@@ -1,0 +1,47 @@
+<script type="text/html" data-help-name="ADC">
+  <p>ADC功能节点</p>
+</script>
+
+
+<script type="text/html" data-template-name="ADC">
+  <!-- 设置第一行为Name -->
+  <div class="form-row">
+    <label for="node-input-name"><i class="fa fa-tag"></i> 名称</label>
+    <input type="text" id="node-input-name" data-i18n="[placeholder]name">
+</div>
+
+
+<div class="form-row">
+  <label for="node-input-pin"><i class="fa fa-circle"></i> Pin</label>
+  <select id="node-input-pin" style="width: 250px;">
+    <option value="0">ADC0</option>
+    <option value="2">ADC2</option>
+    <option value="3">ADC3</option>
+    <option value="4">ADC4</option>
+    <option value="5">ADC5</option>
+</select>
+</div>
+
+</script>
+
+
+
+<script type="text/javascript">
+    RED.nodes.registerType('ADC',{
+      category: 'NodeREDComputer',
+      color: '#35c1f4',
+      defaults: {
+        name: {value:""},
+        pin:  {value:"", required: true},
+      },
+      inputs:1,
+      outputs:1,
+      icon: "font-awesome/fa-angle-double-right",
+      label: function() {
+        return this.name||this._("ADC节点");
+      },
+
+
+    });
+  </script>
+  

@@ -1,0 +1,156 @@
+<script type="text/html" data-help-name="GPIO In">
+    <p>Node function: </p>
+  </script>
+  
+  
+  <script type="text/html" data-template-name="GPIO In">
+  <!-- 设置第一行为Name -->
+  <div class="form-row">
+    <label for="node-input-name"><i class="fa fa-tag"></i>名字</label>
+    <input type="text" id="node-input-name" data-i18n="[placeholder]name">
+  </div>
+
+  <!-- 设置第二行为输出端口数量（隐藏） -->
+  <div class="form-row">
+    <input type="hidden" id="node-input-outputs"/>
+  </div>
+  
+  <!--上下拉电阻设置 -->
+  <div class="form-row">
+  <label for="node-input-mode"><i class="fa fa-globe"></i> Mode</label>
+  <select id="node-input-mode" style="width: 250px;">
+      <option value="floating">floating</option>
+      <option value="pullUp">Pull-up</option>
+      <option value="pullDown">Pull-down</option>
+      </select>
+  </div>
+  
+  <!--Pin容器 -->
+  <div class="form-row">
+      <label for="node-input-container"><i class="fa fa-circle"></i> Pin</label>
+      <ol id="node-input-rule-container"></ol> 
+  </div>
+  
+  
+  
+  </script>
+  
+  
+  
+  <script type="text/javascript">
+      RED.nodes.registerType('GPIO In',{
+        category: 'NodeREDComputer',
+        color: '#35c1f4',
+        defaults: {
+          name: {value:""},
+          // pin:  {value:"", required: true, validate: RED.validators.regex(/^[0-9]*$/)},（在JS文件中进行引脚输入准确性的判断）
+          mode: {value:"pullDown"},
+          rules: [],
+          outputs: {value:1}, // 用于记录输出端口的数量
+        },
+        inputs:1,
+        outputs:1,  // 初始输出数量为1，稍后将动态更改
+        icon: "font-awesome/fa-angle-double-right",
+        label: function() {
+          return this.name||this._("IO输入");
+        },
+  
+  
+  
+      oneditprepare: function() {
+            var node = this;
+  
+            var outputCount = $("#node-input-outputs");
+
+            // 根据现有规则初始化输出计数
+            var initialOutputs = node.rules ? node.rules.length : 1;
+            outputCount.val(initialOutputs);
+
+  
+  
+            $("#node-input-rule-container").css({
+                'min-height': '450px',
+                'min-width': '450px'
+            }).editableList({
+  
+                // 此处的option表示 addItem 添加的 一行（rules[0]或rules[x]）
+                addItem: function(container, index, opt) {
+                    var row = $('<div/>').addClass('form-row').appendTo(container);
+                    var selectDiv = $('<div/>').addClass('form-row').appendTo(row);
+  
+                    var selectOptions = $('<input/>', {
+                          class: 'node-input-rule-type',
+                          type: 'text',
+                          // required: true, // 使输入框为必填
+                          pattern: '[0-9]*', // 允许0-9之间的数字
+                      }).appendTo(selectDiv);
+  
+                    // 如果提供了初始数据，恢复下拉选项和文本框(opt指代的是rules?)
+                    console.log(JSON.stringify(opt))
+                    if (opt) {
+                      selectOptions.val(opt['pin']);  // 直接设置原始selectOptions元素的值
+                    }
+  
+                    
+                    // 创建一个输出标识符(箭头和数字)
+                    var outputId = $('<span/>').addClass('node-input-rule-output-id').text(' → ' + (index + 1)).appendTo(selectDiv);
+  
+                    // 更新输出计数
+                    updateOutputs();
+                },
+                removable: true,
+                sortable: true,
+                // 在重新排序项目时，需要使用以下代码来更新输出标识符
+                sortItems: function(items) {
+                    updateOutputIdentifiers();
+                },
+                // 删除选项时——>同时删除输出端口
+                removeItem: function(opt) {
+                    updateOutputs();
+                    updateOutputIdentifiers();
+                }
+            });
+  
+            // 函数更新输出的数量
+            function updateOutputs() {
+                // 调用editableList('items')方法来获取该元素上可编辑列表的所有项。这些项将被赋值给rules变量
+                var rules = $("#node-input-rule-container").editableList('items');
+                outputCount.val(rules.length);
+            }
+  
+  
+            // 函数更新输出标识符
+            function updateOutputIdentifiers() {
+                $("#node-input-rule-container").editableList('items').each(function(i, el) {
+                    $(el).find('.node-input-rule-output-id').text(' → ' + (i + 1));
+                });
+            }
+  
+            // 恢复已有的规则数据
+            if (node.rules) {
+                // 遍历所有的规则，将上次设置的规则恢复
+                node.rules.forEach(function(rule) {
+                    $("#node-input-rule-container").editableList('addItem', rule);
+                });
+            }
+  
+  
+        },
+  
+        oneditsave: function() {
+            var node = this;
+            node.rules = []; // 准备存储规则数据的数组
+  
+  
+            // 遍历每个规则项，保存下拉选项和文本框的数据
+            $("#node-input-rule-container").children().each(function() {
+                // 找到所有的下拉选项框并保存
+                var type = $(this).find('.node-input-rule-type').val();
+              
+                node.rules.push({pin: type});
+            });
+        },
+    });
+    </script>
+    
+  

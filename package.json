@@ -1,0 +1,35 @@
+{
+    "name": "@renyoo/node-red-DFRobot_NodeREDComputer",
+    "version": "1.0.0",
+    "description": "node red nodes for NodeREDComputer",
+    "node-red": {
+        "version": ">=2.0.0",
+        "nodes": {
+            "dfrobot-gpio_out": "./gpio_out/gpio_out.js",
+            "dfrobot-gpio_in": "./gpio_in/gpio_in.js",
+            "dfrobot-adc": "./adc/adc.js",
+            "dfrobot-dac": "./dac/dac.js",
+            "dfrobot-event_dev": "./event_dev/event_dev.js",
+            "dfrobot-esp32_burn": "./esp32_burn/esp32_burn.js",
+            "dfrobot-gpio_Interrupt": "./Exec_IO_Interrupt/gpio_Interrupt.js"
+        }
+    },
+    "author": "GDuang",
+    "license": "MIT",
+    "engines": {
+        "node": ">=12.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DFRobot/Node-RED-dfrobot-lorawan-nodes.git"
+    },
+    "keywords": [
+        "node-red",
+        "dfrobot",
+        "NodeREDComputer"
+    ],
+    "dependencies": {
+        "axios": "^1.6.7",
+        "mqtt": "^4.2.8"
+    }
+}
