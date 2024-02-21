@@ -21,7 +21,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/DFRobot/Node-RED-dfrobot-lorawan-nodes.git"
+        "url": "https://github.com/DFRobot/Node-RED-dfrobot_NodeREDComputer.git"
     },
     "keywords": [
         "node-red",
