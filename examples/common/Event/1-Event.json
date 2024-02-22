@@ -1,0 +1,47 @@
+[
+    {
+        "id": "0cee421636f335aa",
+        "type": "Dev Event",
+        "z": "2f9a0e8e53bd946e",
+        "name": "",
+        "set": "",
+        "action": "none",
+        "devName": "",
+        "setIOin": "",
+        "edge": "none",
+        "x": 380,
+        "y": 860,
+        "wires": [
+            [
+                "32617df12599b73c"
+            ]
+        ]
+    },
+    {
+        "id": "abc45e4cc26aab30",
+        "type": "comment",
+        "z": "2f9a0e8e53bd946e",
+        "name": "监听所有类型的串口与U盘事件",
+        "info": "",
+        "x": 450,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "32617df12599b73c",
+        "type": "debug",
+        "z": "2f9a0e8e53bd946e",
+        "name": "监听所有类型的串口与U盘事件",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 750,
+        "y": 860,
+        "wires": []
+    }
+]

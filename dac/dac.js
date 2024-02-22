@@ -4,14 +4,6 @@ const axios = require('axios');
 const server_DAC_url = "http://10.1.2.3:5000/peripheral/dac";
 
 
-
-
-
-
-
-
-
-
 module.exports = function(RED) {
 
     function HttpRequestCustomNode(config) {

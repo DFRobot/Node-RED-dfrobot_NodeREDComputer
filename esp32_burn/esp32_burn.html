@@ -49,6 +49,12 @@
         label: function() {
           return this.name||this._("ESP32烧录节点");
         },
+        outputLabels: function(i) {
+            return [
+                this._("烧录进行中的设备"),
+                this._("设备烧录结果统计")
+            ][i];
+        },
   
 
 

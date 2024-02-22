@@ -1,5 +1,5 @@
 {
-    "name": "@renyoo/node-red-DFRobot_NodeREDComputer",
+    "name": "@renyoo/node-red-dfrobot_noderedcomputer",
     "version": "1.0.0",
     "description": "node red nodes for NodeREDComputer",
     "node-red": {
@@ -21,7 +21,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/DFRobot/Node-RED-dfrobot_NodeREDComputer.git"
+        "url": "https://github.com/DFRobot/Node-RED-dfrobot-lorawan-nodes.git"
     },
     "keywords": [
         "node-red",

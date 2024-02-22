@@ -1,0 +1,63 @@
+[
+    {
+        "id": "2a1ca141cd3e1dec",
+        "type": "DAC",
+        "z": "2f9a0e8e53bd946e",
+        "name": "",
+        "pin": "0",
+        "initVoltage": "0",
+        "set": "",
+        "x": 680,
+        "y": 1320,
+        "wires": []
+    },
+    {
+        "id": "f58d6fe8fdb31cc6",
+        "type": "inject",
+        "z": "2f9a0e8e53bd946e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "2.5",
+        "payloadType": "num",
+        "x": 390,
+        "y": 1320,
+        "wires": [
+            [
+                "2a1ca141cd3e1dec"
+            ]
+        ]
+    },
+    {
+        "id": "4e798a41de1f6828",
+        "type": "comment",
+        "z": "2f9a0e8e53bd946e",
+        "name": "输入必须为数字0~3.3",
+        "info": "",
+        "x": 420,
+        "y": 1360,
+        "wires": []
+    },
+    {
+        "id": "20ca4e233569b21d",
+        "type": "comment",
+        "z": "2f9a0e8e53bd946e",
+        "name": "给DAC1输出2.5V的电压",
+        "info": "",
+        "x": 520,
+        "y": 1260,
+        "wires": []
+    }
+]

@@ -26,11 +26,30 @@
     </div>
 
     <div class="form-row" id="node-set-state2">
-
         <!-- <input type="text" id="node-input-initVoltage" data-i18n="[placeholder]初始电压范围：0~3.3"> -->
         <label for="node-input-devName">&nbsp;devName</label>
         <input type="text" id="node-input-devName" data-i18n="[placeholder]输入格式/dev/ttyACM0. 为空表示不筛选此项">
       </div>
+
+
+
+      <!-- <div class="form-row" id="node-setIOin-tick">
+        <label>&nbsp;</label>
+        <input type="checkbox" id="node-input-setIOin" style="display: inline-block; width: auto; vertical-align: top;">
+        <label for="node-input-setIOin" style="width: 70%;">筛选-监听IO中断</label>
+      </div>
+  
+      <div class="form-row" id="node-setIOin-state1">
+        <label for="node-input-edge">&nbsp;edge</label>
+        <select id="node-input-edge" style="width: 250px;">
+          <option value="none" selected>none</option>
+          <option value="rising">rising</option>
+          <option value="falling">falling</option>
+          <option value="both">both</option>
+        </select>
+      </div> -->
+
+
 
   
   </script>
@@ -43,9 +62,12 @@
         color: '#35c1f4',
         defaults: {
           name: {value:""},
+          set: {value:""},
           action:  {value:"none"},
           devName:  {value:""},
-          set: {value:""}
+
+          setIOin: {value:""},
+          edge:  {value:"none"},
         },
         inputs:0,
         outputs:1,
@@ -67,6 +89,17 @@
           };
           $("#node-input-set").change(function () { setstate(); });
           setstate();
+
+
+          // var setstateIOin = function () {
+          //     if ($('#node-input-setIOin').is(":checked")) {
+          //         $("#node-setIOin-state1").show();
+          //     } else {
+          //         $("#node-setIOin-state1").hide();
+          //     }
+          // };
+          // $("#node-input-setIOin").change(function () { setstateIOin(); });
+          // setstateIOin();
         }
   
       });

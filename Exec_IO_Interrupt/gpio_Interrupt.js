@@ -23,11 +23,11 @@ module.exports = function(RED) {
 
         function exec_command() {
             var msg = {"_msgid": "", "payload": "", "topic":""}
-            console.log(JSON.stringify(msg))
+            // console.log(JSON.stringify(msg))
 
             var child;
             var arg = `python3 /root/NodeRED-Computer-PartHardware/python-Script/IO_Interrupt.py -Pin ${node.pin} -Mode ${node.mode} -Interrupt ${node.interrupt}`;
-            console.log('arg = ', arg)
+            // console.log('arg = ', arg)
 
             /* istanbul ignore else  */
             node.debug(arg);
@@ -107,8 +107,9 @@ module.exports = function(RED) {
             }
 
             var msg = { topic: topic, payload: payload_data };
-            node.send(msg);
-
+            if(payload_data.gpio == node.pin) {
+                node.send(msg);
+            }
 
         });
 
