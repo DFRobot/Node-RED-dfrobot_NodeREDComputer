@@ -31,9 +31,9 @@ module.exports = function(RED) {
 
         // mqtt收到信息
         client.on('message', function (topic, message) {
-            var Mqttmsg = new Array(2).fill(null); // 初始化并清空messages数组
+            var Mqttmsg = new Array(1).fill(null); // 初始化并清空messages数组
             var tempmsg = {'topic': "esp32/burn_result", 'payload': ""}
-            Mqttmsg[1] = RED.util.cloneMessage(tempmsg)
+            Mqttmsg[0] = RED.util.cloneMessage(tempmsg)
             // 解析输入的消息payload（假定其为JSON字符串）
             const Json_payload = message;
             let payload_data;
@@ -47,7 +47,7 @@ module.exports = function(RED) {
                 return;
             }
 
-            Mqttmsg[1].payload = payload_data;
+            Mqttmsg[0].payload = payload_data;
             node.send(Mqttmsg);
 
         });

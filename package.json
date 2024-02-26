@@ -11,7 +11,9 @@
             "dfrobot-dac": "./dac/dac.js",
             "dfrobot-event_dev": "./event_dev/event_dev.js",
             "dfrobot-esp32_burn": "./esp32_burn/esp32_burn.js",
-            "dfrobot-gpio_Interrupt": "./Exec_IO_Interrupt/gpio_Interrupt.js"
+            "dfrobot-gpio_Interrupt": "./Exec_IO_Interrupt/gpio_Interrupt.js",
+            "dfrobot-FlowCountNode": "./FlowCountNode/flow_count.js",
+            "dfrobot-Light_Button": "./light_button/light_button.js"
         }
     },
     "author": "GDuang",

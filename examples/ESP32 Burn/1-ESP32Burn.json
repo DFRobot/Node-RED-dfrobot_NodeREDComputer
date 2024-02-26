@@ -6,7 +6,7 @@
         "name": "",
         "set": true,
         "action": "add",
-        "devName": "/dev/ttyACM7",
+        "devName": "/dev/ttyACM0",
         "setIOin": "",
         "edge": "none",
         "x": 340,
