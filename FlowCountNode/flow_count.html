@@ -33,7 +33,7 @@
         defaults: {
           name: {value:""},
           set: { value:"" },
-          num_Init: { value:0 }
+          num_Init:  {value:"0", required: true, validate: RED.validators.regex(/^[0-9]*$/)},
         },
         inputs:1,
         outputs:1,

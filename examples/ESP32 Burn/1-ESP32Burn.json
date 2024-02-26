@@ -9,8 +9,8 @@
         "devName": "/dev/ttyACM0",
         "setIOin": "",
         "edge": "none",
-        "x": 340,
-        "y": 220,
+        "x": 500,
+        "y": 1080,
         "wires": [
             [
                 "6abd2487b3b3deba"
@@ -24,14 +24,11 @@
         "name": "",
         "chip": "esp32c6",
         "firmware": "/root/NodeRED-Computer-PartHardware/python-Script/ESP32_Firmware/esp32c6-blink.bin",
-        "x": 580,
-        "y": 220,
+        "x": 740,
+        "y": 1080,
         "wires": [
             [
                 "9772fce37fedbdca"
-            ],
-            [
-                "6f10caa6e48e3987"
             ]
         ]
     },
@@ -39,7 +36,7 @@
         "id": "9772fce37fedbdca",
         "type": "debug",
         "z": "2f9a0e8e53bd946e",
-        "name": "正在烧录中的设备信息",
+        "name": "设备的烧录信息",
         "active": true,
         "tosidebar": true,
         "console": false,
@@ -48,25 +45,8 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 920,
-        "y": 180,
-        "wires": []
-    },
-    {
-        "id": "6f10caa6e48e3987",
-        "type": "debug",
-        "z": "2f9a0e8e53bd946e",
-        "name": "烧录结果汇总",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "payload",
-        "statusType": "auto",
-        "x": 900,
-        "y": 240,
+        "x": 1020,
+        "y": 1080,
         "wires": []
     },
     {
@@ -75,8 +55,8 @@
         "z": "2f9a0e8e53bd946e",
         "name": "烧录指定设备，如/dev/ttyACM0",
         "info": "",
-        "x": 390,
-        "y": 160,
+        "x": 550,
+        "y": 1020,
         "wires": []
     }
 ]
