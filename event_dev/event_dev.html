@@ -1,5 +1,5 @@
 <script type="text/html" data-help-name="Dev Event">
-    <p>Dev Event功能节点</p>
+    <p>设备监听节点</p>
   </script>
   
   
@@ -17,17 +17,17 @@
     </div>
 
     <div class="form-row" id="node-set-state1">
-      <label for="node-input-action">&nbsp;action</label>
+      <label for="node-input-action">&nbsp;设备行为</label>
       <select id="node-input-action" style="width: 250px;">
-        <option value="none" selected>none</option>
-        <option value="add">add</option>
-        <option value="remove">remove</option>
+        <option value="add">检测-设备插入</option>
+        <option value="remove">检测-设备拔出</option>
+        <option value="both" selected>检测-插入与拔出</option>
       </select>
     </div>
 
     <div class="form-row" id="node-set-state2">
         <!-- <input type="text" id="node-input-initVoltage" data-i18n="[placeholder]初始电压范围：0~3.3"> -->
-        <label for="node-input-devName">&nbsp;devName</label>
+        <label for="node-input-devName">&nbsp;设备名称</label>
         <input type="text" id="node-input-devName" data-i18n="[placeholder]输入格式/dev/ttyACM0. 为空表示不筛选此项">
       </div>
 
@@ -63,7 +63,7 @@
         defaults: {
           name: {value:""},
           set: {value:""},
-          action:  {value:"none"},
+          action:  {value:"both"},
           devName:  {value:""},
 
           setIOin: {value:""},
@@ -73,7 +73,7 @@
         outputs:1,
         icon: "bridge.svg",
         label: function() {
-          return this.name||this._("Dev Event节点");
+          return this.name||this._("设备监听节点");
         },
   
         oneditprepare: function() {

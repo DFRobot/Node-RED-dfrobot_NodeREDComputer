@@ -62,7 +62,7 @@ module.exports = function(RED) {
                 if(payload_data.hasOwnProperty("action") && payload_data.hasOwnProperty("devName")){
                     var msg1 = { topic: topic, payload: payload_data };
                     // 筛选action与devName
-                    if(payload_data.action == node.action || node.action == 'none'){
+                    if(payload_data.action == node.action || node.action == 'both'){
                         if(payload_data.devName == node.devName || node.devName == ""){
                             node.send(msg1);
                         }  

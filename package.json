@@ -1,6 +1,6 @@
 {
     "name": "@renyoo/node-red-dfrobot_noderedcomputer",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "node red nodes for NodeREDComputer",
     "node-red": {
         "version": ">=2.0.0",
@@ -12,7 +12,8 @@
             "dfrobot-event_dev": "./event_dev/event_dev.js",
             "dfrobot-esp32_burn": "./esp32_burn/esp32_burn.js",
             "dfrobot-gpio_Interrupt": "./Exec_IO_Interrupt/gpio_Interrupt.js",
-            "dfrobot-FlowCountNode": "./FlowCountNode/flow_count.js"
+            "dfrobot-FlowCountNode": "./FlowCountNode/flow_count.js",
+            "dfrobot-Special_event": "./Special_listening/Special_event.js"
         }
     },
     "author": "GDuang",

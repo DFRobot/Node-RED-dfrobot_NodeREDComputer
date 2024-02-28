@@ -1,52 +1,34 @@
 [
     {
-        "id": "cecbd44472c07c84",
-        "type": "Dev Event",
-        "z": "2f9a0e8e53bd946e",
-        "name": "事件监听 - 插入设备",
-        "set": true,
-        "action": "add",
-        "devName": "",
-        "setIOin": "",
-        "edge": "none",
-        "x": 290,
-        "y": 560,
-        "wires": [
-            [
-                "325c91b469b61c99"
-            ]
-        ]
-    },
-    {
-        "id": "325c91b469b61c99",
+        "id": "ba405a8b2040099f",
         "type": "ESP32 Burn",
-        "z": "2f9a0e8e53bd946e",
+        "z": "f0666cd60dee13a6",
         "name": "",
         "chip": "esp32c6",
         "firmware": "/root/NodeRED-Computer-PartHardware/python-Script/ESP32_Firmware/esp32c6-blink.bin",
-        "x": 480,
-        "y": 560,
+        "x": 500,
+        "y": 1020,
         "wires": [
             [
-                "413fcb19b2d6b99b",
-                "9302d0d5522e37a4"
+                "1795e0f954f9f7f3",
+                "bdd6df9452d55e00"
             ]
         ]
     },
     {
-        "id": "12736726df95e17b",
+        "id": "e8dfb79d6aacf675",
         "type": "comment",
-        "z": "2f9a0e8e53bd946e",
-        "name": "烧录所有插入的/dev/ttyACMx设备",
+        "z": "f0666cd60dee13a6",
+        "name": "烧录所有插入的esp32c6设备",
         "info": "",
-        "x": 330,
-        "y": 520,
+        "x": 340,
+        "y": 980,
         "wires": []
     },
     {
-        "id": "9f55597fbd8e382b",
+        "id": "b4d391b93a4d4242",
         "type": "ui_template",
-        "z": "2f9a0e8e53bd946e",
+        "z": "f0666cd60dee13a6",
         "group": "e30c0c240b47fb36",
         "name": "/dev/ttyACM0设备",
         "order": 1,
@@ -58,16 +40,16 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 1210,
-        "y": 400,
+        "x": 1230,
+        "y": 860,
         "wires": [
             []
         ]
     },
     {
-        "id": "4445bd526d406b05",
+        "id": "75745f54550d8cb6",
         "type": "ui_template",
-        "z": "2f9a0e8e53bd946e",
+        "z": "f0666cd60dee13a6",
         "group": "e30c0c240b47fb36",
         "name": "/dev/ttyACM1设备",
         "order": 2,
@@ -79,16 +61,16 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 1210,
-        "y": 440,
+        "x": 1230,
+        "y": 900,
         "wires": [
             []
         ]
     },
     {
-        "id": "2cb1ebf1a694f768",
+        "id": "e6b53846cc0d9cec",
         "type": "ui_template",
-        "z": "2f9a0e8e53bd946e",
+        "z": "f0666cd60dee13a6",
         "group": "e30c0c240b47fb36",
         "name": "/dev/ttyACM2设备",
         "order": 3,
@@ -100,16 +82,16 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 1210,
-        "y": 480,
+        "x": 1230,
+        "y": 940,
         "wires": [
             []
         ]
     },
     {
-        "id": "b5a611748fe9030e",
+        "id": "e69fb4a24ed2ad45",
         "type": "ui_template",
-        "z": "2f9a0e8e53bd946e",
+        "z": "f0666cd60dee13a6",
         "group": "e30c0c240b47fb36",
         "name": "/dev/ttyACM3设备",
         "order": 4,
@@ -121,16 +103,16 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 1210,
-        "y": 520,
+        "x": 1230,
+        "y": 980,
         "wires": [
             []
         ]
     },
     {
-        "id": "d082b84366e35972",
+        "id": "e4ea2ff4da8a2ae4",
         "type": "ui_template",
-        "z": "2f9a0e8e53bd946e",
+        "z": "f0666cd60dee13a6",
         "group": "e30c0c240b47fb36",
         "name": "/dev/ttyACM4设备",
         "order": 5,
@@ -142,16 +124,16 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 1210,
-        "y": 560,
+        "x": 1230,
+        "y": 1020,
         "wires": [
             []
         ]
     },
     {
-        "id": "bd02204243146f9e",
+        "id": "98edf7c6304fa38e",
         "type": "ui_template",
-        "z": "2f9a0e8e53bd946e",
+        "z": "f0666cd60dee13a6",
         "group": "e30c0c240b47fb36",
         "name": "/dev/ttyACM5设备",
         "order": 6,
@@ -163,16 +145,16 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 1210,
-        "y": 600,
+        "x": 1230,
+        "y": 1060,
         "wires": [
             []
         ]
     },
     {
-        "id": "c5f547a14fa9a2e7",
+        "id": "aca1cc4226d8459f",
         "type": "ui_template",
-        "z": "2f9a0e8e53bd946e",
+        "z": "f0666cd60dee13a6",
         "group": "e30c0c240b47fb36",
         "name": "/dev/ttyACM6设备",
         "order": 7,
@@ -184,16 +166,16 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 1210,
-        "y": 640,
+        "x": 1230,
+        "y": 1100,
         "wires": [
             []
         ]
     },
     {
-        "id": "abcf75bf1b7113cc",
+        "id": "3364b371802a5710",
         "type": "ui_template",
-        "z": "2f9a0e8e53bd946e",
+        "z": "f0666cd60dee13a6",
         "group": "e30c0c240b47fb36",
         "name": "/dev/ttyACM7设备",
         "order": 8,
@@ -205,16 +187,16 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 1210,
-        "y": 680,
+        "x": 1230,
+        "y": 1140,
         "wires": [
             []
         ]
     },
     {
-        "id": "db06bb24b90a0512",
+        "id": "2d8d2928822c3fed",
         "type": "ui_numeric",
-        "z": "2f9a0e8e53bd946e",
+        "z": "f0666cd60dee13a6",
         "name": "",
         "label": "烧录失败的次数",
         "tooltip": "",
@@ -231,26 +213,26 @@
         "max": "5000",
         "step": 1,
         "className": "",
-        "x": 1200,
-        "y": 800,
+        "x": 1220,
+        "y": 1260,
         "wires": [
             []
         ]
     },
     {
-        "id": "0cd35b4ff32359b9",
+        "id": "d9aba6852781b6b0",
         "type": "comment",
-        "z": "2f9a0e8e53bd946e",
+        "z": "f0666cd60dee13a6",
         "name": "拔出/dev/ttyACMx设备后烧录界面的颜色恢复为紫色",
         "info": "",
-        "x": 390,
-        "y": 420,
+        "x": 410,
+        "y": 880,
         "wires": []
     },
     {
-        "id": "34a2efac3939fe3c",
+        "id": "87ca5655516de3c3",
         "type": "change",
-        "z": "2f9a0e8e53bd946e",
+        "z": "f0666cd60dee13a6",
         "name": "还原默认颜色",
         "rules": [
             {
@@ -273,19 +255,19 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 680,
-        "y": 460,
+        "x": 700,
+        "y": 920,
         "wires": [
             [
-                "92e37627dec64dbf",
-                "aa2a94014c9850f2"
+                "84f8678f301c1907",
+                "d25a9335a9f4629c"
             ]
         ]
     },
     {
-        "id": "35f767b9b94a951a",
+        "id": "c2421038bf3c7597",
         "type": "inject",
-        "z": "2f9a0e8e53bd946e",
+        "z": "f0666cd60dee13a6",
         "name": "部署后，UI显示默认设置",
         "props": [
             {
@@ -299,25 +281,25 @@
         "topic": "",
         "payload": "{\"backgroundColor\":\"#ae81ff\",\"label\":\"\"}",
         "payloadType": "json",
-        "x": 950,
-        "y": 340,
+        "x": 970,
+        "y": 800,
         "wires": [
             [
-                "9f55597fbd8e382b",
-                "4445bd526d406b05",
-                "2cb1ebf1a694f768",
-                "b5a611748fe9030e",
-                "d082b84366e35972",
-                "bd02204243146f9e",
-                "c5f547a14fa9a2e7",
-                "abcf75bf1b7113cc"
+                "b4d391b93a4d4242",
+                "75745f54550d8cb6",
+                "e6b53846cc0d9cec",
+                "e69fb4a24ed2ad45",
+                "e4ea2ff4da8a2ae4",
+                "98edf7c6304fa38e",
+                "aca1cc4226d8459f",
+                "3364b371802a5710"
             ]
         ]
     },
     {
-        "id": "92e37627dec64dbf",
+        "id": "84f8678f301c1907",
         "type": "switch",
-        "z": "2f9a0e8e53bd946e",
+        "z": "f0666cd60dee13a6",
         "name": "",
         "property": "payload.devName",
         "propertyType": "msg",
@@ -366,39 +348,39 @@
         "checkall": "true",
         "repair": false,
         "outputs": 8,
-        "x": 910,
-        "y": 520,
+        "x": 930,
+        "y": 980,
         "wires": [
             [
-                "9f55597fbd8e382b"
+                "b4d391b93a4d4242"
             ],
             [
-                "4445bd526d406b05"
+                "75745f54550d8cb6"
             ],
             [
-                "2cb1ebf1a694f768"
+                "e6b53846cc0d9cec"
             ],
             [
-                "b5a611748fe9030e"
+                "e69fb4a24ed2ad45"
             ],
             [
-                "d082b84366e35972"
+                "e4ea2ff4da8a2ae4"
             ],
             [
-                "bd02204243146f9e"
+                "98edf7c6304fa38e"
             ],
             [
-                "c5f547a14fa9a2e7"
+                "aca1cc4226d8459f"
             ],
             [
-                "abcf75bf1b7113cc"
+                "3364b371802a5710"
             ]
         ]
     },
     {
-        "id": "a24710c5946160d5",
+        "id": "952d5757c9b59398",
         "type": "ui_numeric",
-        "z": "2f9a0e8e53bd946e",
+        "z": "f0666cd60dee13a6",
         "name": "",
         "label": "烧录成功的次数",
         "tooltip": "",
@@ -415,54 +397,54 @@
         "max": "5000",
         "step": 1,
         "className": "",
-        "x": 1200,
-        "y": 740,
+        "x": 1220,
+        "y": 1200,
         "wires": [
             []
         ]
     },
     {
-        "id": "e1cabb1bd11b960e",
+        "id": "1b76d9b7f5362f0a",
         "type": "comment",
-        "z": "2f9a0e8e53bd946e",
+        "z": "f0666cd60dee13a6",
         "name": "烧录结果计数",
         "info": "",
-        "x": 930,
-        "y": 700,
+        "x": 950,
+        "y": 1160,
         "wires": []
     },
     {
-        "id": "80951e020b217e26",
+        "id": "984b25c47aab1f54",
         "type": "comment",
-        "z": "2f9a0e8e53bd946e",
+        "z": "f0666cd60dee13a6",
         "name": "部署后，还原烧录界面",
         "info": "",
-        "x": 940,
-        "y": 300,
+        "x": 960,
+        "y": 760,
         "wires": []
     },
     {
-        "id": "be70dfc8864fc982",
+        "id": "928865ce4da181ff",
         "type": "Dev Event",
-        "z": "2f9a0e8e53bd946e",
+        "z": "f0666cd60dee13a6",
         "name": "事件监听 - 移除设备",
         "set": true,
         "action": "remove",
         "devName": "",
         "setIOin": "",
         "edge": "none",
-        "x": 290,
-        "y": 460,
+        "x": 310,
+        "y": 920,
         "wires": [
             [
-                "34a2efac3939fe3c"
+                "87ca5655516de3c3"
             ]
         ]
     },
     {
-        "id": "413fcb19b2d6b99b",
+        "id": "1795e0f954f9f7f3",
         "type": "switch",
-        "z": "2f9a0e8e53bd946e",
+        "z": "f0666cd60dee13a6",
         "name": "烧录结果",
         "property": "payload.status",
         "propertyType": "msg",
@@ -486,56 +468,56 @@
         "checkall": "true",
         "repair": false,
         "outputs": 3,
-        "x": 660,
-        "y": 560,
+        "x": 680,
+        "y": 1020,
         "wires": [
             [
-                "92e37627dec64dbf"
+                "84f8678f301c1907"
             ],
             [
-                "92e37627dec64dbf",
-                "3750d95cdc0d8731"
+                "84f8678f301c1907",
+                "ac5118c10f427a79"
             ],
             [
-                "92e37627dec64dbf",
-                "c8a5232006504209"
+                "84f8678f301c1907",
+                "d051975297837f6b"
             ]
         ]
     },
     {
-        "id": "3750d95cdc0d8731",
+        "id": "ac5118c10f427a79",
         "type": "Flow Count",
-        "z": "2f9a0e8e53bd946e",
+        "z": "f0666cd60dee13a6",
         "name": "烧录成功计数",
         "set": true,
         "num_Init": "0",
-        "x": 940,
-        "y": 740,
+        "x": 960,
+        "y": 1200,
         "wires": [
             [
-                "a24710c5946160d5"
+                "952d5757c9b59398"
             ]
         ]
     },
     {
-        "id": "c8a5232006504209",
+        "id": "d051975297837f6b",
         "type": "Flow Count",
-        "z": "2f9a0e8e53bd946e",
+        "z": "f0666cd60dee13a6",
         "name": "烧录失败计数",
         "set": true,
         "num_Init": 0,
-        "x": 940,
-        "y": 800,
+        "x": 960,
+        "y": 1260,
         "wires": [
             [
-                "db06bb24b90a0512"
+                "2d8d2928822c3fed"
             ]
         ]
     },
     {
-        "id": "9302d0d5522e37a4",
+        "id": "bdd6df9452d55e00",
         "type": "debug",
-        "z": "2f9a0e8e53bd946e",
+        "z": "f0666cd60dee13a6",
         "name": "debug 2：数据流详情",
         "active": false,
         "tosidebar": true,
@@ -545,26 +527,44 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 640,
-        "y": 660,
+        "x": 660,
+        "y": 1120,
         "wires": []
     },
     {
-        "id": "aa2a94014c9850f2",
+        "id": "d25a9335a9f4629c",
         "type": "debug",
-        "z": "2f9a0e8e53bd946e",
+        "z": "f0666cd60dee13a6",
         "name": "debug 1：数据流详情",
         "active": false,
         "tosidebar": true,
         "console": false,
-        "tostatus": false,
+        "tostatus": true,
         "complete": "payload",
         "targetType": "msg",
-        "statusVal": "",
+        "statusVal": "payload",
         "statusType": "auto",
-        "x": 900,
-        "y": 400,
+        "x": 920,
+        "y": 860,
         "wires": []
+    },
+    {
+        "id": "e4e3e7ec554421c1",
+        "type": "Special Event",
+        "z": "f0666cd60dee13a6",
+        "name": "",
+        "action": "add",
+        "devName": "",
+        "SpecialEvents": "esp32c6_shakeHands",
+        "oldrc": false,
+        "x": 290,
+        "y": 1020,
+        "wires": [
+            [
+                "ba405a8b2040099f"
+            ]
+        ],
+        "icon": "node-red/cog.svg"
     },
     {
         "id": "e30c0c240b47fb36",
