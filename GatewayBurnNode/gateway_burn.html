@@ -1,0 +1,51 @@
+<script type="text/html" data-help-name="RockchipBurn">
+    <p>Rockchip烧录节点</p>
+</script>
+  
+  
+
+
+<script type="text/html" data-template-name="RockchipBurn">
+    <!-- 设置第一行为Name -->
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> 名称</label>
+        <input type="text" id="node-input-name" data-i18n="[placeholder]name">
+      </div>
+  
+      <div class="form-row">
+          <label for="node-input-chip"><i class="fa fa-circle"></i>芯片类型</label>
+          <select id="node-input-chip" style="width: 250px;">
+            <option value="RK3308BS">RK3308BS</option>
+            <option value="RK3308K">RK3308K</option>
+            </select>
+      </div>
+  
+      <div class="form-row">
+          <label for="node-input-firmware"><i class="fa fa-circle"></i> 指定固件</label>
+          <input type="text" id="node-input-firmware" data-i18n="[placeholder]输入路径,如/root/GatewayFirmware/xxx.bin">
+      </div>
+    
+    </script>
+    
+  
+  
+  <script type="text/javascript">
+      RED.nodes.registerType('RockchipBurn',{
+        category: 'NodeREDComputer',
+        color: '#35c1f4',
+        defaults: {
+          name: {value:""},
+          chip: { value: "RK3308K" },
+          firmware: {value: "/root/NodeRED-Computer-PartHardware/python-Script/RockChip_Firmware/dfrobot_lorawanos_rk3308_v0.3.8.patch2.img"}
+        },
+        inputs:1,
+        outputs:2,
+        icon: "font-awesome/fa-cloud-download",
+        label: function() {
+          return this.name||this._("Rockchip烧录节点");
+        }
+
+  
+      });
+    </script>
+    
