@@ -1,0 +1,385 @@
+[
+    {
+        "id": "f303aa211865d559",
+        "type": "CH58x Burn",
+        "z": "2f9a0e8e53bd946e",
+        "name": "",
+        "chip": "ch583",
+        "firmware_codeflash": "/root/NodeRED-Computer-PartHardware/python-Script/CH58x_Firmware/dtu-core-0.6.0.hex",
+        "firmware_dataflash": "/root/NodeRED-Computer-PartHardware/python-Script/CH58x_Firmware/dtuBoot.bin",
+        "setReset": true,
+        "set": true,
+        "x": 500,
+        "y": 1820,
+        "wires": [
+            [
+                "1f90350b94854f3c",
+                "cdce9e1fb4f16da1"
+            ]
+        ]
+    },
+    {
+        "id": "663a87cf76f25d85",
+        "type": "Dev Event",
+        "z": "2f9a0e8e53bd946e",
+        "name": "",
+        "set": true,
+        "action": "add",
+        "devName": "/dev/ch37x0",
+        "setIOin": "",
+        "edge": "none",
+        "x": 290,
+        "y": 1820,
+        "wires": [
+            [
+                "f303aa211865d559",
+                "b3e0675915445ba9"
+            ]
+        ]
+    },
+    {
+        "id": "655882fdc685bb64",
+        "type": "comment",
+        "z": "2f9a0e8e53bd946e",
+        "name": "监听设备插入：/dev/ch37x0",
+        "info": "",
+        "x": 340,
+        "y": 1780,
+        "wires": []
+    },
+    {
+        "id": "1f90350b94854f3c",
+        "type": "debug",
+        "z": "2f9a0e8e53bd946e",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 720,
+        "y": 1820,
+        "wires": []
+    },
+    {
+        "id": "cdce9e1fb4f16da1",
+        "type": "switch",
+        "z": "2f9a0e8e53bd946e",
+        "name": "筛选烧录成功的流",
+        "property": "payload.result",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 750,
+        "y": 1880,
+        "wires": [
+            [
+                "0bce44d441943451"
+            ]
+        ]
+    },
+    {
+        "id": "0bce44d441943451",
+        "type": "change",
+        "z": "2f9a0e8e53bd946e",
+        "name": "设定msg.payload.Switch = on",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.Switch",
+                "pt": "msg",
+                "to": "on",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1030,
+        "y": 1880,
+        "wires": [
+            [
+                "3e046329e7a101fd"
+            ]
+        ]
+    },
+    {
+        "id": "32b41d7c02b0b477",
+        "type": "comment",
+        "z": "2f9a0e8e53bd946e",
+        "name": "打开流开关",
+        "info": "",
+        "x": 960,
+        "y": 1840,
+        "wires": []
+    },
+    {
+        "id": "f7ff70d16ba1186f",
+        "type": "Flow Switch",
+        "z": "2f9a0e8e53bd946e",
+        "name": "",
+        "set": true,
+        "flowSwitch": "off",
+        "x": 630,
+        "y": 2020,
+        "wires": [
+            [
+                "9cbf821e714e150d"
+            ]
+        ]
+    },
+    {
+        "id": "204661409f21f0aa",
+        "type": "Dev Event",
+        "z": "2f9a0e8e53bd946e",
+        "name": "",
+        "set": true,
+        "action": "add",
+        "devName": "/dev/ttyACM0",
+        "setIOin": "",
+        "edge": "none",
+        "x": 290,
+        "y": 2020,
+        "wires": [
+            [
+                "f7ff70d16ba1186f",
+                "64e2ff70a6b8b486"
+            ]
+        ]
+    },
+    {
+        "id": "3130f9e6755c2a29",
+        "type": "comment",
+        "z": "2f9a0e8e53bd946e",
+        "name": "监听设备插入：/dev/ttyACM0",
+        "info": "",
+        "x": 340,
+        "y": 1980,
+        "wires": []
+    },
+    {
+        "id": "9cbf821e714e150d",
+        "type": "DTU Config",
+        "z": "2f9a0e8e53bd946e",
+        "name": "",
+        "set1": true,
+        "set2": true,
+        "set3": true,
+        "region": "EU868",
+        "x": 880,
+        "y": 2020,
+        "wires": [
+            [
+                "1270398ac2debccf"
+            ],
+            [
+                "21cb5634d651c6ad"
+            ],
+            [
+                "29954f4087988164",
+                "b16390e045cdfbce"
+            ]
+        ]
+    },
+    {
+        "id": "1270398ac2debccf",
+        "type": "debug",
+        "z": "2f9a0e8e53bd946e",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1160,
+        "y": 1960,
+        "wires": []
+    },
+    {
+        "id": "21cb5634d651c6ad",
+        "type": "debug",
+        "z": "2f9a0e8e53bd946e",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1160,
+        "y": 2020,
+        "wires": []
+    },
+    {
+        "id": "29954f4087988164",
+        "type": "debug",
+        "z": "2f9a0e8e53bd946e",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1160,
+        "y": 2080,
+        "wires": []
+    },
+    {
+        "id": "b16390e045cdfbce",
+        "type": "change",
+        "z": "2f9a0e8e53bd946e",
+        "name": "设定msg.payload.Switch = off",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.Switch",
+                "pt": "msg",
+                "to": "off",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1070,
+        "y": 2140,
+        "wires": [
+            [
+                "50f5a5d63a182d78"
+            ]
+        ]
+    },
+    {
+        "id": "41869564041a2589",
+        "type": "comment",
+        "z": "2f9a0e8e53bd946e",
+        "name": "关闭流开关",
+        "info": "",
+        "x": 1000,
+        "y": 2180,
+        "wires": []
+    },
+    {
+        "id": "64e2ff70a6b8b486",
+        "type": "debug",
+        "z": "2f9a0e8e53bd946e",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 480,
+        "y": 2080,
+        "wires": []
+    },
+    {
+        "id": "b3e0675915445ba9",
+        "type": "debug",
+        "z": "2f9a0e8e53bd946e",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 480,
+        "y": 1880,
+        "wires": []
+    },
+    {
+        "id": "8726d711e616612c",
+        "type": "comment",
+        "z": "2f9a0e8e53bd946e",
+        "name": "该节点是从上到下依次进行的",
+        "info": "",
+        "x": 920,
+        "y": 1960,
+        "wires": []
+    },
+    {
+        "id": "3e046329e7a101fd",
+        "type": "link out",
+        "z": "2f9a0e8e53bd946e",
+        "name": "link out 4",
+        "mode": "link",
+        "links": [
+            "8c01533fb1ac8d45"
+        ],
+        "x": 1195,
+        "y": 1880,
+        "wires": []
+    },
+    {
+        "id": "8c01533fb1ac8d45",
+        "type": "link in",
+        "z": "2f9a0e8e53bd946e",
+        "name": "link in 3",
+        "links": [
+            "3e046329e7a101fd"
+        ],
+        "x": 495,
+        "y": 2000,
+        "wires": [
+            [
+                "f7ff70d16ba1186f"
+            ]
+        ]
+    },
+    {
+        "id": "50f5a5d63a182d78",
+        "type": "link out",
+        "z": "2f9a0e8e53bd946e",
+        "name": "link out 5",
+        "mode": "link",
+        "links": [
+            "098bf5f0473aade1"
+        ],
+        "x": 1235,
+        "y": 2140,
+        "wires": []
+    },
+    {
+        "id": "098bf5f0473aade1",
+        "type": "link in",
+        "z": "2f9a0e8e53bd946e",
+        "name": "link in 4",
+        "links": [
+            "50f5a5d63a182d78"
+        ],
+        "x": 495,
+        "y": 2040,
+        "wires": [
+            [
+                "f7ff70d16ba1186f"
+            ]
+        ]
+    }
+]

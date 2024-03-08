@@ -1,20 +1,33 @@
 {
     "name": "@renyoo/node-red-dfrobot_noderedcomputer",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "description": "node red nodes for NodeREDComputer",
     "node-red": {
         "version": ">=2.0.0",
         "nodes": {
-            "dfrobot-gpio_out": "./gpio_out/gpio_out.js",
-            "dfrobot-gpio_in": "./gpio_in/gpio_in.js",
-            "dfrobot-adc": "./adc/adc.js",
-            "dfrobot-dac": "./dac/dac.js",
-            "dfrobot-event_dev": "./event_dev/event_dev.js",
-            "dfrobot-esp32_burn": "./esp32_burn/esp32_burn.js",
-            "dfrobot-gpio_Interrupt": "./Exec_IO_Interrupt/gpio_Interrupt.js",
-            "dfrobot-FlowCountNode": "./FlowCountNode/flow_count.js",
-            "dfrobot-Special_event": "./Special_listening/Special_event.js",
-            "dfrobot-GatewayBurnNode": "./GatewayBurnNode/gateway_burn.js"
+            "dfrobot-gpio_out": "./PeripheralControl/gpio_out.js",
+            "dfrobot-gpio_in": "./PeripheralControl/gpio_in.js",
+            "dfrobot-adc": "./PeripheralControl/adc.js",
+            "dfrobot-dac": "./PeripheralControl/dac.js",
+
+            "dfrobot-event_dev": "./ListenerType_Nodes/event_dev.js",
+            "dfrobot-Special_event": "./ListenerType_Nodes/Special_event.js",
+            "dfrobot-gpio_Interrupt": "./ListenerType_Nodes/gpio_Interrupt.js",
+
+            "dfrobot-FlowCountNode": "./Regular_Nodes/flow_count.js",
+            "dfrobot-FlowSwitch": "./Regular_Nodes/flow_switch.js",
+
+            "dfrobot-esp32_burn": "./esp32_Burn_Nodes/esp32_burn.js",
+            "dfrobot-RockChipBurn": "./RockChip_Burn_Nodes/gateway_burn.js",
+            "dfrobot-CH58xBurn": "./CH58x_Burn_Nodes/ch58x_burn.js",
+
+            "dfrobot-GatewaySN": "./Gateway_Nodes/gateway_sn.js",
+            "dfrobot-GatewayOTP": "./Gateway_Nodes/gateway_otp.js",
+            "dfrobot-GatewayTEST": "./Gateway_Nodes/gateway_test.js",
+
+            "dfrobot-dtuSN": "./DTU_Nodes/dtu_sn.js",
+            "dfrobot-dtuConfig": "./DTU_Nodes/dtu_config.js"
+  
         }
     },
     "author": "GDuang",

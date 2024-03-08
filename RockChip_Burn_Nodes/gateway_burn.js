@@ -32,7 +32,7 @@ module.exports = function(RED) {
 
         // mqtt收到信息
         client.on('message', function (topic, message) {
-            var Mqttmsg = new Array(2).fill(null); // 初始化并清空messages数组
+            var Mqttmsg = new Array(3).fill(null); // 初始化并清空messages数组
             // var Mqttmsg = new Array(2)
             var tempmsg = {'topic': topic, 'payload': ""}
 
@@ -52,10 +52,12 @@ module.exports = function(RED) {
                 Mqttmsg[0].payload = payload_data.progress;
                 if(payload_data.progress == '100%'){
                     node.status({fill: "green",shape: "ring",text: `Burning is complete`});
+                    Mqttmsg[1] = RED.util.cloneMessage(tempmsg)
+                    Mqttmsg[1].payload = '烧录成功';
                 }
             }else{
-                Mqttmsg[1] = RED.util.cloneMessage(tempmsg)
-                Mqttmsg[1].payload = payload_data;
+                Mqttmsg[2] = RED.util.cloneMessage(tempmsg)
+                Mqttmsg[2].payload = payload_data;
                 node.status({fill: "red",shape: "ring",text: `Burning error`});
             }
             

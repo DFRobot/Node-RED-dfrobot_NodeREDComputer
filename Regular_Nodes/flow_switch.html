@@ -1,0 +1,63 @@
+<script type="text/html" data-help-name="Flow Switch">
+    <p>流开关节点</p>
+</script>
+  
+  
+
+
+<script type="text/html" data-template-name="Flow Switch">
+    <!-- 设置第一行为Name -->
+    <div class="form-row">
+      <label for="node-input-name"><i class="fa fa-tag"></i> 名称</label>
+      <input type="text" id="node-input-name" data-i18n="[placeholder]name">
+  </div>
+
+  <div class="form-row" id="node-set-tick">
+    <label>&nbsp;</label>
+    <input type="checkbox" id="node-input-set" style="display: inline-block; width: auto; vertical-align: top;">
+    <label for="node-input-set" style="width: 70%;">流开关-初始化</label>
+  </div>
+  <div class="form-row" id="node-set-state">
+    <label for="node-input-flowSwitch">&nbsp;</label>
+    <select id="node-input-flowSwitch" style="width: 250px;">
+      <option value="on">打开</option>
+      <option value="off">关闭</option>
+      </select>
+  </div>
+  
+  </script>
+  
+  
+  
+  <script type="text/javascript">
+      RED.nodes.registerType('Flow Switch',{
+        category: 'NodeREDComputer',
+        color: '#35c1f4',
+        defaults: {
+          name: {value:""},
+          set: { value:"" },
+          flowSwitch: {value:"on"},
+        },
+        inputs:1,
+        outputs:1,
+        icon: "ui_switch.png",
+        label: function() {
+          return this.name||this._("流开关节点");
+        },
+
+        oneditprepare: function() {
+
+            var setstate = function () {
+                if ($('#node-input-set').is(":checked")) {
+                    $("#node-set-state").show();
+                } else {
+                    $("#node-set-state").hide();
+                }
+            };
+            $("#node-input-set").change(function () { setstate(); });
+            setstate();
+        }
+  
+      });
+    </script>
+    

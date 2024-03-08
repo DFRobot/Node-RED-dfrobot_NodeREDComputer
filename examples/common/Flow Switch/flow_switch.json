@@ -1,0 +1,208 @@
+[
+    {
+        "id": "476899dff1f1c301",
+        "type": "Flow Switch",
+        "z": "2f9a0e8e53bd946e",
+        "name": "",
+        "set": true,
+        "flowSwitch": "off",
+        "x": 730,
+        "y": 640,
+        "wires": [
+            [
+                "153fad50a4af31e2"
+            ]
+        ]
+    },
+    {
+        "id": "aaaf458e98009b0d",
+        "type": "inject",
+        "z": "2f9a0e8e53bd946e",
+        "name": "msg.payload.Switch = on",
+        "props": [
+            {
+                "p": "payload.Switch",
+                "v": "on",
+                "vt": "str"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 470,
+        "y": 560,
+        "wires": [
+            [
+                "476899dff1f1c301"
+            ]
+        ]
+    },
+    {
+        "id": "2b93019d68c6cdff",
+        "type": "inject",
+        "z": "2f9a0e8e53bd946e",
+        "name": "msg.payload.Switch = off",
+        "props": [
+            {
+                "p": "payload.Switch",
+                "v": "off",
+                "vt": "str"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 470,
+        "y": 460,
+        "wires": [
+            [
+                "476899dff1f1c301"
+            ]
+        ]
+    },
+    {
+        "id": "4ef822f6383e4d48",
+        "type": "inject",
+        "z": "2f9a0e8e53bd946e",
+        "name": "msg.payload.Switch = 11",
+        "props": [
+            {
+                "p": "payload.Switch",
+                "v": "11",
+                "vt": "str"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 470,
+        "y": 360,
+        "wires": [
+            [
+                "476899dff1f1c301"
+            ]
+        ]
+    },
+    {
+        "id": "1e3b9e9175225a76",
+        "type": "comment",
+        "z": "2f9a0e8e53bd946e",
+        "name": "流开关的用法",
+        "info": "",
+        "x": 750,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "ed43e0907e88857f",
+        "type": "comment",
+        "z": "2f9a0e8e53bd946e",
+        "name": "流开关参数：错误格式",
+        "info": "",
+        "x": 440,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "1897c4f7ac39c609",
+        "type": "comment",
+        "z": "2f9a0e8e53bd946e",
+        "name": "流开关参数：关闭",
+        "info": "",
+        "x": 430,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "134ba5eacc12a050",
+        "type": "comment",
+        "z": "2f9a0e8e53bd946e",
+        "name": "流开关参数：打开",
+        "info": "",
+        "x": 430,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "127d4131727fc5a4",
+        "type": "inject",
+        "z": "2f9a0e8e53bd946e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 350,
+        "y": 640,
+        "wires": [
+            [
+                "476899dff1f1c301",
+                "78c677e829f471f4"
+            ]
+        ]
+    },
+    {
+        "id": "78c677e829f471f4",
+        "type": "debug",
+        "z": "2f9a0e8e53bd946e",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 580,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "153fad50a4af31e2",
+        "type": "debug",
+        "z": "2f9a0e8e53bd946e",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 980,
+        "y": 720,
+        "wires": []
+    }
+]

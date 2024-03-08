@@ -1,0 +1,81 @@
+<script type="text/html" data-help-name="DTU Config">
+    <p>配置DTU各类参数的节点</p>
+</script>
+  
+  
+
+
+<script type="text/html" data-template-name="DTU Config">
+    <!-- 设置第一行为Name -->
+    <div class="form-row">
+      <label for="node-input-name"><i class="fa fa-tag"></i> 名称</label>
+      <input type="text" id="node-input-name" data-i18n="[placeholder]name">
+  </div>
+  
+  <div class="form-row" id="node-set1-tick">
+    <input type="checkbox" id="node-input-set1" style="display: inline-block; width: auto; vertical-align: top;">
+    <label for="node-input-set1" style="width: 70%;">获取DTU序列号SN</label>
+  </div>
+
+  <div class="form-row" id="node-set2-tick">
+    <input type="checkbox" id="node-input-set2" style="display: inline-block; width: auto; vertical-align: top;">
+    <label for="node-input-set2" style="width: 70%;">写入校验码MD5</label>
+  </div>
+
+  <div class="form-row" id="node-set3-tick">
+    <input type="checkbox" id="node-input-set3" style="display: inline-block; width: auto; vertical-align: top;">
+    <label for="node-input-set3" style="width: 70%;">配置地区参数</label>
+  </div>
+  <div class="form-row" id="node-set3-state">
+    <label for="node-input-region"><i class="fa fa-circle"></i>地区参数</label>
+    <select id="node-input-region" style="width: 250px;">
+      <option value="CN470">CN470</option>
+      <option value="EU868">EU868</option>
+      <option value="US915">US915</option>
+      </select>
+  </div>
+
+  </script>
+  
+
+  
+  <script type="text/javascript">
+      RED.nodes.registerType('DTU Config',{
+        category: 'About DTU',
+        color: '#ace04a',
+        defaults: {
+          name: {value: ""},
+          set1: {value: ""},
+          set2: {value: ""},
+          set3: {value: ""},
+          region: {value: "EU868"}
+        },
+        inputs:1,
+        outputs:3,
+        icon: "white-globe.svg",
+        label: function() {
+          return this.name||this._("DTU配置节点");
+        },
+        outputLabels: function(i) {
+          if      (i === 0) return this.name || this._("序列号SN");
+          else if (i === 1) return this.name || this._("设置校验码");
+          else if (i === 2) return this.name || this._("设置地区参数");
+        },
+
+        
+        oneditprepare: function() {
+        var setstate = function () {
+            if ($('#node-input-set3').is(":checked")) {
+                $("#node-set3-state").show();
+            } else {
+                $("#node-set3-state").hide();
+            }
+        };
+        $("#node-input-set3").change(function () { setstate(); });
+        setstate();
+      }
+
+
+      });
+    </script>
+    

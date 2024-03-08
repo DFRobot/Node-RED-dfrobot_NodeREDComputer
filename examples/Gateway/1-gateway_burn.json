@@ -1,0 +1,353 @@
+[
+    {
+        "id": "c75f207f54776cdc",
+        "type": "inject",
+        "z": "2f9a0e8e53bd946e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 330,
+        "y": 1280,
+        "wires": [
+            [
+                "765caa5a430706ea"
+            ]
+        ]
+    },
+    {
+        "id": "f2d78fbd85a7e53e",
+        "type": "debug",
+        "z": "2f9a0e8e53bd946e",
+        "name": "debug 9",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 980,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "e5f1079364a7fde8",
+        "type": "debug",
+        "z": "2f9a0e8e53bd946e",
+        "name": "debug 10",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 980,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "765caa5a430706ea",
+        "type": "RockchipBurn",
+        "z": "2f9a0e8e53bd946e",
+        "name": "",
+        "chip": "RK3308K",
+        "firmware": "/root/NodeRED-Computer-PartHardware/python-Script/RockChip_Firmware/dfrobot_lorawanos_rk3308_k510.img",
+        "x": 590,
+        "y": 1280,
+        "wires": [
+            [
+                "f2d78fbd85a7e53e"
+            ],
+            [
+                "e5f1079364a7fde8",
+                "eca018cb246eb5c4"
+            ],
+            [
+                "1c18c9e16f752473"
+            ]
+        ]
+    },
+    {
+        "id": "1c18c9e16f752473",
+        "type": "debug",
+        "z": "2f9a0e8e53bd946e",
+        "name": "debug 12",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 980,
+        "y": 1320,
+        "wires": []
+    },
+    {
+        "id": "046e09e692135e85",
+        "type": "trigger",
+        "z": "2f9a0e8e53bd946e",
+        "name": "",
+        "op1": "1",
+        "op2": "0",
+        "op1type": "str",
+        "op2type": "str",
+        "duration": "-8",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "reset",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 500,
+        "y": 1480,
+        "wires": [
+            [
+                "894aa96935839f9b",
+                "5d7fd69873c6b855"
+            ]
+        ]
+    },
+    {
+        "id": "894aa96935839f9b",
+        "type": "debug",
+        "z": "2f9a0e8e53bd946e",
+        "name": "debug 13",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 610,
+        "y": 1560,
+        "wires": []
+    },
+    {
+        "id": "5d7fd69873c6b855",
+        "type": "Get SN",
+        "z": "2f9a0e8e53bd946e",
+        "name": "",
+        "x": 800,
+        "y": 1480,
+        "wires": [
+            [
+                "0af4f2c63ce35a25",
+                "11ceb76b28db0165",
+                "50308ff8b73e6472"
+            ]
+        ]
+    },
+    {
+        "id": "0af4f2c63ce35a25",
+        "type": "debug",
+        "z": "2f9a0e8e53bd946e",
+        "name": "debug 14",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1080,
+        "y": 1400,
+        "wires": []
+    },
+    {
+        "id": "5b277b4ad48f36ea",
+        "type": "link in",
+        "z": "2f9a0e8e53bd946e",
+        "name": "link in 1",
+        "links": [
+            "2256f4dc7b1726c6",
+            "8ff1c7c6c24a61be"
+        ],
+        "x": 385,
+        "y": 1460,
+        "wires": [
+            [
+                "046e09e692135e85"
+            ]
+        ]
+    },
+    {
+        "id": "eca018cb246eb5c4",
+        "type": "link out",
+        "z": "2f9a0e8e53bd946e",
+        "name": "link out 2",
+        "mode": "link",
+        "links": [
+            "367966d8d8e58eae"
+        ],
+        "x": 805,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "367966d8d8e58eae",
+        "type": "link in",
+        "z": "2f9a0e8e53bd946e",
+        "name": "link in 2",
+        "links": [
+            "eca018cb246eb5c4"
+        ],
+        "x": 315,
+        "y": 1480,
+        "wires": [
+            [
+                "046e09e692135e85"
+            ]
+        ]
+    },
+    {
+        "id": "11ceb76b28db0165",
+        "type": "switch",
+        "z": "2f9a0e8e53bd946e",
+        "name": "筛选msg.payload含有键sn",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "sn",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1060,
+        "y": 1580,
+        "wires": [
+            [
+                "4793010270438fb5"
+            ]
+        ]
+    },
+    {
+        "id": "4793010270438fb5",
+        "type": "change",
+        "z": "2f9a0e8e53bd946e",
+        "name": "设定msg.payload = reset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "reset",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1310,
+        "y": 1580,
+        "wires": [
+            [
+                "8ff1c7c6c24a61be"
+            ]
+        ]
+    },
+    {
+        "id": "8ff1c7c6c24a61be",
+        "type": "link out",
+        "z": "2f9a0e8e53bd946e",
+        "name": "link out 3",
+        "mode": "link",
+        "links": [
+            "5b277b4ad48f36ea"
+        ],
+        "x": 1465,
+        "y": 1580,
+        "wires": []
+    },
+    {
+        "id": "50308ff8b73e6472",
+        "type": "Burn OTP",
+        "z": "2f9a0e8e53bd946e",
+        "name": "",
+        "set": true,
+        "region": "868",
+        "version": "1.0",
+        "x": 1080,
+        "y": 1480,
+        "wires": [
+            [
+                "bbfeb717b39fca00"
+            ]
+        ]
+    },
+    {
+        "id": "bbfeb717b39fca00",
+        "type": "debug",
+        "z": "2f9a0e8e53bd946e",
+        "name": "debug 15",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1300,
+        "y": 1480,
+        "wires": []
+    },
+    {
+        "id": "744a4dfd1b816ca5",
+        "type": "comment",
+        "z": "2f9a0e8e53bd946e",
+        "name": "网关烧录例程",
+        "info": "",
+        "x": 330,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "f953db59888f04b0",
+        "type": "comment",
+        "z": "2f9a0e8e53bd946e",
+        "name": "网关进入MaskRom模式：先按住BOOT后按RST，然后先松开RST再松开BOOT",
+        "info": "",
+        "x": 540,
+        "y": 1200,
+        "wires": []
+    },
+    {
+        "id": "b70c2df8f97e093a",
+        "type": "comment",
+        "z": "2f9a0e8e53bd946e",
+        "name": "网关固件烧录成功后，等待网关启动，此时循环发送获取SN的请求，直至获取成功后中止",
+        "info": "",
+        "x": 570,
+        "y": 1420,
+        "wires": []
+    }
+]
