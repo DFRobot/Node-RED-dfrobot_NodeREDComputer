@@ -49,11 +49,11 @@ module.exports = function(RED) {
             }
             if(payload_data.hasOwnProperty("progress")){
                 Mqttmsg[0] = RED.util.cloneMessage(tempmsg)
-                Mqttmsg[0].payload = payload_data.progress;
+                Mqttmsg[0].payload = payload_data;
                 if(payload_data.progress == '100%'){
                     node.status({fill: "green",shape: "ring",text: `Burning is complete`});
                     Mqttmsg[1] = RED.util.cloneMessage(tempmsg)
-                    Mqttmsg[1].payload = '烧录成功';
+                    Mqttmsg[1].payload.dashboard_label = '烧录成功';
                 }
             }else{
                 Mqttmsg[2] = RED.util.cloneMessage(tempmsg)

@@ -56,6 +56,12 @@
         label: function() {
           return this.name||this._("烧录OTP");
         },
+        inputLabels: function(i) {
+          return this.name||this._("输入-任意流均可触发（若勾选了加密序列号, 则输入必须含有sn字段）");
+        },
+        outputLabels: function(i) {
+          return this.name||this._("输出-烧录OTP或加密序列号的结果");
+        },
 
 
 

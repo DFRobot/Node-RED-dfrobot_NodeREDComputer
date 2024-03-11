@@ -41,6 +41,13 @@
         label: function() {
           return this.name||this._("流计数节点");
         },
+        inputLabels: function(i) {
+          return this.name||this._("输入-任意流均可触发");
+        },
+        outputLabels: function(i) {
+          return this.name || this._("输出-流计数");
+        },
+
 
         oneditprepare: function() {
 

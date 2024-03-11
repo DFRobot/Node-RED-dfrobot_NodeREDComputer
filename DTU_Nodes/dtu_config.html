@@ -56,6 +56,9 @@
         label: function() {
           return this.name||this._("DTU配置节点");
         },
+        inputLabels: function(i) {
+          return this.name||this._("输入-/dev/ttyACM0类型的设备");
+        },
         outputLabels: function(i) {
           if      (i === 0) return this.name || this._("序列号SN");
           else if (i === 1) return this.name || this._("设置校验码");

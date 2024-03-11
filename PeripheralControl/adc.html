@@ -40,7 +40,13 @@
       label: function() {
         return this.name||this._("ADC节点");
       },
-
+      inputLabels: function(i) {
+          return this.name||this._("输入-任意流均可触发");
+        },
+      outputLabels: function(i) {
+      return this.name || this._("输出-对应ADC引脚采集的电压值");
+      },
+  
 
     });
   </script>

@@ -57,7 +57,9 @@
         label: function() {
             return this.name||this._("IO Interrupt");
         },
-
+        outputLabels: function(i) {
+          return this.name || this._("输出-触发信息");
+        },
 
     });
 </script>

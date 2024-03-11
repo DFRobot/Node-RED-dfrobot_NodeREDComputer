@@ -52,8 +52,12 @@
         label: function() {
           return this.name||this._("IO输入");
         },
-  
-  
+        inputLabels: function(i) {
+          return this.name||this._("输入-任意流均可触发");
+        },
+        outputLabels: function(i) {
+        return this.name || this._((i+1).toString());
+        },
   
       oneditprepare: function() {
             var node = this;

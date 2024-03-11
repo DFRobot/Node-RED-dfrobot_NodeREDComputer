@@ -43,7 +43,9 @@
       label: function() {
         return this.name||this._("lora.gpio_out.Label_0_dragOut");
       },
-
+      inputLabels: function(i) {
+          return this.name||this._("输入-文本0/1、数字0/1、布尔值true/false");
+        },
 
       oneditprepare: function() {
 

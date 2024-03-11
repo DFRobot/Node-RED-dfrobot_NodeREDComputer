@@ -119,7 +119,7 @@ module.exports = function(RED) {
             }else{
                 node.status({});
             }
-            console.log(postPayload)
+            // console.log(postPayload)
 
             // 发送第一个POST请求
             sendHttpRequest('post', 'http://10.1.2.3:5000/gateway', postPayload, node);

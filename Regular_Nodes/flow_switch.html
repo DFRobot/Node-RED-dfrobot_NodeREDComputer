@@ -44,6 +44,12 @@
         label: function() {
           return this.name||this._("流开关节点");
         },
+        inputLabels: function(i) {
+          return this.name||this._("输入-任意流均可触发或msg.payload.Switch=on/off");
+        },
+        outputLabels: function(i) {
+          return this.name || this._("输出-原样输出输入的流");
+        },
 
         oneditprepare: function() {
 

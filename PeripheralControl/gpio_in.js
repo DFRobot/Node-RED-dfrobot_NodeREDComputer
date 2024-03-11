@@ -27,9 +27,13 @@ module.exports = function(RED) {
 
             // 使用for循环发送请求和处理响应
             for (let index = 0; index < node.rules.length; index++) {
+                messages.fill(null);
                 messages[index] = RED.util.cloneMessage(msg)
+                // console.log(messages)
                 if (!isDigitsOnly(node.rules[index].pin)) {
                     messages[index].payload = {"error_type": `输出端口${index+1}:引脚格式错误`}
+                    // console.log(messages)
+                    send(messages); 
                     continue;
                 }
 
@@ -50,8 +54,13 @@ module.exports = function(RED) {
                     .then(function (response) {
                         // 对从pyServer返回的response做处理(只输出了错误信息)
                         // console.log('response = ', util.inspect(response, { showHidden: false, depth: null }));
+                        // console.log('response = ', response.data)
+                        // console.log('index = ', index)
+                        messages.fill(null);
+                        messages[index] = RED.util.cloneMessage(msg)
                         messages[index].payload = response.data
-
+                        // console.log(messages)
+                        send(messages); 
                     })
                     .catch(function (error) {
                         messages[index].payload = error
@@ -62,13 +71,6 @@ module.exports = function(RED) {
                         delete axiosConfig.data;
                         delete axiosConfig.transformRequest;
                         delete axiosConfig.transformResponse;
-
-                        if (index === node.rules.length - 1) {
-                            // console.log(JSON.stringify(messages))
-                            // send([{topic:"", payload: "123"}, {topic:"", payload: "456"}, {topic:"", payload: "789"}]); 
-                            send(messages); 
-                            done();
-                        }
                     });
             }
         });

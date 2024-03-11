@@ -30,7 +30,12 @@
         label: function() {
           return this.name||this._("获取DTU的序列号");
         },
-
+        inputLabels: function(i) {
+          return this.name||this._("输入-/dev/ttyACM0类型的设备");
+        },
+        outputLabels: function(i) {
+          return this.name || this._("序列号SN或错误信息");
+        },
 
       });
     </script>
