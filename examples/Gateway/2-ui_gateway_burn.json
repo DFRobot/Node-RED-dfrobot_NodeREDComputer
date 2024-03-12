@@ -1,0 +1,649 @@
+[
+    {
+        "id": "e70c8c2e36344030",
+        "type": "inject",
+        "z": "2f9a0e8e53bd946e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 350,
+        "y": 1340,
+        "wires": [
+            [
+                "f806960ea31693fd",
+                "3781f4bde8347876",
+                "a6b803dcf7f33b9b"
+            ]
+        ]
+    },
+    {
+        "id": "413a5b7b605fd3ba",
+        "type": "debug",
+        "z": "2f9a0e8e53bd946e",
+        "name": "debug 9",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 820,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "9d0cf31629bc145f",
+        "type": "debug",
+        "z": "2f9a0e8e53bd946e",
+        "name": "debug 10",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 820,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "f806960ea31693fd",
+        "type": "RockchipBurn",
+        "z": "2f9a0e8e53bd946e",
+        "name": "",
+        "chip": "RK3308K",
+        "firmware": "/root/NodeRED-Computer-PartHardware/python-Script/RockChip_Firmware/dfrobot_lorawanos_rk3308_k510.img",
+        "x": 610,
+        "y": 1340,
+        "wires": [
+            [
+                "413a5b7b605fd3ba",
+                "0fb9aa20a8e8ea68"
+            ],
+            [
+                "9d0cf31629bc145f",
+                "9bee26f4c4c91d95"
+            ],
+            [
+                "ea3f54253c5c8845"
+            ]
+        ]
+    },
+    {
+        "id": "ea3f54253c5c8845",
+        "type": "debug",
+        "z": "2f9a0e8e53bd946e",
+        "name": "debug 12",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 820,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "f7fbb20e66c1b329",
+        "type": "trigger",
+        "z": "2f9a0e8e53bd946e",
+        "name": "",
+        "op1": "1",
+        "op2": "0",
+        "op1type": "str",
+        "op2type": "str",
+        "duration": "-8",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "reset",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 520,
+        "y": 1500,
+        "wires": [
+            [
+                "1e4c299e9a23c31f",
+                "3ad692a511234372",
+                "914ef3de24bf79ba"
+            ]
+        ]
+    },
+    {
+        "id": "1e4c299e9a23c31f",
+        "type": "debug",
+        "z": "2f9a0e8e53bd946e",
+        "name": "debug 13",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 630,
+        "y": 1580,
+        "wires": []
+    },
+    {
+        "id": "386fffa0829c3138",
+        "type": "debug",
+        "z": "2f9a0e8e53bd946e",
+        "name": "debug 14",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1060,
+        "y": 1420,
+        "wires": []
+    },
+    {
+        "id": "2cae6b1682871d14",
+        "type": "link in",
+        "z": "2f9a0e8e53bd946e",
+        "name": "link in 1",
+        "links": [
+            "2256f4dc7b1726c6",
+            "2ee1d9f528dee95b"
+        ],
+        "x": 405,
+        "y": 1480,
+        "wires": [
+            [
+                "f7fbb20e66c1b329"
+            ]
+        ]
+    },
+    {
+        "id": "9bee26f4c4c91d95",
+        "type": "link out",
+        "z": "2f9a0e8e53bd946e",
+        "name": "link out 2",
+        "mode": "link",
+        "links": [
+            "6fa93babb148f03e",
+            "5a9a71fcd1bb96ab"
+        ],
+        "x": 825,
+        "y": 1380,
+        "wires": []
+    },
+    {
+        "id": "6fa93babb148f03e",
+        "type": "link in",
+        "z": "2f9a0e8e53bd946e",
+        "name": "link in 2",
+        "links": [
+            "9bee26f4c4c91d95"
+        ],
+        "x": 335,
+        "y": 1500,
+        "wires": [
+            [
+                "f7fbb20e66c1b329"
+            ]
+        ]
+    },
+    {
+        "id": "ef9f90d619242a80",
+        "type": "switch",
+        "z": "2f9a0e8e53bd946e",
+        "name": "筛选msg.payload含有键sn",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "sn",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1080,
+        "y": 1600,
+        "wires": [
+            [
+                "a21e8ae89ab867c8"
+            ]
+        ]
+    },
+    {
+        "id": "a21e8ae89ab867c8",
+        "type": "change",
+        "z": "2f9a0e8e53bd946e",
+        "name": "设定msg.payload = reset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "reset",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1330,
+        "y": 1600,
+        "wires": [
+            [
+                "2ee1d9f528dee95b"
+            ]
+        ]
+    },
+    {
+        "id": "2ee1d9f528dee95b",
+        "type": "link out",
+        "z": "2f9a0e8e53bd946e",
+        "name": "link out 3",
+        "mode": "link",
+        "links": [
+            "2cae6b1682871d14"
+        ],
+        "x": 1485,
+        "y": 1600,
+        "wires": []
+    },
+    {
+        "id": "4e87ead523fa5ef0",
+        "type": "Burn OTP",
+        "z": "2f9a0e8e53bd946e",
+        "name": "",
+        "set": true,
+        "region": "868",
+        "version": "1.0",
+        "x": 1100,
+        "y": 1500,
+        "wires": [
+            [
+                "c6c0114476faab8d",
+                "a31ec63a931f9d6f"
+            ]
+        ]
+    },
+    {
+        "id": "c6c0114476faab8d",
+        "type": "debug",
+        "z": "2f9a0e8e53bd946e",
+        "name": "debug 15",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1320,
+        "y": 1500,
+        "wires": []
+    },
+    {
+        "id": "bc4758dd5ec59954",
+        "type": "comment",
+        "z": "2f9a0e8e53bd946e",
+        "name": "网关烧录例程",
+        "info": "",
+        "x": 350,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "0b7cb45bdbc87d1f",
+        "type": "comment",
+        "z": "2f9a0e8e53bd946e",
+        "name": "网关进入MaskRom模式：先按住BOOT后按RST，然后先松开RST再松开BOOT",
+        "info": "",
+        "x": 560,
+        "y": 1300,
+        "wires": []
+    },
+    {
+        "id": "85a76c9cb5bdba2b",
+        "type": "comment",
+        "z": "2f9a0e8e53bd946e",
+        "name": "网关固件烧录成功后，等待网关启动，此时循环发送获取SN的请求，直至获取成功后中止",
+        "info": "",
+        "x": 590,
+        "y": 1440,
+        "wires": []
+    },
+    {
+        "id": "dc166d1fbc818aee",
+        "type": "ui_text",
+        "z": "2f9a0e8e53bd946e",
+        "group": "0dfadee7fdf53906",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "烧录提示：",
+        "format": "{{msg.payload.dashboard_label}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1470,
+        "y": 1140,
+        "wires": []
+    },
+    {
+        "id": "0fb9aa20a8e8ea68",
+        "type": "link out",
+        "z": "2f9a0e8e53bd946e",
+        "name": "link out 9",
+        "mode": "link",
+        "links": [
+            "5a9a71fcd1bb96ab"
+        ],
+        "x": 825,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "5a9a71fcd1bb96ab",
+        "type": "link in",
+        "z": "2f9a0e8e53bd946e",
+        "name": "link in 8",
+        "links": [
+            "0fb9aa20a8e8ea68",
+            "9bee26f4c4c91d95"
+        ],
+        "x": 1345,
+        "y": 1160,
+        "wires": [
+            [
+                "dc166d1fbc818aee"
+            ]
+        ]
+    },
+    {
+        "id": "f130b186a04720d3",
+        "type": "ui_text",
+        "z": "2f9a0e8e53bd946e",
+        "group": "0dfadee7fdf53906",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "烧录OTP：",
+        "format": "{{msg.payload.dashboard_label}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1470,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "9574dcee7c86fc99",
+        "type": "ui_text",
+        "z": "2f9a0e8e53bd946e",
+        "group": "0dfadee7fdf53906",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "加密SN：",
+        "format": "{{msg.payload.dashboard_label}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1460,
+        "y": 1320,
+        "wires": []
+    },
+    {
+        "id": "a31ec63a931f9d6f",
+        "type": "switch",
+        "z": "2f9a0e8e53bd946e",
+        "name": "筛选：烧录otp与加密序列号的流",
+        "property": "payload.type",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "burn_otp",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "encrypt_sn",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1330,
+        "y": 1420,
+        "wires": [
+            [
+                "f130b186a04720d3"
+            ],
+            [
+                "9574dcee7c86fc99"
+            ]
+        ]
+    },
+    {
+        "id": "069847b525f1e95f",
+        "type": "inject",
+        "z": "2f9a0e8e53bd946e",
+        "name": "部署后清空ui信息",
+        "props": [
+            {
+                "p": "payload.dashboard_label",
+                "v": "",
+                "vt": "str"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 1250,
+        "y": 1080,
+        "wires": [
+            [
+                "dc166d1fbc818aee",
+                "f130b186a04720d3",
+                "9574dcee7c86fc99"
+            ]
+        ]
+    },
+    {
+        "id": "3ad692a511234372",
+        "type": "link out",
+        "z": "2f9a0e8e53bd946e",
+        "name": "link out 10",
+        "mode": "link",
+        "links": [
+            "3efee4789bbd7f49"
+        ],
+        "x": 655,
+        "y": 1480,
+        "wires": []
+    },
+    {
+        "id": "3efee4789bbd7f49",
+        "type": "link in",
+        "z": "2f9a0e8e53bd946e",
+        "name": "link in 9",
+        "links": [
+            "3ad692a511234372"
+        ],
+        "x": 1105,
+        "y": 1280,
+        "wires": [
+            [
+                "62f046c44d4a8793"
+            ]
+        ]
+    },
+    {
+        "id": "3781f4bde8347876",
+        "type": "debug",
+        "z": "2f9a0e8e53bd946e",
+        "name": "debug 16",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 460,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "a6b803dcf7f33b9b",
+        "type": "change",
+        "z": "2f9a0e8e53bd946e",
+        "name": "UI标签：正在烧录中...",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.dashboard_label",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.dashboard_label",
+                "pt": "msg",
+                "to": "正在烧录中...",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 1140,
+        "wires": [
+            [
+                "dc166d1fbc818aee"
+            ]
+        ]
+    },
+    {
+        "id": "62f046c44d4a8793",
+        "type": "change",
+        "z": "2f9a0e8e53bd946e",
+        "name": "UI标签：正在处理...",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.dashboard_label",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.dashboard_label",
+                "pt": "msg",
+                "to": "正在处理...",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1240,
+        "y": 1280,
+        "wires": [
+            [
+                "f130b186a04720d3"
+            ]
+        ]
+    },
+    {
+        "id": "914ef3de24bf79ba",
+        "type": "GW SN",
+        "z": "2f9a0e8e53bd946e",
+        "name": "",
+        "x": 800,
+        "y": 1500,
+        "wires": [
+            [
+                "386fffa0829c3138",
+                "4e87ead523fa5ef0",
+                "ef9f90d619242a80"
+            ]
+        ]
+    },
+    {
+        "id": "0dfadee7fdf53906",
+        "type": "ui_group",
+        "name": "Group",
+        "tab": "aa52260015247341",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "aa52260015247341",
+        "type": "ui_tab",
+        "name": "Tab",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]

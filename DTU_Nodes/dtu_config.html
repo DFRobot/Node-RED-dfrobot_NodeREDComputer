@@ -12,10 +12,10 @@
       <input type="text" id="node-input-name" data-i18n="[placeholder]name">
   </div>
   
-  <div class="form-row" id="node-set1-tick">
+  <!-- <div class="form-row" id="node-set1-tick">
     <input type="checkbox" id="node-input-set1" style="display: inline-block; width: auto; vertical-align: top;">
     <label for="node-input-set1" style="width: 70%;">获取DTU序列号SN</label>
-  </div>
+  </div> -->
 
   <div class="form-row" id="node-set2-tick">
     <input type="checkbox" id="node-input-set2" style="display: inline-block; width: auto; vertical-align: top;">
@@ -45,13 +45,13 @@
         color: '#ace04a',
         defaults: {
           name: {value: ""},
-          set1: {value: ""},
+          // set1: {value: ""},
           set2: {value: ""},
           set3: {value: ""},
           region: {value: "EU868"}
         },
         inputs:1,
-        outputs:3,
+        outputs:2,
         icon: "white-globe.svg",
         label: function() {
           return this.name||this._("DTU配置节点");
@@ -60,9 +60,8 @@
           return this.name||this._("输入-/dev/ttyACM0类型的设备");
         },
         outputLabels: function(i) {
-          if      (i === 0) return this.name || this._("序列号SN");
-          else if (i === 1) return this.name || this._("设置校验码");
-          else if (i === 2) return this.name || this._("设置地区参数");
+          if      (i === 0) return this.name || this._("设置校验码");
+          else if (i === 1) return this.name || this._("设置地区参数");
         },
 
         

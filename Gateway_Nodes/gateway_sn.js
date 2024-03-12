@@ -97,7 +97,7 @@ module.exports = function(RED) {
         });
     }
 
-    RED.nodes.registerType("Get SN", FlowCountNodeFunc);
+    RED.nodes.registerType("GW SN", FlowCountNodeFunc);
 };
 
 

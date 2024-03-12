@@ -1,6 +1,6 @@
 {
     "name": "@renyoo/node-red-dfrobot_noderedcomputer",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "description": "node red nodes for NodeREDComputer",
     "node-red": {
         "version": ">=2.0.0",

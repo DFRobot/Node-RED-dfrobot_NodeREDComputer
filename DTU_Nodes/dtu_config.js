@@ -9,7 +9,7 @@ module.exports = function(RED) {
     function DTUConfigFunc(config) {
         RED.nodes.createNode(this, config);
         var node = this;
-        node.set1 = config.set1
+        // node.set1 = config.set1
         node.set2 = config.set2
         node.set3 = config.set3
         node.region = config.region
@@ -113,7 +113,7 @@ module.exports = function(RED) {
 
             // console.log(postPayload)
 
-            if (node.set1 == true)  postPayload.config1 = 'get_sn'
+            // if (node.set1 == true)  postPayload.config1 = 'get_sn'
             if (node.set2 == true)  postPayload.config2 = 'set_md5'
             if (node.set3 == true)  postPayload.config3 = 'set_region'
 
