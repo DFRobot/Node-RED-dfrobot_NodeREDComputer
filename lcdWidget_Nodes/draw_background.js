@@ -1,0 +1,101 @@
+const uuid = require('uuid');
+const axios = require('axios');
+const url_lcd_draw = "http://10.1.2.3:5000/lcd/draw";
+
+module.exports = function(RED) {
+
+    function backgroundColorFunc(config) {
+        RED.nodes.createNode(this, config);
+        var node = this;
+        node.background_color = config.background_color
+        node.custom_color = config.custom_color
+        node.priority = config.priority
+        node.set = config.set
+// -------------------------------------------------------------------------------------
+        // 通用的HTTP请求函数
+        function sendHttpRequest(method, url, payload, node) {
+            const axiosConfig = {
+                method: method,
+                url: url,
+                data: payload
+            };
+
+            axios(axiosConfig)
+                .then(function (response) {
+                    // 对从服务器返回的response做处理
+                    if (response.data.hasOwnProperty('result')) {
+                        if (response.data.result == false) {
+                            node.status({fill:"red",shape:"ring",text: response.data.error_type});
+                        }else{
+                            // node.status({fill: "blue",shape: "ring",text: `Operation successful!`});
+                        }
+                    }
+                })
+                .catch(function (error) {
+                    node.error(error);
+                });
+        }
+        
+// ----------------------------------------------
+        if (node.set == true) {
+            temp_priority = parseInt(node.priority) 
+        }else{
+            temp_priority = 7
+        }
+        const uniqueId = uuid.v4(); // 生成唯一 ID
+    
+        // 1、部署后执行
+        node.status({});
+        // console.log(uniqueId)
+        var bk_color = ''
+        if(node.background_color != "custom"){
+            bk_color = node.background_color
+        }else{
+            const regex = /^#[0-9A-Fa-f]{6}$/;
+            // console.log(node.custom_color)
+            if (regex.test(node.custom_color)) {
+                bk_color = node.custom_color
+            } else {
+                node.status({fill: "red",shape: "ring",text: `自定义颜色格式错误,背景颜色恢复为默认白色`});
+                bk_color = "#FFFFFF"
+            }
+        }
+        var postPayload_init = {
+            draw_type: 'background_color',
+            color: bk_color,
+            id: uniqueId,
+            priority: temp_priority
+        }; 
+        sendHttpRequest('post', url_lcd_draw, postPayload_init, node);
+
+// ----------------------------------------------
+        // 2、触发输入后执行
+        node.on('input', function(msg) {
+            // 验证输入是否含有color字段
+            if(!msg.payload.hasOwnProperty("color")){
+                node.status({fill: "red",shape: "ring",text: `请使用更改属性的节点的流作为输入`});
+                return;
+            }
+
+            var postPayload_input = {
+                draw_type: 'background_color',
+                color: msg.payload.background_color,
+                id: uniqueId,
+                priority: temp_priority
+            };
+
+            sendHttpRequest('post', url_lcd_draw, postPayload_input, node);
+        });
+
+    }
+
+    RED.nodes.registerType("background", backgroundColorFunc);
+};
+
+
+
+  
+
+
+
+

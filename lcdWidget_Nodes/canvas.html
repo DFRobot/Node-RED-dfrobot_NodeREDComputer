@@ -1,0 +1,105 @@
+<script type="text/javascript">
+    RED.nodes.registerType('canvas',{
+        category: 'Draw LCD UI',
+        color: '#ffcb3c',
+        defaults: {
+            width: {value:"", type:"number", required:true},
+            height: {value:"", type:"number", required:true},
+        },
+        inputs:1,
+        outputs:1,
+        icon: "file.png",
+        label: function() {
+            return this.name||"画布";
+        },
+        oneditprepare: function() {
+            function updatePreview() {
+                var width = $("#node-input-width").val();
+                var height = $("#node-input-height").val();
+                var preview = "<table><tbody>";
+                for(var h = 0; h < height; h++) {
+                    preview += "<tr>";
+                    for(var w = 0; w < width; w++) {
+                        preview += `<td id="cell-${h}-${w}" class="preview-cell">&nbsp;</td>`;
+                    }
+                    preview += "</tr>";
+                }
+                preview += "</tbody></table>";
+                $("#preview").html(preview);
+                
+                // 绑定鼠标事件
+                $(".preview-cell").mousedown(function(e) {
+                    var isSelecting = true;
+                    var startCell = $(this).attr('id');
+                    var startPosition = startCell.split('-').map(Number);
+                    
+                    $(".preview-cell").mousemove(function() {
+                        if(isSelecting) {
+                            var currentCell = $(this).attr('id');
+                            var currentPosition = currentCell.split('-').map(Number);
+                            var selectedWidth = Math.abs(currentPosition[2] - startPosition[2]) + 1;
+                            var selectedHeight = Math.abs(currentPosition[1] - startPosition[1]) + 1;
+                            
+                            // 更新显示选中区域的长宽
+                            $("#selected-area").text(`Selected Area: Width = ${selectedWidth}, Height = ${selectedHeight}`);
+                        }
+                    });
+
+                    $(".preview-cell").mouseup(function() {
+                        isSelecting = false;
+                        $(".preview-cell").off("mousemove");
+                    });
+
+                    $(document).one("mouseup", function() {
+                        $(".preview-cell").off("mousemove");
+                        isSelecting = false;
+                    });
+                });
+            }
+
+            $("#node-input-width").on("change keyup", updatePreview);
+            $("#node-input-height").on("change keyup", updatePreview);
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="canvas">
+    <div class="form-row">
+        <label for="node-input-width"><i class="icon-tag"></i> Width</label>
+        <input type="number" id="node-input-width" placeholder="Width">
+    </div>
+    <div class="form-row">
+        <label for="node-input-height"><i class="icon-tag"></i> Height</label>
+        <input type="number" id="node-input-height" placeholder="Height">
+    </div>
+    <div class="form-row">
+        <label>Preview</label>
+        <div id="preview" style="font-family: monospace;"></div>
+    </div>
+    <div class="form-row">
+        <label id="selected-area">Selected Area: Width = 0, Height = 0</label>
+    </div>
+</script>
+
+<script type="text/html" data-help-name="canvas">
+    <p>This node creates a rectangle based on the specified width and height.</p>
+</script>
+
+<style>
+    .preview-cell {
+        width: 20px;
+        height: 20px;
+        border: 1px solid #ddd;
+        display: inline-block;
+        cursor: pointer;
+    }
+    .preview-cell:hover {
+        background-color: #f0f0f0;
+    }
+    table {
+        border-collapse: collapse;
+    }
+    td {
+        padding: 0;
+    }
+</style>

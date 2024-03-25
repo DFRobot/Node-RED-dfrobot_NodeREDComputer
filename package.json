@@ -1,6 +1,6 @@
 {
     "name": "@renyoo/node-red-dfrobot_noderedcomputer",
-    "version": "1.0.8",
+    "version": "1.0.9",
     "description": "node red nodes for NodeREDComputer",
     "node-red": {
         "version": ">=2.0.0",
@@ -26,8 +26,13 @@
             "dfrobot-GatewayTEST": "./Gateway_Nodes/gateway_test.js",
 
             "dfrobot-dtuSN": "./DTU_Nodes/dtu_sn.js",
-            "dfrobot-dtuConfig": "./DTU_Nodes/dtu_config.js"
-  
+            "dfrobot-dtuConfig": "./DTU_Nodes/dtu_config.js",
+
+            "dfrobot-lcdWidget_DrawBackground": "./lcdWidget_Nodes/draw_background.js",
+            "dfrobot-lcdWidget_DrawLine": "./lcdWidget_Nodes/draw_line.js",
+            "dfrobot-lcdWidget_DrawRect": "./lcdWidget_Nodes/draw_rect.js",
+            "dfrobot-lcdWidget_DrawCircle": "./lcdWidget_Nodes/draw_circle.js",
+            "dfrobot-lcdWidget_DrawText": "./lcdWidget_Nodes/draw_text.js"
         }
     },
     "author": "GDuang",
@@ -46,6 +51,7 @@
     ],
     "dependencies": {
         "axios": "^1.6.7",
-        "mqtt": "^4.2.8"
+        "mqtt": "^4.2.8",
+        "uuid": "^9.0.1"
     }
 }

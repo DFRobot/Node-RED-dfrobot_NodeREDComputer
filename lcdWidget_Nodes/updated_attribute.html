@@ -1,0 +1,336 @@
+<script type="text/html" data-help-name="更改属性">
+    <p>更改图形属性的节点</p>
+</script>
+  
+
+<script type="text/html" data-template-name="更改属性">
+  <!-- Name -->
+  <div class="form-row">
+    <label for="node-input-name"><i class="fa fa-tag"></i> 名称</label>
+    <input type="text" id="node-input-name" data-i18n="[placeholder]name">
+  </div>
+
+  <!-- label -->
+  <div class="form-row" style="display: inline-block; width: auto; vertical-align: top;">
+    <div><br>重绘画布中图形的颜色:</div>
+    <div><br></div>
+  </div>
+
+  <!-- graphic options -->
+  <div class="form-row">
+    <label for="node-input-graphic_options"><i class="fa fa-circle"></i> 选择图形</label>
+    <select id="node-input-graphic_options" style="width: 250px;">
+        <option value="background">背景</option>
+        <option value="line">直线</option>
+        <option value="rect">矩形</option>
+        <option value="circle">圆形</option>
+        <option value="text">文本</option>
+      </select>
+  </div>
+
+    <!-- 下拉选项框选择——背景 -->
+      <div class="form-row"  id="node-set-state1">
+        <div><br></div>
+        <label for="node-input-label_bk">&nbsp;</label>
+        <label id="node-input-label_bk">画布重新刷色</label>
+        <div><br></div>
+        <label for="node-input-background_color">&nbsp;</label>
+        <select id="node-input-background_color" style="width: 250px;">
+          <option value="#FF0000">红色</option>        <!-- red -->
+          <option value="#00FF00">绿色</option>   <!-- green -->
+          <option value="#0000FF">蓝色</option>    <!-- blue -->
+          <option value="#FFFF00">黄色</option>  <!-- yellow -->
+          <option value="#800080">紫色</option>  <!-- purple -->
+          <option value="#00FFFF">青色</option>    <!-- cyan -->
+          <option value="#FFA500">橙色</option>  <!-- orange -->
+          <option value="#FFC0CB">粉红色</option>  <!-- pink -->
+          <option value="#000000">黑色</option>   <!-- black -->
+          <option value="#FFFFFF">白色</option>   <!-- white -->
+          <!-- <option value="custom">自定义</option> -->
+        </select>
+      </div>
+          <!-- custom -->
+          <!-- <div class="form-row" id="node-set-state1_1">
+            <label for="node-input-custom_background_color">&nbsp;</label>
+            <input type="text" id="node-input-custom_background_color" data-i18n="[placeholder]填写格式为#0099FF">
+          </div> -->
+
+    <!-- 下拉选项框选择——直线 -->
+    <div class="form-row" id="node-set-state2">
+      <div><br></div>
+      <label for="node-input-label_line">&nbsp;</label>
+      <label id="node-input-label_line">重绘直线颜色</label>
+      <div><br></div>
+      <label for="node-input-line_color">&nbsp;</label>
+      <select id="node-input-line_color" style="width: 250px;">
+        <option value="#FF0000">红色</option>        <!-- red -->
+        <option value="#00FF00">绿色</option>   <!-- green -->
+        <option value="#0000FF">蓝色</option>    <!-- blue -->
+        <option value="#FFFF00">黄色</option>  <!-- yellow -->
+        <option value="#800080">紫色</option>  <!-- purple -->
+        <option value="#00FFFF">青色</option>    <!-- cyan -->
+        <option value="#FFA500">橙色</option>  <!-- orange -->
+        <option value="#FFC0CB">粉红色</option>  <!-- pink -->
+        <option value="#000000">黑色</option>   <!-- black -->
+        <option value="#FFFFFF">白色</option>   <!-- white -->
+        <!-- <option value="custom">自定义</option> -->
+      </select>
+    </div>
+        <!-- custom -->
+        <!-- <div class="form-row" id="node-set-state2_1">
+          <label for="node-input-custom_line_color">&nbsp;</label>
+          <input type="text" id="node-input-custom_line_color" data-i18n="[placeholder]填写格式为#0099FF">
+        </div> -->
+
+    <!-- 下拉选项框选择——矩形 -->
+    <div class="form-row" id="node-set-state3">
+      <div><br></div>
+      <label for="node-input-label_rect1">&nbsp;</label>
+      <label id="node-input-label_rect1">重绘边框颜色</label>
+      <div><br></div>
+      <label for="node-input-rect_border_color">&nbsp;</label>
+      <select id="node-input-rect_border_color" style="width: 250px;">
+        <option value="#FF0000">红色</option>        <!-- red -->
+        <option value="#00FF00">绿色</option>   <!-- green -->
+        <option value="#0000FF">蓝色</option>    <!-- blue -->
+        <option value="#FFFF00">黄色</option>  <!-- yellow -->
+        <option value="#800080">紫色</option>  <!-- purple -->
+        <option value="#00FFFF">青色</option>    <!-- cyan -->
+        <option value="#FFA500">橙色</option>  <!-- orange -->
+        <option value="#FFC0CB">粉红色</option>  <!-- pink -->
+        <option value="#000000">黑色</option>   <!-- black -->
+        <option value="#FFFFFF">白色</option>   <!-- white -->
+        <!-- <option value="custom">自定义</option> -->
+      </select>
+        <div><br></div>
+        <label for="node-input-label_rect2">&nbsp;</label>
+        <label id="node-input-label_rect2">重绘填充颜色</label>
+        <div><br></div>
+        <label for="node-input-rect_fill_color">&nbsp;</label>
+        <select id="node-input-rect_fill_color" style="width: 250px;">
+          <option value="#FF0000">红色</option>        <!-- red -->
+          <option value="#00FF00">绿色</option>   <!-- green -->
+          <option value="#0000FF">蓝色</option>    <!-- blue -->
+          <option value="#FFFF00">黄色</option>  <!-- yellow -->
+          <option value="#800080">紫色</option>  <!-- purple -->
+          <option value="#00FFFF">青色</option>    <!-- cyan -->
+          <option value="#FFA500">橙色</option>  <!-- orange -->
+          <option value="#FFC0CB">粉红色</option>  <!-- pink -->
+          <option value="#000000">黑色</option>   <!-- black -->
+          <option value="#FFFFFF">白色</option>   <!-- white -->
+          <!-- <option value="custom">自定义</option> -->
+      </select>
+    </div>
+        <!-- custom -->
+        <!-- <div class="form-row" id="node-set-state1_1">
+          <label for="node-input-custom_color_background">&nbsp;</label>
+          <input type="text" id="node-input-custom_color_background" data-i18n="[placeholder]填写格式为#0099FF">
+        </div> -->
+        <!-- custom -->
+        <!-- <div class="form-row" id="node-set-state1_1">
+          <label for="node-input-custom_color_background">&nbsp;</label>
+          <input type="text" id="node-input-custom_color_background" data-i18n="[placeholder]填写格式为#0099FF">
+        </div> -->
+
+        <!-- 下拉选项框选择——圆形 -->
+  <div class="form-row" id="node-set-state4">
+    <div><br></div>
+    <label for="node-input-label_circle1">&nbsp;</label>
+    <label id="node-input-label_circle1">重绘边框颜色</label>
+    <div><br></div>
+    <label for="node-input-circle_border_color">&nbsp;</label>
+    <select id="node-input-circle_border_color" style="width: 250px;">
+      <option value="#FF0000">红色</option>        <!-- red -->
+      <option value="#00FF00">绿色</option>   <!-- green -->
+      <option value="#0000FF">蓝色</option>    <!-- blue -->
+      <option value="#FFFF00">黄色</option>  <!-- yellow -->
+      <option value="#800080">紫色</option>  <!-- purple -->
+      <option value="#00FFFF">青色</option>    <!-- cyan -->
+      <option value="#FFA500">橙色</option>  <!-- orange -->
+      <option value="#FFC0CB">粉红色</option>  <!-- pink -->
+      <option value="#000000">黑色</option>   <!-- black -->
+      <option value="#FFFFFF">白色</option>   <!-- white -->
+      <!-- <option value="custom">自定义</option> -->
+    </select>
+      <div><br></div>
+      <label for="node-input-label_circle2">&nbsp;</label>
+      <label id="node-input-label_circle2">重绘填充颜色</label>
+      <div><br></div>
+      <label for="node-input-circle_fill_color">&nbsp;</label>
+      <select id="node-input-circle_fill_color" style="width: 250px;">
+        <option value="None">无填充色</option>        <!-- red -->
+        <option value="#FF0000">红色</option>        <!-- red -->
+        <option value="#00FF00">绿色</option>   <!-- green -->
+        <option value="#0000FF">蓝色</option>    <!-- blue -->
+        <option value="#FFFF00">黄色</option>  <!-- yellow -->
+        <option value="#800080">紫色</option>  <!-- purple -->
+        <option value="#00FFFF">青色</option>    <!-- cyan -->
+        <option value="#FFA500">橙色</option>  <!-- orange -->
+        <option value="#FFC0CB">粉红色</option>  <!-- pink -->
+        <option value="#000000">黑色</option>   <!-- black -->
+        <option value="#FFFFFF">白色</option>   <!-- white -->
+        <!-- <option value="custom">自定义</option> -->
+    </select>
+  </div>
+      <!-- custom -->
+      <!-- <div class="form-row" id="node-set-state1_1">
+        <label for="node-input-custom_color_background">&nbsp;</label>
+        <input type="text" id="node-input-custom_color_background" data-i18n="[placeholder]填写格式为#0099FF">
+      </div> -->
+
+    <!-- 下拉选项框选择——文本 -->
+    <div class="form-row" id="node-set-state5">
+      <div><br></div>
+      <label for="node-input-label_text">&nbsp;</label>
+      <label id="node-input-label_text">重绘文本颜色</label>
+      <div><br></div>
+      <label for="node-input-text_color">&nbsp;</label>
+      <select id="node-input-text_color" style="width: 250px;">
+        <option value="#FF0000">红色</option>        <!-- red -->
+        <option value="#00FF00">绿色</option>   <!-- green -->
+        <option value="#0000FF">蓝色</option>    <!-- blue -->
+        <option value="#FFFF00">黄色</option>  <!-- yellow -->
+        <option value="#800080">紫色</option>  <!-- purple -->
+        <option value="#00FFFF">青色</option>    <!-- cyan -->
+        <option value="#FFA500">橙色</option>  <!-- orange -->
+        <option value="#FFC0CB">粉红色</option>  <!-- pink -->
+        <option value="#000000">黑色</option>   <!-- black -->
+        <option value="#FFFFFF">白色</option>   <!-- white -->
+        <!-- <option value="custom">自定义</option> -->
+      </select>
+  </div>
+      <!-- custom -->
+      <!-- <div class="form-row" id="node-set-state1_1">
+        <label for="node-input-custom_color_background">&nbsp;</label>
+        <input type="text" id="node-input-custom_color_background" data-i18n="[placeholder]填写格式为#0099FF">
+      </div> -->
+
+  </script>
+  
+
+  
+  <script type="text/javascript">
+      RED.nodes.registerType('更改属性',{
+        category: 'Draw LCD UI',
+        color: '#ffcb3c',
+        defaults: {
+          name: {value: "#FFFFFF"},
+          background_color: {value:"#FFFFFF"},  
+          line_color: {value:"#000000"},  
+          rect_border_color: {value:"#000000"},  
+          rect_fill_color: {value:"#FFFFFF"}, 
+          circle_border_color: {value:"#000000"},  
+          circle_fill_color: {value:"#FFFFFF"}, 
+          text_color: {value:"#000000"},   
+
+        }, 
+        inputs:1,
+        outputs:1,
+        icon: "font-awesome/fa-pencil",
+        label: function() {
+          return this.name||this._("更改图形属性");
+        },
+
+        oneditprepare: function() {
+
+          // ----------------------------------------------
+          var setstate1 = function () {
+              if ($('#node-input-graphic_options').val() === "background") { // 判断选中的选项是否为"custom"
+                  $("#node-set-state1").show();
+              } else {
+                  $("#node-set-state1").hide();
+              }
+          };
+          $("#node-input-graphic_options").change(function () { setstate1(); }); // 绑定下拉菜单的变化事件到setstate函数
+          setstate1();   // 初始化时也调用一次以设置初始状态
+
+          var setstate1_1 = function () {
+              if ($('#node-input-background_color').val() === "custom") {
+                  $("#node-set-state1_1").show();
+              } else {
+                  $("#node-set-state1_1").hide();
+              }
+          };
+          $("#node-input-background_color").change(function () { setstate1_1(); });
+          setstate1_1();
+
+          // ----------------------------------------------
+
+          var setstate2 = function () {
+              if ($('#node-input-graphic_options').val() === "line") {
+                  $("#node-set-state2").show();
+              } else {
+                  $("#node-set-state2").hide();
+              }
+          };
+          $("#node-input-graphic_options").change(function () { setstate2(); });
+          setstate2();
+
+          var setstate2_1 = function () {
+              if ($('#node-input-line_color').val() === "custom") {
+                  $("#node-set-state2_1").show();
+              } else {
+                  $("#node-set-state2_1").hide();
+              }
+          };
+          $("#node-input-line_color").change(function () { setstate2_1(); });
+          setstate2_1();
+
+          // ----------------------------------------------
+          var setstate3 = function () {
+              if ($('#node-input-graphic_options').val() === "rect") {
+                  $("#node-set-state3").show();
+              } else {
+                  $("#node-set-state3").hide();
+              }
+          };
+          $("#node-input-graphic_options").change(function () { setstate3(); });
+          setstate3();
+
+          
+          var setstate2_1 = function () {
+              if ($('#node-input-line_color').val() === "custom") {
+                  $("#node-set-state2_1").show();
+              } else {
+                  $("#node-set-state2_1").hide();
+              }
+          };
+          $("#node-input-line_color").change(function () { setstate2_1(); });
+          setstate2_1();
+          
+          var setstate2_1 = function () {
+              if ($('#node-input-line_color').val() === "custom") {
+                  $("#node-set-state2_1").show();
+              } else {
+                  $("#node-set-state2_1").hide();
+              }
+          };
+          $("#node-input-line_color").change(function () { setstate2_1(); });
+          
+          setstate2_1();
+          // ----------------------------------------------
+          var setstate4 = function () {
+              if ($('#node-input-graphic_options').val() === "circle") {
+                  $("#node-set-state4").show();
+              } else {
+                  $("#node-set-state4").hide();
+              }
+          };
+          $("#node-input-graphic_options").change(function () { setstate4(); });
+          setstate4();
+
+          // ----------------------------------------------
+          var setstate5 = function () {
+              if ($('#node-input-graphic_options').val() === "text") {
+                  $("#node-set-state5").show();
+              } else {
+                  $("#node-set-state5").hide();
+              }
+          };
+          $("#node-input-graphic_options").change(function () { setstate5(); });
+          setstate5();
+        }
+
+      });
+    </script>
+    
