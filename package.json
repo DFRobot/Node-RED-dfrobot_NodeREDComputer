@@ -1,6 +1,6 @@
 {
     "name": "@renyoo/node-red-dfrobot_noderedcomputer",
-    "version": "1.0.9",
+    "version": "1.0.10",
     "description": "node red nodes for NodeREDComputer",
     "node-red": {
         "version": ">=2.0.0",
@@ -32,7 +32,8 @@
             "dfrobot-lcdWidget_DrawLine": "./lcdWidget_Nodes/draw_line.js",
             "dfrobot-lcdWidget_DrawRect": "./lcdWidget_Nodes/draw_rect.js",
             "dfrobot-lcdWidget_DrawCircle": "./lcdWidget_Nodes/draw_circle.js",
-            "dfrobot-lcdWidget_DrawText": "./lcdWidget_Nodes/draw_text.js"
+            "dfrobot-lcdWidget_DrawText": "./lcdWidget_Nodes/draw_text.js",
+            "dfrobot-lcdWidget_UpdatedAttribute": "./lcdWidget_Nodes/updated_attribute.js"
         }
     },
     "author": "GDuang",
@@ -42,7 +43,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/DFRobot/Node-RED-dfrobot-lorawan-nodes.git"
+        "url": "https://github.com/GDuang/Ren_Yoo_Repository1.git"
     },
     "keywords": [
         "node-red",

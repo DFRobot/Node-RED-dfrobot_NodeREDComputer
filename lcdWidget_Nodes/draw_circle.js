@@ -26,7 +26,7 @@ module.exports = function(RED) {
             let regex = /^[0-9]+$/;
             if (!regex.test(str)) {
                 node.status({fill:"red",shape:"ring",text: "绘制圆形的参数格式填写错误"});
-                global.global_num = -1;
+                global_num = -1;
             }
         }
 
@@ -56,7 +56,7 @@ module.exports = function(RED) {
         
 // ----------------------------------------------
         /* 1、部署后执行 */
-        global.global_num = 0; // 参数无效时，禁用发送绘图指令
+        global_num = 0; // 参数无效时，禁用发送绘图指令
         let stringList = [node.coord_x, node.coord_y, node.radius, node.line_width];    // 创建一个字符串列表
         // 检验参数的有效性
         stringList.forEach((str, index) => {
@@ -82,8 +82,9 @@ module.exports = function(RED) {
             if (regex.test(node.custom_fill_color)) {
                 F_color = node.custom_fill_color
             } else {
-                node.status({fill: "red",shape: "ring",text: `自定义颜色格式错误,填充色默认恢复为白色`});
-                F_color = "#FFFFFF"
+                node.status({fill: "red",shape: "ring",text: `自定义填充色格式错误`});
+                // F_color = "#FFFFFF"
+                global_num = -1
             }
         }
 
@@ -96,26 +97,24 @@ module.exports = function(RED) {
             if (regex.test(node.custom_border_color)) {
                 B_color = node.custom_border_color
             } else {
-                node.status({fill: "red",shape: "ring",text: `自定义颜色格式错误,边框色默认恢复为黑色`});
-                B_color = "#000000"
+                node.status({fill: "red",shape: "ring",text: `自定义边框色格式错误`});
+                // B_color = "#000000"
+                global_num = -1
             }
         }
 
-        var postPayload_init = {
-            draw_type: 'draw_circle',
-            x: parseInt(node.coord_x),
-            y: parseInt(node.coord_y),
-            radius: parseInt(node.radius),
-            line_width: parseInt(node.line_width),
-            fill_color: F_color,
-            border_color: B_color,
-            priority: temp_priority,   // 默认优先级定为7
-            id: uniqueId,
-        }; 
-
-        // console.log(postPayload_init)
-        // console.log(global_num)
-        if(global.global_num == 0){
+        if(global_num == 0){
+            var postPayload_init = {
+                draw_type: 'draw_circle',
+                x: parseInt(node.coord_x),
+                y: parseInt(node.coord_y),
+                radius: parseInt(node.radius),
+                line_width: parseInt(node.line_width),
+                fill_color: F_color,
+                border_color: B_color,
+                priority: temp_priority,   // 默认优先级定为7
+                id: uniqueId,
+            }; 
             sendHttpRequest('post', url_lcd_draw, postPayload_init, node);
         }
         
@@ -123,24 +122,25 @@ module.exports = function(RED) {
 // ----------------------------------------------
         /* 2、触发输入后执行 */
         node.on('input', function(msg) {
+            node.status({});
             // 验证输入是否含有color字段
-            if(!msg.payload.hasOwnProperty("color")){
-                node.status({fill: "red",shape: "ring",text: `请使用更改属性的节点的流作为输入`});
+            if( ! (msg.payload.hasOwnProperty("circle_fill_color") && msg.payload.hasOwnProperty("circle_border_color")) ){
+                node.status({fill: "red",shape: "ring",text: `请使用更改属性的节点的流作为输入, 且选择修改圆形颜色`});
                 return;
             }
 
-            var postPayload_input = {
-                draw_type: 'draw_circle',
-                x: parseInt(node.coord_x),
-                y: parseInt(node.coord_y),
-                radius: parseInt(node.radius),
-                line_width: parseInt(node.line_width),
-                fill_color: msg.payload.fill_color,
-                border_color: msg.payload.border_color,
-                priority: temp_priority,   // 默认优先级定为7
-                id: uniqueId,
-            };
-            if(global.global_num == 0){
+            if(global_num == 0){
+                var postPayload_input = {
+                    draw_type: 'draw_circle',
+                    x: parseInt(node.coord_x),
+                    y: parseInt(node.coord_y),
+                    radius: parseInt(node.radius),
+                    line_width: parseInt(node.line_width),
+                    fill_color: msg.payload.circle_fill_color,
+                    border_color: msg.payload.circle_border_color,
+                    priority: temp_priority,   // 默认优先级定为7
+                    id: uniqueId,
+                };
                 sendHttpRequest('post', url_lcd_draw, postPayload_input, node);
             }
         });

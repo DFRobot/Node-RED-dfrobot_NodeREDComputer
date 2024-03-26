@@ -158,7 +158,7 @@
       <div><br></div>
       <label for="node-input-circle_fill_color">&nbsp;</label>
       <select id="node-input-circle_fill_color" style="width: 250px;">
-        <option value="None">无填充色</option>        <!-- red -->
+        <!-- <option value="None">无填充色</option> -->
         <option value="#FF0000">红色</option>        <!-- red -->
         <option value="#00FF00">绿色</option>   <!-- green -->
         <option value="#0000FF">蓝色</option>    <!-- blue -->
@@ -214,7 +214,8 @@
         category: 'Draw LCD UI',
         color: '#ffcb3c',
         defaults: {
-          name: {value: "#FFFFFF"},
+          name: {value: ""},
+          graphic_options:  {value: "background"},
           background_color: {value:"#FFFFFF"},  
           line_color: {value:"#000000"},  
           rect_border_color: {value:"#000000"},  
@@ -222,7 +223,6 @@
           circle_border_color: {value:"#000000"},  
           circle_fill_color: {value:"#FFFFFF"}, 
           text_color: {value:"#000000"},   
-
         }, 
         inputs:1,
         outputs:1,
