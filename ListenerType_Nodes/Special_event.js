@@ -30,7 +30,7 @@ module.exports = function(RED) {
             var child;
             var arg;
 
-            arg = `/root/NodeRED-Computer-PartHardware/Event-Code/SpecialEvent -${node.SpecialEvents}`;
+            arg = `/root/NodeRED-Computer-PartHardware/Executable-Script/Block-Event/SpecialEvent -${node.SpecialEvents}`;
 
             node.debug(arg);
             child = exec(arg, node.execOpt, function (error, stdout, stderr) {

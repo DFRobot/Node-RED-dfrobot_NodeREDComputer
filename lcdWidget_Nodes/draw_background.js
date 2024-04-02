@@ -62,33 +62,23 @@ module.exports = function(RED) {
             }
         }
 
-        if(global_num == 0){
-            var postPayload_init = {
+// ----------------------------------------------
+        // 2、触发输入后执行
+        node.on('input', function(msg) {
+            node.status({});
+
+            var postPayload_input = {
                 draw_type: 'background_color',
                 color: bk_color,
                 id: uniqueId,
                 priority: temp_priority
             }; 
-            sendHttpRequest('post', url_lcd_draw, postPayload_init, node);
-        }
 
-// ----------------------------------------------
-        // 2、触发输入后执行
-        node.on('input', function(msg) {
-            node.status({});
-            // 验证输入是否含有color字段
-            if(!msg.payload.hasOwnProperty("background_color")){
-                node.status({fill: "red",shape: "ring",text: `请使用更改属性的节点的流作为输入, 且选择修改背景颜色`});
-                return;
+            if(msg.payload.hasOwnProperty("background_color")){
+                postPayload_input.color = msg.payload.background_color
             }
-            if(global_num == 0){
-                var postPayload_input = {
-                    draw_type: 'background_color',
-                    color: msg.payload.background_color,
-                    id: uniqueId,
-                    priority: temp_priority
-                };
 
+            if(global_num == 0){
                 sendHttpRequest('post', url_lcd_draw, postPayload_input, node);
             }
         });

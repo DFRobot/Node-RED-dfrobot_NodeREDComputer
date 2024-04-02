@@ -26,7 +26,7 @@ module.exports = function(RED) {
             // console.log(JSON.stringify(msg))
 
             var child;
-            var arg = `python3 /root/NodeRED-Computer-PartHardware/python-Script/IO_Interrupt.py -Pin ${node.pin} -Mode ${node.mode} -Interrupt ${node.interrupt}`;
+            var arg = `python3 /root/NodeRED-Computer-PartHardware/Executable-Script/Block-peripheral/IO_Interrupt.py -Pin ${node.pin} -Mode ${node.mode} -Interrupt ${node.interrupt}`;
             // console.log('arg = ', arg)
 
             /* istanbul ignore else  */

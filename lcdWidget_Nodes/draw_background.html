@@ -65,13 +65,12 @@
         defaults: {
           name: {value: ""},
           background_color: {value: "#FFFFFF"},
-          // custom_color: {value:"#FFFFFF", validate: RED.validators.regex(/^#[0-9A-Fa-f]{8}$/)}
           custom_color: {value:""},
           priority: {value:"7"},
           set: {value:""}
         }, 
         inputs:1,
-        outputs:1,
+        outputs:0,
         icon: "font-awesome/fa-pencil",
         label: function() {
           return this.name||this._("清屏并设置屏幕背景");

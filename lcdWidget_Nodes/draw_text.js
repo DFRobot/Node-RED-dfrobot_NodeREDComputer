@@ -102,8 +102,12 @@ module.exports = function(RED) {
             }
         }
 
-        if(global_num == 0){
-            var postPayload_init = {
+// ----------------------------------------------
+        /* 2、触发输入后执行 */
+        node.on('input', function(msg) {
+            node.status({});
+
+            var postPayload_input = {
                 draw_type: 'draw_text',
                 text_content: node.text_content,
                 x: parseInt(node.coord_x),
@@ -113,31 +117,13 @@ module.exports = function(RED) {
                 priority: temp_priority,   // 默认优先级定为7
                 id: uniqueId,
             }; 
-            sendHttpRequest('post', url_lcd_draw, postPayload_init, node);
-        }
-        
 
-// ----------------------------------------------
-        /* 2、触发输入后执行 */
-        node.on('input', function(msg) {
-            node.status({});
             // 验证输入是否含有color字段
-            if(!msg.payload.hasOwnProperty("text_color")){
-                node.status({fill: "red",shape: "ring",text: `请使用更改属性的节点的流作为输入, 且选择修改文本颜色`});
-                return;
+            if(msg.payload.hasOwnProperty("text_color")){
+                postPayload_input.font_color = msg.payload.text_color;
             }
 
             if(global_num == 0){
-                var postPayload_input = {
-                    draw_type: 'draw_text',
-                    text_content: node.text_content,
-                    x: parseInt(node.coord_x),
-                    y: parseInt(node.coord_y),
-                    font_size: parseInt(font_size_opt),
-                    font_color: msg.payload.text_color,
-                    priority: temp_priority,   // 默认优先级定为7
-                    id: uniqueId,
-                };
                 sendHttpRequest('post', url_lcd_draw, postPayload_input, node);
             }
         });

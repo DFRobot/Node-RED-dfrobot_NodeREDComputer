@@ -100,8 +100,14 @@ module.exports = function(RED) {
             }
         }
 
-        if(global_num == 0){
-            var postPayload_init = {
+
+    
+// ----------------------------------------------
+        /* 2、触发输入后执行 */
+        node.on('input', function(msg) {
+            node.status({});
+
+            var postPayload_input = {
                 draw_type: 'draw_rect',
                 x: parseInt(node.coord_x),
                 y: parseInt(node.coord_y),
@@ -114,34 +120,14 @@ module.exports = function(RED) {
                 priority: temp_priority,   // 默认优先级定为7
                 id: uniqueId,
             }; 
-            sendHttpRequest('post', url_lcd_draw, postPayload_init, node);
-        }
-        
 
-// ----------------------------------------------
-        /* 2、触发输入后执行 */
-        node.on('input', function(msg) {
-            node.status({});
             // 验证输入是否含有color字段
-            if( ! (msg.payload.hasOwnProperty("rect_fill_color") && msg.payload.hasOwnProperty("rect_border_color")) ){
-                node.status({fill: "red",shape: "ring",text: `请使用更改属性的节点的流作为输入, 且选择修改矩形颜色`});
-                return;
+            if((msg.payload.hasOwnProperty("rect_fill_color") && msg.payload.hasOwnProperty("rect_border_color"))){
+                postPayload_input.fill_color = msg.payload.rect_fill_color;
+                postPayload_input.border_color = msg.payload.rect_border_color;
             }
 
             if(global_num == 0){
-                var postPayload_input = {
-                    draw_type: 'draw_rect',
-                    x: parseInt(node.coord_x),
-                    y: parseInt(node.coord_y),
-                    width: parseInt(node.width),
-                    height: parseInt(node.height),
-                    line_width: parseInt(node.line_width),
-                    fill_color: msg.payload.rect_fill_color,
-                    border_color: msg.payload.rect_border_color,
-                    border_radius: parseInt(node.border_radius),
-                    priority: temp_priority,   // 默认优先级定为7
-                    id: uniqueId,
-                };
                 sendHttpRequest('post', url_lcd_draw, postPayload_input, node);
             }
         });
