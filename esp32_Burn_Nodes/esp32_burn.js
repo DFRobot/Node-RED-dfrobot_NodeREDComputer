@@ -72,7 +72,7 @@ module.exports = function(RED) {
 
             // 筛选 add  /dev/ttyACMx
             if(msg.payload.hasOwnProperty('devName')){
-                if(!msg.payload.devName.includes('/dev/ttyACM'))    return
+                if(!msg.payload.devName.includes('/dev/ttyACM') && !msg.payload.devName.includes('/dev/ttyUSB'))    return
             }else{
                 return
             }
@@ -88,7 +88,7 @@ module.exports = function(RED) {
                 chip: node.chip,
                 firmware:  node.firmware
             };
-            // console.log(JSON.stringify(postPayload))
+            console.log(JSON.stringify(postPayload))
         
 
             const axiosConfig = {
