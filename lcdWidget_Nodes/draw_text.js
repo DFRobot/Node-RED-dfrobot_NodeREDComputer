@@ -2,7 +2,6 @@ const uuid = require('uuid');
 const axios = require('axios');
 const url_lcd_draw = "http://10.1.2.3:5000/lcd/draw";
 
-global.global_num = 0;
 
 module.exports = function(RED) {
 
@@ -21,11 +20,11 @@ module.exports = function(RED) {
         
 // -------------------------------------------------------------------------------------函数合集
         /* 检验参数的有效性: 检查字符串是否全为0-9的数字字符组成 */
-        function CheckStr(str) {
+        function CheckStr(str, obj) {
             let regex = /^[0-9]+$/;
             if (!regex.test(str)) {
                 node.status({fill:"red",shape:"ring",text: "绘制文本的参数格式填写错误"});
-                global_num = -1;
+                obj.global_num = -1;
             }
         }
 
@@ -55,11 +54,12 @@ module.exports = function(RED) {
         
 // ----------------------------------------------
         /* 1、部署后执行 */
-        global_num = 0; // 参数无效时，禁用发送绘图指令
+        let obj = {global_num: 0}; // 参数无效时，禁用发送绘图指令(对象是以引用传递到函数内部的)
+        let temp_priority = 7;
         let stringList = [node.coord_x, node.coord_y];    // 创建一个字符串列表
         // 检验参数的有效性
         stringList.forEach((str, index) => {
-            CheckStr(str)
+            CheckStr(str, obj)
         });
 
         if (node.set == true) {
@@ -73,7 +73,7 @@ module.exports = function(RED) {
         node.status({});
 
         // 验证字体大小
-        font_size_opt = ''
+        let font_size_opt = ''
         if(node.font_size != "custom"){
             font_size_opt = node.font_size
         }else{
@@ -83,12 +83,12 @@ module.exports = function(RED) {
             } else {
                 node.status({fill: "red",shape: "ring",text: `自定义字体大小的格式错误`});
                 // font_size_opt = "32"
-                global_num = -1
+                obj.global_num = -1
             }
         }
 
         // 验证字体颜色
-        font_color_opt = ''
+        let font_color_opt = ''
         if(node.font_color != "custom"){
             font_color_opt = node.font_color
         }else{
@@ -98,7 +98,7 @@ module.exports = function(RED) {
             } else {
                 node.status({fill: "red",shape: "ring",text: `自定义字体颜色格式错误`});
                 // font_color_opt = "#000000"
-                global_num = -1
+                obj.global_num = -1
             }
         }
 
@@ -117,13 +117,17 @@ module.exports = function(RED) {
                 priority: temp_priority,   // 默认优先级定为7
                 id: uniqueId,
             }; 
-
+            
             // 验证输入是否含有color字段
             if(msg.payload.hasOwnProperty("text_color")){
                 postPayload_input.font_color = msg.payload.text_color;
             }
 
-            if(global_num == 0){
+            if(msg.payload.hasOwnProperty("text_content")){
+                postPayload_input.text_content = msg.payload.text_content;
+            }
+            console.log(postPayload_input);
+            if(obj.global_num == 0){
                 sendHttpRequest('post', url_lcd_draw, postPayload_input, node);
             }
         });

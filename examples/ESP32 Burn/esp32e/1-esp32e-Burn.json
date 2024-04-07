@@ -1,0 +1,125 @@
+[
+    {
+        "id": "aed00647a2d674c1",
+        "type": "ESP32 Burn",
+        "z": "4701b8940aeb2fea",
+        "name": "",
+        "chip": "esp32e",
+        "firmware": "/root/NodeRED-Computer-PartHardware/Executable-Script/Block-Burn/ESP32_Firmware/esp32e/esp32e.Blink.bin",
+        "x": 900,
+        "y": 720,
+        "wires": [
+            [
+                "f9b9cb215e5f9835"
+            ]
+        ]
+    },
+    {
+        "id": "165abd9a70186d17",
+        "type": "comment",
+        "z": "4701b8940aeb2fea",
+        "name": "烧录所有插入的esp32e/eu设备",
+        "info": "",
+        "x": 590,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "756735c610609e7a",
+        "type": "comment",
+        "z": "4701b8940aeb2fea",
+        "name": "拔出/dev/ttyUSBx设备",
+        "info": "",
+        "x": 560,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "9e5aa364ae6fe4f4",
+        "type": "Dev Event",
+        "z": "4701b8940aeb2fea",
+        "name": "事件监听 - 移除设备",
+        "set": true,
+        "action": "remove",
+        "devName": "",
+        "setIOin": "",
+        "edge": "none",
+        "x": 550,
+        "y": 620,
+        "wires": [
+            [
+                "299ea482ffbc4e7c"
+            ]
+        ]
+    },
+    {
+        "id": "f9b9cb215e5f9835",
+        "type": "debug",
+        "z": "4701b8940aeb2fea",
+        "name": "debug 2：数据流详情",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1140,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "299ea482ffbc4e7c",
+        "type": "debug",
+        "z": "4701b8940aeb2fea",
+        "name": "debug 1：数据流详情",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 820,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "f8dbb7b453acaecf",
+        "type": "Dev Event",
+        "z": "4701b8940aeb2fea",
+        "name": "事件监听 - 监听/dev/ttyUSBx设备插入",
+        "set": true,
+        "action": "add",
+        "devName": "",
+        "setIOin": "",
+        "edge": "none",
+        "x": 610,
+        "y": 720,
+        "wires": [
+            [
+                "aed00647a2d674c1",
+                "6d47e0ea62c69b9c"
+            ]
+        ]
+    },
+    {
+        "id": "6d47e0ea62c69b9c",
+        "type": "debug",
+        "z": "4701b8940aeb2fea",
+        "name": "debug 2：数据流详情",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 889.6666259765625,
+        "y": 811,
+        "wires": []
+    }
+]

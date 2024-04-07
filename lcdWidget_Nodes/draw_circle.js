@@ -2,7 +2,6 @@ const uuid = require('uuid');
 const axios = require('axios');
 const url_lcd_draw = "http://10.1.2.3:5000/lcd/draw";
 
-global.global_num = 0;
 
 module.exports = function(RED) {
 
@@ -22,11 +21,11 @@ module.exports = function(RED) {
         
 // -------------------------------------------------------------------------------------函数合集
         /* 检验参数的有效性: 检查字符串是否全为0-9的数字字符组成 */
-        function CheckStr(str) {
+        function CheckStr(str, obj) {
             let regex = /^[0-9]+$/;
             if (!regex.test(str)) {
                 node.status({fill:"red",shape:"ring",text: "绘制圆形的参数格式填写错误"});
-                global_num = -1;
+                obj.global_num = -1;
             }
         }
 
@@ -56,11 +55,12 @@ module.exports = function(RED) {
         
 // ----------------------------------------------
         /* 1、部署后执行 */
-        global_num = 0; // 参数无效时，禁用发送绘图指令
+        let obj = {global_num: 0}; // 参数无效时，禁用发送绘图指令(对象是以引用传递到函数内部的)
+        let temp_priority = 7;
         let stringList = [node.coord_x, node.coord_y, node.radius, node.line_width];    // 创建一个字符串列表
         // 检验参数的有效性
         stringList.forEach((str, index) => {
-            CheckStr(str)
+            CheckStr(str, obj)
         });
 
         if (node.set == true) {
@@ -84,7 +84,7 @@ module.exports = function(RED) {
             } else {
                 node.status({fill: "red",shape: "ring",text: `自定义填充色格式错误`});
                 // F_color = "#FFFFFF"
-                global_num = -1
+                obj.global_num = -1
             }
         }
 
@@ -99,7 +99,7 @@ module.exports = function(RED) {
             } else {
                 node.status({fill: "red",shape: "ring",text: `自定义边框色格式错误`});
                 // B_color = "#000000"
-                global_num = -1
+                obj.global_num = -1
             }
         }
 
@@ -120,6 +120,7 @@ module.exports = function(RED) {
                 priority: temp_priority,   // 默认优先级定为7
                 id: uniqueId,
             }; 
+            console.log(postPayload_input);
 
             // 验证输入是否含有color字段
             if((msg.payload.hasOwnProperty("circle_fill_color") && msg.payload.hasOwnProperty("circle_border_color"))){
@@ -127,7 +128,7 @@ module.exports = function(RED) {
                 postPayload_input.border_color = msg.payload.circle_border_color;
             }
 
-            if(global_num == 0){
+            if(obj.global_num == 0){
                 sendHttpRequest('post', url_lcd_draw, postPayload_input, node);
             }
         });

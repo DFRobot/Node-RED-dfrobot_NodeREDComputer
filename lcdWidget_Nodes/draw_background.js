@@ -2,7 +2,6 @@ const uuid = require('uuid');
 const axios = require('axios');
 const url_lcd_draw = "http://10.1.2.3:5000/lcd/draw";
 
-global.global_num = 0;
 
 module.exports = function(RED) {
 
@@ -39,16 +38,21 @@ module.exports = function(RED) {
         }
         
 // ----------------------------------------------
-        if (node.set == true) {
-            temp_priority = parseInt(node.priority) 
-        }else{
-            temp_priority = 7
-        }
         const uniqueId = uuid.v4(); // 生成唯一 ID
     
         // 1、部署后执行
         node.status({});
-        global_num = 0; // 参数无效时，禁用发送绘图指令
+        let obj = {global_num: 0}; // 参数无效时，禁用发送绘图指令(对象是以引用传递到函数内部的)
+        let temp_priority = 6;
+
+        if (node.set == true) {
+            temp_priority = parseInt(node.priority) 
+        }else{
+            temp_priority = 6
+        }
+
+        console.log(temp_priority)
+
         var bk_color = ''
         if(node.background_color != "custom"){
             bk_color = node.background_color
@@ -58,7 +62,7 @@ module.exports = function(RED) {
                 bk_color = node.custom_color
             } else {
                 node.status({fill: "red",shape: "ring",text: `自定义背景颜色格式错误`});
-                global_num = -1
+                obj.global_num = -1
             }
         }
 
@@ -74,11 +78,13 @@ module.exports = function(RED) {
                 priority: temp_priority
             }; 
 
+            console.log(postPayload_input)
+
             if(msg.payload.hasOwnProperty("background_color")){
                 postPayload_input.color = msg.payload.background_color
             }
 
-            if(global_num == 0){
+            if(obj.global_num == 0){
                 sendHttpRequest('post', url_lcd_draw, postPayload_input, node);
             }
         });
