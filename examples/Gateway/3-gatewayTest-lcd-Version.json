@@ -2,7 +2,7 @@
     {
         "id": "2d07958f8023903f",
         "type": "change",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "修改频段参数与硬件版本",
         "rules": [
             {
@@ -25,8 +25,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 850,
-        "y": 1160,
+        "x": 570,
+        "y": 320,
         "wires": [
             [
                 "824e0a2c8fafbd6c"
@@ -36,7 +36,7 @@
     {
         "id": "f7f50f23867d5deb",
         "type": "inject",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "",
         "props": [
             {
@@ -54,8 +54,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 620,
-        "y": 1160,
+        "x": 340,
+        "y": 320,
         "wires": [
             [
                 "2d07958f8023903f"
@@ -65,7 +65,7 @@
     {
         "id": "824e0a2c8fafbd6c",
         "type": "debug",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "debug 2",
         "active": false,
         "tosidebar": true,
@@ -75,14 +75,14 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1100,
-        "y": 1160,
+        "x": 820,
+        "y": 320,
         "wires": []
     },
     {
         "id": "636d74eff00b4674",
         "type": "exec",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "command": "rkdeveloptool ld",
         "addpay": "",
         "append": "",
@@ -91,8 +91,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "",
-        "x": 1000,
-        "y": 1720,
+        "x": 720,
+        "y": 880,
         "wires": [
             [
                 "d15aed285fd3ce37",
@@ -109,7 +109,7 @@
     {
         "id": "d3d4c84ec2836bea",
         "type": "trigger",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "",
         "op1": "",
         "op2": "",
@@ -123,8 +123,8 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 800,
-        "y": 1720,
+        "x": 520,
+        "y": 880,
         "wires": [
             [
                 "636d74eff00b4674"
@@ -134,7 +134,7 @@
     {
         "id": "2bdd103046e4b885",
         "type": "change",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "暂停MaskRom设备的循环监听",
         "rules": [
             {
@@ -150,8 +150,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1350,
-        "y": 1600,
+        "x": 1070,
+        "y": 760,
         "wires": [
             [
                 "7928df218b03737f"
@@ -161,7 +161,7 @@
     {
         "id": "d15aed285fd3ce37",
         "type": "switch",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "RK3308成功进入MaskRom模式",
         "property": "payload",
         "propertyType": "msg",
@@ -175,20 +175,21 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 1030,
-        "y": 1600,
+        "x": 750,
+        "y": 760,
         "wires": [
             [
                 "2bdd103046e4b885",
                 "51af19ea3dc767bb",
-                "b599a4a336eef5d7"
+                "b599a4a336eef5d7",
+                "32d38802cd15b1e6"
             ]
         ]
     },
     {
         "id": "64d4d75373a47291",
         "type": "inject",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "1、自动触发（后期删除）",
         "props": [
             {
@@ -206,8 +207,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 570,
-        "y": 1720,
+        "x": 290,
+        "y": 880,
         "wires": [
             [
                 "d3d4c84ec2836bea"
@@ -217,20 +218,20 @@
     {
         "id": "7928df218b03737f",
         "type": "link out",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "link out 12",
         "mode": "link",
         "links": [
             "67979cdb8c340236"
         ],
-        "x": 1525,
-        "y": 1600,
+        "x": 1245,
+        "y": 760,
         "wires": []
     },
     {
         "id": "67979cdb8c340236",
         "type": "link in",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "link in 9",
         "links": [
             "7928df218b03737f",
@@ -238,8 +239,8 @@
             "55b25c8f4d11f2bb",
             "e26b2d609b9328c3"
         ],
-        "x": 505,
-        "y": 1660,
+        "x": 225,
+        "y": 820,
         "wires": [
             [
                 "2e30f0844db3d51f"
@@ -249,7 +250,7 @@
     {
         "id": "543ea105a3dbe1d1",
         "type": "debug",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "debug-执行shell的返回信息",
         "active": false,
         "tosidebar": true,
@@ -259,19 +260,19 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1240,
-        "y": 1780,
+        "x": 960,
+        "y": 940,
         "wires": []
     },
     {
         "id": "51af19ea3dc767bb",
         "type": "RockchipBurn",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "",
         "chip": "RK3308K",
         "firmware": "/media/sda1/dfrobot_lorawanos_rk3308_ryl.img",
-        "x": 1310,
-        "y": 1700,
+        "x": 1030,
+        "y": 860,
         "wires": [
             [
                 "9e0bd1d03cfa8d74",
@@ -289,15 +290,15 @@
     {
         "id": "1da51626fdf12931",
         "type": "postgresql",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "数据库中删除已拿取的MAC",
         "query": "BEGIN;\nWITH deleted AS (\n  DELETE FROM lora_gw_eui_store\n  WHERE ctid IN (\n    SELECT ctid FROM lora_gw_eui_store\n    ORDER BY eui LIMIT 1\n  )\n  RETURNING eui, status\n)\nSELECT * FROM deleted;\nCOMMIT;\n",
         "postgreSQLConfig": "7fe1881e75a10716",
         "split": false,
         "rowsPerMsg": "10",
         "outputs": 1,
-        "x": 700,
-        "y": 3180,
+        "x": 420,
+        "y": 2340,
         "wires": [
             [
                 "1c2a38053605cac6",
@@ -308,7 +309,7 @@
     {
         "id": "d29657ad7278129a",
         "type": "debug",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "debug 31",
         "active": true,
         "tosidebar": true,
@@ -318,14 +319,14 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 1540,
-        "y": 3240,
+        "x": 1260,
+        "y": 2400,
         "wires": []
     },
     {
         "id": "1c2a38053605cac6",
         "type": "debug",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "debug 32",
         "active": true,
         "tosidebar": true,
@@ -335,14 +336,14 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 940,
-        "y": 3240,
+        "x": 660,
+        "y": 2400,
         "wires": []
     },
     {
         "id": "5e214a7f311ce463",
         "type": "debug",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "debug 33",
         "active": true,
         "tosidebar": true,
@@ -352,14 +353,14 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 1200,
-        "y": 3240,
+        "x": 920,
+        "y": 2400,
         "wires": []
     },
     {
         "id": "dd42694280883df5",
         "type": "function",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "对拿取得到的字段重组数据",
         "func": "\nconst eui = msg.payload[0].eui; // 假设msg.payload是删除操作返回的记录\nconst status = msg.payload[0].status;\nconst currentDate = new Date();\n// 当数据被插入到数据库中时，它会被转换为 UTC 时间，并存储在数据库中。\n// 当数据被检索时，它会根据数据库连接的时区进行转换，并返回相应的本地时间\n// currentDate.setHours(currentDate.getHours() + 8);\nconst now = currentDate.toISOString();\nmsg.payload = {\n  eui: eui,\n  status: status,\n  now: now\n};\n\nreturn msg;\n",
         "outputs": 1,
@@ -368,8 +369,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 980,
-        "y": 3180,
+        "x": 700,
+        "y": 2340,
         "wires": [
             [
                 "5e214a7f311ce463",
@@ -380,15 +381,15 @@
     {
         "id": "8d796dce1fbf9fed",
         "type": "postgresql",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "将拿取得到的MAC丢入trash数据表",
         "query": "INSERT INTO lora_gw_eui_trash (eui, status, date) \nVALUES ('{{msg.payload.eui}}', '{{msg.payload.status}}', '{{msg.payload.now}}');\n\n",
         "postgreSQLConfig": "7fe1881e75a10716",
         "split": false,
         "rowsPerMsg": "10",
         "outputs": 1,
-        "x": 1300,
-        "y": 3180,
+        "x": 1020,
+        "y": 2340,
         "wires": [
             [
                 "d29657ad7278129a",
@@ -399,7 +400,7 @@
     {
         "id": "e26b2d609b9328c3",
         "type": "link out",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "link out 13",
         "mode": "link",
         "links": [
@@ -410,20 +411,20 @@
             "c7cf1ea8dd4a53bd",
             "e4b6d5165dcca9be"
         ],
-        "x": 1525,
-        "y": 1720,
+        "x": 1245,
+        "y": 880,
         "wires": []
     },
     {
         "id": "bf3a4e486fc9e3be",
         "type": "link in",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "link in 10",
         "links": [
             "a5e216eeefcde855"
         ],
-        "x": 525,
-        "y": 3220,
+        "x": 245,
+        "y": 2380,
         "wires": [
             [
                 "1da51626fdf12931"
@@ -433,7 +434,7 @@
     {
         "id": "112310dc7bf37ac4",
         "type": "inject",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "",
         "props": [
             {
@@ -451,8 +452,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 490,
-        "y": 3180,
+        "x": 210,
+        "y": 2340,
         "wires": [
             [
                 "1da51626fdf12931"
@@ -462,13 +463,13 @@
     {
         "id": "015948f68080ec5f",
         "type": "Dev Shell",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "检测网关中的internalServer是否启动起来",
         "IP_Port": "10.6.6.6:18080",
         "identity": "BOM",
         "cmd": "pwd",
-        "x": 1040,
-        "y": 2480,
+        "x": 760,
+        "y": 1640,
         "wires": [
             [
                 "a5381c83a856a1e2",
@@ -479,14 +480,14 @@
     {
         "id": "535fd7734d88bea0",
         "type": "link in",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "link in 11",
         "links": [
             "e26b2d609b9328c3",
             "11ca648e5dadf3b9"
         ],
-        "x": 585,
-        "y": 2480,
+        "x": 305,
+        "y": 1640,
         "wires": [
             [
                 "355881ac77cc047c"
@@ -496,15 +497,15 @@
     {
         "id": "99ed7e5eb8bb0d44",
         "type": "postgresql",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "数据库中拿取MAC",
         "query": "SELECT eui\nFROM lora_gw_eui_store\nORDER BY eui\nLIMIT 1;",
         "postgreSQLConfig": "7fe1881e75a10716",
         "split": false,
         "rowsPerMsg": "10",
         "outputs": 1,
-        "x": 610,
-        "y": 2960,
+        "x": 330,
+        "y": 2120,
         "wires": [
             [
                 "b37ac15ce9ccae43",
@@ -515,7 +516,7 @@
     {
         "id": "b37ac15ce9ccae43",
         "type": "debug",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "debug 39",
         "active": true,
         "tosidebar": true,
@@ -525,14 +526,14 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 800,
-        "y": 2900,
+        "x": 520,
+        "y": 2060,
         "wires": []
     },
     {
         "id": "355881ac77cc047c",
         "type": "trigger",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "",
         "op1": "1",
         "op2": "0",
@@ -546,8 +547,8 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 740,
-        "y": 2480,
+        "x": 460,
+        "y": 1640,
         "wires": [
             [
                 "015948f68080ec5f",
@@ -558,7 +559,7 @@
     {
         "id": "a5381c83a856a1e2",
         "type": "switch",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "判断网关内置Shell服务器是否启动成功",
         "property": "payload",
         "propertyType": "msg",
@@ -572,8 +573,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 1420,
-        "y": 2480,
+        "x": 1140,
+        "y": 1640,
         "wires": [
             [
                 "0bfd255006183478"
@@ -583,7 +584,7 @@
     {
         "id": "0bfd255006183478",
         "type": "change",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "启动成功，暂停internalServer的启动检测",
         "rules": [
             {
@@ -599,8 +600,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1780,
-        "y": 2480,
+        "x": 1500,
+        "y": 1640,
         "wires": [
             [
                 "bb3159326af8632a"
@@ -610,7 +611,7 @@
     {
         "id": "11ca648e5dadf3b9",
         "type": "link out",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "link out 14",
         "mode": "link",
         "links": [
@@ -619,20 +620,20 @@
             "d20b875bca7d94a0",
             "799b8e15a0cd7849"
         ],
-        "x": 2175,
-        "y": 2480,
+        "x": 1895,
+        "y": 1640,
         "wires": []
     },
     {
         "id": "262019a794a3d36c",
         "type": "link in",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "link in 12",
         "links": [
             "11ca648e5dadf3b9"
         ],
-        "x": 445,
-        "y": 2960,
+        "x": 165,
+        "y": 2120,
         "wires": [
             [
                 "99ed7e5eb8bb0d44"
@@ -642,7 +643,7 @@
     {
         "id": "f612824b22805e80",
         "type": "switch",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "筛选MAC",
         "property": "payload[0]",
         "propertyType": "msg",
@@ -656,8 +657,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 820,
-        "y": 2960,
+        "x": 540,
+        "y": 2120,
         "wires": [
             [
                 "687c2dd9ee04439b",
@@ -668,7 +669,7 @@
     {
         "id": "687c2dd9ee04439b",
         "type": "debug",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "debug 40",
         "active": true,
         "tosidebar": true,
@@ -678,14 +679,14 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 1000,
-        "y": 2900,
+        "x": 720,
+        "y": 2060,
         "wires": []
     },
     {
         "id": "a5e216eeefcde855",
         "type": "link out",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "link out 15",
         "mode": "link",
         "links": [
@@ -693,24 +694,24 @@
             "2a1c13558bfe5257",
             "dfbbaba215ac287d"
         ],
-        "x": 2095,
-        "y": 2940,
+        "x": 1815,
+        "y": 2100,
         "wires": []
     },
     {
         "id": "cce5208da203bb9f",
         "type": "comment",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "烧录OTP成功后，更新数据库中数据",
         "info": "",
-        "x": 1760,
-        "y": 3180,
+        "x": 1480,
+        "y": 2340,
         "wires": []
     },
     {
         "id": "173a11c7a85b2b2c",
         "type": "link out",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "link out 16",
         "mode": "link",
         "links": [
@@ -723,14 +724,14 @@
             "cdbac96470b8311f",
             "4570fd3508c2d88c"
         ],
-        "x": 1545,
-        "y": 3180,
+        "x": 1265,
+        "y": 2340,
         "wires": []
     },
     {
         "id": "1a601a6c1161297d",
         "type": "link in",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "link in 13",
         "links": [
             "173a11c7a85b2b2c",
@@ -738,8 +739,8 @@
             "8f4276e5d5d2c691",
             "ad7cb132ce33c700"
         ],
-        "x": 545,
-        "y": 3880,
+        "x": 265,
+        "y": 3040,
         "wires": [
             [
                 "d388f1ba1fc3a973"
@@ -749,13 +750,13 @@
     {
         "id": "a5faaeda2e71ad31",
         "type": "Dev Shell",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "测试WIFI：获取SSID与signal",
         "IP_Port": "10.6.6.6:18080",
         "identity": "BOM",
         "cmd": "iw dev wlan0 scan | grep -B 2 \"LoraWANGateway-57AB2883DD71F8F6\"",
-        "x": 1040,
-        "y": 3880,
+        "x": 760,
+        "y": 3040,
         "wires": [
             [
                 "3b2092243e7da856",
@@ -766,7 +767,7 @@
     {
         "id": "3b2092243e7da856",
         "type": "function",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "获取SSID与signal的正则筛选关键信息",
         "func": "\n\n\nconst lines = msg.payload.split('\\n');\n\nlines.forEach(line => {\n    if (line.includes('signal')) {\n        console.log(`${line} contains 'signal'`);\n        const regex = /-([0-9]+)/;\n        const match = line.match(regex);\n\n        if (match) {\n            const number = match[1];\n            console.log(number);\n            msg.payload = {'text_content': \"\"}\n            msg.payload['text_content'] = `-${number}`\n            node.send(msg);\n        } else {\n            console.log('No match found');\n        }\n\n    }\n});\n\n",
         "outputs": 1,
@@ -775,8 +776,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1410,
-        "y": 3880,
+        "x": 1130,
+        "y": 3040,
         "wires": [
             [
                 "8052614a6fcc5892",
@@ -789,17 +790,17 @@
     {
         "id": "7d8de6084f0b8cc0",
         "type": "comment",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "4、开始测试wifi/4G/ETH/LoRa/NFC",
         "info": "",
-        "x": 760,
-        "y": 3500,
+        "x": 480,
+        "y": 2660,
         "wires": []
     },
     {
         "id": "d388f1ba1fc3a973",
         "type": "trigger",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "",
         "op1": "1",
         "op2": "0",
@@ -813,8 +814,8 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 700,
-        "y": 3880,
+        "x": 420,
+        "y": 3040,
         "wires": [
             [
                 "a5faaeda2e71ad31"
@@ -824,7 +825,7 @@
     {
         "id": "8052614a6fcc5892",
         "type": "change",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "停止循环",
         "rules": [
             {
@@ -840,8 +841,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1660,
-        "y": 3920,
+        "x": 1380,
+        "y": 3080,
         "wires": [
             [
                 "33f5a89e1927ae5c"
@@ -851,7 +852,7 @@
     {
         "id": "33f5a89e1927ae5c",
         "type": "link out",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "link out 17",
         "mode": "link",
         "links": [
@@ -859,20 +860,20 @@
             "90045b0f9c1fae5f",
             "044283b46ddbffb0"
         ],
-        "x": 1765,
-        "y": 3920,
+        "x": 1485,
+        "y": 3080,
         "wires": []
     },
     {
         "id": "78536076bec343bd",
         "type": "Dev Shell",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "测试ETH：是否连上网络",
         "IP_Port": "10.6.6.6:18080",
         "identity": "BOM",
         "cmd": "ifconfig eth0",
-        "x": 1090,
-        "y": 4340,
+        "x": 810,
+        "y": 3500,
         "wires": [
             [
                 "fda27b8aa5379095",
@@ -883,7 +884,7 @@
     {
         "id": "fda27b8aa5379095",
         "type": "function",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "获取以太网ip的正则筛选关键信息",
         "func": "\n\n\nconst lines = msg.payload.split('\\n');\n\nlines.forEach(line => {\n    if (line.includes('inet ')) {\n        console.log(`${line} contains 'inet '`);\n        const trimmedStr = line.trim();\n        msg.payload = trimmedStr\n        node.send(msg);\n    }\n});\n\n",
         "outputs": 1,
@@ -892,8 +893,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1400,
-        "y": 4340,
+        "x": 1120,
+        "y": 3500,
         "wires": [
             [
                 "7259ce56f2610ed5",
@@ -906,7 +907,7 @@
     {
         "id": "73ec33c6796189de",
         "type": "trigger",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "",
         "op1": "1",
         "op2": "0",
@@ -920,8 +921,8 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 760,
-        "y": 4340,
+        "x": 480,
+        "y": 3500,
         "wires": [
             [
                 "78536076bec343bd"
@@ -931,7 +932,7 @@
     {
         "id": "f46729985fd76fcb",
         "type": "link in",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "link in 14",
         "links": [
             "173a11c7a85b2b2c",
@@ -939,8 +940,8 @@
             "8f4276e5d5d2c691",
             "ad7cb132ce33c700"
         ],
-        "x": 605,
-        "y": 4340,
+        "x": 325,
+        "y": 3500,
         "wires": [
             [
                 "73ec33c6796189de"
@@ -950,7 +951,7 @@
     {
         "id": "7259ce56f2610ed5",
         "type": "change",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "停止循环",
         "rules": [
             {
@@ -966,8 +967,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1660,
-        "y": 4380,
+        "x": 1380,
+        "y": 3540,
         "wires": [
             [
                 "9ba5c8a580517a76"
@@ -977,27 +978,27 @@
     {
         "id": "9ba5c8a580517a76",
         "type": "link out",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "link out 18",
         "mode": "link",
         "links": [
             "f46729985fd76fcb",
             "90045b0f9c1fae5f"
         ],
-        "x": 1765,
-        "y": 4380,
+        "x": 1485,
+        "y": 3540,
         "wires": []
     },
     {
         "id": "09d8f33f8ede3ad9",
         "type": "Dev Shell",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "测试4G：是否有IP显示",
         "IP_Port": "10.6.6.6:18080",
         "identity": "BOM",
         "cmd": "ifconfig usb0",
-        "x": 1050,
-        "y": 4860,
+        "x": 770,
+        "y": 4020,
         "wires": [
             [
                 "b67eada3cea134fc",
@@ -1008,7 +1009,7 @@
     {
         "id": "b67eada3cea134fc",
         "type": "function",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "获取4G网卡ip的正则筛选关键信息",
         "func": "\n\n\nconst lines = msg.payload.split('\\n');\n\nlines.forEach(line => {\n    if (line.includes('inet ')) {\n        console.log(`${line} contains 'inet '`);\n        const trimmedStr = line.trim();\n        msg.payload = trimmedStr\n        node.send(msg);\n    }\n});\n\n",
         "outputs": 1,
@@ -1017,8 +1018,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1420,
-        "y": 4860,
+        "x": 1140,
+        "y": 4020,
         "wires": [
             [
                 "d85b11f1a939c06d",
@@ -1030,7 +1031,7 @@
     {
         "id": "d85b11f1a939c06d",
         "type": "debug",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "debug 44",
         "active": true,
         "tosidebar": true,
@@ -1040,14 +1041,14 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 1680,
-        "y": 4980,
+        "x": 1400,
+        "y": 4140,
         "wires": []
     },
     {
         "id": "71a9e37dcde68cd8",
         "type": "trigger",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "",
         "op1": "1",
         "op2": "0",
@@ -1061,8 +1062,8 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 720,
-        "y": 4860,
+        "x": 440,
+        "y": 4020,
         "wires": [
             [
                 "09d8f33f8ede3ad9"
@@ -1072,7 +1073,7 @@
     {
         "id": "44a7194a8d1c59de",
         "type": "change",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "停止循环",
         "rules": [
             {
@@ -1088,8 +1089,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1680,
-        "y": 4900,
+        "x": 1400,
+        "y": 4060,
         "wires": [
             [
                 "9064815f06215091"
@@ -1099,7 +1100,7 @@
     {
         "id": "9064815f06215091",
         "type": "link out",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "link out 19",
         "mode": "link",
         "links": [
@@ -1107,14 +1108,14 @@
             "90045b0f9c1fae5f",
             "042e0a2dc9b1d5a7"
         ],
-        "x": 1795,
-        "y": 4900,
+        "x": 1515,
+        "y": 4060,
         "wires": []
     },
     {
         "id": "237b8ae552dd6e7f",
         "type": "link in",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "link in 15",
         "links": [
             "173a11c7a85b2b2c",
@@ -1122,8 +1123,8 @@
             "8f4276e5d5d2c691",
             "ad7cb132ce33c700"
         ],
-        "x": 565,
-        "y": 4860,
+        "x": 285,
+        "y": 4020,
         "wires": [
             [
                 "71a9e37dcde68cd8"
@@ -1133,27 +1134,28 @@
     {
         "id": "95a1f911fe6c536b",
         "type": "Dev Shell",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "测试4G：读文件判断4G信号质量",
         "IP_Port": "10.6.6.6:18080",
         "identity": "BOM",
         "cmd": "cat /gw/etc/cat1.json",
-        "x": 980,
-        "y": 5100,
+        "x": 700,
+        "y": 4260,
         "wires": [
             [
                 "049f1bf15b99c0f5",
                 "99f9631ca44c62f0",
                 "57338d2768fe6be0",
                 "88760a199733749a",
-                "12277e16dd066d64"
+                "12277e16dd066d64",
+                "66109bb8a70fc9ca"
             ]
         ]
     },
     {
         "id": "cb36d058bc546613",
         "type": "trigger",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "",
         "op1": "1",
         "op2": "0",
@@ -1167,8 +1169,8 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 680,
-        "y": 5100,
+        "x": 400,
+        "y": 4260,
         "wires": [
             [
                 "95a1f911fe6c536b"
@@ -1178,13 +1180,13 @@
     {
         "id": "31b2db33b7fbae5b",
         "type": "Dev Shell",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "执行脚本：发射Lora信号（868.1MHz发射EUI）",
         "IP_Port": "10.6.6.6:18080",
         "identity": "BOM",
         "cmd": "/opt/gwConfig/Gateway_LoRa_Test/test_loragw_hal_rx_DF -d /dev/spidev2.0 -k0 -r1250 -z16 -n2",
-        "x": 880,
-        "y": 5700,
+        "x": 600,
+        "y": 4860,
         "wires": [
             [
                 "f0d3ef43b4af97a3",
@@ -1195,7 +1197,7 @@
     {
         "id": "c931a4b6c895d092",
         "type": "trigger",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "",
         "op1": "1",
         "op2": "0",
@@ -1209,8 +1211,8 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 540,
-        "y": 5700,
+        "x": 260,
+        "y": 4860,
         "wires": [
             [
                 "31b2db33b7fbae5b"
@@ -1220,7 +1222,7 @@
     {
         "id": "f0d3ef43b4af97a3",
         "type": "function",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "正则筛选LoRa测试的关键信息",
         "func": "\n\n\n// 按换行符分割字符串\nconst lines = msg.payload.trim().split('\\n');\nmsg.payload = { \"snr_avg\": \"\", \"rssi_chan\": \"\", \"rssi_sig\": \"\", \"verify_data\":\"\"}\n\nvar snr_avg = 0\nvar rssi_chan = 0\nvar rssi_sig = 0\nvar verify_data = 0\n\n// 遍历每一行，查找包含特定子字符串的行并打印出来\nlines.forEach(line => {\n    if (line.includes(\"snr_avg\") && snr_avg == 0){\n        snr_avg += 1;\n        const parts = line.split(\":\"); // 以冒号为分割符分割字符串\n        const result = parts[1].trim(); // 获取冒号后面的字符（第二部分）\n        msg.payload.snr_avg = result\n    }\n\n    if (line.includes(\"rssi_chan\") && rssi_chan == 0) {\n        rssi_chan += 1;\n        const parts = line.split(\":\"); // 以冒号为分割符分割字符串\n        const result = parts[1].trim(); // 获取冒号后面的字符（第二部分）\n        msg.payload.rssi_chan = result\n    }\n\n    if (line.includes(\"rssi_sig\") && rssi_sig == 0) {\n        rssi_sig += 1;\n        const parts = line.split(\":\"); // 以冒号为分割符分割字符串\n        const result = parts[1].trim(); // 获取冒号后面的字符（第二部分）\n        msg.payload.rssi_sig = result\n    }\n\n    if (line.includes(\"44 46 52 6F 62 6F 74\") && verify_data == 0) {\n        verify_data += 1;\n        msg.payload.verify_data = \"Data verification passed! \" + line\n    } \n});\n\nnode.send(msg)\n\n\n\n\n",
         "outputs": 1,
@@ -1229,8 +1231,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1290,
-        "y": 5700,
+        "x": 1010,
+        "y": 4860,
         "wires": [
             [
                 "24e59325d016d8fc",
@@ -1243,7 +1245,7 @@
     {
         "id": "24e59325d016d8fc",
         "type": "change",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "停止循环",
         "rules": [
             {
@@ -1259,8 +1261,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1540,
-        "y": 5740,
+        "x": 1260,
+        "y": 4900,
         "wires": [
             [
                 "9b30fff25353eb0b"
@@ -1270,7 +1272,7 @@
     {
         "id": "9b30fff25353eb0b",
         "type": "link out",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "link out 22",
         "mode": "link",
         "links": [
@@ -1278,14 +1280,14 @@
             "90045b0f9c1fae5f",
             "d04f8274a421cadf"
         ],
-        "x": 1665,
-        "y": 5740,
+        "x": 1385,
+        "y": 4900,
         "wires": []
     },
     {
         "id": "6aeee981e37574a2",
         "type": "link in",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "link in 17",
         "links": [
             "173a11c7a85b2b2c",
@@ -1294,8 +1296,8 @@
             "8f4276e5d5d2c691",
             "ad7cb132ce33c700"
         ],
-        "x": 405,
-        "y": 5700,
+        "x": 125,
+        "y": 4860,
         "wires": [
             [
                 "c931a4b6c895d092"
@@ -1305,15 +1307,15 @@
     {
         "id": "d20b875bca7d94a0",
         "type": "link in",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "link in 18",
         "links": [
             "e26b2d609b9328c3",
             "11ca648e5dadf3b9",
             "52152cce8135ccd2"
         ],
-        "x": 595,
-        "y": 2320,
+        "x": 315,
+        "y": 1480,
         "wires": [
             [
                 "e850e56dab17e9c0"
@@ -1323,7 +1325,7 @@
     {
         "id": "31d9030ebc8af55c",
         "type": "change",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "超时！暂停internalServer的启动检测",
         "rules": [
             {
@@ -1339,8 +1341,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1190,
-        "y": 2400,
+        "x": 910,
+        "y": 1560,
         "wires": [
             [
                 "355881ac77cc047c",
@@ -1351,34 +1353,34 @@
     {
         "id": "c8470c9f0bec8c3e",
         "type": "comment",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "部署后立即执行",
         "info": "",
-        "x": 600,
-        "y": 1760,
+        "x": 320,
+        "y": 920,
         "wires": []
     },
     {
         "id": "61b58f2abf2a7cee",
         "type": "comment",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "1、网关烧录：网关进入MaskRom模式：先按住BOOT后按RST，然后先松开RST再松开BOOT",
         "info": "",
-        "x": 820,
-        "y": 1560,
+        "x": 540,
+        "y": 720,
         "wires": []
     },
     {
         "id": "97b07f82b7f055a3",
         "type": "link in",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "link in 20",
         "links": [
             "8f4276e5d5d2c691",
             "ad7cb132ce33c700"
         ],
-        "x": 1815,
-        "y": 3840,
+        "x": 1535,
+        "y": 3000,
         "wires": [
             [
                 "d986764271a10635"
@@ -1388,12 +1390,12 @@
     {
         "id": "d986764271a10635",
         "type": "Flow Switch",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "",
         "set": true,
         "flowSwitch": "on",
-        "x": 1910,
-        "y": 3880,
+        "x": 1630,
+        "y": 3040,
         "wires": [
             [
                 "71e0d5e547ced05d"
@@ -1403,7 +1405,7 @@
     {
         "id": "5cdc246c53470371",
         "type": "change",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "关闭流开关",
         "rules": [
             {
@@ -1426,8 +1428,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1670,
-        "y": 3880,
+        "x": 1390,
+        "y": 3040,
         "wires": [
             [
                 "d986764271a10635"
@@ -1437,14 +1439,14 @@
     {
         "id": "2e955977ced3678d",
         "type": "link in",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "link in 21",
         "links": [
             "8f4276e5d5d2c691",
             "ad7cb132ce33c700"
         ],
-        "x": 1815,
-        "y": 4300,
+        "x": 1535,
+        "y": 3460,
         "wires": [
             [
                 "7524a9b595ce57f5"
@@ -1454,12 +1456,12 @@
     {
         "id": "7524a9b595ce57f5",
         "type": "Flow Switch",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "",
         "set": true,
         "flowSwitch": "on",
-        "x": 1910,
-        "y": 4340,
+        "x": 1630,
+        "y": 3500,
         "wires": [
             [
                 "fd584f7157e8203a"
@@ -1469,7 +1471,7 @@
     {
         "id": "27623e31d910cde5",
         "type": "change",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "关闭流开关",
         "rules": [
             {
@@ -1492,8 +1494,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1670,
-        "y": 4340,
+        "x": 1390,
+        "y": 3500,
         "wires": [
             [
                 "7524a9b595ce57f5"
@@ -1503,14 +1505,14 @@
     {
         "id": "5275e6ef953b2bfd",
         "type": "link in",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "link in 22",
         "links": [
             "8f4276e5d5d2c691",
             "ad7cb132ce33c700"
         ],
-        "x": 1835,
-        "y": 4820,
+        "x": 1555,
+        "y": 3980,
         "wires": [
             [
                 "6fcf6d4d86bed9dd"
@@ -1520,12 +1522,12 @@
     {
         "id": "6fcf6d4d86bed9dd",
         "type": "Flow Switch",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "",
         "set": true,
         "flowSwitch": "on",
-        "x": 1930,
-        "y": 4860,
+        "x": 1650,
+        "y": 4020,
         "wires": [
             [
                 "dc3960920383e1d7"
@@ -1535,7 +1537,7 @@
     {
         "id": "60aea862c4af6317",
         "type": "change",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "关闭流开关",
         "rules": [
             {
@@ -1558,8 +1560,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1690,
-        "y": 4860,
+        "x": 1410,
+        "y": 4020,
         "wires": [
             [
                 "6fcf6d4d86bed9dd"
@@ -1569,14 +1571,14 @@
     {
         "id": "7d32bf1789eeb4e0",
         "type": "link in",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "link in 24",
         "links": [
             "8f4276e5d5d2c691",
             "ad7cb132ce33c700"
         ],
-        "x": 1715,
-        "y": 5660,
+        "x": 1435,
+        "y": 4820,
         "wires": [
             [
                 "d96f016174b9d3f4"
@@ -1586,12 +1588,12 @@
     {
         "id": "d96f016174b9d3f4",
         "type": "Flow Switch",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "",
         "set": true,
         "flowSwitch": "on",
-        "x": 1810,
-        "y": 5700,
+        "x": 1530,
+        "y": 4860,
         "wires": [
             [
                 "4dafd5679b6c2957"
@@ -1601,7 +1603,7 @@
     {
         "id": "cdce784e83e345fd",
         "type": "change",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "关闭流开关",
         "rules": [
             {
@@ -1624,8 +1626,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1550,
-        "y": 5700,
+        "x": 1270,
+        "y": 4860,
         "wires": [
             [
                 "d96f016174b9d3f4"
@@ -1635,7 +1637,7 @@
     {
         "id": "16cb4c25c6b6cdae",
         "type": "change",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "提取eui",
         "rules": [
             {
@@ -1651,8 +1653,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1000,
-        "y": 2960,
+        "x": 720,
+        "y": 2120,
         "wires": [
             [
                 "74c27cb8c94eb390",
@@ -1663,7 +1665,7 @@
     {
         "id": "68dae3ef9150828b",
         "type": "join",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "",
         "mode": "custom",
         "build": "array",
@@ -1680,8 +1682,8 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 1250,
-        "y": 2960,
+        "x": 970,
+        "y": 2120,
         "wires": [
             [
                 "24c847fee7e4a4ac",
@@ -1692,13 +1694,13 @@
     {
         "id": "74c27cb8c94eb390",
         "type": "Dev Shell",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "执行脚本：获取网关SN",
         "IP_Port": "10.6.6.6:18080",
         "identity": "BOM",
         "cmd": "/opt/gwConfig/Gateway_ExecutableScript/get_gwSN.sh",
-        "x": 630,
-        "y": 3040,
+        "x": 350,
+        "y": 2200,
         "wires": [
             [
                 "4e00e3582cdfc0d8",
@@ -1709,7 +1711,7 @@
     {
         "id": "4e00e3582cdfc0d8",
         "type": "function",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "封装获取md5的命令",
         "func": "\nconst sn = msg.payload.trim();\n\n\nmsg.payload = { shell: \"\" };\nmsg.payload.shell = `python3 /root/NodeRED-Computer-PartHardware/Executable-Script/Block-Burn/MD5_Config/getMD5.py -sn ${sn}`\n\nreturn msg;\n\n\n",
         "outputs": 1,
@@ -1718,8 +1720,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 880,
-        "y": 3040,
+        "x": 600,
+        "y": 2200,
         "wires": [
             [
                 "1cd6b57f6b371aad",
@@ -1730,7 +1732,7 @@
     {
         "id": "1cd6b57f6b371aad",
         "type": "exec",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "command": "",
         "addpay": "payload.shell",
         "append": "",
@@ -1739,8 +1741,8 @@
         "winHide": false,
         "oldrc": false,
         "name": "获取md5",
-        "x": 1080,
-        "y": 3040,
+        "x": 800,
+        "y": 2200,
         "wires": [
             [
                 "68dae3ef9150828b"
@@ -1756,7 +1758,7 @@
     {
         "id": "92899a9acc7b7c80",
         "type": "debug",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "debug 68",
         "active": true,
         "tosidebar": true,
@@ -1766,14 +1768,14 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 1260,
-        "y": 3040,
+        "x": 980,
+        "y": 2200,
         "wires": []
     },
     {
         "id": "fc40b943aab4bcad",
         "type": "debug",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "debug 69",
         "active": true,
         "tosidebar": true,
@@ -1783,14 +1785,14 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 1260,
-        "y": 3100,
+        "x": 980,
+        "y": 2260,
         "wires": []
     },
     {
         "id": "24c847fee7e4a4ac",
         "type": "function",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "封装烧录otp的命令",
         "func": "var band = global.get(\"band\");\nvar version = global.get(\"version\");\nconst mac = msg.payload[0];\nconst md5 = msg.payload[1];\n// const band = '868';\n// const version = '1.0';\n\nconst MD5_first14Chars = md5.substring(0, 14); // 获取md5的前14个字符\n\nmsg.payload = { shell: \"\" };\nmsg.payload.shell = `/opt/gwConfig/Gateway_ExecutableScript/burnOTP -band ${band} -hardware ${version} -mac ${mac} -md5 ${MD5_first14Chars}`\n\nreturn msg;\n\n\n",
         "outputs": 1,
@@ -1799,8 +1801,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1450,
-        "y": 2960,
+        "x": 1170,
+        "y": 2120,
         "wires": [
             [
                 "972dc8735f181d41",
@@ -1811,13 +1813,13 @@
     {
         "id": "972dc8735f181d41",
         "type": "Dev Shell",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "执行脚本：烧录otp",
         "IP_Port": "10.6.6.6:18080",
         "identity": "BOM",
         "cmd": "",
-        "x": 1690,
-        "y": 2960,
+        "x": 1410,
+        "y": 2120,
         "wires": [
             [
                 "a9a0a2d072bdaeee",
@@ -1828,7 +1830,7 @@
     {
         "id": "a9a0a2d072bdaeee",
         "type": "switch",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "烧录结果",
         "property": "payload",
         "propertyType": "msg",
@@ -1847,8 +1849,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1900,
-        "y": 2960,
+        "x": 1620,
+        "y": 2120,
         "wires": [
             [
                 "a5e216eeefcde855",
@@ -1863,7 +1865,7 @@
     {
         "id": "62d57e2fd3522f86",
         "type": "debug",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "debug 71",
         "active": true,
         "tosidebar": true,
@@ -1872,14 +1874,14 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1340,
-        "y": 2520,
+        "x": 1060,
+        "y": 1680,
         "wires": []
     },
     {
         "id": "c1e3bd3312d7dc48",
         "type": "debug",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "debug 72",
         "active": true,
         "tosidebar": true,
@@ -1888,14 +1890,14 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 940,
-        "y": 2520,
+        "x": 660,
+        "y": 1680,
         "wires": []
     },
     {
         "id": "815573c22b591ccc",
         "type": "debug",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "debug 73",
         "active": true,
         "tosidebar": true,
@@ -1904,14 +1906,14 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1420,
-        "y": 2900,
+        "x": 1140,
+        "y": 2060,
         "wires": []
     },
     {
         "id": "d5e95c27f1cfa47a",
         "type": "debug",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "debug 74",
         "active": true,
         "tosidebar": true,
@@ -1920,14 +1922,14 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1660,
-        "y": 3020,
+        "x": 1380,
+        "y": 2180,
         "wires": []
     },
     {
         "id": "019c355f8054a114",
         "type": "debug",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "debug 75",
         "active": true,
         "tosidebar": true,
@@ -1936,14 +1938,14 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1900,
-        "y": 3020,
+        "x": 1620,
+        "y": 2180,
         "wires": []
     },
     {
         "id": "670df58e7140c2b6",
         "type": "debug",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "debug 76",
         "active": true,
         "tosidebar": true,
@@ -1952,14 +1954,14 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2120,
-        "y": 3060,
+        "x": 1840,
+        "y": 2220,
         "wires": []
     },
     {
         "id": "fcc2463888793ed5",
         "type": "debug",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "debug 77",
         "active": true,
         "tosidebar": true,
@@ -1968,14 +1970,14 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2120,
-        "y": 3120,
+        "x": 1840,
+        "y": 2280,
         "wires": []
     },
     {
         "id": "0d70d706d7490880",
         "type": "debug",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "debug 78",
         "active": true,
         "tosidebar": true,
@@ -1984,14 +1986,14 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 840,
-        "y": 3100,
+        "x": 560,
+        "y": 2260,
         "wires": []
     },
     {
         "id": "c470390eb5fd3f42",
         "type": "debug",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "debug 79",
         "active": true,
         "tosidebar": true,
@@ -2000,14 +2002,14 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1080,
-        "y": 3100,
+        "x": 800,
+        "y": 2260,
         "wires": []
     },
     {
         "id": "3248cef78230d1fa",
         "type": "inject",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "",
         "props": [
             {
@@ -2025,8 +2027,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 730,
-        "y": 5180,
+        "x": 450,
+        "y": 4340,
         "wires": [
             [
                 "95a1f911fe6c536b"
@@ -2036,7 +2038,7 @@
     {
         "id": "049f1bf15b99c0f5",
         "type": "debug",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "debug 80",
         "active": true,
         "tosidebar": true,
@@ -2046,14 +2048,14 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 1400,
-        "y": 5020,
+        "x": 1000,
+        "y": 4460,
         "wires": []
     },
     {
         "id": "55b25c8f4d11f2bb",
         "type": "link out",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "link out 24",
         "mode": "link",
         "links": [
@@ -2061,14 +2063,14 @@
             "55d36906b1b34204",
             "e4b6d5165dcca9be"
         ],
-        "x": 1525,
-        "y": 1780,
+        "x": 1245,
+        "y": 940,
         "wires": []
     },
     {
         "id": "e850e56dab17e9c0",
         "type": "trigger",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "",
         "op1": "",
         "op2": "",
@@ -2082,8 +2084,8 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 730,
-        "y": 2320,
+        "x": 450,
+        "y": 1480,
         "wires": [
             [
                 "75bbea62717ebaad"
@@ -2093,12 +2095,12 @@
     {
         "id": "75bbea62717ebaad",
         "type": "Flow Switch",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "",
         "set": true,
         "flowSwitch": "off",
-        "x": 930,
-        "y": 2400,
+        "x": 650,
+        "y": 1560,
         "wires": [
             [
                 "31d9030ebc8af55c"
@@ -2108,7 +2110,7 @@
     {
         "id": "73f5788c8c02017b",
         "type": "change",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "关闭流开关",
         "rules": [
             {
@@ -2131,8 +2133,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 710,
-        "y": 2360,
+        "x": 430,
+        "y": 1520,
         "wires": [
             [
                 "75bbea62717ebaad"
@@ -2142,14 +2144,14 @@
     {
         "id": "799b8e15a0cd7849",
         "type": "link in",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "link in 25",
         "links": [
             "52152cce8135ccd2",
             "11ca648e5dadf3b9"
         ],
-        "x": 595,
-        "y": 2360,
+        "x": 315,
+        "y": 1520,
         "wires": [
             [
                 "73f5788c8c02017b"
@@ -2159,7 +2161,7 @@
     {
         "id": "56a07e1ac44696b5",
         "type": "change",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "打开流开关",
         "rules": [
             {
@@ -2182,8 +2184,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 710,
-        "y": 2400,
+        "x": 430,
+        "y": 1560,
         "wires": [
             [
                 "75bbea62717ebaad"
@@ -2193,13 +2195,13 @@
     {
         "id": "185b298776073fd9",
         "type": "link in",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "link in 26",
         "links": [
             "e26b2d609b9328c3"
         ],
-        "x": 445,
-        "y": 2400,
+        "x": 165,
+        "y": 1560,
         "wires": [
             [
                 "d10916e64429fd12"
@@ -2209,7 +2211,7 @@
     {
         "id": "3e91088d45fb9743",
         "type": "inject",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "",
         "props": [
             {
@@ -2227,8 +2229,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 1510,
-        "y": 3140,
+        "x": 1230,
+        "y": 2300,
         "wires": [
             [
                 "173a11c7a85b2b2c"
@@ -2238,7 +2240,7 @@
     {
         "id": "d10916e64429fd12",
         "type": "delay",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "",
         "pauseType": "delay",
         "timeout": "100",
@@ -2252,8 +2254,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 550,
-        "y": 2400,
+        "x": 270,
+        "y": 1560,
         "wires": [
             [
                 "56a07e1ac44696b5"
@@ -2263,27 +2265,27 @@
     {
         "id": "9d39a7a2cc112cc9",
         "type": "comment",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "烧录成功后，循环执行pwd，只要有回应就说明网关启动起来了，设计120s的超时机制",
         "info": "",
-        "x": 1180,
-        "y": 2340,
+        "x": 900,
+        "y": 1500,
         "wires": []
     },
     {
         "id": "632b825d58022ac1",
         "type": "comment",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "内置Shell服务器失败原因：1、USB连不进网关  2、内置Shell服务器服务出错",
         "info": "",
-        "x": 1770,
-        "y": 2420,
+        "x": 1490,
+        "y": 1580,
         "wires": []
     },
     {
         "id": "52152cce8135ccd2",
         "type": "link out",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "link out 25",
         "mode": "link",
         "links": [
@@ -2291,34 +2293,34 @@
             "d20b875bca7d94a0",
             "f5e8dee978510980"
         ],
-        "x": 1435,
-        "y": 2400,
+        "x": 1155,
+        "y": 1560,
         "wires": []
     },
     {
         "id": "7b1202b777f55108",
         "type": "comment",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "2、网关内置Shell服务器检测",
         "info": "",
-        "x": 700,
-        "y": 2280,
+        "x": 420,
+        "y": 1440,
         "wires": []
     },
     {
         "id": "5a2671b1bc956adc",
         "type": "comment",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "3、烧录otp并更新数据库",
         "info": "",
-        "x": 550,
-        "y": 2900,
+        "x": 270,
+        "y": 2060,
         "wires": []
     },
     {
         "id": "2e30f0844db3d51f",
         "type": "delay",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "",
         "pauseType": "delay",
         "timeout": "500",
@@ -2332,8 +2334,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 630,
-        "y": 1660,
+        "x": 350,
+        "y": 820,
         "wires": [
             [
                 "d3d4c84ec2836bea"
@@ -2343,7 +2345,7 @@
     {
         "id": "bb3159326af8632a",
         "type": "delay",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "",
         "pauseType": "delay",
         "timeout": "200",
@@ -2357,8 +2359,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 2050,
-        "y": 2480,
+        "x": 1770,
+        "y": 1640,
         "wires": [
             [
                 "11ca648e5dadf3b9"
@@ -2368,15 +2370,15 @@
     {
         "id": "d35e09a96eb458d1",
         "type": "link in",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "link in 27",
         "links": [
             "173a11c7a85b2b2c",
             "ad7cb132ce33c700",
             "e9f21b1405633dde"
         ],
-        "x": 775,
-        "y": 3580,
+        "x": 495,
+        "y": 2740,
         "wires": [
             [
                 "03d9a9eb6742f451"
@@ -2386,7 +2388,7 @@
     {
         "id": "ec028756667ee43e",
         "type": "change",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "超时！网关测试中存在测试项超时",
         "rules": [
             {
@@ -2402,8 +2404,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1360,
-        "y": 3660,
+        "x": 1080,
+        "y": 2820,
         "wires": [
             [
                 "ad7cb132ce33c700"
@@ -2413,7 +2415,7 @@
     {
         "id": "03d9a9eb6742f451",
         "type": "trigger",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "",
         "op1": "",
         "op2": "",
@@ -2427,8 +2429,8 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 900,
-        "y": 3580,
+        "x": 620,
+        "y": 2740,
         "wires": [
             [
                 "4126e165795a7451"
@@ -2438,12 +2440,12 @@
     {
         "id": "4126e165795a7451",
         "type": "Flow Switch",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "",
         "set": true,
         "flowSwitch": "off",
-        "x": 1110,
-        "y": 3660,
+        "x": 830,
+        "y": 2820,
         "wires": [
             [
                 "ec028756667ee43e"
@@ -2453,7 +2455,7 @@
     {
         "id": "399d2ad9bfaca0ec",
         "type": "change",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "关闭流开关",
         "rules": [
             {
@@ -2476,8 +2478,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 890,
-        "y": 3620,
+        "x": 610,
+        "y": 2780,
         "wires": [
             [
                 "4126e165795a7451"
@@ -2487,14 +2489,14 @@
     {
         "id": "8a928dcf46e2ff7d",
         "type": "link in",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "link in 28",
         "links": [
             "ad7cb132ce33c700",
             "e9f21b1405633dde"
         ],
-        "x": 775,
-        "y": 3620,
+        "x": 495,
+        "y": 2780,
         "wires": [
             [
                 "399d2ad9bfaca0ec"
@@ -2504,7 +2506,7 @@
     {
         "id": "16bcc94cc80e0ac1",
         "type": "change",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "打开流开关",
         "rules": [
             {
@@ -2527,8 +2529,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 890,
-        "y": 3660,
+        "x": 610,
+        "y": 2820,
         "wires": [
             [
                 "4126e165795a7451"
@@ -2538,13 +2540,13 @@
     {
         "id": "cdbac96470b8311f",
         "type": "link in",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "link in 29",
         "links": [
             "173a11c7a85b2b2c"
         ],
-        "x": 615,
-        "y": 3660,
+        "x": 335,
+        "y": 2820,
         "wires": [
             [
                 "a5f11271448e124d"
@@ -2554,7 +2556,7 @@
     {
         "id": "a5f11271448e124d",
         "type": "delay",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "",
         "pauseType": "delay",
         "timeout": "100",
@@ -2568,8 +2570,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 730,
-        "y": 3660,
+        "x": 450,
+        "y": 2820,
         "wires": [
             [
                 "16bcc94cc80e0ac1"
@@ -2579,17 +2581,17 @@
     {
         "id": "be449c005cfec519",
         "type": "comment",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "网关测试项目中的超时机制",
         "info": "",
-        "x": 870,
-        "y": 3540,
+        "x": 590,
+        "y": 2700,
         "wires": []
     },
     {
         "id": "ad7cb132ce33c700",
         "type": "link out",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "link out 26",
         "mode": "link",
         "links": [
@@ -2608,46 +2610,47 @@
             "78e70cacd747b591",
             "8a76d81f6fe29baa",
             "4570fd3508c2d88c",
-            "89086222637a3766"
+            "89086222637a3766",
+            "a8dbd4bc60febcbc"
         ],
-        "x": 1575,
-        "y": 3660,
+        "x": 1295,
+        "y": 2820,
         "wires": []
     },
     {
         "id": "bdc03341a2940ee3",
         "type": "comment",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "WIFI测试",
         "info": "",
-        "x": 680,
-        "y": 3840,
+        "x": 400,
+        "y": 3000,
         "wires": []
     },
     {
         "id": "90b0afe35f51d7dc",
         "type": "comment",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "以太网测试",
         "info": "",
-        "x": 760,
-        "y": 4300,
+        "x": 480,
+        "y": 3460,
         "wires": []
     },
     {
         "id": "c66c4f61f32aa266",
         "type": "comment",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "4G联网测试",
         "info": "",
-        "x": 710,
-        "y": 4820,
+        "x": 430,
+        "y": 3980,
         "wires": []
     },
     {
         "id": "5efd4311dd7ec5f4",
         "type": "link in",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "link in 16",
         "links": [
             "173a11c7a85b2b2c",
@@ -2657,8 +2660,8 @@
             "ad7cb132ce33c700",
             "c1d570de4198e790"
         ],
-        "x": 545,
-        "y": 5100,
+        "x": 265,
+        "y": 4260,
         "wires": [
             [
                 "cb36d058bc546613"
@@ -2668,17 +2671,17 @@
     {
         "id": "203d346507ccd377",
         "type": "comment",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "4G信号测试",
         "info": "",
-        "x": 670,
-        "y": 5060,
+        "x": 390,
+        "y": 4220,
         "wires": []
     },
     {
         "id": "88760a199733749a",
         "type": "change",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "停止循环",
         "rules": [
             {
@@ -2694,8 +2697,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1260,
-        "y": 5220,
+        "x": 1000,
+        "y": 4420,
         "wires": [
             [
                 "c1d570de4198e790"
@@ -2705,47 +2708,47 @@
     {
         "id": "c1d570de4198e790",
         "type": "link out",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "link out 27",
         "mode": "link",
         "links": [
             "5efd4311dd7ec5f4",
             "90045b0f9c1fae5f"
         ],
-        "x": 1375,
-        "y": 5220,
+        "x": 1115,
+        "y": 4420,
         "wires": []
     },
     {
         "id": "d9bdc37e1504ccd7",
         "type": "comment",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "LoRa接收测试",
         "info": "",
-        "x": 530,
-        "y": 5660,
+        "x": 250,
+        "y": 4820,
         "wires": []
     },
     {
         "id": "1e37fcfa78341c86",
         "type": "comment",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "只有NFC测试成功才会：从网关固件中删除测试文件",
         "info": "",
-        "x": 750,
-        "y": 6660,
+        "x": 470,
+        "y": 5820,
         "wires": []
     },
     {
         "id": "c99276dfded9359c",
         "type": "Dev Shell",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "测试NFC",
         "IP_Port": "10.6.6.6:18080",
         "identity": "BOM",
         "cmd": "/opt/gwConfig/Gateway_ExecutableScript/listen_nfc_7151.sh",
-        "x": 1280,
-        "y": 6280,
+        "x": 1000,
+        "y": 5440,
         "wires": [
             [
                 "068cf12c94e13527",
@@ -2756,7 +2759,7 @@
     {
         "id": "068cf12c94e13527",
         "type": "debug",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "debug 70",
         "active": true,
         "tosidebar": true,
@@ -2766,14 +2769,14 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 1380,
-        "y": 6380,
+        "x": 1100,
+        "y": 5540,
         "wires": []
     },
     {
         "id": "4570fd3508c2d88c",
         "type": "link in",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "link in 32",
         "links": [
             "173a11c7a85b2b2c",
@@ -2782,8 +2785,8 @@
             "ad7cb132ce33c700",
             "9dc609d5446d4e4f"
         ],
-        "x": 525,
-        "y": 6280,
+        "x": 245,
+        "y": 5440,
         "wires": [
             [
                 "3b0dee26712b5513"
@@ -2793,7 +2796,7 @@
     {
         "id": "aa9b9d7db94a775b",
         "type": "switch",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "NFC标签到达",
         "property": "payload.method",
         "propertyType": "msg",
@@ -2807,8 +2810,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 1460,
-        "y": 6280,
+        "x": 1180,
+        "y": 5440,
         "wires": [
             [
                 "299807d69583b72f",
@@ -2820,7 +2823,7 @@
     {
         "id": "299807d69583b72f",
         "type": "change",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "停止循环",
         "rules": [
             {
@@ -2836,8 +2839,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1660,
-        "y": 6240,
+        "x": 1380,
+        "y": 5400,
         "wires": [
             [
                 "9dc609d5446d4e4f"
@@ -2847,27 +2850,27 @@
     {
         "id": "9dc609d5446d4e4f",
         "type": "link out",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "link out 29",
         "mode": "link",
         "links": [
             "90045b0f9c1fae5f",
             "4570fd3508c2d88c"
         ],
-        "x": 1765,
-        "y": 6240,
+        "x": 1485,
+        "y": 5400,
         "wires": []
     },
     {
         "id": "c8b4457fea6d4165",
         "type": "Dev Shell",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "停止AS服务",
         "IP_Port": "10.6.6.6:18080",
         "identity": "BOM",
         "cmd": "systemctl stop chirpstack-application-server",
-        "x": 990,
-        "y": 6280,
+        "x": 710,
+        "y": 5440,
         "wires": [
             [
                 "b20a43661cf0c51a",
@@ -2878,7 +2881,7 @@
     {
         "id": "3b0dee26712b5513",
         "type": "delay",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "",
         "pauseType": "delay",
         "timeout": "1",
@@ -2892,8 +2895,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 840,
-        "y": 6280,
+        "x": 560,
+        "y": 5440,
         "wires": [
             [
                 "c8b4457fea6d4165"
@@ -2903,7 +2906,7 @@
     {
         "id": "b20a43661cf0c51a",
         "type": "delay",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "",
         "pauseType": "delay",
         "timeout": "1",
@@ -2917,8 +2920,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 1140,
-        "y": 6280,
+        "x": 860,
+        "y": 5440,
         "wires": [
             [
                 "c99276dfded9359c"
@@ -2928,7 +2931,7 @@
     {
         "id": "8057aab4099876dc",
         "type": "inject",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "",
         "props": [
             {
@@ -2946,8 +2949,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 510,
-        "y": 6320,
+        "x": 230,
+        "y": 5480,
         "wires": [
             [
                 "3b0dee26712b5513"
@@ -2957,7 +2960,7 @@
     {
         "id": "61386407158297de",
         "type": "debug",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "debug 93",
         "active": true,
         "tosidebar": true,
@@ -2967,14 +2970,14 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 1080,
-        "y": 6380,
+        "x": 800,
+        "y": 5540,
         "wires": []
     },
     {
         "id": "99f9631ca44c62f0",
         "type": "switch",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "检测到SIM卡",
         "property": "payload.SIMInsert",
         "propertyType": "msg",
@@ -2986,8 +2989,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 1270,
-        "y": 5100,
+        "x": 1010,
+        "y": 4300,
         "wires": [
             [
                 "7ce3216dec3438ad",
@@ -2998,7 +3001,7 @@
     {
         "id": "57338d2768fe6be0",
         "type": "switch",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "未检测到SIM卡",
         "property": "payload.SIMInsert",
         "propertyType": "msg",
@@ -3010,8 +3013,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 1280,
-        "y": 5140,
+        "x": 1020,
+        "y": 4340,
         "wires": [
             [
                 "e5d264b36c1747ef",
@@ -3022,7 +3025,7 @@
     {
         "id": "fea84c76e54ff6cb",
         "type": "inject",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "",
         "props": [
             {
@@ -3040,8 +3043,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 750,
-        "y": 4960,
+        "x": 470,
+        "y": 4120,
         "wires": [
             [
                 "09d8f33f8ede3ad9"
@@ -3051,7 +3054,1005 @@
     {
         "id": "b6901ace134487bd",
         "type": "inject",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 270,
+        "y": 4940,
+        "wires": [
+            [
+                "31b2db33b7fbae5b"
+            ]
+        ]
+    },
+    {
+        "id": "30a79fce0e84947a",
+        "type": "comment",
+        "z": "9cc9bee3c9890942",
+        "name": "NFC测试",
+        "info": "",
+        "x": 360,
+        "y": 5400,
+        "wires": []
+    },
+    {
+        "id": "4bae5a553e30db5e",
+        "type": "inject",
+        "z": "9cc9bee3c9890942",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 490,
+        "y": 3580,
+        "wires": [
+            [
+                "78536076bec343bd"
+            ]
+        ]
+    },
+    {
+        "id": "60440ee4afab9b82",
+        "type": "delay",
+        "z": "9cc9bee3c9890942",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "20",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1850,
+        "y": 780,
+        "wires": [
+            [
+                "34355ceb5a0d4d45"
+            ]
+        ]
+    },
+    {
+        "id": "9e0bd1d03cfa8d74",
+        "type": "change",
+        "z": "9cc9bee3c9890942",
+        "name": "改变TEXT属性（LCD显示烧录进度）",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload.progress",
+                "pt": "msg",
+                "to": "payload.text_content",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1390,
+        "y": 820,
+        "wires": [
+            [
+                "7f027b1c0a3ca7b5"
+            ]
+        ]
+    },
+    {
+        "id": "7f027b1c0a3ca7b5",
+        "type": "function",
+        "z": "9cc9bee3c9890942",
+        "name": "lcd显示烧录进度",
+        "func": "\n\n// 提取数字部分\nconst numberString = msg.payload.text_content.replace(\"%\", \"\");\n\n// 将提取出的数字转换为整数类型\nconst number = parseInt(numberString, 10);\n\nconsole.log(number); // 输出: 50\nconsole.log(typeof number); // 输出: number\n\n\nif (number % 2 === 0) {\n    msg.payload.text_content = `${number}%`\n    return msg\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1660,
+        "y": 820,
+        "wires": [
+            [
+                "60440ee4afab9b82",
+                "f7ef96c2dde9d53c"
+            ]
+        ]
+    },
+    {
+        "id": "0e9930e22cd3aeeb",
+        "type": "comment",
+        "z": "9cc9bee3c9890942",
+        "name": "band：地区频段        version：硬件版本",
+        "info": "",
+        "x": 600,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "f7ef96c2dde9d53c",
+        "type": "link out",
+        "z": "9cc9bee3c9890942",
+        "name": "link out 30",
+        "mode": "link",
+        "links": [
+            "e4d94e1d0e7584e5"
+        ],
+        "x": 1955,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "34355ceb5a0d4d45",
+        "type": "link out",
+        "z": "9cc9bee3c9890942",
+        "name": "link out 31",
+        "mode": "link",
+        "links": [
+            "478403bb64c335a6"
+        ],
+        "x": 1955,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "b599a4a336eef5d7",
+        "type": "link out",
+        "z": "9cc9bee3c9890942",
+        "name": "link out 32",
+        "mode": "link",
+        "links": [
+            "3a0bd5f330c6090b",
+            "f95fc7b90febd184",
+            "58d97038e8acf7ed",
+            "4e1984d91cb00e5c",
+            "d1e5041afbf02571",
+            "e9d7c48dfa9aa2b1",
+            "40e2024c6f6ea79f",
+            "f2a8f6c596de21d9",
+            "6cfa49b49e8703a0"
+        ],
+        "x": 965,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "6867210146eb9631",
+        "type": "debug",
+        "z": "9cc9bee3c9890942",
+        "name": "debug-烧录的错误信息",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1320,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "c160301053fa54ee",
+        "type": "debug",
+        "z": "9cc9bee3c9890942",
+        "name": "debug-烧录进度",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1300,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "964242dd8f258699",
+        "type": "comment",
+        "z": "9cc9bee3c9890942",
+        "name": "烧录成功后触发",
+        "info": "",
+        "x": 1360,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "badb77f710dbbb83",
+        "type": "comment",
+        "z": "9cc9bee3c9890942",
+        "name": "烧录失败后触发",
+        "info": "",
+        "x": 1360,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "0ac585ab2690ae97",
+        "type": "catch",
+        "z": "9cc9bee3c9890942",
+        "name": "捕获：网络数据库连接错误的信息",
+        "scope": [
+            "1da51626fdf12931",
+            "8d796dce1fbf9fed",
+            "99ed7e5eb8bb0d44"
+        ],
+        "uncaught": false,
+        "x": 590,
+        "y": 2020,
+        "wires": [
+            [
+                "20eca39a491ce46a"
+            ]
+        ]
+    },
+    {
+        "id": "20eca39a491ce46a",
+        "type": "link out",
+        "z": "9cc9bee3c9890942",
+        "name": "link out 33",
+        "mode": "link",
+        "links": [
+            "d123c9c2485b2891"
+        ],
+        "x": 755,
+        "y": 2020,
+        "wires": []
+    },
+    {
+        "id": "f3207884b0a7d4e1",
+        "type": "link out",
+        "z": "9cc9bee3c9890942",
+        "name": "link out 35",
+        "mode": "link",
+        "links": [
+            "9e8246e34f6128f4"
+        ],
+        "x": 1815,
+        "y": 2140,
+        "wires": []
+    },
+    {
+        "id": "e698621c23af0a84",
+        "type": "link out",
+        "z": "9cc9bee3c9890942",
+        "name": "link out 36",
+        "mode": "link",
+        "links": [
+            "51b7bf0bc77ab561"
+        ],
+        "x": 1345,
+        "y": 3120,
+        "wires": []
+    },
+    {
+        "id": "71e0d5e547ced05d",
+        "type": "link out",
+        "z": "9cc9bee3c9890942",
+        "name": "link out 37",
+        "mode": "link",
+        "links": [
+            "048de92d1628a983"
+        ],
+        "x": 1755,
+        "y": 3040,
+        "wires": []
+    },
+    {
+        "id": "3eea298835b61ec2",
+        "type": "comment",
+        "z": "9cc9bee3c9890942",
+        "name": "WIFI测试超时",
+        "info": "",
+        "x": 1670,
+        "y": 3000,
+        "wires": []
+    },
+    {
+        "id": "65c0bc9be752c7c7",
+        "type": "link out",
+        "z": "9cc9bee3c9890942",
+        "name": "link out 38",
+        "mode": "link",
+        "links": [
+            "7ece91017f1d4cd5"
+        ],
+        "x": 1335,
+        "y": 3580,
+        "wires": []
+    },
+    {
+        "id": "fd584f7157e8203a",
+        "type": "link out",
+        "z": "9cc9bee3c9890942",
+        "name": "link out 39",
+        "mode": "link",
+        "links": [
+            "548689c39c8b4c8b"
+        ],
+        "x": 1755,
+        "y": 3500,
+        "wires": []
+    },
+    {
+        "id": "7ce3216dec3438ad",
+        "type": "link out",
+        "z": "9cc9bee3c9890942",
+        "name": "link out 40",
+        "mode": "link",
+        "links": [
+            "d8e6057013781797"
+        ],
+        "x": 1255,
+        "y": 4300,
+        "wires": []
+    },
+    {
+        "id": "c134a5d3712d56f1",
+        "type": "link out",
+        "z": "9cc9bee3c9890942",
+        "name": "link out 41",
+        "mode": "link",
+        "links": [
+            "4790b67bad2d2656"
+        ],
+        "x": 1255,
+        "y": 4380,
+        "wires": []
+    },
+    {
+        "id": "e5d264b36c1747ef",
+        "type": "link out",
+        "z": "9cc9bee3c9890942",
+        "name": "link out 42",
+        "mode": "link",
+        "links": [
+            "0f16f6ef7ee3b769"
+        ],
+        "x": 1255,
+        "y": 4340,
+        "wires": []
+    },
+    {
+        "id": "12277e16dd066d64",
+        "type": "function",
+        "z": "9cc9bee3c9890942",
+        "name": "获取4G测试中的信噪比snr",
+        "func": "\nconst snr = msg.payload.snr\n\nmsg.payload = {'text_content': \"\"}\nmsg.payload['text_content'] = `${snr}`\nreturn msg\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1060,
+        "y": 4380,
+        "wires": [
+            [
+                "c134a5d3712d56f1",
+                "70303480f62f4224"
+            ]
+        ]
+    },
+    {
+        "id": "dc3960920383e1d7",
+        "type": "link out",
+        "z": "9cc9bee3c9890942",
+        "name": "link out 43",
+        "mode": "link",
+        "links": [
+            "85190dac56c964c9"
+        ],
+        "x": 1775,
+        "y": 4020,
+        "wires": []
+    },
+    {
+        "id": "1177fc5d79552ca0",
+        "type": "comment",
+        "z": "9cc9bee3c9890942",
+        "name": "ETH测试超时",
+        "info": "",
+        "x": 1670,
+        "y": 3460,
+        "wires": []
+    },
+    {
+        "id": "c4a83864bd3e1a58",
+        "type": "comment",
+        "z": "9cc9bee3c9890942",
+        "name": "4G测试超时",
+        "info": "",
+        "x": 1690,
+        "y": 3980,
+        "wires": []
+    },
+    {
+        "id": "9f3caa90d90e57cb",
+        "type": "function",
+        "z": "9cc9bee3c9890942",
+        "name": "获取LoRa测试中的信噪比snr",
+        "func": "\nconst snr = msg.payload.snr_avg\n\nmsg.payload = {'text_content': \"\"}\nmsg.payload['text_content'] = snr\nreturn msg\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1320,
+        "y": 4940,
+        "wires": [
+            [
+                "397ef37548ee085b"
+            ]
+        ]
+    },
+    {
+        "id": "397ef37548ee085b",
+        "type": "link out",
+        "z": "9cc9bee3c9890942",
+        "name": "link out 44",
+        "mode": "link",
+        "links": [
+            "138133b87e5fc5a8"
+        ],
+        "x": 1495,
+        "y": 4940,
+        "wires": []
+    },
+    {
+        "id": "4dafd5679b6c2957",
+        "type": "link out",
+        "z": "9cc9bee3c9890942",
+        "name": "link out 45",
+        "mode": "link",
+        "links": [
+            "33caac65a1cdc82a"
+        ],
+        "x": 1675,
+        "y": 4860,
+        "wires": []
+    },
+    {
+        "id": "be0ee4795e2749aa",
+        "type": "comment",
+        "z": "9cc9bee3c9890942",
+        "name": "LoRa测试超时",
+        "info": "",
+        "x": 1650,
+        "y": 4800,
+        "wires": []
+    },
+    {
+        "id": "8a76d81f6fe29baa",
+        "type": "link in",
+        "z": "9cc9bee3c9890942",
+        "name": "link in 30",
+        "links": [
+            "ad7cb132ce33c700"
+        ],
+        "x": 45,
+        "y": 4740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8f6447a9db0cf7a6",
+        "type": "change",
+        "z": "9cc9bee3c9890942",
+        "name": "所有项检测成功：最后一步刷取NFC成功后停止网关测试的超时检测",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "reset",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 5860,
+        "wires": [
+            [
+                "e9f21b1405633dde"
+            ]
+        ]
+    },
+    {
+        "id": "e9f21b1405633dde",
+        "type": "link out",
+        "z": "9cc9bee3c9890942",
+        "name": "link out 28",
+        "mode": "link",
+        "links": [
+            "d35e09a96eb458d1",
+            "8a928dcf46e2ff7d",
+            "e957e889b944c764"
+        ],
+        "x": 815,
+        "y": 5860,
+        "wires": []
+    },
+    {
+        "id": "a7f9b592394d5b90",
+        "type": "link in",
+        "z": "9cc9bee3c9890942",
+        "name": "link in 60",
+        "links": [
+            "7b62a081e07868e0"
+        ],
+        "x": 245,
+        "y": 5860,
+        "wires": [
+            [
+                "8f6447a9db0cf7a6"
+            ]
+        ]
+    },
+    {
+        "id": "00f837ea87186bc8",
+        "type": "Dev Shell",
+        "z": "9cc9bee3c9890942",
+        "name": "挂载镜像",
+        "IP_Port": "10.6.6.6:18080",
+        "identity": "BOM",
+        "cmd": "mount /dev/mmcblk1p5 /mnt/",
+        "x": 520,
+        "y": 5920,
+        "wires": [
+            [
+                "936c877f502c5851"
+            ]
+        ]
+    },
+    {
+        "id": "546a03a3e18e5511",
+        "type": "Dev Shell",
+        "z": "9cc9bee3c9890942",
+        "name": "删除网关内置Shell服务器的开机自启动服务",
+        "IP_Port": "10.6.6.6:18080",
+        "identity": "BOM",
+        "cmd": "rm /mnt/etc/systemd/system/multi-user.target.wants/internalShellServer.service",
+        "x": 950,
+        "y": 5920,
+        "wires": [
+            [
+                "f10c7626c6afb446"
+            ]
+        ]
+    },
+    {
+        "id": "bd98fa46c4e080a1",
+        "type": "Dev Shell",
+        "z": "9cc9bee3c9890942",
+        "name": "删除网关内置的量产测试文件",
+        "IP_Port": "10.6.6.6:18080",
+        "identity": "BOM",
+        "cmd": "rm /mnt/opt/gwConfig -rf",
+        "x": 1440,
+        "y": 5920,
+        "wires": [
+            [
+                "7ed3305d44ee90fc"
+            ]
+        ]
+    },
+    {
+        "id": "536b380368f219b5",
+        "type": "Dev Shell",
+        "z": "9cc9bee3c9890942",
+        "name": "删除网关内置Shell服务器",
+        "IP_Port": "10.6.6.6:18080",
+        "identity": "BOM",
+        "cmd": "rm /mnt/lib/systemd/system/internalShellServer.service",
+        "x": 650,
+        "y": 5980,
+        "wires": [
+            [
+                "b41c362ec5ff5664"
+            ]
+        ]
+    },
+    {
+        "id": "9dfbfd410bc146a9",
+        "type": "Dev Shell",
+        "z": "9cc9bee3c9890942",
+        "name": "卸载镜像",
+        "IP_Port": "10.6.6.6:18080",
+        "identity": "BOM",
+        "cmd": "umount /mnt/",
+        "x": 1040,
+        "y": 5980,
+        "wires": [
+            [
+                "41e5bad85454424c"
+            ]
+        ]
+    },
+    {
+        "id": "faa7e6cdc44ce1b2",
+        "type": "delay",
+        "z": "9cc9bee3c9890942",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 360,
+        "y": 5920,
+        "wires": [
+            [
+                "00f837ea87186bc8"
+            ]
+        ]
+    },
+    {
+        "id": "936c877f502c5851",
+        "type": "delay",
+        "z": "9cc9bee3c9890942",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 680,
+        "y": 5920,
+        "wires": [
+            [
+                "546a03a3e18e5511"
+            ]
+        ]
+    },
+    {
+        "id": "f10c7626c6afb446",
+        "type": "delay",
+        "z": "9cc9bee3c9890942",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1220,
+        "y": 5920,
+        "wires": [
+            [
+                "bd98fa46c4e080a1"
+            ]
+        ]
+    },
+    {
+        "id": "7ed3305d44ee90fc",
+        "type": "delay",
+        "z": "9cc9bee3c9890942",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 420,
+        "y": 5980,
+        "wires": [
+            [
+                "536b380368f219b5"
+            ]
+        ]
+    },
+    {
+        "id": "b41c362ec5ff5664",
+        "type": "delay",
+        "z": "9cc9bee3c9890942",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 860,
+        "y": 5980,
+        "wires": [
+            [
+                "9dfbfd410bc146a9"
+            ]
+        ]
+    },
+    {
+        "id": "9affe65f955995c7",
+        "type": "Dev Shell",
+        "z": "9cc9bee3c9890942",
+        "name": "网关恢复出厂设置",
+        "IP_Port": "10.6.6.6:18080",
+        "identity": "BOM",
+        "cmd": "/gw/bin/recovery.sh",
+        "x": 1450,
+        "y": 5980,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "41e5bad85454424c",
+        "type": "delay",
+        "z": "9cc9bee3c9890942",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1260,
+        "y": 5980,
+        "wires": [
+            [
+                "9affe65f955995c7"
+            ]
+        ]
+    },
+    {
+        "id": "e957e889b944c764",
+        "type": "link in",
+        "z": "9cc9bee3c9890942",
+        "name": "link in 34",
+        "links": [
+            "e9f21b1405633dde"
+        ],
+        "x": 245,
+        "y": 5920,
+        "wires": [
+            [
+                "faa7e6cdc44ce1b2"
+            ]
+        ]
+    },
+    {
+        "id": "a2dc4b94b1947d04",
+        "type": "comment",
+        "z": "9cc9bee3c9890942",
+        "name": "量产测试前：设置otp参数",
+        "info": "",
+        "x": 570,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "2dce77b19f2efbee",
+        "type": "inject",
+        "z": "9cc9bee3c9890942",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1030,
+        "y": 1020,
+        "wires": [
+            [
+                "e26b2d609b9328c3"
+            ]
+        ]
+    },
+    {
+        "id": "c9677d0bfd771aa1",
+        "type": "debug",
+        "z": "9cc9bee3c9890942",
+        "name": "debug 94",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 950,
+        "y": 3120,
+        "wires": []
+    },
+    {
+        "id": "3f64933029b782fd",
+        "type": "debug",
+        "z": "9cc9bee3c9890942",
+        "name": "debug 95",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1380,
+        "y": 3160,
+        "wires": []
+    },
+    {
+        "id": "1b81219f4d3f40f6",
+        "type": "debug",
+        "z": "9cc9bee3c9890942",
+        "name": "debug 96",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1020,
+        "y": 3580,
+        "wires": []
+    },
+    {
+        "id": "ac502d3141914b40",
+        "type": "debug",
+        "z": "9cc9bee3c9890942",
+        "name": "debug 97",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1460,
+        "y": 3600,
+        "wires": []
+    },
+    {
+        "id": "ae1caaf6a74ff089",
+        "type": "debug",
+        "z": "9cc9bee3c9890942",
+        "name": "debug 98",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 980,
+        "y": 4100,
+        "wires": []
+    },
+    {
+        "id": "a22d7df9f8787775",
+        "type": "debug",
+        "z": "9cc9bee3c9890942",
+        "name": "debug 99",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 980,
+        "y": 4800,
+        "wires": []
+    },
+    {
+        "id": "171fb40fc83c201b",
+        "type": "debug",
+        "z": "9cc9bee3c9890942",
+        "name": "debug 100",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1290,
+        "y": 4780,
+        "wires": []
+    },
+    {
+        "id": "bf99aa831e8270ce",
+        "type": "inject",
+        "z": "9cc9bee3c9890942",
         "name": "",
         "props": [
             {
@@ -3070,1018 +4071,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 550,
-        "y": 5780,
-        "wires": [
-            [
-                "31b2db33b7fbae5b"
-            ]
-        ]
-    },
-    {
-        "id": "30a79fce0e84947a",
-        "type": "comment",
-        "z": "4701b8940aeb2fea",
-        "name": "NFC测试",
-        "info": "",
-        "x": 640,
-        "y": 6240,
-        "wires": []
-    },
-    {
-        "id": "4bae5a553e30db5e",
-        "type": "inject",
-        "z": "4701b8940aeb2fea",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 770,
-        "y": 4420,
-        "wires": [
-            [
-                "78536076bec343bd"
-            ]
-        ]
-    },
-    {
-        "id": "60440ee4afab9b82",
-        "type": "delay",
-        "z": "4701b8940aeb2fea",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "20",
-        "timeoutUnits": "milliseconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 2130,
-        "y": 1620,
-        "wires": [
-            [
-                "34355ceb5a0d4d45"
-            ]
-        ]
-    },
-    {
-        "id": "9e0bd1d03cfa8d74",
-        "type": "change",
-        "z": "4701b8940aeb2fea",
-        "name": "改变TEXT属性（LCD显示烧录进度）",
-        "rules": [
-            {
-                "t": "move",
-                "p": "payload.progress",
-                "pt": "msg",
-                "to": "payload.text_content",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1670,
-        "y": 1660,
-        "wires": [
-            [
-                "7f027b1c0a3ca7b5"
-            ]
-        ]
-    },
-    {
-        "id": "7f027b1c0a3ca7b5",
-        "type": "function",
-        "z": "4701b8940aeb2fea",
-        "name": "lcd显示烧录进度",
-        "func": "\n\n// 提取数字部分\nconst numberString = msg.payload.text_content.replace(\"%\", \"\");\n\n// 将提取出的数字转换为整数类型\nconst number = parseInt(numberString, 10);\n\nconsole.log(number); // 输出: 50\nconsole.log(typeof number); // 输出: number\n\n\nif (number % 2 === 0) {\n    msg.payload.text_content = `${number}%`\n    return msg\n}",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1940,
-        "y": 1660,
-        "wires": [
-            [
-                "60440ee4afab9b82",
-                "f7ef96c2dde9d53c"
-            ]
-        ]
-    },
-    {
-        "id": "0e9930e22cd3aeeb",
-        "type": "comment",
-        "z": "4701b8940aeb2fea",
-        "name": "band：地区频段        version：硬件版本",
-        "info": "",
-        "x": 880,
-        "y": 1120,
-        "wires": []
-    },
-    {
-        "id": "f7ef96c2dde9d53c",
-        "type": "link out",
-        "z": "4701b8940aeb2fea",
-        "name": "link out 30",
-        "mode": "link",
-        "links": [
-            "e4d94e1d0e7584e5"
-        ],
-        "x": 2235,
-        "y": 1660,
-        "wires": []
-    },
-    {
-        "id": "34355ceb5a0d4d45",
-        "type": "link out",
-        "z": "4701b8940aeb2fea",
-        "name": "link out 31",
-        "mode": "link",
-        "links": [
-            "478403bb64c335a6"
-        ],
-        "x": 2235,
-        "y": 1620,
-        "wires": []
-    },
-    {
-        "id": "b599a4a336eef5d7",
-        "type": "link out",
-        "z": "4701b8940aeb2fea",
-        "name": "link out 32",
-        "mode": "link",
-        "links": [],
-        "x": 1245,
-        "y": 1560,
-        "wires": []
-    },
-    {
-        "id": "6867210146eb9631",
-        "type": "debug",
-        "z": "4701b8940aeb2fea",
-        "name": "debug-烧录的错误信息",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "payload",
-        "statusType": "auto",
-        "x": 1600,
-        "y": 1880,
-        "wires": []
-    },
-    {
-        "id": "c160301053fa54ee",
-        "type": "debug",
-        "z": "4701b8940aeb2fea",
-        "name": "debug-烧录进度",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "payload",
-        "statusType": "auto",
-        "x": 1580,
-        "y": 1840,
-        "wires": []
-    },
-    {
-        "id": "964242dd8f258699",
-        "type": "comment",
-        "z": "4701b8940aeb2fea",
-        "name": "烧录成功后触发",
-        "info": "",
-        "x": 1640,
-        "y": 1720,
-        "wires": []
-    },
-    {
-        "id": "badb77f710dbbb83",
-        "type": "comment",
-        "z": "4701b8940aeb2fea",
-        "name": "烧录失败后触发",
-        "info": "",
-        "x": 1640,
-        "y": 1780,
-        "wires": []
-    },
-    {
-        "id": "0ac585ab2690ae97",
-        "type": "catch",
-        "z": "4701b8940aeb2fea",
-        "name": "捕获：网络数据库连接错误的信息",
-        "scope": [
-            "1da51626fdf12931",
-            "8d796dce1fbf9fed",
-            "99ed7e5eb8bb0d44"
-        ],
-        "uncaught": false,
-        "x": 870,
-        "y": 2860,
-        "wires": [
-            [
-                "20eca39a491ce46a"
-            ]
-        ]
-    },
-    {
-        "id": "20eca39a491ce46a",
-        "type": "link out",
-        "z": "4701b8940aeb2fea",
-        "name": "link out 33",
-        "mode": "link",
-        "links": [
-            "d123c9c2485b2891"
-        ],
-        "x": 1035,
-        "y": 2860,
-        "wires": []
-    },
-    {
-        "id": "f3207884b0a7d4e1",
-        "type": "link out",
-        "z": "4701b8940aeb2fea",
-        "name": "link out 35",
-        "mode": "link",
-        "links": [
-            "9e8246e34f6128f4"
-        ],
-        "x": 2095,
-        "y": 2980,
-        "wires": []
-    },
-    {
-        "id": "e698621c23af0a84",
-        "type": "link out",
-        "z": "4701b8940aeb2fea",
-        "name": "link out 36",
-        "mode": "link",
-        "links": [
-            "51b7bf0bc77ab561"
-        ],
-        "x": 1625,
-        "y": 3960,
-        "wires": []
-    },
-    {
-        "id": "71e0d5e547ced05d",
-        "type": "link out",
-        "z": "4701b8940aeb2fea",
-        "name": "link out 37",
-        "mode": "link",
-        "links": [
-            "048de92d1628a983"
-        ],
-        "x": 2035,
-        "y": 3880,
-        "wires": []
-    },
-    {
-        "id": "3eea298835b61ec2",
-        "type": "comment",
-        "z": "4701b8940aeb2fea",
-        "name": "WIFI测试超时",
-        "info": "",
-        "x": 1950,
-        "y": 3840,
-        "wires": []
-    },
-    {
-        "id": "65c0bc9be752c7c7",
-        "type": "link out",
-        "z": "4701b8940aeb2fea",
-        "name": "link out 38",
-        "mode": "link",
-        "links": [
-            "7ece91017f1d4cd5"
-        ],
-        "x": 1615,
-        "y": 4420,
-        "wires": []
-    },
-    {
-        "id": "fd584f7157e8203a",
-        "type": "link out",
-        "z": "4701b8940aeb2fea",
-        "name": "link out 39",
-        "mode": "link",
-        "links": [
-            "548689c39c8b4c8b"
-        ],
-        "x": 2035,
-        "y": 4340,
-        "wires": []
-    },
-    {
-        "id": "7ce3216dec3438ad",
-        "type": "link out",
-        "z": "4701b8940aeb2fea",
-        "name": "link out 40",
-        "mode": "link",
-        "links": [
-            "d8e6057013781797"
-        ],
-        "x": 1515,
-        "y": 5100,
-        "wires": []
-    },
-    {
-        "id": "c134a5d3712d56f1",
-        "type": "link out",
-        "z": "4701b8940aeb2fea",
-        "name": "link out 41",
-        "mode": "link",
-        "links": [
-            "4790b67bad2d2656"
-        ],
-        "x": 1515,
-        "y": 5180,
-        "wires": []
-    },
-    {
-        "id": "e5d264b36c1747ef",
-        "type": "link out",
-        "z": "4701b8940aeb2fea",
-        "name": "link out 42",
-        "mode": "link",
-        "links": [
-            "0f16f6ef7ee3b769"
-        ],
-        "x": 1515,
-        "y": 5140,
-        "wires": []
-    },
-    {
-        "id": "12277e16dd066d64",
-        "type": "function",
-        "z": "4701b8940aeb2fea",
-        "name": "获取4G测试中的信噪比snr",
-        "func": "\nconst snr = msg.payload.snr\n\nmsg.payload = {'text_content': \"\"}\nmsg.payload['text_content'] = `${snr}`\nreturn msg\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1320,
-        "y": 5180,
-        "wires": [
-            [
-                "c134a5d3712d56f1",
-                "70303480f62f4224"
-            ]
-        ]
-    },
-    {
-        "id": "042e0a2dc9b1d5a7",
-        "type": "link in",
-        "z": "4701b8940aeb2fea",
-        "name": "link in 54",
-        "links": [
-            "9064815f06215091"
-        ],
-        "x": 2235,
-        "y": 5140,
-        "wires": [
-            [
-                "3007e486b7e7308a"
-            ]
-        ]
-    },
-    {
-        "id": "dc3960920383e1d7",
-        "type": "link out",
-        "z": "4701b8940aeb2fea",
-        "name": "link out 43",
-        "mode": "link",
-        "links": [
-            "85190dac56c964c9"
-        ],
-        "x": 2055,
-        "y": 4860,
-        "wires": []
-    },
-    {
-        "id": "1177fc5d79552ca0",
-        "type": "comment",
-        "z": "4701b8940aeb2fea",
-        "name": "ETH测试超时",
-        "info": "",
-        "x": 1950,
-        "y": 4300,
-        "wires": []
-    },
-    {
-        "id": "c4a83864bd3e1a58",
-        "type": "comment",
-        "z": "4701b8940aeb2fea",
-        "name": "4G测试超时",
-        "info": "",
-        "x": 1970,
-        "y": 4820,
-        "wires": []
-    },
-    {
-        "id": "9f3caa90d90e57cb",
-        "type": "function",
-        "z": "4701b8940aeb2fea",
-        "name": "获取LoRa测试中的信噪比snr",
-        "func": "\nconst snr = msg.payload.snr_avg\n\nmsg.payload = {'text_content': \"\"}\nmsg.payload['text_content'] = snr\nreturn msg\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1600,
-        "y": 5780,
-        "wires": [
-            [
-                "397ef37548ee085b"
-            ]
-        ]
-    },
-    {
-        "id": "397ef37548ee085b",
-        "type": "link out",
-        "z": "4701b8940aeb2fea",
-        "name": "link out 44",
-        "mode": "link",
-        "links": [
-            "138133b87e5fc5a8"
-        ],
-        "x": 1775,
-        "y": 5780,
-        "wires": []
-    },
-    {
-        "id": "4dafd5679b6c2957",
-        "type": "link out",
-        "z": "4701b8940aeb2fea",
-        "name": "link out 45",
-        "mode": "link",
-        "links": [
-            "33caac65a1cdc82a"
-        ],
-        "x": 1955,
-        "y": 5700,
-        "wires": []
-    },
-    {
-        "id": "be0ee4795e2749aa",
-        "type": "comment",
-        "z": "4701b8940aeb2fea",
-        "name": "LoRa测试超时",
-        "info": "",
-        "x": 1930,
-        "y": 5640,
-        "wires": []
-    },
-    {
-        "id": "8a76d81f6fe29baa",
-        "type": "link in",
-        "z": "4701b8940aeb2fea",
-        "name": "link in 30",
-        "links": [
-            "ad7cb132ce33c700"
-        ],
-        "x": 325,
-        "y": 5580,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "8f6447a9db0cf7a6",
-        "type": "change",
-        "z": "4701b8940aeb2fea",
-        "name": "所有项检测成功：最后一步刷取NFC成功后停止网关测试的超时检测",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "reset",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 800,
-        "y": 6700,
-        "wires": [
-            [
-                "e9f21b1405633dde"
-            ]
-        ]
-    },
-    {
-        "id": "e9f21b1405633dde",
-        "type": "link out",
-        "z": "4701b8940aeb2fea",
-        "name": "link out 28",
-        "mode": "link",
-        "links": [
-            "d35e09a96eb458d1",
-            "8a928dcf46e2ff7d"
-        ],
-        "x": 1095,
-        "y": 6700,
-        "wires": []
-    },
-    {
-        "id": "a7f9b592394d5b90",
-        "type": "link in",
-        "z": "4701b8940aeb2fea",
-        "name": "link in 60",
-        "links": [
-            "7b62a081e07868e0"
-        ],
-        "x": 525,
-        "y": 6700,
-        "wires": [
-            [
-                "8f6447a9db0cf7a6"
-            ]
-        ]
-    },
-    {
-        "id": "00f837ea87186bc8",
-        "type": "Dev Shell",
-        "z": "4701b8940aeb2fea",
-        "name": "挂载镜像",
-        "IP_Port": "10.6.6.6:18080",
-        "identity": "BOM",
-        "cmd": "mount /dev/mmcblk1p5 /mnt/",
-        "x": 800,
-        "y": 6760,
-        "wires": [
-            [
-                "936c877f502c5851"
-            ]
-        ]
-    },
-    {
-        "id": "546a03a3e18e5511",
-        "type": "Dev Shell",
-        "z": "4701b8940aeb2fea",
-        "name": "删除网关内置Shell服务器的开机自启动服务",
-        "IP_Port": "10.6.6.6:18080",
-        "identity": "BOM",
-        "cmd": "rm /mnt/etc/systemd/system/multi-user.target.wants/internalShellServer.service",
-        "x": 1230,
-        "y": 6760,
-        "wires": [
-            [
-                "f10c7626c6afb446"
-            ]
-        ]
-    },
-    {
-        "id": "bd98fa46c4e080a1",
-        "type": "Dev Shell",
-        "z": "4701b8940aeb2fea",
-        "name": "删除网关内置的量产测试文件",
-        "IP_Port": "10.6.6.6:18080",
-        "identity": "BOM",
-        "cmd": "rm /mnt/opt/gwConfig -rf",
-        "x": 1720,
-        "y": 6760,
-        "wires": [
-            [
-                "7ed3305d44ee90fc"
-            ]
-        ]
-    },
-    {
-        "id": "536b380368f219b5",
-        "type": "Dev Shell",
-        "z": "4701b8940aeb2fea",
-        "name": "删除网关内置Shell服务器",
-        "IP_Port": "10.6.6.6:18080",
-        "identity": "BOM",
-        "cmd": "rm /mnt/lib/systemd/system/internalShellServer.service",
-        "x": 930,
-        "y": 6820,
-        "wires": [
-            [
-                "b41c362ec5ff5664"
-            ]
-        ]
-    },
-    {
-        "id": "9dfbfd410bc146a9",
-        "type": "Dev Shell",
-        "z": "4701b8940aeb2fea",
-        "name": "卸载镜像",
-        "IP_Port": "10.6.6.6:18080",
-        "identity": "BOM",
-        "cmd": "umount /mnt/",
-        "x": 1320,
-        "y": 6820,
-        "wires": [
-            [
-                "41e5bad85454424c"
-            ]
-        ]
-    },
-    {
-        "id": "faa7e6cdc44ce1b2",
-        "type": "delay",
-        "z": "4701b8940aeb2fea",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "1",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 640,
-        "y": 6760,
-        "wires": [
-            [
-                "00f837ea87186bc8"
-            ]
-        ]
-    },
-    {
-        "id": "936c877f502c5851",
-        "type": "delay",
-        "z": "4701b8940aeb2fea",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "1",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 960,
-        "y": 6760,
-        "wires": [
-            [
-                "546a03a3e18e5511"
-            ]
-        ]
-    },
-    {
-        "id": "f10c7626c6afb446",
-        "type": "delay",
-        "z": "4701b8940aeb2fea",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "1",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 1500,
-        "y": 6760,
-        "wires": [
-            [
-                "bd98fa46c4e080a1"
-            ]
-        ]
-    },
-    {
-        "id": "7ed3305d44ee90fc",
-        "type": "delay",
-        "z": "4701b8940aeb2fea",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "1",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 700,
-        "y": 6820,
-        "wires": [
-            [
-                "536b380368f219b5"
-            ]
-        ]
-    },
-    {
-        "id": "b41c362ec5ff5664",
-        "type": "delay",
-        "z": "4701b8940aeb2fea",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "1",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 1140,
-        "y": 6820,
-        "wires": [
-            [
-                "9dfbfd410bc146a9"
-            ]
-        ]
-    },
-    {
-        "id": "9affe65f955995c7",
-        "type": "Dev Shell",
-        "z": "4701b8940aeb2fea",
-        "name": "网关恢复出厂设置",
-        "IP_Port": "10.6.6.6:18080",
-        "identity": "BOM",
-        "cmd": "/gw/bin/recovery.sh",
-        "x": 1730,
-        "y": 6820,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "41e5bad85454424c",
-        "type": "delay",
-        "z": "4701b8940aeb2fea",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "1",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 1540,
-        "y": 6820,
-        "wires": [
-            [
-                "9affe65f955995c7"
-            ]
-        ]
-    },
-    {
-        "id": "e957e889b944c764",
-        "type": "link in",
-        "z": "4701b8940aeb2fea",
-        "name": "link in 34",
-        "links": [],
-        "x": 525,
-        "y": 6760,
-        "wires": [
-            [
-                "faa7e6cdc44ce1b2"
-            ]
-        ]
-    },
-    {
-        "id": "a2dc4b94b1947d04",
-        "type": "comment",
-        "z": "4701b8940aeb2fea",
-        "name": "量产测试前：设置otp参数",
-        "info": "",
-        "x": 850,
-        "y": 1080,
-        "wires": []
-    },
-    {
-        "id": "2dce77b19f2efbee",
-        "type": "inject",
-        "z": "4701b8940aeb2fea",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 1310,
-        "y": 1860,
-        "wires": [
-            [
-                "e26b2d609b9328c3"
-            ]
-        ]
-    },
-    {
-        "id": "c9677d0bfd771aa1",
-        "type": "debug",
-        "z": "4701b8940aeb2fea",
-        "name": "debug 94",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "payload",
-        "statusType": "auto",
-        "x": 1230,
-        "y": 3960,
-        "wires": []
-    },
-    {
-        "id": "3f64933029b782fd",
-        "type": "debug",
-        "z": "4701b8940aeb2fea",
-        "name": "debug 95",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "payload",
-        "statusType": "auto",
-        "x": 1660,
-        "y": 4000,
-        "wires": []
-    },
-    {
-        "id": "1b81219f4d3f40f6",
-        "type": "debug",
-        "z": "4701b8940aeb2fea",
-        "name": "debug 96",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "payload",
-        "statusType": "auto",
-        "x": 1300,
-        "y": 4420,
-        "wires": []
-    },
-    {
-        "id": "ac502d3141914b40",
-        "type": "debug",
-        "z": "4701b8940aeb2fea",
-        "name": "debug 97",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "payload",
-        "statusType": "auto",
-        "x": 1740,
-        "y": 4440,
-        "wires": []
-    },
-    {
-        "id": "ae1caaf6a74ff089",
-        "type": "debug",
-        "z": "4701b8940aeb2fea",
-        "name": "debug 98",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "payload",
-        "statusType": "auto",
-        "x": 1260,
-        "y": 4940,
-        "wires": []
-    },
-    {
-        "id": "a22d7df9f8787775",
-        "type": "debug",
-        "z": "4701b8940aeb2fea",
-        "name": "debug 99",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "payload",
-        "statusType": "auto",
-        "x": 1260,
-        "y": 5640,
-        "wires": []
-    },
-    {
-        "id": "171fb40fc83c201b",
-        "type": "debug",
-        "z": "4701b8940aeb2fea",
-        "name": "debug 100",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "payload",
-        "statusType": "auto",
-        "x": 1570,
-        "y": 5620,
-        "wires": []
-    },
-    {
-        "id": "203b1339f2e97128",
-        "type": "comment",
-        "z": "4701b8940aeb2fea",
-        "name": "",
-        "info": "",
-        "x": 1530,
-        "y": 3500,
-        "wires": []
-    },
-    {
-        "id": "bf99aa831e8270ce",
-        "type": "inject",
-        "z": "4701b8940aeb2fea",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 830,
-        "y": 3800,
+        "y": 2960,
         "wires": [
             [
                 "a5faaeda2e71ad31"
@@ -4091,7 +4081,7 @@
     {
         "id": "b5ad7ac407f3a979",
         "type": "inject",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "",
         "props": [
             {
@@ -4109,8 +4099,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 890,
-        "y": 4200,
+        "x": 610,
+        "y": 3360,
         "wires": [
             [
                 "78536076bec343bd"
@@ -4120,7 +4110,7 @@
     {
         "id": "70303480f62f4224",
         "type": "debug",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "debug 101",
         "active": true,
         "tosidebar": true,
@@ -4129,14 +4119,14 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1560,
-        "y": 5260,
+        "x": 1300,
+        "y": 4460,
         "wires": []
     },
     {
         "id": "554504c662a72e39",
         "type": "debug",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "debug 102",
         "active": true,
         "tosidebar": true,
@@ -4145,20 +4135,20 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1700,
-        "y": 5220,
+        "x": 1470,
+        "y": 4320,
         "wires": []
     },
     {
         "id": "2317f359d73b9131",
         "type": "Dev Shell",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "播放网关内置mp3(测试喇叭)",
         "IP_Port": "10.6.6.6:18080",
         "identity": "BOM",
         "cmd": "mpg123 -o alsa:hw:1,0 /gw/sound/system/'1.[alarm clock sound][闹铃]'/'1.[didi][didi].mp3'",
-        "x": 1720,
-        "y": 6280,
+        "x": 1440,
+        "y": 5440,
         "wires": [
             []
         ]
@@ -4166,24 +4156,24 @@
     {
         "id": "7b62a081e07868e0",
         "type": "link out",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "link out 46",
         "mode": "link",
         "links": [
-            "a7f9b592394d5b90",
-            "f8f2bafed5f5fb9a"
+            "f8f2bafed5f5fb9a",
+            "a7f9b592394d5b90"
         ],
-        "x": 1755,
-        "y": 6320,
+        "x": 1475,
+        "y": 5480,
         "wires": []
     },
     {
         "id": "120b8a21e9ead413",
         "type": "delay",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "",
         "pauseType": "delay",
-        "timeout": "1",
+        "timeout": "2",
         "timeoutUnits": "seconds",
         "rate": "1",
         "nbRateUnits": "1",
@@ -4194,8 +4184,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 1660,
-        "y": 6320,
+        "x": 1380,
+        "y": 5480,
         "wires": [
             [
                 "7b62a081e07868e0"
@@ -4205,7 +4195,7 @@
     {
         "id": "13e644700ef00f78",
         "type": "trigger",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "",
         "op1": "1",
         "op2": "0",
@@ -4219,16 +4209,123 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 760,
-        "y": 6140,
+        "x": 480,
+        "y": 5300,
         "wires": [
             []
         ]
     },
     {
+        "id": "a8dbd4bc60febcbc",
+        "type": "link in",
+        "z": "9cc9bee3c9890942",
+        "name": "link in 61",
+        "links": [
+            "8f4276e5d5d2c691",
+            "ad7cb132ce33c700"
+        ],
+        "x": 1115,
+        "y": 4220,
+        "wires": [
+            [
+                "25bfa9b83de6e820"
+            ]
+        ]
+    },
+    {
+        "id": "25bfa9b83de6e820",
+        "type": "Flow Switch",
+        "z": "9cc9bee3c9890942",
+        "name": "",
+        "set": true,
+        "flowSwitch": "on",
+        "x": 1210,
+        "y": 4260,
+        "wires": [
+            [
+                "b313f5f5ab0033d5"
+            ]
+        ]
+    },
+    {
+        "id": "b313f5f5ab0033d5",
+        "type": "link out",
+        "z": "9cc9bee3c9890942",
+        "name": "link out 47",
+        "mode": "link",
+        "links": [
+            "85190dac56c964c9",
+            "0f16f6ef7ee3b769"
+        ],
+        "x": 1335,
+        "y": 4260,
+        "wires": []
+    },
+    {
+        "id": "3c9fa940698572f1",
+        "type": "comment",
+        "z": "9cc9bee3c9890942",
+        "name": "4G测试超时",
+        "info": "",
+        "x": 1250,
+        "y": 4220,
+        "wires": []
+    },
+    {
+        "id": "66109bb8a70fc9ca",
+        "type": "change",
+        "z": "9cc9bee3c9890942",
+        "name": "关闭流开关",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.Switch",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.Switch",
+                "pt": "msg",
+                "to": "off",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1010,
+        "y": 4260,
+        "wires": [
+            [
+                "25bfa9b83de6e820"
+            ]
+        ]
+    },
+    {
+        "id": "32d38802cd15b1e6",
+        "type": "debug",
+        "z": "9cc9bee3c9890942",
+        "name": "debug 103",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1030,
+        "y": 640,
+        "wires": []
+    },
+    {
         "id": "3ae80349726f624d",
         "type": "group",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "更新背景+用线绘制表格",
         "style": {
             "label": true
@@ -4243,31 +4340,34 @@
             "63c4a9438e10875b",
             "17e74ac5f5da21f1",
             "126281a22001129a",
-            "5c7b0d7881bd6311"
+            "5c7b0d7881bd6311",
+            "681bcd630cea17f4",
+            "441502905f1b56ea",
+            "3a0bd5f330c6090b"
         ],
-        "x": 2274,
-        "y": 1039,
-        "w": 432,
+        "x": 1994,
+        "y": 199,
+        "w": 552,
         "h": 422
     },
     {
         "id": "37a1ce9344aeeb8c",
         "type": "background",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "3ae80349726f624d",
         "name": "",
         "background_color": "#FFFFFF",
         "custom_color": "",
         "priority": "4",
         "set": true,
-        "x": 2580,
-        "y": 1080,
+        "x": 2420,
+        "y": 240,
         "wires": []
     },
     {
         "id": "6259e3ad0221a6c0",
         "type": "inject",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "3ae80349726f624d",
         "name": "",
         "props": [
@@ -4286,8 +4386,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 2380,
-        "y": 1080,
+        "x": 2100,
+        "y": 240,
         "wires": [
             [
                 "37a1ce9344aeeb8c"
@@ -4297,7 +4397,7 @@
     {
         "id": "f75295efe117e504",
         "type": "inject",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "3ae80349726f624d",
         "name": "",
         "props": [
@@ -4316,8 +4416,171 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 2380,
-        "y": 1160,
+        "x": 2100,
+        "y": 320,
+        "wires": [
+            [
+                "441502905f1b56ea"
+            ]
+        ]
+    },
+    {
+        "id": "9f0934a99422ba49",
+        "type": "line",
+        "z": "9cc9bee3c9890942",
+        "g": "3ae80349726f624d",
+        "name": "",
+        "x0": "0",
+        "y0": "70",
+        "x1": "480",
+        "y1": "70",
+        "line_width": "3",
+        "line_color": "#000000",
+        "custom_color": "",
+        "priority": "7",
+        "set": "",
+        "x": 2420,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "2aab86c5282f7efb",
+        "type": "line",
+        "z": "9cc9bee3c9890942",
+        "g": "3ae80349726f624d",
+        "name": "",
+        "x0": "0",
+        "y0": "130",
+        "x1": "480",
+        "y1": "130",
+        "line_width": "3",
+        "line_color": "#000000",
+        "custom_color": "",
+        "priority": "7",
+        "set": "",
+        "x": 2420,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "99e6efe61edc5839",
+        "type": "line",
+        "z": "9cc9bee3c9890942",
+        "g": "3ae80349726f624d",
+        "name": "",
+        "x0": "0",
+        "y0": "190",
+        "x1": "480",
+        "y1": "190",
+        "line_width": "3",
+        "line_color": "#000000",
+        "custom_color": "",
+        "priority": "7",
+        "set": "",
+        "x": 2420,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "63c4a9438e10875b",
+        "type": "line",
+        "z": "9cc9bee3c9890942",
+        "g": "3ae80349726f624d",
+        "name": "",
+        "x0": "0",
+        "y0": "250",
+        "x1": "480",
+        "y1": "250",
+        "line_width": "3",
+        "line_color": "#000000",
+        "custom_color": "",
+        "priority": "7",
+        "set": "",
+        "x": 2420,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "17e74ac5f5da21f1",
+        "type": "line",
+        "z": "9cc9bee3c9890942",
+        "g": "3ae80349726f624d",
+        "name": "",
+        "x0": "240",
+        "y0": "0",
+        "x1": "240",
+        "y1": "320",
+        "line_width": "3",
+        "line_color": "#000000",
+        "custom_color": "",
+        "priority": "7",
+        "set": "",
+        "x": 2420,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "126281a22001129a",
+        "type": "line",
+        "z": "9cc9bee3c9890942",
+        "g": "3ae80349726f624d",
+        "name": "",
+        "x0": "60",
+        "y0": "0",
+        "x1": "60",
+        "y1": "320",
+        "line_width": "1",
+        "line_color": "custom",
+        "custom_color": "#959595",
+        "priority": "7",
+        "set": "",
+        "x": 2420,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "5c7b0d7881bd6311",
+        "type": "line",
+        "z": "9cc9bee3c9890942",
+        "g": "3ae80349726f624d",
+        "name": "",
+        "x0": "300",
+        "y0": "0",
+        "x1": "300",
+        "y1": "320",
+        "line_width": "1",
+        "line_color": "custom",
+        "custom_color": "#959595",
+        "priority": "7",
+        "set": "",
+        "x": 2420,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "681bcd630cea17f4",
+        "type": "Flow Switch",
+        "z": "9cc9bee3c9890942",
+        "g": "3ae80349726f624d",
+        "name": "流开关",
+        "set": true,
+        "flowSwitch": "on",
+        "x": 2250,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "441502905f1b56ea",
+        "type": "Flow Switch",
+        "z": "9cc9bee3c9890942",
+        "g": "3ae80349726f624d",
+        "name": "流开关",
+        "set": true,
+        "flowSwitch": "on",
+        "x": 2250,
+        "y": 320,
         "wires": [
             [
                 "9f0934a99422ba49",
@@ -4331,142 +4594,27 @@
         ]
     },
     {
-        "id": "9f0934a99422ba49",
-        "type": "line",
-        "z": "4701b8940aeb2fea",
+        "id": "3a0bd5f330c6090b",
+        "type": "link in",
+        "z": "9cc9bee3c9890942",
         "g": "3ae80349726f624d",
-        "name": "",
-        "x0": "0",
-        "y0": "70",
-        "x1": "480",
-        "y1": "70",
-        "line_width": "3",
-        "line_color": "#000000",
-        "custom_color": "",
-        "priority": "7",
-        "set": "",
-        "x": 2580,
-        "y": 1160,
-        "wires": []
-    },
-    {
-        "id": "2aab86c5282f7efb",
-        "type": "line",
-        "z": "4701b8940aeb2fea",
-        "g": "3ae80349726f624d",
-        "name": "",
-        "x0": "0",
-        "y0": "130",
-        "x1": "480",
-        "y1": "130",
-        "line_width": "3",
-        "line_color": "#000000",
-        "custom_color": "",
-        "priority": "7",
-        "set": "",
-        "x": 2580,
-        "y": 1200,
-        "wires": []
-    },
-    {
-        "id": "99e6efe61edc5839",
-        "type": "line",
-        "z": "4701b8940aeb2fea",
-        "g": "3ae80349726f624d",
-        "name": "",
-        "x0": "0",
-        "y0": "190",
-        "x1": "480",
-        "y1": "190",
-        "line_width": "3",
-        "line_color": "#000000",
-        "custom_color": "",
-        "priority": "7",
-        "set": "",
-        "x": 2580,
-        "y": 1240,
-        "wires": []
-    },
-    {
-        "id": "63c4a9438e10875b",
-        "type": "line",
-        "z": "4701b8940aeb2fea",
-        "g": "3ae80349726f624d",
-        "name": "",
-        "x0": "0",
-        "y0": "250",
-        "x1": "480",
-        "y1": "250",
-        "line_width": "3",
-        "line_color": "#000000",
-        "custom_color": "",
-        "priority": "7",
-        "set": "",
-        "x": 2580,
-        "y": 1280,
-        "wires": []
-    },
-    {
-        "id": "17e74ac5f5da21f1",
-        "type": "line",
-        "z": "4701b8940aeb2fea",
-        "g": "3ae80349726f624d",
-        "name": "",
-        "x0": "240",
-        "y0": "0",
-        "x1": "240",
-        "y1": "320",
-        "line_width": "3",
-        "line_color": "#000000",
-        "custom_color": "",
-        "priority": "7",
-        "set": "",
-        "x": 2580,
-        "y": 1320,
-        "wires": []
-    },
-    {
-        "id": "126281a22001129a",
-        "type": "line",
-        "z": "4701b8940aeb2fea",
-        "g": "3ae80349726f624d",
-        "name": "",
-        "x0": "60",
-        "y0": "0",
-        "x1": "60",
-        "y1": "320",
-        "line_width": "1",
-        "line_color": "custom",
-        "custom_color": "#959595",
-        "priority": "7",
-        "set": "",
-        "x": 2580,
-        "y": 1380,
-        "wires": []
-    },
-    {
-        "id": "5c7b0d7881bd6311",
-        "type": "line",
-        "z": "4701b8940aeb2fea",
-        "g": "3ae80349726f624d",
-        "name": "",
-        "x0": "300",
-        "y0": "0",
-        "x1": "300",
-        "y1": "320",
-        "line_width": "1",
-        "line_color": "custom",
-        "custom_color": "#959595",
-        "priority": "7",
-        "set": "",
-        "x": 2580,
-        "y": 1420,
-        "wires": []
+        "name": "link in 62",
+        "links": [
+            "b599a4a336eef5d7"
+        ],
+        "x": 2175,
+        "y": 280,
+        "wires": [
+            [
+                "681bcd630cea17f4",
+                "441502905f1b56ea"
+            ]
+        ]
     },
     {
         "id": "29d6e7ae2b72aa41",
         "type": "group",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "1、固件烧录的label",
         "style": {
             "label": true
@@ -4489,17 +4637,19 @@
             "478403bb64c335a6",
             "8751f73adbca098f",
             "850e9294e2133928",
-            "e4b6d5165dcca9be"
+            "e4b6d5165dcca9be",
+            "3bc537e963d017ab",
+            "f95fc7b90febd184"
         ],
-        "x": 2274,
-        "y": 1539,
-        "w": 552,
+        "x": 1994,
+        "y": 699,
+        "w": 612,
         "h": 482
     },
     {
         "id": "ac90cab5b0503d85",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "29d6e7ae2b72aa41",
         "name": "固定标签——烧录结果：",
         "text_content": "烧录结果：",
@@ -4511,14 +4661,14 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2650,
-        "y": 1680,
+        "x": 2430,
+        "y": 840,
         "wires": []
     },
     {
         "id": "c5f4a617057dfe85",
         "type": "inject",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "29d6e7ae2b72aa41",
         "name": "",
         "props": [
@@ -4537,22 +4687,18 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 2380,
-        "y": 1580,
+        "x": 2100,
+        "y": 740,
         "wires": [
             [
-                "ac90cab5b0503d85",
-                "571db48745b59e6e",
-                "a9c0879ebd015b7d",
-                "d0da470340979fc5",
-                "f93ef59232622fb3"
+                "3bc537e963d017ab"
             ]
         ]
     },
     {
         "id": "571db48745b59e6e",
         "type": "circle",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "29d6e7ae2b72aa41",
         "name": "标签1",
         "coord_x": "70",
@@ -4565,14 +4711,14 @@
         "custom_border_color": "",
         "priority": "7",
         "set": "",
-        "x": 2590,
-        "y": 1640,
+        "x": 2370,
+        "y": 800,
         "wires": []
     },
     {
         "id": "85f218f3b5396302",
         "type": "rectangle",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "29d6e7ae2b72aa41",
         "name": "清除——烧录结果",
         "coord_x": "170",
@@ -4587,14 +4733,14 @@
         "custom_color2": "",
         "priority": "7",
         "set": "",
-        "x": 2670,
-        "y": 1720,
+        "x": 2450,
+        "y": 880,
         "wires": []
     },
     {
         "id": "d0da470340979fc5",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "29d6e7ae2b72aa41",
         "name": "固定标签——烧录进度：",
         "text_content": "烧录进度：",
@@ -4606,14 +4752,14 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2650,
-        "y": 1900,
+        "x": 2430,
+        "y": 1060,
         "wires": []
     },
     {
         "id": "a9c0879ebd015b7d",
         "type": "circle",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "29d6e7ae2b72aa41",
         "name": "标签2",
         "coord_x": "70",
@@ -4626,14 +4772,14 @@
         "custom_border_color": "",
         "priority": "7",
         "set": "",
-        "x": 2590,
-        "y": 1860,
+        "x": 2370,
+        "y": 1020,
         "wires": []
     },
     {
         "id": "3fdc7a819242b575",
         "type": "rectangle",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "29d6e7ae2b72aa41",
         "name": "清除——烧录进度",
         "coord_x": "170",
@@ -4648,14 +4794,14 @@
         "custom_color2": "",
         "priority": "7",
         "set": "",
-        "x": 2670,
-        "y": 1940,
+        "x": 2450,
+        "y": 1100,
         "wires": []
     },
     {
         "id": "474c5fefe9f8aab3",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "29d6e7ae2b72aa41",
         "name": "可变标签——进度x%",
         "text_content": "100%",
@@ -4667,14 +4813,14 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2680,
-        "y": 1980,
+        "x": 2460,
+        "y": 1140,
         "wires": []
     },
     {
         "id": "cac8dd9754769307",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "29d6e7ae2b72aa41",
         "name": "可变标签——成功",
         "text_content": "成功",
@@ -4686,14 +4832,14 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2710,
-        "y": 1760,
+        "x": 2490,
+        "y": 920,
         "wires": []
     },
     {
         "id": "34cc0515da80c92d",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "29d6e7ae2b72aa41",
         "name": "可变标签——失败",
         "text_content": "失败",
@@ -4705,14 +4851,14 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2710,
-        "y": 1800,
+        "x": 2490,
+        "y": 960,
         "wires": []
     },
     {
         "id": "f93ef59232622fb3",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "29d6e7ae2b72aa41",
         "name": "固定标签——固件",
         "text_content": "固件",
@@ -4724,21 +4870,21 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2590,
-        "y": 1580,
+        "x": 2410,
+        "y": 740,
         "wires": []
     },
     {
         "id": "c7cf1ea8dd4a53bd",
         "type": "link in",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "29d6e7ae2b72aa41",
         "name": "link in 36",
         "links": [
             "e26b2d609b9328c3"
         ],
-        "x": 2405,
-        "y": 1760,
+        "x": 2185,
+        "y": 920,
         "wires": [
             [
                 "8751f73adbca098f"
@@ -4748,14 +4894,14 @@
     {
         "id": "55d36906b1b34204",
         "type": "link in",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "29d6e7ae2b72aa41",
         "name": "link in 37",
         "links": [
             "55b25c8f4d11f2bb"
         ],
-        "x": 2405,
-        "y": 1800,
+        "x": 2185,
+        "y": 960,
         "wires": [
             [
                 "850e9294e2133928"
@@ -4765,14 +4911,14 @@
     {
         "id": "e4d94e1d0e7584e5",
         "type": "link in",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "29d6e7ae2b72aa41",
         "name": "link in 38",
         "links": [
             "f7ef96c2dde9d53c"
         ],
-        "x": 2545,
-        "y": 1940,
+        "x": 2325,
+        "y": 1100,
         "wires": [
             [
                 "3fdc7a819242b575"
@@ -4782,14 +4928,14 @@
     {
         "id": "478403bb64c335a6",
         "type": "link in",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "29d6e7ae2b72aa41",
         "name": "link in 39",
         "links": [
             "34355ceb5a0d4d45"
         ],
-        "x": 2545,
-        "y": 1980,
+        "x": 2325,
+        "y": 1140,
         "wires": [
             [
                 "474c5fefe9f8aab3"
@@ -4799,7 +4945,7 @@
     {
         "id": "8751f73adbca098f",
         "type": "delay",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "29d6e7ae2b72aa41",
         "name": "",
         "pauseType": "delay",
@@ -4814,8 +4960,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 2510,
-        "y": 1760,
+        "x": 2290,
+        "y": 920,
         "wires": [
             [
                 "cac8dd9754769307"
@@ -4825,7 +4971,7 @@
     {
         "id": "850e9294e2133928",
         "type": "delay",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "29d6e7ae2b72aa41",
         "name": "",
         "pauseType": "delay",
@@ -4840,8 +4986,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 2510,
-        "y": 1800,
+        "x": 2290,
+        "y": 960,
         "wires": [
             [
                 "34cc0515da80c92d"
@@ -4851,15 +4997,15 @@
     {
         "id": "e4b6d5165dcca9be",
         "type": "link in",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "29d6e7ae2b72aa41",
         "name": "link in 40",
         "links": [
             "e26b2d609b9328c3",
             "55b25c8f4d11f2bb"
         ],
-        "x": 2405,
-        "y": 1720,
+        "x": 2185,
+        "y": 880,
         "wires": [
             [
                 "85f218f3b5396302"
@@ -4867,9 +5013,46 @@
         ]
     },
     {
+        "id": "3bc537e963d017ab",
+        "type": "Flow Switch",
+        "z": "9cc9bee3c9890942",
+        "g": "29d6e7ae2b72aa41",
+        "name": "流开关",
+        "set": true,
+        "flowSwitch": "on",
+        "x": 2230,
+        "y": 740,
+        "wires": [
+            [
+                "f93ef59232622fb3",
+                "571db48745b59e6e",
+                "ac90cab5b0503d85",
+                "a9c0879ebd015b7d",
+                "d0da470340979fc5"
+            ]
+        ]
+    },
+    {
+        "id": "f95fc7b90febd184",
+        "type": "link in",
+        "z": "9cc9bee3c9890942",
+        "g": "29d6e7ae2b72aa41",
+        "name": "link in 63",
+        "links": [
+            "b599a4a336eef5d7"
+        ],
+        "x": 2155,
+        "y": 780,
+        "wires": [
+            [
+                "3bc537e963d017ab"
+            ]
+        ]
+    },
+    {
         "id": "a956fee69cc58df2",
         "type": "group",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "2、OTP烧录的label",
         "style": {
             "label": true
@@ -4889,17 +5072,19 @@
             "9e8246e34f6128f4",
             "d5264f0dcddb230e",
             "2a1c13558bfe5257",
-            "dfbbaba215ac287d"
+            "dfbbaba215ac287d",
+            "4d2724721c2bc1a0",
+            "4e1984d91cb00e5c"
         ],
-        "x": 2274,
-        "y": 2819,
-        "w": 492,
+        "x": 1994,
+        "y": 1979,
+        "w": 612,
         "h": 502
     },
     {
         "id": "9c96cfdb888fc81c",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "a956fee69cc58df2",
         "name": "固定标签——烧录结果：",
         "text_content": "烧录结果：",
@@ -4911,14 +5096,14 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2630,
-        "y": 2960,
+        "x": 2470,
+        "y": 2120,
         "wires": []
     },
     {
         "id": "7538ebf430447fbd",
         "type": "inject",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "a956fee69cc58df2",
         "name": "",
         "props": [
@@ -4937,22 +5122,18 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 2380,
-        "y": 2860,
+        "x": 2100,
+        "y": 2020,
         "wires": [
             [
-                "9c96cfdb888fc81c",
-                "d736f2f84d452393",
-                "2de6506d3a266b11",
-                "cccba1d5041c9075",
-                "b76bb46933789763"
+                "4d2724721c2bc1a0"
             ]
         ]
     },
     {
         "id": "d736f2f84d452393",
         "type": "circle",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "a956fee69cc58df2",
         "name": "标签1",
         "coord_x": "70",
@@ -4965,14 +5146,14 @@
         "custom_border_color": "",
         "priority": "7",
         "set": "",
-        "x": 2570,
-        "y": 2920,
+        "x": 2410,
+        "y": 2080,
         "wires": []
     },
     {
         "id": "960a5c743e8d8033",
         "type": "rectangle",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "a956fee69cc58df2",
         "name": "清除——烧录结果",
         "coord_x": "170",
@@ -4987,14 +5168,14 @@
         "custom_color2": "",
         "priority": "7",
         "set": "",
-        "x": 2650,
-        "y": 3000,
+        "x": 2490,
+        "y": 2160,
         "wires": []
     },
     {
         "id": "b76bb46933789763",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "a956fee69cc58df2",
         "name": "固定标签——B / V：",
         "text_content": "B / V：",
@@ -5006,14 +5187,14 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2620,
-        "y": 3200,
+        "x": 2460,
+        "y": 2360,
         "wires": []
     },
     {
         "id": "2de6506d3a266b11",
         "type": "circle",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "a956fee69cc58df2",
         "name": "标签2",
         "coord_x": "70",
@@ -5026,14 +5207,14 @@
         "custom_border_color": "",
         "priority": "7",
         "set": "",
-        "x": 2570,
-        "y": 3160,
+        "x": 2410,
+        "y": 2320,
         "wires": []
     },
     {
         "id": "14bef7ade7c34fc2",
         "type": "rectangle",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "a956fee69cc58df2",
         "name": "清除——烧录进度",
         "coord_x": "170",
@@ -5048,14 +5229,14 @@
         "custom_color2": "",
         "priority": "7",
         "set": "",
-        "x": 2650,
-        "y": 3240,
+        "x": 2490,
+        "y": 2400,
         "wires": []
     },
     {
         "id": "8d922d01e9b45e8e",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "a956fee69cc58df2",
         "name": "可变标签——B / V",
         "text_content": "",
@@ -5067,14 +5248,14 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2650,
-        "y": 3280,
+        "x": 2490,
+        "y": 2440,
         "wires": []
     },
     {
         "id": "b94ab112df2453da",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "a956fee69cc58df2",
         "name": "可变标签——成功",
         "text_content": "成功",
@@ -5086,14 +5267,14 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2650,
-        "y": 3040,
+        "x": 2490,
+        "y": 2200,
         "wires": []
     },
     {
         "id": "100b5782547dd370",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "a956fee69cc58df2",
         "name": "可变标签——失败",
         "text_content": "失败",
@@ -5105,14 +5286,14 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2650,
-        "y": 3080,
+        "x": 2490,
+        "y": 2240,
         "wires": []
     },
     {
         "id": "cccba1d5041c9075",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "a956fee69cc58df2",
         "name": "固定标签——OTP",
         "text_content": "OTP",
@@ -5124,21 +5305,21 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2570,
-        "y": 2860,
+        "x": 2410,
+        "y": 2020,
         "wires": []
     },
     {
         "id": "9e8246e34f6128f4",
         "type": "link in",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "a956fee69cc58df2",
         "name": "link in 44",
         "links": [
             "f3207884b0a7d4e1"
         ],
-        "x": 2415,
-        "y": 3080,
+        "x": 2255,
+        "y": 2240,
         "wires": [
             [
                 "100b5782547dd370"
@@ -5148,7 +5329,7 @@
     {
         "id": "d5264f0dcddb230e",
         "type": "function",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "a956fee69cc58df2",
         "name": "lcd显示烧录的otp参数",
         "func": "var band = global.get(\"band\");\nvar version = global.get(\"version\");\n\nmsg.payload = {'text_content': \"\"}\nmsg.payload['text_content'] = `${band}/${version}`\nreturn msg\n",
@@ -5158,8 +5339,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 2440,
-        "y": 3280,
+        "x": 2280,
+        "y": 2440,
         "wires": [
             [
                 "8d922d01e9b45e8e"
@@ -5169,14 +5350,14 @@
     {
         "id": "2a1c13558bfe5257",
         "type": "link in",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "a956fee69cc58df2",
         "name": "link in 43",
         "links": [
             "a5e216eeefcde855"
         ],
-        "x": 2415,
-        "y": 3040,
+        "x": 2255,
+        "y": 2200,
         "wires": [
             [
                 "b94ab112df2453da"
@@ -5186,14 +5367,14 @@
     {
         "id": "dfbbaba215ac287d",
         "type": "link in",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "a956fee69cc58df2",
         "name": "link in 45",
         "links": [
             "a5e216eeefcde855"
         ],
-        "x": 2355,
-        "y": 3240,
+        "x": 2195,
+        "y": 2400,
         "wires": [
             [
                 "d5264f0dcddb230e"
@@ -5201,9 +5382,46 @@
         ]
     },
     {
+        "id": "4d2724721c2bc1a0",
+        "type": "Flow Switch",
+        "z": "9cc9bee3c9890942",
+        "g": "a956fee69cc58df2",
+        "name": "流开关",
+        "set": true,
+        "flowSwitch": "on",
+        "x": 2230,
+        "y": 2020,
+        "wires": [
+            [
+                "cccba1d5041c9075",
+                "d736f2f84d452393",
+                "9c96cfdb888fc81c",
+                "2de6506d3a266b11",
+                "b76bb46933789763"
+            ]
+        ]
+    },
+    {
+        "id": "4e1984d91cb00e5c",
+        "type": "link in",
+        "z": "9cc9bee3c9890942",
+        "g": "a956fee69cc58df2",
+        "name": "link in 65",
+        "links": [
+            "b599a4a336eef5d7"
+        ],
+        "x": 2145,
+        "y": 2060,
+        "wires": [
+            [
+                "4d2724721c2bc1a0"
+            ]
+        ]
+    },
+    {
         "id": "acd47d8f57c80385",
         "type": "group",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "3、WIFI测试的label",
         "style": {
             "label": true
@@ -5222,17 +5440,19 @@
             "044283b46ddbffb0",
             "51b7bf0bc77ab561",
             "32979caf1e30c618",
-            "048de92d1628a983"
+            "048de92d1628a983",
+            "d753ee1c808e2d5c",
+            "d1e5041afbf02571"
         ],
-        "x": 2094,
-        "y": 3559,
-        "w": 512,
+        "x": 1994,
+        "y": 2719,
+        "w": 632,
         "h": 482
     },
     {
         "id": "8965f5a21a3a44c3",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "acd47d8f57c80385",
         "name": "固定标签——指定wifi：",
         "text_content": "指定wifi：",
@@ -5244,14 +5464,14 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2450,
-        "y": 3700,
+        "x": 2470,
+        "y": 2860,
         "wires": []
     },
     {
         "id": "58662c07e835c980",
         "type": "inject",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "acd47d8f57c80385",
         "name": "",
         "props": [
@@ -5270,22 +5490,18 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 2200,
-        "y": 3600,
+        "x": 2100,
+        "y": 2760,
         "wires": [
             [
-                "8965f5a21a3a44c3",
-                "b71c862729f3182e",
-                "e2a7c08f09eeae51",
-                "a0971cd8a22e5b2a",
-                "6dea3e1ac6d29fd9"
+                "d753ee1c808e2d5c"
             ]
         ]
     },
     {
         "id": "b71c862729f3182e",
         "type": "circle",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "acd47d8f57c80385",
         "name": "标签1",
         "coord_x": "70",
@@ -5298,14 +5514,14 @@
         "custom_border_color": "",
         "priority": "7",
         "set": "",
-        "x": 2390,
-        "y": 3660,
+        "x": 2410,
+        "y": 2820,
         "wires": []
     },
     {
         "id": "ef69b55c043d792b",
         "type": "rectangle",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "acd47d8f57c80385",
         "name": "清除——烧录结果",
         "coord_x": "170",
@@ -5320,14 +5536,14 @@
         "custom_color2": "",
         "priority": "7",
         "set": "",
-        "x": 2470,
-        "y": 3740,
+        "x": 2490,
+        "y": 2900,
         "wires": []
     },
     {
         "id": "6dea3e1ac6d29fd9",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "acd47d8f57c80385",
         "name": "固定标签——信号质量：",
         "text_content": "信号质量：",
@@ -5339,14 +5555,14 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2450,
-        "y": 3920,
+        "x": 2470,
+        "y": 3080,
         "wires": []
     },
     {
         "id": "e2a7c08f09eeae51",
         "type": "circle",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "acd47d8f57c80385",
         "name": "标签2",
         "coord_x": "70",
@@ -5359,14 +5575,14 @@
         "custom_border_color": "",
         "priority": "7",
         "set": "",
-        "x": 2390,
-        "y": 3880,
+        "x": 2410,
+        "y": 3040,
         "wires": []
     },
     {
         "id": "6bbe204c28f386c2",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "acd47d8f57c80385",
         "name": "可变标签——rssi",
         "text_content": "",
@@ -5378,14 +5594,14 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2470,
-        "y": 4000,
+        "x": 2490,
+        "y": 3160,
         "wires": []
     },
     {
         "id": "21b755b286ae9a94",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "acd47d8f57c80385",
         "name": "可变标签——已找到",
         "text_content": "已找到",
@@ -5397,14 +5613,14 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2480,
-        "y": 3780,
+        "x": 2500,
+        "y": 2940,
         "wires": []
     },
     {
         "id": "878f1c5882a5943e",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "acd47d8f57c80385",
         "name": "可变标签——未找到",
         "text_content": "未找到",
@@ -5416,14 +5632,14 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2480,
-        "y": 3820,
+        "x": 2500,
+        "y": 2980,
         "wires": []
     },
     {
         "id": "a0971cd8a22e5b2a",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "acd47d8f57c80385",
         "name": "固定标签——WIFI",
         "text_content": "wifi",
@@ -5435,21 +5651,21 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2390,
-        "y": 3600,
+        "x": 2410,
+        "y": 2760,
         "wires": []
     },
     {
         "id": "044283b46ddbffb0",
         "type": "link in",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "acd47d8f57c80385",
         "name": "link in 46",
         "links": [
             "33f5a89e1927ae5c"
         ],
-        "x": 2235,
-        "y": 3780,
+        "x": 2255,
+        "y": 2940,
         "wires": [
             [
                 "21b755b286ae9a94"
@@ -5459,14 +5675,14 @@
     {
         "id": "51b7bf0bc77ab561",
         "type": "link in",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "acd47d8f57c80385",
         "name": "link in 48",
         "links": [
             "e698621c23af0a84"
         ],
-        "x": 2275,
-        "y": 4000,
+        "x": 2295,
+        "y": 3160,
         "wires": [
             [
                 "6bbe204c28f386c2"
@@ -5476,7 +5692,7 @@
     {
         "id": "32979caf1e30c618",
         "type": "rectangle",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "acd47d8f57c80385",
         "name": "清除——烧录进度",
         "coord_x": "170",
@@ -5491,21 +5707,21 @@
         "custom_color2": "",
         "priority": "7",
         "set": "",
-        "x": 2470,
-        "y": 3960,
+        "x": 2490,
+        "y": 3120,
         "wires": []
     },
     {
         "id": "048de92d1628a983",
         "type": "link in",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "acd47d8f57c80385",
         "name": "link in 47",
         "links": [
             "71e0d5e547ced05d"
         ],
-        "x": 2235,
-        "y": 3820,
+        "x": 2255,
+        "y": 2980,
         "wires": [
             [
                 "878f1c5882a5943e"
@@ -5513,9 +5729,46 @@
         ]
     },
     {
+        "id": "d753ee1c808e2d5c",
+        "type": "Flow Switch",
+        "z": "9cc9bee3c9890942",
+        "g": "acd47d8f57c80385",
+        "name": "流开关",
+        "set": true,
+        "flowSwitch": "on",
+        "x": 2230,
+        "y": 2760,
+        "wires": [
+            [
+                "a0971cd8a22e5b2a",
+                "b71c862729f3182e",
+                "8965f5a21a3a44c3",
+                "e2a7c08f09eeae51",
+                "6dea3e1ac6d29fd9"
+            ]
+        ]
+    },
+    {
+        "id": "d1e5041afbf02571",
+        "type": "link in",
+        "z": "9cc9bee3c9890942",
+        "g": "acd47d8f57c80385",
+        "name": "link in 66",
+        "links": [
+            "b599a4a336eef5d7"
+        ],
+        "x": 2145,
+        "y": 2800,
+        "wires": [
+            [
+                "d753ee1c808e2d5c"
+            ]
+        ]
+    },
+    {
         "id": "32f78f14acdf910e",
         "type": "group",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "4、以太网测试的label",
         "style": {
             "label": true
@@ -5532,17 +5785,19 @@
             "8d6e4ff0f1910d39",
             "949fc842e1f0f11c",
             "548689c39c8b4c8b",
-            "7ece91017f1d4cd5"
+            "7ece91017f1d4cd5",
+            "2a97f23e261aff37",
+            "e9d7c48dfa9aa2b1"
         ],
-        "x": 2094,
-        "y": 4159,
-        "w": 492,
+        "x": 1994,
+        "y": 3319,
+        "w": 632,
         "h": 442
     },
     {
         "id": "83f75d1f2863e9cd",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "32f78f14acdf910e",
         "name": "固定标签——联网结果：",
         "text_content": "联网结果：",
@@ -5554,14 +5809,14 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2450,
-        "y": 4300,
+        "x": 2490,
+        "y": 3460,
         "wires": []
     },
     {
         "id": "4d14589cfd949d7c",
         "type": "inject",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "32f78f14acdf910e",
         "name": "",
         "props": [
@@ -5580,21 +5835,18 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 2200,
-        "y": 4200,
+        "x": 2100,
+        "y": 3360,
         "wires": [
             [
-                "83f75d1f2863e9cd",
-                "9ca577863311812d",
-                "d128decc412145d7",
-                "949fc842e1f0f11c"
+                "2a97f23e261aff37"
             ]
         ]
     },
     {
         "id": "9ca577863311812d",
         "type": "circle",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "32f78f14acdf910e",
         "name": "标签1",
         "coord_x": "70",
@@ -5607,14 +5859,14 @@
         "custom_border_color": "",
         "priority": "7",
         "set": "",
-        "x": 2390,
-        "y": 4260,
+        "x": 2430,
+        "y": 3420,
         "wires": []
     },
     {
         "id": "4852c0161e1a179a",
         "type": "rectangle",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "32f78f14acdf910e",
         "name": "清除——烧录结果",
         "coord_x": "170",
@@ -5629,14 +5881,14 @@
         "custom_color2": "",
         "priority": "7",
         "set": "",
-        "x": 2470,
-        "y": 4340,
+        "x": 2510,
+        "y": 3500,
         "wires": []
     },
     {
         "id": "978fad82b935c041",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "32f78f14acdf910e",
         "name": "固定标签——待定：",
         "text_content": "待定：",
@@ -5648,14 +5900,14 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2440,
-        "y": 4520,
+        "x": 2480,
+        "y": 3680,
         "wires": []
     },
     {
         "id": "d128decc412145d7",
         "type": "circle",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "32f78f14acdf910e",
         "name": "标签2",
         "coord_x": "70",
@@ -5668,14 +5920,14 @@
         "custom_border_color": "",
         "priority": "7",
         "set": "",
-        "x": 2390,
-        "y": 4480,
+        "x": 2430,
+        "y": 3640,
         "wires": []
     },
     {
         "id": "7e9d09d8349beb4f",
         "type": "rectangle",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "32f78f14acdf910e",
         "name": "清除——",
         "coord_x": "170",
@@ -5690,14 +5942,14 @@
         "custom_color2": "",
         "priority": "7",
         "set": "",
-        "x": 2440,
-        "y": 4560,
+        "x": 2480,
+        "y": 3720,
         "wires": []
     },
     {
         "id": "7e56e8cbc0b30925",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "32f78f14acdf910e",
         "name": "可变标签——成功",
         "text_content": "成功",
@@ -5709,14 +5961,14 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2470,
-        "y": 4380,
+        "x": 2510,
+        "y": 3540,
         "wires": []
     },
     {
         "id": "8d6e4ff0f1910d39",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "32f78f14acdf910e",
         "name": "可变标签——失败",
         "text_content": "失败",
@@ -5728,14 +5980,14 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2470,
-        "y": 4420,
+        "x": 2510,
+        "y": 3580,
         "wires": []
     },
     {
         "id": "949fc842e1f0f11c",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "32f78f14acdf910e",
         "name": "固定标签——ETH",
         "text_content": "ETH",
@@ -5747,21 +5999,21 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2390,
-        "y": 4200,
+        "x": 2430,
+        "y": 3360,
         "wires": []
     },
     {
         "id": "548689c39c8b4c8b",
         "type": "link in",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "32f78f14acdf910e",
         "name": "link in 49",
         "links": [
             "fd584f7157e8203a"
         ],
-        "x": 2215,
-        "y": 4420,
+        "x": 2255,
+        "y": 3580,
         "wires": [
             [
                 "8d6e4ff0f1910d39"
@@ -5771,14 +6023,14 @@
     {
         "id": "7ece91017f1d4cd5",
         "type": "link in",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "32f78f14acdf910e",
         "name": "link in 50",
         "links": [
             "65c0bc9be752c7c7"
         ],
-        "x": 2215,
-        "y": 4380,
+        "x": 2255,
+        "y": 3540,
         "wires": [
             [
                 "7e56e8cbc0b30925"
@@ -5786,9 +6038,45 @@
         ]
     },
     {
+        "id": "2a97f23e261aff37",
+        "type": "Flow Switch",
+        "z": "9cc9bee3c9890942",
+        "g": "32f78f14acdf910e",
+        "name": "流开关",
+        "set": true,
+        "flowSwitch": "on",
+        "x": 2230,
+        "y": 3360,
+        "wires": [
+            [
+                "949fc842e1f0f11c",
+                "9ca577863311812d",
+                "83f75d1f2863e9cd",
+                "d128decc412145d7"
+            ]
+        ]
+    },
+    {
+        "id": "e9d7c48dfa9aa2b1",
+        "type": "link in",
+        "z": "9cc9bee3c9890942",
+        "g": "32f78f14acdf910e",
+        "name": "link in 67",
+        "links": [
+            "b599a4a336eef5d7"
+        ],
+        "x": 2155,
+        "y": 3400,
+        "wires": [
+            [
+                "2a97f23e261aff37"
+            ]
+        ]
+    },
+    {
         "id": "961d12654e6bb4ad",
         "type": "group",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "5、4G测试的label",
         "style": {
             "label": true
@@ -5813,17 +6101,20 @@
             "d8e6057013781797",
             "0f16f6ef7ee3b769",
             "4790b67bad2d2656",
-            "85190dac56c964c9"
+            "85190dac56c964c9",
+            "40e2024c6f6ea79f",
+            "042e0a2dc9b1d5a7",
+            "2409dfc3f70f53f1"
         ],
-        "x": 2094,
-        "y": 4679,
-        "w": 512,
+        "x": 1994,
+        "y": 3859,
+        "w": 672,
         "h": 722
     },
     {
         "id": "96c18d4d1c4293cc",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "961d12654e6bb4ad",
         "name": "固定标签——SIM卡：",
         "text_content": "SIM卡：",
@@ -5835,14 +6126,14 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2440,
-        "y": 4820,
+        "x": 2500,
+        "y": 4000,
         "wires": []
     },
     {
         "id": "bf7df6b2c9bc8b6b",
         "type": "inject",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "961d12654e6bb4ad",
         "name": "",
         "props": [
@@ -5861,24 +6152,18 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 2200,
-        "y": 4720,
+        "x": 2100,
+        "y": 3900,
         "wires": [
             [
-                "f7bdba47c9df735a",
-                "c1da4e7e012b9ff9",
-                "4ae1db6dfed6e13c",
-                "eb6d4c064d3e5f68",
-                "96c18d4d1c4293cc",
-                "6d20f087abcd78e1",
-                "a0a13912cd8a694d"
+                "2409dfc3f70f53f1"
             ]
         ]
     },
     {
         "id": "f7bdba47c9df735a",
         "type": "circle",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "961d12654e6bb4ad",
         "name": "标签1",
         "coord_x": "70",
@@ -5891,14 +6176,14 @@
         "custom_border_color": "",
         "priority": "7",
         "set": "",
-        "x": 2390,
-        "y": 4780,
+        "x": 2450,
+        "y": 3960,
         "wires": []
     },
     {
         "id": "97d61827e3f610cb",
         "type": "rectangle",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "961d12654e6bb4ad",
         "name": "清除",
         "coord_x": "170",
@@ -5913,14 +6198,14 @@
         "custom_color2": "",
         "priority": "7",
         "set": "",
-        "x": 2430,
-        "y": 4860,
+        "x": 2490,
+        "y": 4040,
         "wires": []
     },
     {
         "id": "a0a13912cd8a694d",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "961d12654e6bb4ad",
         "name": "固定标签——信噪比：",
         "text_content": "信噪比：",
@@ -5932,14 +6217,14 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2440,
-        "y": 5280,
+        "x": 2500,
+        "y": 4460,
         "wires": []
     },
     {
         "id": "c1da4e7e012b9ff9",
         "type": "circle",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "961d12654e6bb4ad",
         "name": "标签3",
         "coord_x": "70",
@@ -5952,14 +6237,14 @@
         "custom_border_color": "",
         "priority": "7",
         "set": "",
-        "x": 2390,
-        "y": 5240,
+        "x": 2450,
+        "y": 4420,
         "wires": []
     },
     {
         "id": "0cc7115a1c373794",
         "type": "rectangle",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "961d12654e6bb4ad",
         "name": "清除",
         "coord_x": "170",
@@ -5974,14 +6259,14 @@
         "custom_color2": "",
         "priority": "7",
         "set": "",
-        "x": 2430,
-        "y": 5320,
+        "x": 2490,
+        "y": 4500,
         "wires": []
     },
     {
         "id": "1091308996c67af1",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "961d12654e6bb4ad",
         "name": "可变标签——已识别",
         "text_content": "已识别",
@@ -5993,14 +6278,14 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2480,
-        "y": 4900,
+        "x": 2540,
+        "y": 4080,
         "wires": []
     },
     {
         "id": "9f855c09a30ee384",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "961d12654e6bb4ad",
         "name": "可变标签——未识别",
         "text_content": "未识别",
@@ -6012,14 +6297,14 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2480,
-        "y": 4940,
+        "x": 2540,
+        "y": 4120,
         "wires": []
     },
     {
         "id": "4ae1db6dfed6e13c",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "961d12654e6bb4ad",
         "name": "固定标签——4G",
         "text_content": "4G",
@@ -6031,14 +6316,14 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2380,
-        "y": 4720,
+        "x": 2440,
+        "y": 3900,
         "wires": []
     },
     {
         "id": "6d20f087abcd78e1",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "961d12654e6bb4ad",
         "name": "固定标签——联网结果：",
         "text_content": "联网结果：",
@@ -6050,14 +6335,14 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2430,
-        "y": 5060,
+        "x": 2490,
+        "y": 4240,
         "wires": []
     },
     {
         "id": "eb6d4c064d3e5f68",
         "type": "circle",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "961d12654e6bb4ad",
         "name": "标签2",
         "coord_x": "70",
@@ -6070,14 +6355,14 @@
         "custom_border_color": "",
         "priority": "7",
         "set": "",
-        "x": 2370,
-        "y": 5020,
+        "x": 2430,
+        "y": 4200,
         "wires": []
     },
     {
         "id": "dd247add4bd134b2",
         "type": "rectangle",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "961d12654e6bb4ad",
         "name": "清除",
         "coord_x": "170",
@@ -6092,14 +6377,14 @@
         "custom_color2": "",
         "priority": "7",
         "set": "",
-        "x": 2410,
-        "y": 5100,
+        "x": 2470,
+        "y": 4280,
         "wires": []
     },
     {
         "id": "3007e486b7e7308a",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "961d12654e6bb4ad",
         "name": "可变标签——成功",
         "text_content": "成功",
@@ -6111,14 +6396,14 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2450,
-        "y": 5140,
+        "x": 2510,
+        "y": 4320,
         "wires": []
     },
     {
         "id": "86eeca281a5f2dfd",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "961d12654e6bb4ad",
         "name": "可变标签——失败",
         "text_content": "失败",
@@ -6130,14 +6415,14 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2450,
-        "y": 5180,
+        "x": 2510,
+        "y": 4360,
         "wires": []
     },
     {
         "id": "5f3b4ae94ac738b7",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "961d12654e6bb4ad",
         "name": "可变标签——snr",
         "text_content": "",
@@ -6149,21 +6434,21 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2460,
-        "y": 5360,
+        "x": 2520,
+        "y": 4540,
         "wires": []
     },
     {
         "id": "d8e6057013781797",
         "type": "link in",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "961d12654e6bb4ad",
         "name": "link in 51",
         "links": [
             "7ce3216dec3438ad"
         ],
-        "x": 2235,
-        "y": 4900,
+        "x": 2295,
+        "y": 4080,
         "wires": [
             [
                 "1091308996c67af1"
@@ -6173,14 +6458,15 @@
     {
         "id": "0f16f6ef7ee3b769",
         "type": "link in",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "961d12654e6bb4ad",
         "name": "link in 52",
         "links": [
-            "e5d264b36c1747ef"
+            "e5d264b36c1747ef",
+            "b313f5f5ab0033d5"
         ],
-        "x": 2235,
-        "y": 4940,
+        "x": 2295,
+        "y": 4120,
         "wires": [
             [
                 "9f855c09a30ee384"
@@ -6190,14 +6476,14 @@
     {
         "id": "4790b67bad2d2656",
         "type": "link in",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "961d12654e6bb4ad",
         "name": "link in 53",
         "links": [
             "c134a5d3712d56f1"
         ],
-        "x": 2255,
-        "y": 5360,
+        "x": 2315,
+        "y": 4540,
         "wires": [
             [
                 "5f3b4ae94ac738b7"
@@ -6207,14 +6493,15 @@
     {
         "id": "85190dac56c964c9",
         "type": "link in",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "961d12654e6bb4ad",
         "name": "link in 55",
         "links": [
-            "dc3960920383e1d7"
+            "dc3960920383e1d7",
+            "b313f5f5ab0033d5"
         ],
-        "x": 2235,
-        "y": 5180,
+        "x": 2295,
+        "y": 4360,
         "wires": [
             [
                 "86eeca281a5f2dfd"
@@ -6222,9 +6509,65 @@
         ]
     },
     {
+        "id": "40e2024c6f6ea79f",
+        "type": "link in",
+        "z": "9cc9bee3c9890942",
+        "g": "961d12654e6bb4ad",
+        "name": "link in 68",
+        "links": [
+            "b599a4a336eef5d7"
+        ],
+        "x": 2145,
+        "y": 3940,
+        "wires": [
+            [
+                "2409dfc3f70f53f1"
+            ]
+        ]
+    },
+    {
+        "id": "042e0a2dc9b1d5a7",
+        "type": "link in",
+        "z": "9cc9bee3c9890942",
+        "g": "961d12654e6bb4ad",
+        "name": "link in 54",
+        "links": [
+            "9064815f06215091"
+        ],
+        "x": 2295,
+        "y": 4320,
+        "wires": [
+            [
+                "3007e486b7e7308a"
+            ]
+        ]
+    },
+    {
+        "id": "2409dfc3f70f53f1",
+        "type": "Flow Switch",
+        "z": "9cc9bee3c9890942",
+        "g": "961d12654e6bb4ad",
+        "name": "流开关",
+        "set": true,
+        "flowSwitch": "on",
+        "x": 2250,
+        "y": 3900,
+        "wires": [
+            [
+                "4ae1db6dfed6e13c",
+                "f7bdba47c9df735a",
+                "96c18d4d1c4293cc",
+                "eb6d4c064d3e5f68",
+                "6d20f087abcd78e1",
+                "c1da4e7e012b9ff9",
+                "a0a13912cd8a694d"
+            ]
+        ]
+    },
+    {
         "id": "bb9055124e8b9286",
         "type": "group",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "6、LoRa测试的label",
         "style": {
             "label": true
@@ -6243,17 +6586,19 @@
             "06cf5d3b93c53fe7",
             "33caac65a1cdc82a",
             "d04f8274a421cadf",
-            "138133b87e5fc5a8"
+            "138133b87e5fc5a8",
+            "d637f883c18cf1df",
+            "f2a8f6c596de21d9"
         ],
-        "x": 2094,
-        "y": 5479,
-        "w": 512,
+        "x": 1994,
+        "y": 4639,
+        "w": 632,
         "h": 482
     },
     {
         "id": "fbf63667d78f1fe8",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "bb9055124e8b9286",
         "name": "固定标签——接收结果：",
         "text_content": "接收结果：",
@@ -6265,14 +6610,14 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2450,
-        "y": 5620,
+        "x": 2470,
+        "y": 4780,
         "wires": []
     },
     {
         "id": "4fedfea109bc2fd0",
         "type": "inject",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "bb9055124e8b9286",
         "name": "",
         "props": [
@@ -6291,22 +6636,18 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 2200,
-        "y": 5520,
+        "x": 2100,
+        "y": 4680,
         "wires": [
             [
-                "fbf63667d78f1fe8",
-                "a73738a5bd896e32",
-                "0d7d1ede8d6536bf",
-                "ebee21d32cecd86e",
-                "06cf5d3b93c53fe7"
+                "d637f883c18cf1df"
             ]
         ]
     },
     {
         "id": "a73738a5bd896e32",
         "type": "circle",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "bb9055124e8b9286",
         "name": "标签1",
         "coord_x": "310",
@@ -6319,14 +6660,14 @@
         "custom_border_color": "",
         "priority": "7",
         "set": "",
-        "x": 2390,
-        "y": 5580,
+        "x": 2410,
+        "y": 4740,
         "wires": []
     },
     {
         "id": "6804bbf2d8790614",
         "type": "rectangle",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "bb9055124e8b9286",
         "name": "清除——烧录结果",
         "coord_x": "410",
@@ -6341,14 +6682,14 @@
         "custom_color2": "",
         "priority": "7",
         "set": "",
-        "x": 2470,
-        "y": 5660,
+        "x": 2490,
+        "y": 4820,
         "wires": []
     },
     {
         "id": "ebee21d32cecd86e",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "bb9055124e8b9286",
         "name": "固定标签——信噪比：",
         "text_content": "信噪比：",
@@ -6360,14 +6701,14 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2440,
-        "y": 5840,
+        "x": 2460,
+        "y": 5000,
         "wires": []
     },
     {
         "id": "0d7d1ede8d6536bf",
         "type": "circle",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "bb9055124e8b9286",
         "name": "标签2",
         "coord_x": "310",
@@ -6380,14 +6721,14 @@
         "custom_border_color": "",
         "priority": "7",
         "set": "",
-        "x": 2390,
-        "y": 5800,
+        "x": 2410,
+        "y": 4960,
         "wires": []
     },
     {
         "id": "bef7097e581f618b",
         "type": "rectangle",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "bb9055124e8b9286",
         "name": "清除",
         "coord_x": "410",
@@ -6402,14 +6743,14 @@
         "custom_color2": "",
         "priority": "7",
         "set": "",
-        "x": 2430,
-        "y": 5880,
+        "x": 2450,
+        "y": 5040,
         "wires": []
     },
     {
         "id": "63a492a21a667f89",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "bb9055124e8b9286",
         "name": "可变标签——信噪比",
         "text_content": "5.0",
@@ -6421,14 +6762,14 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2480,
-        "y": 5920,
+        "x": 2500,
+        "y": 5080,
         "wires": []
     },
     {
         "id": "f5861b211ef99846",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "bb9055124e8b9286",
         "name": "可变标签——成功",
         "text_content": "成功",
@@ -6440,14 +6781,14 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2470,
-        "y": 5700,
+        "x": 2490,
+        "y": 4860,
         "wires": []
     },
     {
         "id": "28e685ed514c0471",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "bb9055124e8b9286",
         "name": "可变标签——失败",
         "text_content": "失败",
@@ -6459,14 +6800,14 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2470,
-        "y": 5740,
+        "x": 2490,
+        "y": 4900,
         "wires": []
     },
     {
         "id": "06cf5d3b93c53fe7",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "bb9055124e8b9286",
         "name": "固定标签——LoRa",
         "text_content": "LoRa",
@@ -6478,21 +6819,21 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2390,
-        "y": 5520,
+        "x": 2470,
+        "y": 4680,
         "wires": []
     },
     {
         "id": "33caac65a1cdc82a",
         "type": "link in",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "bb9055124e8b9286",
         "name": "link in 56",
         "links": [
             "4dafd5679b6c2957"
         ],
-        "x": 2205,
-        "y": 5740,
+        "x": 2225,
+        "y": 4900,
         "wires": [
             [
                 "28e685ed514c0471"
@@ -6502,14 +6843,14 @@
     {
         "id": "d04f8274a421cadf",
         "type": "link in",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "bb9055124e8b9286",
         "name": "link in 57",
         "links": [
             "9b30fff25353eb0b"
         ],
-        "x": 2205,
-        "y": 5700,
+        "x": 2225,
+        "y": 4860,
         "wires": [
             [
                 "f5861b211ef99846"
@@ -6519,14 +6860,14 @@
     {
         "id": "138133b87e5fc5a8",
         "type": "link in",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "bb9055124e8b9286",
         "name": "link in 58",
         "links": [
             "397ef37548ee085b"
         ],
-        "x": 2215,
-        "y": 5920,
+        "x": 2235,
+        "y": 5080,
         "wires": [
             [
                 "63a492a21a667f89"
@@ -6534,9 +6875,46 @@
         ]
     },
     {
+        "id": "d637f883c18cf1df",
+        "type": "Flow Switch",
+        "z": "9cc9bee3c9890942",
+        "g": "bb9055124e8b9286",
+        "name": "流开关",
+        "set": true,
+        "flowSwitch": "on",
+        "x": 2230,
+        "y": 4680,
+        "wires": [
+            [
+                "06cf5d3b93c53fe7",
+                "a73738a5bd896e32",
+                "fbf63667d78f1fe8",
+                "0d7d1ede8d6536bf",
+                "ebee21d32cecd86e"
+            ]
+        ]
+    },
+    {
+        "id": "f2a8f6c596de21d9",
+        "type": "link in",
+        "z": "9cc9bee3c9890942",
+        "g": "bb9055124e8b9286",
+        "name": "link in 69",
+        "links": [
+            "b599a4a336eef5d7"
+        ],
+        "x": 2155,
+        "y": 4720,
+        "wires": [
+            [
+                "d637f883c18cf1df"
+            ]
+        ]
+    },
+    {
         "id": "3a6a8c0529c6d46e",
         "type": "group",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "7、NFC测试的label",
         "style": {
             "label": true
@@ -6551,17 +6929,19 @@
             "ced26b15e1cc0e73",
             "157f30bad6d32d3a",
             "e7683ff6db0d06e4",
-            "f8f2bafed5f5fb9a"
+            "f8f2bafed5f5fb9a",
+            "f249d379ba79b54f",
+            "6cfa49b49e8703a0"
         ],
-        "x": 2094,
-        "y": 6079,
-        "w": 492,
+        "x": 1994,
+        "y": 5239,
+        "w": 612,
         "h": 402
     },
     {
         "id": "a705b2b9e7c5aa67",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "3a6a8c0529c6d46e",
         "name": "固定标签——测试结果：",
         "text_content": "测试结果：",
@@ -6573,14 +6953,14 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2450,
-        "y": 6220,
+        "x": 2470,
+        "y": 5380,
         "wires": []
     },
     {
         "id": "90454099c222e196",
         "type": "inject",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "3a6a8c0529c6d46e",
         "name": "",
         "props": [
@@ -6599,22 +6979,18 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 2200,
-        "y": 6120,
+        "x": 2100,
+        "y": 5280,
         "wires": [
             [
-                "a705b2b9e7c5aa67",
-                "0bd131d508b43a35",
-                "aa043c78a7b835a1",
-                "e7683ff6db0d06e4",
-                "7806f0943e1d0acd"
+                "f249d379ba79b54f"
             ]
         ]
     },
     {
         "id": "0bd131d508b43a35",
         "type": "circle",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "3a6a8c0529c6d46e",
         "name": "标签1",
         "coord_x": "310",
@@ -6627,14 +7003,14 @@
         "custom_border_color": "",
         "priority": "7",
         "set": "",
-        "x": 2390,
-        "y": 6180,
+        "x": 2410,
+        "y": 5340,
         "wires": []
     },
     {
         "id": "a16c8378199861ed",
         "type": "rectangle",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "3a6a8c0529c6d46e",
         "name": "清除——测试结果",
         "coord_x": "410",
@@ -6649,14 +7025,14 @@
         "custom_color2": "",
         "priority": "7",
         "set": "",
-        "x": 2470,
-        "y": 6260,
+        "x": 2490,
+        "y": 5420,
         "wires": []
     },
     {
         "id": "7806f0943e1d0acd",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "3a6a8c0529c6d46e",
         "name": "固定标签——提示语：",
         "text_content": "刷NFC后没结果，则测试失败",
@@ -6668,14 +7044,14 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2440,
-        "y": 6440,
+        "x": 2460,
+        "y": 5600,
         "wires": []
     },
     {
         "id": "aa043c78a7b835a1",
         "type": "circle",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "3a6a8c0529c6d46e",
         "name": "标签2",
         "coord_x": "310",
@@ -6688,14 +7064,14 @@
         "custom_border_color": "",
         "priority": "7",
         "set": "",
-        "x": 2390,
-        "y": 6400,
+        "x": 2410,
+        "y": 5560,
         "wires": []
     },
     {
         "id": "ced26b15e1cc0e73",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "3a6a8c0529c6d46e",
         "name": "可变标签——成功",
         "text_content": "成功",
@@ -6707,14 +7083,14 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2470,
-        "y": 6300,
+        "x": 2490,
+        "y": 5460,
         "wires": []
     },
     {
         "id": "157f30bad6d32d3a",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "3a6a8c0529c6d46e",
         "name": "可变标签——失败",
         "text_content": "失败",
@@ -6726,14 +7102,14 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2470,
-        "y": 6340,
+        "x": 2490,
+        "y": 5500,
         "wires": []
     },
     {
         "id": "e7683ff6db0d06e4",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "3a6a8c0529c6d46e",
         "name": "固定标签——NFC",
         "text_content": "NFC",
@@ -6745,21 +7121,21 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2390,
-        "y": 6120,
+        "x": 2410,
+        "y": 5280,
         "wires": []
     },
     {
         "id": "f8f2bafed5f5fb9a",
         "type": "link in",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "3a6a8c0529c6d46e",
         "name": "link in 59",
         "links": [
             "7b62a081e07868e0"
         ],
-        "x": 2265,
-        "y": 6300,
+        "x": 2285,
+        "y": 5460,
         "wires": [
             [
                 "ced26b15e1cc0e73"
@@ -6767,9 +7143,46 @@
         ]
     },
     {
+        "id": "f249d379ba79b54f",
+        "type": "Flow Switch",
+        "z": "9cc9bee3c9890942",
+        "g": "3a6a8c0529c6d46e",
+        "name": "流开关",
+        "set": true,
+        "flowSwitch": "on",
+        "x": 2230,
+        "y": 5280,
+        "wires": [
+            [
+                "e7683ff6db0d06e4",
+                "0bd131d508b43a35",
+                "a705b2b9e7c5aa67",
+                "aa043c78a7b835a1",
+                "7806f0943e1d0acd"
+            ]
+        ]
+    },
+    {
+        "id": "6cfa49b49e8703a0",
+        "type": "link in",
+        "z": "9cc9bee3c9890942",
+        "g": "3a6a8c0529c6d46e",
+        "name": "link in 70",
+        "links": [
+            "b599a4a336eef5d7"
+        ],
+        "x": 2155,
+        "y": 5320,
+        "wires": [
+            [
+                "f249d379ba79b54f"
+            ]
+        ]
+    },
+    {
         "id": "ebe58173c38bd7bd",
         "type": "group",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "name": "8、其他问题",
         "style": {
             "label": true
@@ -6784,17 +7197,19 @@
             "afe90a707eb2d6e3",
             "36a60fa5408efac1",
             "f5e8dee978510980",
-            "d123c9c2485b2891"
+            "d123c9c2485b2891",
+            "b4d9878a6aabff3f",
+            "58d97038e8acf7ed"
         ],
-        "x": 2274,
-        "y": 2219,
-        "w": 612,
+        "x": 1994,
+        "y": 1379,
+        "w": 692,
         "h": 362
     },
     {
         "id": "18796ff3604fafb1",
         "type": "inject",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "ebe58173c38bd7bd",
         "name": "",
         "props": [
@@ -6813,20 +7228,18 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 2380,
-        "y": 2260,
+        "x": 2100,
+        "y": 1420,
         "wires": [
             [
-                "568aa64a7404ecac",
-                "31776e96cd6b0f27",
-                "36a60fa5408efac1"
+                "b4d9878a6aabff3f"
             ]
         ]
     },
     {
         "id": "568aa64a7404ecac",
         "type": "circle",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "ebe58173c38bd7bd",
         "name": "标签1",
         "coord_x": "310",
@@ -6839,14 +7252,14 @@
         "custom_border_color": "",
         "priority": "7",
         "set": "",
-        "x": 2570,
-        "y": 2320,
+        "x": 2370,
+        "y": 1480,
         "wires": []
     },
     {
         "id": "d727e8ade6df2ed5",
         "type": "rectangle",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "ebe58173c38bd7bd",
         "name": "清除——烧录结果",
         "coord_x": "320",
@@ -6861,14 +7274,14 @@
         "custom_color2": "",
         "priority": "7",
         "set": "",
-        "x": 2650,
-        "y": 2360,
+        "x": 2450,
+        "y": 1520,
         "wires": []
     },
     {
         "id": "31776e96cd6b0f27",
         "type": "circle",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "ebe58173c38bd7bd",
         "name": "标签2",
         "coord_x": "310",
@@ -6881,14 +7294,14 @@
         "custom_border_color": "",
         "priority": "7",
         "set": "",
-        "x": 2570,
-        "y": 2460,
+        "x": 2370,
+        "y": 1620,
         "wires": []
     },
     {
         "id": "0c964c296115b338",
         "type": "rectangle",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "ebe58173c38bd7bd",
         "name": "清除——",
         "coord_x": "320",
@@ -6903,14 +7316,14 @@
         "custom_color2": "",
         "priority": "7",
         "set": "",
-        "x": 2620,
-        "y": 2500,
+        "x": 2420,
+        "y": 1660,
         "wires": []
     },
     {
         "id": "ccf1711c7c07f21d",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "ebe58173c38bd7bd",
         "name": "可变标签——网络数据库连接错误",
         "text_content": "网络数据库连接错误",
@@ -6922,14 +7335,14 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2700,
-        "y": 2400,
+        "x": 2500,
+        "y": 1560,
         "wires": []
     },
     {
         "id": "afe90a707eb2d6e3",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "ebe58173c38bd7bd",
         "name": "可变标签——网关内置Shell服务器出错",
         "text_content": "网关内置Shell服务器出错",
@@ -6941,14 +7354,14 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2710,
-        "y": 2540,
+        "x": 2510,
+        "y": 1700,
         "wires": []
     },
     {
         "id": "36a60fa5408efac1",
         "type": "text",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "ebe58173c38bd7bd",
         "name": "固定标签——其他",
         "text_content": "其他",
@@ -6960,21 +7373,21 @@
         "custom_color": "",
         "priority": "7",
         "set": false,
-        "x": 2570,
-        "y": 2260,
+        "x": 2410,
+        "y": 1420,
         "wires": []
     },
     {
         "id": "f5e8dee978510980",
         "type": "link in",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "ebe58173c38bd7bd",
         "name": "link in 41",
         "links": [
             "52152cce8135ccd2"
         ],
-        "x": 2475,
-        "y": 2540,
+        "x": 2275,
+        "y": 1700,
         "wires": [
             [
                 "afe90a707eb2d6e3"
@@ -6984,17 +7397,52 @@
     {
         "id": "d123c9c2485b2891",
         "type": "link in",
-        "z": "4701b8940aeb2fea",
+        "z": "9cc9bee3c9890942",
         "g": "ebe58173c38bd7bd",
         "name": "link in 42",
         "links": [
             "20eca39a491ce46a"
         ],
-        "x": 2475,
-        "y": 2400,
+        "x": 2275,
+        "y": 1560,
         "wires": [
             [
                 "ccf1711c7c07f21d"
+            ]
+        ]
+    },
+    {
+        "id": "b4d9878a6aabff3f",
+        "type": "Flow Switch",
+        "z": "9cc9bee3c9890942",
+        "g": "ebe58173c38bd7bd",
+        "name": "流开关",
+        "set": true,
+        "flowSwitch": "on",
+        "x": 2230,
+        "y": 1420,
+        "wires": [
+            [
+                "36a60fa5408efac1",
+                "568aa64a7404ecac",
+                "31776e96cd6b0f27"
+            ]
+        ]
+    },
+    {
+        "id": "58d97038e8acf7ed",
+        "type": "link in",
+        "z": "9cc9bee3c9890942",
+        "g": "ebe58173c38bd7bd",
+        "name": "link in 64",
+        "links": [
+            "b599a4a336eef5d7"
+        ],
+        "x": 2155,
+        "y": 1460,
+        "wires": [
+            [
+                "b4d9878a6aabff3f"
             ]
         ]
     },
