@@ -63,7 +63,8 @@ module.exports = function(RED) {
                     var msg1 = { topic: topic, payload: payload_data };
                     // 筛选action与devName
                     if(payload_data.action == node.action || node.action == 'both'){
-                        if(payload_data.devName == node.devName || node.devName == ""){
+                        // if(payload_data.devName == node.devName || node.devName == ""){
+                        if(payload_data.devName.includes(node.devName) || node.devName == ""){
                             node.send(msg1);
                         }  
                     }

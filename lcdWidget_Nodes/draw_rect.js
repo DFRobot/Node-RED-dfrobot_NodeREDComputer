@@ -51,7 +51,8 @@ module.exports = function(RED) {
                     }
                 })
                 .catch(function (error) {
-                    node.error(error);
+                    // node.error(error);
+                    node.status({fill:"red",shape:"ring",text: error});
                 });
         }
         

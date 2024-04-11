@@ -1,17 +1,20 @@
 {
     "name": "@renyoo/node-red-dfrobot_noderedcomputer",
-    "version": "1.0.18",
+    "version": "1.0.19",
     "description": "node red nodes for NodeREDComputer",
     "node-red": {
         "version": ">=2.0.0",
         "nodes": {
-            "dfrobot-gpio_out": "./PeripheralControl/gpio_out.js",
-            "dfrobot-gpio_in": "./PeripheralControl/gpio_in.js",
-            "dfrobot-adc": "./PeripheralControl/adc.js",
-            "dfrobot-dac": "./PeripheralControl/dac.js",
+            "dfrobot-gpio_out": "./1-PeripheralControl/gpio_out.js",
+            "dfrobot-gpio_in": "./1-PeripheralControl/gpio_in.js",
+            "dfrobot-adc": "./1-PeripheralControl/adc.js",
+            "dfrobot-dac": "./1-PeripheralControl/dac.js",
+
             "dfrobot-event_dev": "./ListenerType_Nodes/event_dev.js",
             "dfrobot-Special_event": "./ListenerType_Nodes/Special_event.js",
             "dfrobot-gpio_Interrupt": "./ListenerType_Nodes/gpio_Interrupt.js",
+            "dfrobot-serialCommunication": "./ListenerType_Nodes/serialCommunication.js",
+
             "dfrobot-FlowCountNode": "./Regular_Nodes/flow_count.js",
             "dfrobot-FlowSwitch": "./Regular_Nodes/flow_switch.js",
             "dfrobot-DeviceShell": "./Regular_Nodes/device_shell.js",
