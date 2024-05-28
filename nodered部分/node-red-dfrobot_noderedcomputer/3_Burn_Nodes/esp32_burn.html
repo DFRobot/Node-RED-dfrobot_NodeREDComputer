@@ -1,0 +1,82 @@
+<script type="text/html" data-help-name="ESP32烧录">
+  <p>ESP32烧录节点: 用于对esp32设备进行烧录</p>
+</script>
+
+
+<script type="text/html" data-template-name="ESP32烧录">
+  <!-- Name -->
+  <div class="form-row">
+    <label for="node-input-name"><i class="fa fa-tag"></i> 名称</label>
+    <input type="text" id="node-input-name" data-i18n="[placeholder]name">
+  </div>
+
+  <div class="form-row">
+      <label for="node-input-chip"><i class="fa fa-circle"></i> 芯片选型</label>
+      <select id="node-input-chip" style="width: 250px;">
+        <option value="esp32c3">esp32-C3</option>
+        <option value="esp32c6">esp32-C6</option>
+        <option value="esp32s3">esp32-S3</option>
+        <option value="esp32e">esp32-E/UE</option>
+        <option value="esp8266">esp8266</option>
+        <option value="custom">自定义</option>
+        <!-- 注意esp32c6c5是2022年发布的，Linux上的esptool烧录工具并不支持这款芯片 -->
+        <!-- <option value="esp32c6c5">C5</option>
+        <option value="esp32p4">P4</option>
+        <option value="esp32c6beta">C61</option> -->
+        </select>
+  </div>
+
+  <!-- 下拉选项框选择了自定义 -->
+  <div class="form-row" id="node-set-state">
+    <label for="node-input-custom_chip">&nbsp;</label>
+    <input type="text" id="node-input-custom_chip" >
+  </div>
+
+  <div class="form-row">
+      <label for="node-input-firmware"><i class="fa fa-circle"></i> 指定固件</label>
+      <input type="text" id="node-input-firmware" data-i18n="[placeholder]输入路径,如/root/ESP32Firmware/bink.bin">
+  </div>
+
+</script>
+
+
+
+<script type="text/javascript">
+    RED.nodes.registerType('ESP32烧录',{
+      category: 'Block 烧录事件',
+      color: '#35c1f4',
+      defaults: {
+        name: {value:""},
+        chip: {value:"esp32c6"},
+        custom_chip: {value:""},
+        firmware:  {value:""},
+      },
+      inputs:1,
+      outputs:1,
+      icon: "font-awesome/fa-download",
+      label: function() {
+        return this.name||this._("ESP32烧录节点");
+      },
+      inputLabels: function(i) {
+        return this.name||this._("输入-烧录设备名称msg.payload.device_name");
+      },
+      outputLabels: function(i) {
+        return this.name||this._("输出-烧录信息");
+      },
+
+      oneditprepare: function() {
+        var setstate = function () {
+            // 判断选中的选项是否为"custom"
+            if ($('#node-input-chip').val() === "custom") {
+                $("#node-set-state").show();
+            } else {
+                $("#node-set-state").hide();
+            }
+        };
+        $("#node-input-chip").change(function () { setstate(); });
+        setstate();
+      }
+
+    });
+  </script>
+  

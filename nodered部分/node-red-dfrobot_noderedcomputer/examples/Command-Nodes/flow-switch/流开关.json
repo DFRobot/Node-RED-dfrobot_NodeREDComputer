@@ -1,0 +1,141 @@
+[
+    {
+        "id": "b09195b5639916e3",
+        "type": "inject",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "timestamp",
+        "payload": "",
+        "payloadType": "date",
+        "x": 460,
+        "y": 1580,
+        "wires": [
+            [
+                "e0a1f9a75b6e9748"
+            ]
+        ]
+    },
+    {
+        "id": "60858579bb083e36",
+        "type": "debug",
+        "z": "2cc6b8578366bc4d",
+        "name": "debug-流开关",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 940,
+        "y": 1580,
+        "wires": []
+    },
+    {
+        "id": "3d4f9a27e9f6d864",
+        "type": "inject",
+        "z": "2cc6b8578366bc4d",
+        "name": "payload.switch = on",
+        "props": [
+            {
+                "p": "payload.switch",
+                "v": "on",
+                "vt": "str"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "timestamp",
+        "x": 450,
+        "y": 1640,
+        "wires": [
+            [
+                "e0a1f9a75b6e9748"
+            ]
+        ]
+    },
+    {
+        "id": "c94127e630dc7967",
+        "type": "inject",
+        "z": "2cc6b8578366bc4d",
+        "name": "payload.switch = off",
+        "props": [
+            {
+                "p": "payload.switch",
+                "v": "off",
+                "vt": "str"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "timestamp",
+        "x": 446.3333435058594,
+        "y": 1709,
+        "wires": [
+            [
+                "e0a1f9a75b6e9748"
+            ]
+        ]
+    },
+    {
+        "id": "e0a1f9a75b6e9748",
+        "type": "流开关",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "set": true,
+        "flowSwitch": "on",
+        "x": 710,
+        "y": 1580,
+        "wires": [
+            [
+                "60858579bb083e36"
+            ]
+        ]
+    },
+    {
+        "id": "d1bcbedb07c35ca0",
+        "type": "comment",
+        "z": "2cc6b8578366bc4d",
+        "name": "用于数据流的通行管理",
+        "info": "",
+        "x": 480,
+        "y": 1540,
+        "wires": []
+    },
+    {
+        "id": "b5cb4e4ad36cbdaa",
+        "type": "comment",
+        "z": "2cc6b8578366bc4d",
+        "name": "msg.payload.switch（用于设置流开关的开闭状态）",
+        "info": "",
+        "x": 790,
+        "y": 1680,
+        "wires": []
+    }
+]

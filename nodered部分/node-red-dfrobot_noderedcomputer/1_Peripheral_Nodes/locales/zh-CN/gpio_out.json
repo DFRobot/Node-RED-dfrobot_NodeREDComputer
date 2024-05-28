@@ -1,0 +1,13 @@
+
+{
+    "peripheral": {
+        "gpio": {
+            "name": "名称"
+        },
+        
+        "gpio_out": {
+            "Label_0_dragOut": "GPIO输出",
+            "Level_Init": "设置引脚的初始电平"
+        }
+    }
+}

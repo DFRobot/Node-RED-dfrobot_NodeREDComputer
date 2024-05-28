@@ -1,0 +1,84 @@
+[
+    {
+        "id": "5bf7e1b5a0814cfe",
+        "type": "GPIO输出",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "pin": "79",
+        "level": "1",
+        "set": false,
+        "x": 780,
+        "y": 840,
+        "wires": [
+            [
+                "bc69b50522829351"
+            ]
+        ]
+    },
+    {
+        "id": "a9305535e41d0ced",
+        "type": "inject",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 550,
+        "y": 840,
+        "wires": [
+            [
+                "5bf7e1b5a0814cfe"
+            ]
+        ]
+    },
+    {
+        "id": "d5b4f71e5d1d31a7",
+        "type": "comment",
+        "z": "2cc6b8578366bc4d",
+        "name": "未勾选输入流更改属性：79号引脚-输出高电平",
+        "info": "",
+        "x": 670,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "bc69b50522829351",
+        "type": "debug",
+        "z": "2cc6b8578366bc4d",
+        "name": "debug信息",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1010,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "1269695e81e4646d",
+        "type": "comment",
+        "z": "2cc6b8578366bc4d",
+        "name": "任意流皆可触发，输入流并不改变属性",
+        "info": "",
+        "x": 650,
+        "y": 880,
+        "wires": []
+    }
+]

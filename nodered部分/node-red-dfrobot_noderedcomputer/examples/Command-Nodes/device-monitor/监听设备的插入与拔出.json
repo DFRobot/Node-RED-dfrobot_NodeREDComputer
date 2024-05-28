@@ -1,0 +1,134 @@
+[
+    {
+        "id": "660468f308147ff8",
+        "type": "设备监听",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "set": false,
+        "action": "both",
+        "device_name": "",
+        "setIOin": "",
+        "edge": "none",
+        "x": 510,
+        "y": 900,
+        "wires": [
+            [
+                "6a828e278983f1d1"
+            ]
+        ]
+    },
+    {
+        "id": "6a828e278983f1d1",
+        "type": "debug",
+        "z": "2cc6b8578366bc4d",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 800,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "be1fd9fd446077cb",
+        "type": "comment",
+        "z": "2cc6b8578366bc4d",
+        "name": "监听所有类型的串口与U盘事件",
+        "info": "",
+        "x": 570,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "d28aef45de3644f8",
+        "type": "设备监听",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "set": true,
+        "action": "both",
+        "device_name": "/dev/ttyUSB",
+        "setIOin": "",
+        "edge": "none",
+        "x": 510,
+        "y": 1020,
+        "wires": [
+            [
+                "efac624ea04bf7ac"
+            ]
+        ]
+    },
+    {
+        "id": "efac624ea04bf7ac",
+        "type": "debug",
+        "z": "2cc6b8578366bc4d",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 800,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "40188f4d6713330a",
+        "type": "comment",
+        "z": "2cc6b8578366bc4d",
+        "name": "监听所有/dev/ttyUSB类型的设备",
+        "info": "",
+        "x": 570,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "126cdcd25d5b75e6",
+        "type": "设备监听",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "set": true,
+        "action": "both",
+        "device_name": "/dev/ttyUSB0",
+        "setIOin": "",
+        "edge": "none",
+        "x": 510,
+        "y": 1140,
+        "wires": [
+            [
+                "dd637fbf18baed97"
+            ]
+        ]
+    },
+    {
+        "id": "dd637fbf18baed97",
+        "type": "debug",
+        "z": "2cc6b8578366bc4d",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 800,
+        "y": 1140,
+        "wires": []
+    },
+    {
+        "id": "256e1866454a4a23",
+        "type": "comment",
+        "z": "2cc6b8578366bc4d",
+        "name": "监听/dev/ttyUSB0设备",
+        "info": "",
+        "x": 540,
+        "y": 1100,
+        "wires": []
+    }
+]

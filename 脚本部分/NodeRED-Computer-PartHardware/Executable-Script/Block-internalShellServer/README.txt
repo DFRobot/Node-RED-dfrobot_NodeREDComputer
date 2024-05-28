@@ -1,0 +1,1 @@
+详情见NodeRED-Computer-PartHardware/EnvironmentSetup/gwConfig/internal_Shell_Server

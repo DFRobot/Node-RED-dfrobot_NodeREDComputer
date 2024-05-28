@@ -1,0 +1,106 @@
+[
+    {
+        "id": "e724282679246f5c",
+        "type": "comment",
+        "z": "2cc6b8578366bc4d",
+        "name": "烧录所有插入的esp32设备",
+        "info": "",
+        "x": 1450,
+        "y": 1920,
+        "wires": []
+    },
+    {
+        "id": "d8a61c62c6d125cb",
+        "type": "comment",
+        "z": "2cc6b8578366bc4d",
+        "name": "拔出设备",
+        "info": "",
+        "x": 1400,
+        "y": 1820,
+        "wires": []
+    },
+    {
+        "id": "2d350adeb0529205",
+        "type": "debug",
+        "z": "2cc6b8578366bc4d",
+        "name": "debug 2：数据流详情",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1900,
+        "y": 1960,
+        "wires": []
+    },
+    {
+        "id": "9d6271fa5458924c",
+        "type": "debug",
+        "z": "2cc6b8578366bc4d",
+        "name": "debug 1：数据流详情",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1660,
+        "y": 1860,
+        "wires": []
+    },
+    {
+        "id": "f2bb6bcfcf621157",
+        "type": "设备监听",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "set": true,
+        "action": "remove",
+        "device_name": "/dev/ttyACM",
+        "setIOin": "",
+        "edge": "none",
+        "x": 1410,
+        "y": 1860,
+        "wires": [
+            [
+                "9d6271fa5458924c"
+            ]
+        ]
+    },
+    {
+        "id": "27a70c1edb6c0a69",
+        "type": "特殊烧录事件",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "action": "add",
+        "devName": "",
+        "SpecialEvents": "esp32c6_shakeHands",
+        "oldrc": false,
+        "x": 1430,
+        "y": 1960,
+        "wires": [
+            [
+                "2e21c9458ccd1630"
+            ]
+        ]
+    },
+    {
+        "id": "2e21c9458ccd1630",
+        "type": "ESP32烧录",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "chip": "esp32c6",
+        "firmware": "/root/NodeRED-Computer-PartHardware/Executable-Script/Block-Burn/ESP32_Firmware/esp32c6/esp32c6-blink.bin",
+        "x": 1620,
+        "y": 1960,
+        "wires": [
+            [
+                "2d350adeb0529205"
+            ]
+        ]
+    }
+]

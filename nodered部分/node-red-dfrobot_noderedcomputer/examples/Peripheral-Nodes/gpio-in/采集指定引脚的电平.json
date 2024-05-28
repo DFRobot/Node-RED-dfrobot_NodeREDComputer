@@ -1,0 +1,134 @@
+[
+    {
+        "id": "22ef26533d75faa2",
+        "type": "GPIO输入",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "mode": "floating",
+        "rules": [
+            {
+                "pin": "80"
+            },
+            {
+                "pin": "79"
+            },
+            {
+                "pin": "76"
+            }
+        ],
+        "outputs": 3,
+        "x": 740,
+        "y": 1520,
+        "wires": [
+            [
+                "3b88c432996acd80"
+            ],
+            [
+                "b59808982999950c"
+            ],
+            [
+                "f26521ba9b76281c"
+            ]
+        ]
+    },
+    {
+        "id": "ef8eee544695cd59",
+        "type": "inject",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 480,
+        "y": 1520,
+        "wires": [
+            [
+                "22ef26533d75faa2"
+            ]
+        ]
+    },
+    {
+        "id": "3b88c432996acd80",
+        "type": "debug",
+        "z": "2cc6b8578366bc4d",
+        "name": "GPIO的80引脚电平",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1010,
+        "y": 1460,
+        "wires": []
+    },
+    {
+        "id": "b59808982999950c",
+        "type": "debug",
+        "z": "2cc6b8578366bc4d",
+        "name": "GPIO的79引脚电平",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1010,
+        "y": 1520,
+        "wires": []
+    },
+    {
+        "id": "f26521ba9b76281c",
+        "type": "debug",
+        "z": "2cc6b8578366bc4d",
+        "name": "GPIO的76引脚电平",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1010,
+        "y": 1580,
+        "wires": []
+    },
+    {
+        "id": "d56b99fb1b149a2a",
+        "type": "comment",
+        "z": "2cc6b8578366bc4d",
+        "name": "采集GPIO引脚的高低电平",
+        "info": "",
+        "x": 530,
+        "y": 1460,
+        "wires": []
+    },
+    {
+        "id": "dd424b4bfe2048d8",
+        "type": "comment",
+        "z": "2cc6b8578366bc4d",
+        "name": "随机的输入触发，此处可设置循环采集",
+        "info": "",
+        "x": 570,
+        "y": 1580,
+        "wires": []
+    }
+]

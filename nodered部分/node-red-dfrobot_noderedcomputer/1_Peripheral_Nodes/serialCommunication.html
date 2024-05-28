@@ -1,0 +1,99 @@
+<script type="text/html" data-help-name="串口通信">
+  <p>用于串口通信的节点</p>
+</script>
+
+
+<script type="text/html" data-template-name="串口通信">
+  <!-- Name -->
+  <div class="form-row">
+    <label for="node-input-name"><i class="fa fa-tag"></i> 名称</label>
+    <input type="text" id="node-input-name" data-i18n="[placeholder]name">
+  </div>
+  
+  <!-- port -->
+  <div class="form-row">
+    <label for="node-input-port"><i class="fa fa-tag"></i> 串口名称</label>
+    <input type="text" id="node-input-port" data-i18n="[placeholder]/dev/ttyACM0">
+  </div>
+
+  <!-- baudrate -->
+  <div class="form-row">
+    <label for="node-input-baudrate"><i class="fa fa-tag"></i>波特率</label>
+    <select id="node-input-baudrate" style="width: 250px;">
+      <option value="9600">9600</option>
+      <option value="115200">115200</option>
+      <option value="custom">自定义</option>
+    </select>
+  </div>
+  <!-- baudrate_custom -->
+  <div class="form-row" id="node-set-state">
+    <label for="node-input-custom_baudrate">&nbsp;</label>
+    <input type="text" id="node-input-custom_baudrate" data-i18n="[placeholder]9600">
+  </div>
+
+  <!-- responseTime -->
+  <div class="form-row">
+    <label for="node-input-responseTime"><i class="fa fa-tag"></i> 串口响应时间</label>
+    <input type="text" id="node-input-responseTime" data-i18n="[placeholder]10（默认单位为s）">
+  </div>
+
+  <!-- cmd -->
+  <div class="form-row">
+    <div><br></div>
+    <label for="node-input-cmd"><i class="fa fa-tag"></i> 发送指令</label>
+    <input type="text" id="node-input-cmd" data-i18n="[placeholder]AT+SN?">
+    <div>
+      <label>&nbsp;</label>
+      <label for="node-input-endMark" style="width: 65px;"><i class="fa fa-circle"></i> 结束符</label>
+      <select id="node-input-endMark" style="width: 80px;">
+        <option value="CR">CR</option>
+        <option value="LF">LF</option>
+        <option value="CRLF">CR/LF</option>
+        <option value="None">None</option>
+      </select>
+    </div>
+  </div>
+
+</script>
+
+
+
+<script type="text/javascript">
+    RED.nodes.registerType('串口通信',{
+      category: 'Block 板载外设',
+      color: '#35c1f4',
+      defaults: {
+        name: {value: ""},
+        port: {value: ""},
+        baudrate: {value: "115200"},
+        baudrate_custom: {value: ""},
+        responseTime: {value: "1"},
+        cmd: {value: ""},
+        endMark: {value: "None"}
+      },
+      inputs:1,
+      outputs:1,
+      icon: "bridge.svg",
+      label: function() {
+        return this.name||this._("串口通信节点");
+      },
+
+      oneditprepare: function() {
+
+        var setstate = function () {
+            // 判断选中的选项是否为"custom"
+            if ($('#node-input-baudrate').val() === "custom") {
+                $("#node-set-state").show();
+            } else {
+                $("#node-set-state").hide();
+            }
+        };
+        // 绑定下拉菜单的变化事件到setstate函数
+        $("#node-input-baudrate").change(function () { setstate(); });
+        // 初始化时也调用一次以设置初始状态
+        setstate();
+      }
+
+    });
+  </script>
+  

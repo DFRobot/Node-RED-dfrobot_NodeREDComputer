@@ -1,0 +1,106 @@
+[
+    {
+        "id": "2d44ffb718ceb386",
+        "type": "comment",
+        "z": "2cc6b8578366bc4d",
+        "name": "烧录所有插入的esp32设备",
+        "info": "",
+        "x": 1650,
+        "y": 1700,
+        "wires": []
+    },
+    {
+        "id": "5fe06b8396542918",
+        "type": "comment",
+        "z": "2cc6b8578366bc4d",
+        "name": "拔出设备",
+        "info": "",
+        "x": 1600,
+        "y": 1600,
+        "wires": []
+    },
+    {
+        "id": "cf43ad7ae622f403",
+        "type": "debug",
+        "z": "2cc6b8578366bc4d",
+        "name": "debug 2：数据流详情",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 2040,
+        "y": 1740,
+        "wires": []
+    },
+    {
+        "id": "30f2d4e2be4920e9",
+        "type": "debug",
+        "z": "2cc6b8578366bc4d",
+        "name": "debug 1：数据流详情",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1860,
+        "y": 1640,
+        "wires": []
+    },
+    {
+        "id": "49f5074f55f28138",
+        "type": "设备监听",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "set": true,
+        "action": "remove",
+        "device_name": "/dev/ttyACM",
+        "setIOin": "",
+        "edge": "none",
+        "x": 1610,
+        "y": 1640,
+        "wires": [
+            [
+                "30f2d4e2be4920e9"
+            ]
+        ]
+    },
+    {
+        "id": "fbb576df02cfe4b8",
+        "type": "特殊烧录事件",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "action": "add",
+        "devName": "",
+        "SpecialEvents": "esp32s3_shakeHands",
+        "oldrc": false,
+        "x": 1630,
+        "y": 1740,
+        "wires": [
+            [
+                "3c41d05cf513e2c9"
+            ]
+        ]
+    },
+    {
+        "id": "3c41d05cf513e2c9",
+        "type": "ESP32烧录",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "chip": "esp32s3",
+        "firmware": "/root/NodeRED-Computer-PartHardware/Executable-Script/Block-Burn/ESP32_Firmware/esp32s3/esp32s3-Blink.bin",
+        "x": 1820,
+        "y": 1740,
+        "wires": [
+            [
+                "cf43ad7ae622f403"
+            ]
+        ]
+    }
+]

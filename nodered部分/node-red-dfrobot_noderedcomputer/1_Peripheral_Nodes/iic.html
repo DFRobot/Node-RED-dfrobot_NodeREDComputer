@@ -1,0 +1,68 @@
+<script type="text/html" data-help-name="IIC通信">
+    <p>noderedComputer板载IIC功能节点</p>
+  </script>
+  
+  
+  <script type="text/html" data-template-name="IIC通信">
+    <!-- 设置第一行为Name -->
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> 名称</label>
+        <input type="text" id="node-input-name" data-i18n="[placeholder]name">
+    </div>
+  
+    <div class="form-row">
+        <label for="node-input-bus"><i class="fa fa-tag"></i> 总线编号</label>
+        <input type="text" id="node-input-bus" data-i18n="[placeholder]2">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-address"><i class="fa fa-tag"></i> 从机设备</label>
+        <input type="text" id="node-input-address" data-i18n="[placeholder]0x16">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-mode"><i class="fa fa-tag"></i> 读/写操作</label>
+        <select id="node-input-mode" style="width: 250px;">
+            <option value="write">写操作</option>
+            <option value="read">读操作</option>
+        </select>
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-command"><i class="fa fa-tag"></i> 指令数据</label>
+        <input type="text" id="node-input-command" data-i18n="[placeholder]0x1e ...">
+    </div>
+  
+  </script>
+  
+  
+  
+  <script type="text/javascript">
+      RED.nodes.registerType('IIC通信',{
+        category: 'Block 板载外设',
+        color: '#35c1f4',
+        defaults: {
+          name: {value:""},
+          bus:  {value:"2", required: true},
+          address:  {value:"", required: true},
+          mode:  {value:"write", required: true},
+          command:  {value:""}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "font-awesome/fa-angle-double-right",
+        label: function() {
+          return this.name||this._("IIC节点");
+        },
+        inputLabels: function(i) {
+            return this.name||this._("输入-任意流均可触发/msg.payload.command");
+          },
+        outputLabels: function(i) {
+        return this.name || this._("输出-读操作的返回结果（写操作无输出）");
+        },
+    
+  
+      });
+    </script>
+    
+  

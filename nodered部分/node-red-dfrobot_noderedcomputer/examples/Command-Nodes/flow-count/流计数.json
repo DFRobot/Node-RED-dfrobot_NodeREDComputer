@@ -1,0 +1,73 @@
+[
+    {
+        "id": "e1263a1a805555ca",
+        "type": "inject",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "timestamp",
+        "payload": "",
+        "payloadType": "date",
+        "x": 380,
+        "y": 1180,
+        "wires": [
+            [
+                "12fb0155050f8b24"
+            ]
+        ]
+    },
+    {
+        "id": "6e23815e04836ec3",
+        "type": "debug",
+        "z": "2cc6b8578366bc4d",
+        "name": "debug-流计数",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 900,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "12fb0155050f8b24",
+        "type": "流计数",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "set": true,
+        "num_Init": "0",
+        "x": 650,
+        "y": 1180,
+        "wires": [
+            [
+                "6e23815e04836ec3"
+            ]
+        ]
+    },
+    {
+        "id": "5bceb4dadc6226de",
+        "type": "comment",
+        "z": "2cc6b8578366bc4d",
+        "name": "对输入该节点的流进行计数",
+        "info": "",
+        "x": 410,
+        "y": 1140,
+        "wires": []
+    }
+]

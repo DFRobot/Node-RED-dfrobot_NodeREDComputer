@@ -1,0 +1,82 @@
+[
+    {
+        "id": "d2c472da58e2c28d",
+        "type": "inject",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "10",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 440,
+        "y": 280,
+        "wires": [
+            [
+                "36e32d029292a8b6"
+            ]
+        ]
+    },
+    {
+        "id": "ab85028b947f6616",
+        "type": "comment",
+        "z": "2cc6b8578366bc4d",
+        "name": "随机的输入触发，每隔10s采集一次",
+        "info": "",
+        "x": 500,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "ce193771f5dfd683",
+        "type": "debug",
+        "z": "2cc6b8578366bc4d",
+        "name": "ADC2的电压",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 850,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "0416a3ff9761ee04",
+        "type": "comment",
+        "z": "2cc6b8578366bc4d",
+        "name": "每隔10s采集一次ADC2引脚的电压",
+        "info": "",
+        "x": 500,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "36e32d029292a8b6",
+        "type": "ADC",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "pin": "2",
+        "x": 620,
+        "y": 280,
+        "wires": [
+            [
+                "ce193771f5dfd683"
+            ]
+        ]
+    }
+]

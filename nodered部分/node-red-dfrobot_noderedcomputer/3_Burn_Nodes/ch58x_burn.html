@@ -1,0 +1,85 @@
+<script type="text/html" data-help-name="CH58x烧录">
+  <p>CH58x系列MCU烧录节点</p>
+</script>
+
+
+<script type="text/html" data-template-name="CH58x烧录">
+  <!-- 设置第一行为Name -->
+  <div class="form-row">
+      <label for="node-input-name"><i class="fa fa-tag"></i> 名称</label>
+      <input type="text" id="node-input-name" data-i18n="[placeholder]name">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-chip"><i class="fa fa-circle"></i>芯片类型</label>
+        <select id="node-input-chip" style="width: 250px;">
+          <option value="ch583">ch583</option>
+          <option value="tbd">待定</option>
+          <!-- <option value="ch582">ch582</option> -->
+          <!-- <option value="ch581">ch581</option> -->
+          </select>
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-firmware_codeflash"><i class="fa fa-circle"></i> 指定固件</label>
+        <input type="text" id="node-input-firmware_codeflash" data-i18n="[placeholder]输入路径,如/root/dtu-core.hex">
+    </div>
+
+    <div class="form-row" id="node-setReset-tick">
+      <input type="checkbox" id="node-input-setReset" style="display: inline-block; width: auto; vertical-align: top;">
+      <label for="node-input-setReset" style="width: 70%;">烧录完成后复位设备</label>
+    </div>
+
+    <div class="form-row" id="node-set-tick">
+      <input type="checkbox" id="node-input-set" style="display: inline-block; width: auto; vertical-align: top;">
+      <label for="node-input-set" style="width: 70%;">烧录dataflash</label>
+    </div>
+    <div class="form-row" id="node-set-state">
+      <label for="node-input-firmware_dataflash">指定固件</label>
+      <input type="text" id="node-input-firmware_dataflash" data-i18n="[placeholder]输入路径,如/root/dtuBoot.bin">
+    </div>
+  
+  </script>
+  
+
+
+<script type="text/javascript">
+    RED.nodes.registerType('CH58x烧录',{
+      category: 'Block 烧录事件',
+      color: '#35c1f4',
+      defaults: {
+        name: {value:""},
+        chip: { value: "ch583" }, 
+        firmware_codeflash: {value: ""},
+        firmware_dataflash: {value: ""},
+        setReset: { value: "" },
+        set: { value: "" }
+      },
+      inputs:1,
+      outputs:1,
+      icon: "font-awesome/fa-download",
+      label: function() {
+        return this.name||this._("CH58x烧录节点");
+      },
+      inputLabels: function(i) {
+        return this.name||this._("输入-/dev/ch37x0类型的设备");
+      },
+      outputLabels: function(i) {
+        return this.name || this._("输出-烧录结果");
+      },
+
+      oneditprepare: function() {
+        var setstate = function () {
+            if ($('#node-input-set').is(":checked")) {
+                $("#node-set-state").show();
+            } else {
+                $("#node-set-state").hide();
+            }
+        };
+        $("#node-input-set").change(function () { setstate(); });
+        setstate();
+      }
+
+    });
+  </script>
+  

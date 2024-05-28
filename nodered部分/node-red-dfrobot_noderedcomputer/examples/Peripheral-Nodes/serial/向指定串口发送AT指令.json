@@ -1,0 +1,160 @@
+[
+    {
+        "id": "916c25ed1656eb3e",
+        "type": "串口通信",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "port": "/dev/ttyACM0",
+        "baudrate": "115200",
+        "baudrate_custom": "",
+        "responseTime": "1",
+        "cmd": "AT+SN?",
+        "endMark": "CRLF",
+        "x": 640,
+        "y": 600,
+        "wires": [
+            [
+                "12965de6dc9d6af5"
+            ]
+        ]
+    },
+    {
+        "id": "7b645fe1a0344e46",
+        "type": "inject",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 410,
+        "y": 600,
+        "wires": [
+            [
+                "916c25ed1656eb3e"
+            ]
+        ]
+    },
+    {
+        "id": "12965de6dc9d6af5",
+        "type": "debug",
+        "z": "2cc6b8578366bc4d",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "9ef731210ba50d39",
+        "type": "comment",
+        "z": "2cc6b8578366bc4d",
+        "name": "向/dev/ttyACM0发送AT+SN?的指令",
+        "info": "",
+        "x": 480,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "c806c6d750d5a9cc",
+        "type": "串口通信",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "port": "/dev/ttyACM0",
+        "baudrate": "115200",
+        "baudrate_custom": "",
+        "responseTime": "1",
+        "cmd": "AT+SN?",
+        "endMark": "CRLF",
+        "x": 640,
+        "y": 760,
+        "wires": [
+            [
+                "817573b0f4556f42"
+            ]
+        ]
+    },
+    {
+        "id": "e95dd6424bd0dc24",
+        "type": "inject",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"device_name\":\"/dev/ttyS3\",\"baudrate\":\"115200\",\"responseTime\":\"3\",\"cmd\":\"AT+DEVEUI?\",\"endMark\":\"CRLF\"}",
+        "payloadType": "json",
+        "x": 410,
+        "y": 760,
+        "wires": [
+            [
+                "c806c6d750d5a9cc"
+            ]
+        ]
+    },
+    {
+        "id": "817573b0f4556f42",
+        "type": "debug",
+        "z": "2cc6b8578366bc4d",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "c862864f80c79fcb",
+        "type": "comment",
+        "z": "2cc6b8578366bc4d",
+        "name": "向/dev/ttyS3发送AT+DEVEUI?的指令",
+        "info": "",
+        "x": 490,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "d0a1087d85913749",
+        "type": "comment",
+        "z": "2cc6b8578366bc4d",
+        "name": "输入流说明",
+        "info": "  以节点的初始属性作为基础，输入只要含有如下某字段就对相应属性进行覆盖\n  输入非以下字段均只作为触发流\n  - msg.payload.device_name (串口名称str) \n  - msg.payload.baudrate (波特率str)\n  - msg.payload.responseTime (串口响应时间str)\n  - msg.payload.cmd (发送指令str)\n  - msg.payload.endMark (结束符str)",
+        "x": 400,
+        "y": 660,
+        "wires": []
+    }
+]

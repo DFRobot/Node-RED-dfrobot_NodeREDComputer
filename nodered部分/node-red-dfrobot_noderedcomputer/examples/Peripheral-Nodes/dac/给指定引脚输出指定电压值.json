@@ -1,0 +1,85 @@
+[
+    {
+        "id": "2a1ca141cd3e1dec",
+        "type": "DAC",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "pin": "0",
+        "initVoltage": "0",
+        "set": "",
+        "x": 820,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "f58d6fe8fdb31cc6",
+        "type": "inject",
+        "z": "2cc6b8578366bc4d",
+        "name": "msg.payload.voltage = 2.5",
+        "props": [
+            {
+                "p": "payload.voltage",
+                "v": "2.5",
+                "vt": "num"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 590,
+        "y": 860,
+        "wires": [
+            [
+                "2a1ca141cd3e1dec"
+            ]
+        ]
+    },
+    {
+        "id": "4e798a41de1f6828",
+        "type": "comment",
+        "z": "2cc6b8578366bc4d",
+        "name": "输入含有字段msg.payload.voltage，且必须为数字0~3.3",
+        "info": "",
+        "x": 680,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "20ca4e233569b21d",
+        "type": "comment",
+        "z": "2cc6b8578366bc4d",
+        "name": "给DAC1输出2.5V的电压",
+        "info": "",
+        "x": 580,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "9f7f46d2a8459d45",
+        "type": "DAC",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "pin": "1",
+        "initVoltage": "3",
+        "set": true,
+        "x": 820,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "b4edf6619578d81a",
+        "type": "comment",
+        "z": "2cc6b8578366bc4d",
+        "name": "给DAC2设置初始电压为3V",
+        "info": "",
+        "x": 790,
+        "y": 720,
+        "wires": []
+    }
+]

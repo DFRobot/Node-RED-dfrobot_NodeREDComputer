@@ -1,0 +1,2797 @@
+[
+    {
+        "id": "059e3a26a9cfa071",
+        "type": "GPIO输出",
+        "z": "1c9952406c8324a7",
+        "name": "GPIO-80——>初始化高电平",
+        "pin": "80",
+        "level": "1",
+        "set": "",
+        "x": 520,
+        "y": 500,
+        "wires": [
+            [
+                "137719bbb50a7970"
+            ]
+        ]
+    },
+    {
+        "id": "13c4b8f17031bb4a",
+        "type": "inject",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 280,
+        "y": 500,
+        "wires": [
+            [
+                "059e3a26a9cfa071"
+            ]
+        ]
+    },
+    {
+        "id": "137719bbb50a7970",
+        "type": "debug",
+        "z": "1c9952406c8324a7",
+        "name": "debug 130",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 770,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "12b9c44d8d9690fd",
+        "type": "GPIO输出",
+        "z": "1c9952406c8324a7",
+        "name": "GPIO-79——>初始化低电平",
+        "pin": "79",
+        "level": "0",
+        "set": "",
+        "x": 1280,
+        "y": 500,
+        "wires": [
+            [
+                "25beebcf288e4db5"
+            ]
+        ]
+    },
+    {
+        "id": "026a23fc855b8527",
+        "type": "inject",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1020,
+        "y": 500,
+        "wires": [
+            [
+                "12b9c44d8d9690fd"
+            ]
+        ]
+    },
+    {
+        "id": "25beebcf288e4db5",
+        "type": "debug",
+        "z": "1c9952406c8324a7",
+        "name": "debug 131",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1510,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "a6207de2488d217b",
+        "type": "comment",
+        "z": "1c9952406c8324a7",
+        "name": "EN",
+        "info": "",
+        "x": 270,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "89c8cb197fe1c78f",
+        "type": "comment",
+        "z": "1c9952406c8324a7",
+        "name": "BOOT",
+        "info": "",
+        "x": 990,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "9a3f1618a8b6fc7f",
+        "type": "串口通信",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "port": "",
+        "baudrate": "9600",
+        "baudrate_custom": "",
+        "responseTime": "12",
+        "cmd": "|2|1|dfrobotGuest,dfrobot2020|",
+        "endMark": "CR",
+        "x": 860,
+        "y": 1680,
+        "wires": [
+            [
+                "04b4f118168d2a01",
+                "666d6ddd858e65fb",
+                "584a126b43f71cfc",
+                "5d369ab51078651d"
+            ]
+        ]
+    },
+    {
+        "id": "a9af06c7874bbd54",
+        "type": "function",
+        "z": "1c9952406c8324a7",
+        "name": "function 2",
+        "func": "\nlet msg0 = { \"topic\": \"device0\", \"payload\": { \"action\": \"add\", \"device_name\": \"/dev/ttyUSB0\" } }\nlet msg1 = { \"topic\": \"device1\", \"payload\": { \"action\": \"add\", \"device_name\": \"/dev/ttyUSB1\" } }\nlet msg2 = { \"topic\": \"device2\", \"payload\": { \"action\": \"add\", \"device_name\": \"/dev/ttyUSB2\" } }\nlet msg3 = { \"topic\": \"device3\", \"payload\": { \"action\": \"add\", \"device_name\": \"/dev/ttyUSB3\" } }\nlet msg4 = { \"topic\": \"device4\", \"payload\": { \"action\": \"add\", \"device_name\": \"/dev/ttyUSB4\" } }\nlet msg5 = { \"topic\": \"device5\", \"payload\": { \"action\": \"add\", \"device_name\": \"/dev/ttyUSB5\" } }\nlet msg6 = { \"topic\": \"device6\", \"payload\": { \"action\": \"add\", \"device_name\": \"/dev/ttyUSB6\" } }\nlet msg7 = { \"topic\": \"device7\", \"payload\": { \"action\": \"add\", \"device_name\": \"/dev/ttyUSB7\" } }\n\nreturn [msg0, msg1, msg2, msg3, msg4, msg5, msg6, msg7];",
+        "outputs": 8,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 1680,
+        "wires": [
+            [
+                "22652d189a622d7e"
+            ],
+            [
+                "22652d189a622d7e"
+            ],
+            [
+                "22652d189a622d7e"
+            ],
+            [
+                "22652d189a622d7e"
+            ],
+            [
+                "22652d189a622d7e"
+            ],
+            [
+                "22652d189a622d7e"
+            ],
+            [
+                "22652d189a622d7e"
+            ],
+            [
+                "22652d189a622d7e"
+            ]
+        ]
+    },
+    {
+        "id": "6658aca4d8add50d",
+        "type": "switch",
+        "z": "1c9952406c8324a7",
+        "name": "分筛设备",
+        "property": "payload.device_name",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "/dev/ttyUSB0",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/dev/ttyUSB1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/dev/ttyUSB2",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/dev/ttyUSB3",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/dev/ttyUSB4",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/dev/ttyUSB5",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/dev/ttyUSB6",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/dev/ttyUSB7",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 8,
+        "x": 1400,
+        "y": 1140,
+        "wires": [
+            [
+                "5f2f5f942fb0653e"
+            ],
+            [
+                "cdc81e0b0e3b7a08"
+            ],
+            [
+                "7de3e727f6d4b023"
+            ],
+            [
+                "77043fc3121c03cb"
+            ],
+            [
+                "ddb0c43737bf6a3a"
+            ],
+            [
+                "7d271a92fb815d09"
+            ],
+            [
+                "28989b108f662b55"
+            ],
+            [
+                "6e858958305ec9df"
+            ]
+        ]
+    },
+    {
+        "id": "f410a1a07fd44d7a",
+        "type": "comment",
+        "z": "1c9952406c8324a7",
+        "name": "设备0-设备9的LCD屏幕中的图像绘制",
+        "info": "",
+        "x": 1660,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "1443b69dd6256e37",
+        "type": "switch",
+        "z": "1c9952406c8324a7",
+        "name": "烧录结果",
+        "property": "payload.status",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Burning",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "True",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "False",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 740,
+        "y": 1160,
+        "wires": [
+            [
+                "b844700a24b02530"
+            ],
+            [
+                "2b6ffb8aceb4948e"
+            ],
+            [
+                "43851c74fd875fd9"
+            ]
+        ]
+    },
+    {
+        "id": "f01cb5b47bd58bc2",
+        "type": "inject",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1580,
+        "y": 880,
+        "wires": [
+            [
+                "d7dd905499732449",
+                "ea524a61f37ea5f3",
+                "3ec2da21a76cd7a3",
+                "9234c290e0206be9",
+                "79045d881b9ef49a",
+                "22b512144f994725",
+                "566567a66bd1a75e",
+                "8b2f815e933baedf",
+                "103ef92c560cf2bb",
+                "0b43f258f0bbbdd4",
+                "5bcd5716d7764820",
+                "c0b54ca2223c7b96",
+                "e9e87033fe697a69",
+                "9bb13056c61da2e9",
+                "1ebd9f7fe8655b8f",
+                "a519fe673e92df1c",
+                "82401ca3c13ea094",
+                "b0734882d2e9999f",
+                "04bf05a65f82ffe2"
+            ]
+        ]
+    },
+    {
+        "id": "2b6ffb8aceb4948e",
+        "type": "更改属性",
+        "z": "1c9952406c8324a7",
+        "name": "重新渲染矩形：绿色（烧录成功）",
+        "graphic_options": "rect",
+        "background_color": "#00FF00",
+        "line_color": "#000000",
+        "rect_border_color": "#000000",
+        "rect_fill_color": "#00FF00",
+        "circle_border_color": "#000000",
+        "circle_fill_color": "#FFFFFF",
+        "text_color": "#000000",
+        "x": 1100,
+        "y": 1160,
+        "wires": [
+            [
+                "6658aca4d8add50d"
+            ]
+        ]
+    },
+    {
+        "id": "43851c74fd875fd9",
+        "type": "更改属性",
+        "z": "1c9952406c8324a7",
+        "name": "重新渲染矩形：红色（烧录失败）",
+        "graphic_options": "rect",
+        "background_color": "#FFFFFF",
+        "line_color": "#000000",
+        "rect_border_color": "#000000",
+        "rect_fill_color": "#FF0000",
+        "circle_border_color": "#000000",
+        "circle_fill_color": "#FFFFFF",
+        "text_color": "#000000",
+        "x": 1100,
+        "y": 1200,
+        "wires": [
+            [
+                "6658aca4d8add50d"
+            ]
+        ]
+    },
+    {
+        "id": "b844700a24b02530",
+        "type": "更改属性",
+        "z": "1c9952406c8324a7",
+        "name": "重新渲染矩形：青色（烧录中...）",
+        "graphic_options": "rect",
+        "background_color": "#FFFFFF",
+        "line_color": "#000000",
+        "rect_border_color": "#000000",
+        "rect_fill_color": "#00FFFF",
+        "circle_border_color": "#000000",
+        "circle_fill_color": "#FFFFFF",
+        "text_color": "#000000",
+        "x": 1100,
+        "y": 1120,
+        "wires": [
+            [
+                "6658aca4d8add50d"
+            ]
+        ]
+    },
+    {
+        "id": "e2c050a2642e4ca1",
+        "type": "inject",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1600,
+        "y": 780,
+        "wires": [
+            [
+                "7c969629965f410b"
+            ]
+        ]
+    },
+    {
+        "id": "7c969629965f410b",
+        "type": "背景颜色",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "background_color": "#FFFFFF",
+        "custom_color": "",
+        "priority": "5",
+        "set": true,
+        "x": 1760,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "d7dd905499732449",
+        "type": "绘制文本",
+        "z": "1c9952406c8324a7",
+        "name": "设置文本-设备0",
+        "text_content": "设备0",
+        "coord_x": "110",
+        "coord_y": "0",
+        "font_size": "20",
+        "custom_size": "",
+        "font_color": "#000000",
+        "custom_color": "",
+        "priority": "7",
+        "set": "",
+        "x": 1960,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "ea524a61f37ea5f3",
+        "type": "绘制文本",
+        "z": "1c9952406c8324a7",
+        "name": "设置文本-设备1",
+        "text_content": "设备1",
+        "coord_x": "200",
+        "coord_y": "0",
+        "font_size": "20",
+        "custom_size": "",
+        "font_color": "#000000",
+        "custom_color": "",
+        "priority": "7",
+        "set": "",
+        "x": 1960,
+        "y": 1200,
+        "wires": []
+    },
+    {
+        "id": "3ec2da21a76cd7a3",
+        "type": "绘制文本",
+        "z": "1c9952406c8324a7",
+        "name": "设置文本-设备2",
+        "text_content": "设备2",
+        "coord_x": "290",
+        "coord_y": "0",
+        "font_size": "20",
+        "custom_size": "",
+        "font_color": "#000000",
+        "custom_color": "",
+        "priority": "7",
+        "set": "",
+        "x": 1960,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "9234c290e0206be9",
+        "type": "绘制文本",
+        "z": "1c9952406c8324a7",
+        "name": "设置文本-设备3",
+        "text_content": "设备3",
+        "coord_x": "380",
+        "coord_y": "0",
+        "font_size": "20",
+        "custom_size": "",
+        "font_color": "#000000",
+        "custom_color": "",
+        "priority": "7",
+        "set": "",
+        "x": 1960,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "79045d881b9ef49a",
+        "type": "绘制文本",
+        "z": "1c9952406c8324a7",
+        "name": "设置文本-设备4",
+        "text_content": "设备4",
+        "coord_x": "110",
+        "coord_y": "160",
+        "font_size": "20",
+        "custom_size": "",
+        "font_color": "#000000",
+        "custom_color": "",
+        "priority": "7",
+        "set": "",
+        "x": 1960,
+        "y": 1380,
+        "wires": []
+    },
+    {
+        "id": "22b512144f994725",
+        "type": "绘制文本",
+        "z": "1c9952406c8324a7",
+        "name": "设置文本-设备5",
+        "text_content": "设备5",
+        "coord_x": "200",
+        "coord_y": "160",
+        "font_size": "20",
+        "custom_size": "",
+        "font_color": "#000000",
+        "custom_color": "",
+        "priority": "7",
+        "set": "",
+        "x": 1960,
+        "y": 1420,
+        "wires": []
+    },
+    {
+        "id": "566567a66bd1a75e",
+        "type": "绘制文本",
+        "z": "1c9952406c8324a7",
+        "name": "设置文本-设备6",
+        "text_content": "设备6",
+        "coord_x": "290",
+        "coord_y": "160",
+        "font_size": "20",
+        "custom_size": "",
+        "font_color": "#000000",
+        "custom_color": "",
+        "priority": "7",
+        "set": "",
+        "x": 1960,
+        "y": 1460,
+        "wires": []
+    },
+    {
+        "id": "8b2f815e933baedf",
+        "type": "绘制文本",
+        "z": "1c9952406c8324a7",
+        "name": "设置文本-设备7",
+        "text_content": "设备7",
+        "coord_x": "380",
+        "coord_y": "160",
+        "font_size": "20",
+        "custom_size": "",
+        "font_color": "#000000",
+        "custom_color": "",
+        "priority": "7",
+        "set": "",
+        "x": 1960,
+        "y": 1500,
+        "wires": []
+    },
+    {
+        "id": "5f2f5f942fb0653e",
+        "type": "绘制矩形",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "coord_x": "110",
+        "coord_y": "30",
+        "width": "40",
+        "height": "40",
+        "line_width": "2",
+        "border_radius": "5",
+        "fill_color": "#FFFFFF",
+        "border_color": "#000000",
+        "custom_color1": "",
+        "custom_color2": "",
+        "priority": "6",
+        "set": true,
+        "x": 1720,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "cdc81e0b0e3b7a08",
+        "type": "绘制矩形",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "coord_x": "200",
+        "coord_y": "30",
+        "width": "40",
+        "height": "40",
+        "line_width": "2",
+        "border_radius": "5",
+        "fill_color": "#FFFFFF",
+        "border_color": "#000000",
+        "custom_color1": "",
+        "custom_color2": "",
+        "priority": "6",
+        "set": true,
+        "x": 1720,
+        "y": 1140,
+        "wires": []
+    },
+    {
+        "id": "7de3e727f6d4b023",
+        "type": "绘制矩形",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "coord_x": "290",
+        "coord_y": "30",
+        "width": "40",
+        "height": "40",
+        "line_width": "2",
+        "border_radius": "5",
+        "fill_color": "#FFFFFF",
+        "border_color": "#000000",
+        "custom_color1": "",
+        "custom_color2": "",
+        "priority": "6",
+        "set": true,
+        "x": 1720,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "77043fc3121c03cb",
+        "type": "绘制矩形",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "coord_x": "380",
+        "coord_y": "30",
+        "width": "40",
+        "height": "40",
+        "line_width": "2",
+        "border_radius": "5",
+        "fill_color": "#FFFFFF",
+        "border_color": "#000000",
+        "custom_color1": "",
+        "custom_color2": "",
+        "priority": "6",
+        "set": true,
+        "x": 1720,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "ddb0c43737bf6a3a",
+        "type": "绘制矩形",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "coord_x": "110",
+        "coord_y": "190",
+        "width": "40",
+        "height": "40",
+        "line_width": "2",
+        "border_radius": "5",
+        "fill_color": "#FFFFFF",
+        "border_color": "#000000",
+        "custom_color1": "",
+        "custom_color2": "",
+        "priority": "6",
+        "set": true,
+        "x": 1720,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "7d271a92fb815d09",
+        "type": "绘制矩形",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "coord_x": "200",
+        "coord_y": "190",
+        "width": "40",
+        "height": "40",
+        "line_width": "2",
+        "border_radius": "5",
+        "fill_color": "#FFFFFF",
+        "border_color": "#000000",
+        "custom_color1": "",
+        "custom_color2": "",
+        "priority": "6",
+        "set": true,
+        "x": 1720,
+        "y": 1320,
+        "wires": []
+    },
+    {
+        "id": "28989b108f662b55",
+        "type": "绘制矩形",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "coord_x": "290",
+        "coord_y": "190",
+        "width": "40",
+        "height": "40",
+        "line_width": "2",
+        "border_radius": "5",
+        "fill_color": "#FFFFFF",
+        "border_color": "#000000",
+        "custom_color1": "",
+        "custom_color2": "",
+        "priority": "6",
+        "set": true,
+        "x": 1720,
+        "y": 1360,
+        "wires": []
+    },
+    {
+        "id": "6e858958305ec9df",
+        "type": "绘制矩形",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "coord_x": "380",
+        "coord_y": "190",
+        "width": "40",
+        "height": "40",
+        "line_width": "2",
+        "border_radius": "5",
+        "fill_color": "#FFFFFF",
+        "border_color": "#000000",
+        "custom_color1": "",
+        "custom_color2": "",
+        "priority": "6",
+        "set": true,
+        "x": 1720,
+        "y": 1400,
+        "wires": []
+    },
+    {
+        "id": "772feff30c5991d6",
+        "type": "switch",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "property": "payload.serial_response",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "|2|3|",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1150,
+        "y": 1680,
+        "wires": [
+            [
+                "eb1f7b63124b5099"
+            ],
+            [
+                "c5eaa6867584750a"
+            ]
+        ]
+    },
+    {
+        "id": "103ef92c560cf2bb",
+        "type": "绘制文本",
+        "z": "1c9952406c8324a7",
+        "name": "设置文本-烧录结果",
+        "text_content": "烧录结果",
+        "coord_x": "10",
+        "coord_y": "30",
+        "font_size": "20",
+        "custom_size": "",
+        "font_color": "#000000",
+        "custom_color": "",
+        "priority": "7",
+        "set": "",
+        "x": 1970,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "0b43f258f0bbbdd4",
+        "type": "绘制文本",
+        "z": "1c9952406c8324a7",
+        "name": "设置文本-设备编号",
+        "text_content": "设备编号",
+        "coord_x": "10",
+        "coord_y": "0",
+        "font_size": "20",
+        "custom_size": "",
+        "font_color": "#000000",
+        "custom_color": "",
+        "priority": "7",
+        "set": "",
+        "x": 1970,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "5bcd5716d7764820",
+        "type": "绘制文本",
+        "z": "1c9952406c8324a7",
+        "name": "设置文本-WIFI测试",
+        "text_content": "WIFI测试",
+        "coord_x": "10",
+        "coord_y": "120",
+        "font_size": "16",
+        "custom_size": "",
+        "font_color": "#000000",
+        "custom_color": "",
+        "priority": "7",
+        "set": "",
+        "x": 1970,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "c0b54ca2223c7b96",
+        "type": "绘制文本",
+        "z": "1c9952406c8324a7",
+        "name": "设置文本-设备编号",
+        "text_content": "设备编号",
+        "coord_x": "10",
+        "coord_y": "160",
+        "font_size": "20",
+        "custom_size": "",
+        "font_color": "#000000",
+        "custom_color": "",
+        "priority": "7",
+        "set": "",
+        "x": 1970,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "e9e87033fe697a69",
+        "type": "绘制文本",
+        "z": "1c9952406c8324a7",
+        "name": "设置文本-烧录结果",
+        "text_content": "烧录结果",
+        "coord_x": "10",
+        "coord_y": "190",
+        "font_size": "20",
+        "custom_size": "",
+        "font_color": "#000000",
+        "custom_color": "",
+        "priority": "7",
+        "set": "",
+        "x": 1970,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "9bb13056c61da2e9",
+        "type": "绘制文本",
+        "z": "1c9952406c8324a7",
+        "name": "设置文本-UART测试",
+        "text_content": "UART测试",
+        "coord_x": "10",
+        "coord_y": "250",
+        "font_size": "16",
+        "custom_size": "",
+        "font_color": "#000000",
+        "custom_color": "",
+        "priority": "7",
+        "set": "",
+        "x": 1980,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "1ebd9f7fe8655b8f",
+        "type": "绘制直线",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "x0": "0",
+        "y0": "160",
+        "x1": "480",
+        "y1": "160",
+        "line_width": "2",
+        "line_color": "#000000",
+        "custom_color": "",
+        "priority": "7",
+        "set": "",
+        "x": 1940,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "a519fe673e92df1c",
+        "type": "绘制直线",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "x0": "100",
+        "y0": "0",
+        "x1": "100",
+        "y1": "320",
+        "line_width": "1",
+        "line_color": "#000000",
+        "custom_color": "",
+        "priority": "7",
+        "set": "",
+        "x": 1940,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "9822d44a539ade80",
+        "type": "function",
+        "z": "1c9952406c8324a7",
+        "name": "function 3",
+        "func": "\nlet msg0 = { \"topic\": \"device0\", \"payload\": { \"action\": \"add\", \"device_name\": \"/dev/ttyUSB0\" } }\nlet msg1 = { \"topic\": \"device1\", \"payload\": { \"action\": \"add\", \"device_name\": \"/dev/ttyUSB1\" } }\nlet msg2 = { \"topic\": \"device2\", \"payload\": { \"action\": \"add\", \"device_name\": \"/dev/ttyUSB2\" } }\nlet msg3 = { \"topic\": \"device3\", \"payload\": { \"action\": \"add\", \"device_name\": \"/dev/ttyUSB3\" } }\nlet msg4 = { \"topic\": \"device4\", \"payload\": { \"action\": \"add\", \"device_name\": \"/dev/ttyUSB4\" } }\nlet msg5 = { \"topic\": \"device5\", \"payload\": { \"action\": \"add\", \"device_name\": \"/dev/ttyUSB5\" } }\nlet msg6 = { \"topic\": \"device6\", \"payload\": { \"action\": \"add\", \"device_name\": \"/dev/ttyUSB6\" } }\nlet msg7 = { \"topic\": \"device7\", \"payload\": { \"action\": \"add\", \"device_name\": \"/dev/ttyUSB7\" } }\n\nreturn [msg0, msg1, msg2, msg3, msg4, msg5, msg6, msg7];",
+        "outputs": 8,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 1160,
+        "wires": [
+            [
+                "241bb948b4f1c046"
+            ],
+            [
+                "241bb948b4f1c046"
+            ],
+            [
+                "241bb948b4f1c046"
+            ],
+            [
+                "241bb948b4f1c046"
+            ],
+            [
+                "241bb948b4f1c046"
+            ],
+            [
+                "241bb948b4f1c046"
+            ],
+            [
+                "241bb948b4f1c046"
+            ],
+            [
+                "241bb948b4f1c046"
+            ]
+        ]
+    },
+    {
+        "id": "241bb948b4f1c046",
+        "type": "ESP32烧录",
+        "z": "1c9952406c8324a7",
+        "name": "ESP32烧录-TEL0126",
+        "chip": "custom",
+        "custom_chip": "TEL0126",
+        "firmware": "/root/NodeRED-Computer-PartHardware/Executable-Script/Block-Burn/ESP32_Firmware/TEL0126/ED10139D.bin",
+        "x": 540,
+        "y": 1160,
+        "wires": [
+            [
+                "1443b69dd6256e37",
+                "fc6448ab76c9b0ce",
+                "f372a9bf55414f8e"
+            ]
+        ]
+    },
+    {
+        "id": "6b0a2f3960cf63f6",
+        "type": "IO中断",
+        "z": "1c9952406c8324a7",
+        "name": "KeyA按键按下触发",
+        "pin": "77",
+        "mode": "pullDown",
+        "interrupt": "falling",
+        "oldrc": false,
+        "x": 290,
+        "y": 860,
+        "wires": [
+            [
+                "e710a62ef8feae83",
+                "d684bce139ed01d7"
+            ]
+        ]
+    },
+    {
+        "id": "e710a62ef8feae83",
+        "type": "debug",
+        "z": "1c9952406c8324a7",
+        "name": "debug 120",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 510,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "6d3c25fd6d40f65b",
+        "type": "link out",
+        "z": "1c9952406c8324a7",
+        "name": "link out 1",
+        "mode": "link",
+        "links": [
+            "1a520340e51f3ce0",
+            "e5436c6821815c73",
+            "e161e0f1ad765afd"
+        ],
+        "x": 555,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "3adf3b360898e3e7",
+        "type": "switch",
+        "z": "1c9952406c8324a7",
+        "name": "分筛设备",
+        "property": "payload.device_name",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "/dev/ttyUSB0",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/dev/ttyUSB1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/dev/ttyUSB2",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/dev/ttyUSB3",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/dev/ttyUSB4",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/dev/ttyUSB5",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/dev/ttyUSB6",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/dev/ttyUSB7",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 8,
+        "x": 1660,
+        "y": 1660,
+        "wires": [
+            [
+                "ca2e127bb0141a40"
+            ],
+            [
+                "68e91344d32ce9f3"
+            ],
+            [
+                "0751d309357bda91"
+            ],
+            [
+                "60b886dda2d25033"
+            ],
+            [
+                "314c484ee7449974"
+            ],
+            [
+                "905c8229261cfac9"
+            ],
+            [
+                "3a852179fe652cfc"
+            ],
+            [
+                "bc46dbdb4a76916d"
+            ]
+        ]
+    },
+    {
+        "id": "fc6448ab76c9b0ce",
+        "type": "debug",
+        "z": "1c9952406c8324a7",
+        "name": "debug 121",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 750,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "d684bce139ed01d7",
+        "type": "流计数",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "set": true,
+        "num_Init": "0",
+        "x": 310,
+        "y": 920,
+        "wires": [
+            [
+                "808b0d087a343250"
+            ]
+        ]
+    },
+    {
+        "id": "808b0d087a343250",
+        "type": "switch",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "property": "payload.current_count",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 450,
+        "y": 920,
+        "wires": [
+            [
+                "6d3c25fd6d40f65b",
+                "f32a6cb8462a4c29"
+            ]
+        ]
+    },
+    {
+        "id": "a87a67a2fa150753",
+        "type": "流计数",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "set": true,
+        "num_Init": "0",
+        "x": 890,
+        "y": 1280,
+        "wires": [
+            [
+                "682f54325caa44f8",
+                "a9d038c817955ae3"
+            ]
+        ]
+    },
+    {
+        "id": "682f54325caa44f8",
+        "type": "switch",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "property": "payload.current_count",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "8",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 1360,
+        "wires": [
+            [
+                "dcd169d76a923732",
+                "92a41947b54f8e7c"
+            ]
+        ]
+    },
+    {
+        "id": "a9d038c817955ae3",
+        "type": "debug",
+        "z": "1c9952406c8324a7",
+        "name": "debug 123",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1110,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "f372a9bf55414f8e",
+        "type": "switch",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "property": "payload.status",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "Burning",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 730,
+        "y": 1280,
+        "wires": [
+            [
+                "a87a67a2fa150753"
+            ]
+        ]
+    },
+    {
+        "id": "dcd169d76a923732",
+        "type": "delay",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1060,
+        "y": 1360,
+        "wires": [
+            [
+                "02c240fc63b91089"
+            ]
+        ]
+    },
+    {
+        "id": "21d6f1a3d8d8222d",
+        "type": "link in",
+        "z": "1c9952406c8324a7",
+        "name": "link in 2",
+        "links": [
+            "e3d6d9a107467f24",
+            "9d8ecc5e02654b2d"
+        ],
+        "x": 795,
+        "y": 1320,
+        "wires": [
+            [
+                "a87a67a2fa150753"
+            ]
+        ]
+    },
+    {
+        "id": "5fff0828213ddf2d",
+        "type": "link in",
+        "z": "1c9952406c8324a7",
+        "name": "link in 3",
+        "links": [
+            "e3d6d9a107467f24",
+            "9d8ecc5e02654b2d"
+        ],
+        "x": 185,
+        "y": 920,
+        "wires": [
+            [
+                "d684bce139ed01d7"
+            ]
+        ]
+    },
+    {
+        "id": "eb1f7b63124b5099",
+        "type": "更改属性",
+        "z": "1c9952406c8324a7",
+        "name": "重新渲染矩形：绿色（测试成功）",
+        "graphic_options": "rect",
+        "background_color": "#00FF00",
+        "line_color": "#000000",
+        "rect_border_color": "#000000",
+        "rect_fill_color": "#00FF00",
+        "circle_border_color": "#000000",
+        "circle_fill_color": "#FFFFFF",
+        "text_color": "#000000",
+        "x": 1400,
+        "y": 1660,
+        "wires": [
+            [
+                "3adf3b360898e3e7"
+            ]
+        ]
+    },
+    {
+        "id": "c5eaa6867584750a",
+        "type": "更改属性",
+        "z": "1c9952406c8324a7",
+        "name": "重新渲染矩形：红色（测试失败）",
+        "graphic_options": "rect",
+        "background_color": "#FFFFFF",
+        "line_color": "#000000",
+        "rect_border_color": "#000000",
+        "rect_fill_color": "#FF0000",
+        "circle_border_color": "#000000",
+        "circle_fill_color": "#FFFFFF",
+        "text_color": "#000000",
+        "x": 1400,
+        "y": 1700,
+        "wires": [
+            [
+                "3adf3b360898e3e7"
+            ]
+        ]
+    },
+    {
+        "id": "ca2e127bb0141a40",
+        "type": "绘制矩形",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "coord_x": "110",
+        "coord_y": "90",
+        "width": "50",
+        "height": "25",
+        "line_width": "2",
+        "border_radius": "5",
+        "fill_color": "#FFFFFF",
+        "border_color": "#000000",
+        "custom_color1": "",
+        "custom_color2": "",
+        "priority": "6",
+        "set": true,
+        "x": 1920,
+        "y": 1600,
+        "wires": []
+    },
+    {
+        "id": "68e91344d32ce9f3",
+        "type": "绘制矩形",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "coord_x": "200",
+        "coord_y": "90",
+        "width": "50",
+        "height": "25",
+        "line_width": "2",
+        "border_radius": "5",
+        "fill_color": "#FFFFFF",
+        "border_color": "#000000",
+        "custom_color1": "",
+        "custom_color2": "",
+        "priority": "6",
+        "set": true,
+        "x": 1920,
+        "y": 1640,
+        "wires": []
+    },
+    {
+        "id": "0751d309357bda91",
+        "type": "绘制矩形",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "coord_x": "290",
+        "coord_y": "90",
+        "width": "50",
+        "height": "25",
+        "line_width": "2",
+        "border_radius": "5",
+        "fill_color": "#FFFFFF",
+        "border_color": "#000000",
+        "custom_color1": "",
+        "custom_color2": "",
+        "priority": "6",
+        "set": true,
+        "x": 1920,
+        "y": 1680,
+        "wires": []
+    },
+    {
+        "id": "60b886dda2d25033",
+        "type": "绘制矩形",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "coord_x": "380",
+        "coord_y": "90",
+        "width": "50",
+        "height": "25",
+        "line_width": "2",
+        "border_radius": "5",
+        "fill_color": "#FFFFFF",
+        "border_color": "#000000",
+        "custom_color1": "",
+        "custom_color2": "",
+        "priority": "6",
+        "set": true,
+        "x": 1920,
+        "y": 1720,
+        "wires": []
+    },
+    {
+        "id": "314c484ee7449974",
+        "type": "绘制矩形",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "coord_x": "110",
+        "coord_y": "250",
+        "width": "50",
+        "height": "25",
+        "line_width": "2",
+        "border_radius": "5",
+        "fill_color": "#FFFFFF",
+        "border_color": "#000000",
+        "custom_color1": "",
+        "custom_color2": "",
+        "priority": "6",
+        "set": true,
+        "x": 1920,
+        "y": 1780,
+        "wires": []
+    },
+    {
+        "id": "905c8229261cfac9",
+        "type": "绘制矩形",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "coord_x": "200",
+        "coord_y": "250",
+        "width": "50",
+        "height": "25",
+        "line_width": "2",
+        "border_radius": "5",
+        "fill_color": "#FFFFFF",
+        "border_color": "#000000",
+        "custom_color1": "",
+        "custom_color2": "",
+        "priority": "6",
+        "set": true,
+        "x": 1920,
+        "y": 1820,
+        "wires": []
+    },
+    {
+        "id": "3a852179fe652cfc",
+        "type": "绘制矩形",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "coord_x": "290",
+        "coord_y": "250",
+        "width": "50",
+        "height": "25",
+        "line_width": "2",
+        "border_radius": "5",
+        "fill_color": "#FFFFFF",
+        "border_color": "#000000",
+        "custom_color1": "",
+        "custom_color2": "",
+        "priority": "6",
+        "set": true,
+        "x": 1920,
+        "y": 1860,
+        "wires": []
+    },
+    {
+        "id": "bc46dbdb4a76916d",
+        "type": "绘制矩形",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "coord_x": "380",
+        "coord_y": "250",
+        "width": "50",
+        "height": "25",
+        "line_width": "2",
+        "border_radius": "5",
+        "fill_color": "#FFFFFF",
+        "border_color": "#000000",
+        "custom_color1": "",
+        "custom_color2": "",
+        "priority": "6",
+        "set": true,
+        "x": 1920,
+        "y": 1900,
+        "wires": []
+    },
+    {
+        "id": "caf6d78deb91a87d",
+        "type": "inject",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1740,
+        "y": 1500,
+        "wires": [
+            [
+                "f086a625642205b4"
+            ]
+        ]
+    },
+    {
+        "id": "1796ce8fce10e4eb",
+        "type": "流计数",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "set": true,
+        "num_Init": "0",
+        "x": 1170,
+        "y": 1740,
+        "wires": [
+            [
+                "60d1225b6819ba76",
+                "7debcbe23afd4911"
+            ]
+        ]
+    },
+    {
+        "id": "60d1225b6819ba76",
+        "type": "switch",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "property": "payload.current_count",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "8",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1290,
+        "y": 1820,
+        "wires": [
+            [
+                "363ff28bf886f72b",
+                "957e3a22488a100a"
+            ]
+        ]
+    },
+    {
+        "id": "7debcbe23afd4911",
+        "type": "debug",
+        "z": "1c9952406c8324a7",
+        "name": "debug 124",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1470,
+        "y": 1740,
+        "wires": []
+    },
+    {
+        "id": "04b4f118168d2a01",
+        "type": "switch",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "property": "payload.status",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "Burning",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1010,
+        "y": 1740,
+        "wires": [
+            [
+                "1796ce8fce10e4eb"
+            ]
+        ]
+    },
+    {
+        "id": "363ff28bf886f72b",
+        "type": "change",
+        "z": "1c9952406c8324a7",
+        "name": "msg.payload = reset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "reset",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1480,
+        "y": 1820,
+        "wires": [
+            [
+                "9d8ecc5e02654b2d"
+            ]
+        ]
+    },
+    {
+        "id": "afe127acf1f0ed47",
+        "type": "link in",
+        "z": "1c9952406c8324a7",
+        "name": "link in 6",
+        "links": [
+            "9d8ecc5e02654b2d"
+        ],
+        "x": 1075,
+        "y": 1780,
+        "wires": [
+            [
+                "1796ce8fce10e4eb"
+            ]
+        ]
+    },
+    {
+        "id": "9d8ecc5e02654b2d",
+        "type": "link out",
+        "z": "1c9952406c8324a7",
+        "name": "link out 4",
+        "mode": "link",
+        "links": [
+            "afe127acf1f0ed47",
+            "034fb7cc8b540e65",
+            "21d6f1a3d8d8222d",
+            "5fff0828213ddf2d"
+        ],
+        "x": 1615,
+        "y": 1820,
+        "wires": []
+    },
+    {
+        "id": "666d6ddd858e65fb",
+        "type": "debug",
+        "z": "1c9952406c8324a7",
+        "name": "debug 126",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1030,
+        "y": 1620,
+        "wires": []
+    },
+    {
+        "id": "3701aacd515fe239",
+        "type": "更改属性",
+        "z": "1c9952406c8324a7",
+        "name": "重新渲染矩形：青色（测试中...）",
+        "graphic_options": "rect",
+        "background_color": "#FFFFFF",
+        "line_color": "#000000",
+        "rect_border_color": "#000000",
+        "rect_fill_color": "#00FFFF",
+        "circle_border_color": "#000000",
+        "circle_fill_color": "#FFFFFF",
+        "text_color": "#000000",
+        "x": 1400,
+        "y": 1540,
+        "wires": [
+            [
+                "3adf3b360898e3e7"
+            ]
+        ]
+    },
+    {
+        "id": "8075620a2adecd01",
+        "type": "delay",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "500",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1170,
+        "y": 1540,
+        "wires": [
+            [
+                "3701aacd515fe239"
+            ]
+        ]
+    },
+    {
+        "id": "22652d189a622d7e",
+        "type": "流开关",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "set": true,
+        "flowSwitch": "on",
+        "x": 670,
+        "y": 1680,
+        "wires": [
+            [
+                "9a3f1618a8b6fc7f",
+                "cb6381da97f3b9db"
+            ]
+        ]
+    },
+    {
+        "id": "7039da728038da46",
+        "type": "link in",
+        "z": "1c9952406c8324a7",
+        "name": "link in 7",
+        "links": [
+            "cb6381da97f3b9db"
+        ],
+        "x": 1065,
+        "y": 1540,
+        "wires": [
+            [
+                "8075620a2adecd01"
+            ]
+        ]
+    },
+    {
+        "id": "cb6381da97f3b9db",
+        "type": "link out",
+        "z": "1c9952406c8324a7",
+        "name": "link out 5",
+        "mode": "link",
+        "links": [
+            "7039da728038da46",
+            "d77779f8e4d1031d"
+        ],
+        "x": 765,
+        "y": 1640,
+        "wires": []
+    },
+    {
+        "id": "584a126b43f71cfc",
+        "type": "delay",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1020,
+        "y": 1680,
+        "wires": [
+            [
+                "772feff30c5991d6"
+            ]
+        ]
+    },
+    {
+        "id": "82401ca3c13ea094",
+        "type": "流开关",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "set": true,
+        "flowSwitch": "on",
+        "x": 1570,
+        "y": 940,
+        "wires": [
+            [
+                "5f2f5f942fb0653e",
+                "cdc81e0b0e3b7a08",
+                "7de3e727f6d4b023",
+                "77043fc3121c03cb",
+                "ddb0c43737bf6a3a",
+                "7d271a92fb815d09",
+                "28989b108f662b55",
+                "6e858958305ec9df"
+            ]
+        ]
+    },
+    {
+        "id": "f086a625642205b4",
+        "type": "流开关",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "set": true,
+        "flowSwitch": "on",
+        "x": 1730,
+        "y": 1560,
+        "wires": [
+            [
+                "ca2e127bb0141a40",
+                "68e91344d32ce9f3",
+                "0751d309357bda91",
+                "60b886dda2d25033",
+                "314c484ee7449974",
+                "905c8229261cfac9",
+                "3a852179fe652cfc",
+                "bc46dbdb4a76916d",
+                "b431368b8b9913b5",
+                "603dd927e950737d",
+                "72568fbc60dd7efa",
+                "cc26cba771cded2f",
+                "60d67950675b358b",
+                "c074d5a080221473",
+                "80b3f9093b9b12fa",
+                "2479a56d4eab2406"
+            ]
+        ]
+    },
+    {
+        "id": "e5436c6821815c73",
+        "type": "link in",
+        "z": "1c9952406c8324a7",
+        "name": "link in 8",
+        "links": [
+            "6d3c25fd6d40f65b"
+        ],
+        "x": 1455,
+        "y": 940,
+        "wires": [
+            [
+                "82401ca3c13ea094"
+            ]
+        ]
+    },
+    {
+        "id": "e161e0f1ad765afd",
+        "type": "link in",
+        "z": "1c9952406c8324a7",
+        "name": "link in 9",
+        "links": [
+            "c834c165444b1bd2",
+            "6d3c25fd6d40f65b"
+        ],
+        "x": 1615,
+        "y": 1560,
+        "wires": [
+            [
+                "f086a625642205b4"
+            ]
+        ]
+    },
+    {
+        "id": "47dbaacc5d179f1a",
+        "type": "comment",
+        "z": "1c9952406c8324a7",
+        "name": "TEL0126烧录",
+        "info": "",
+        "x": 270,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "3e399369a072069f",
+        "type": "comment",
+        "z": "1c9952406c8324a7",
+        "name": "TEL0126测试-WIFI",
+        "info": "",
+        "x": 310,
+        "y": 1500,
+        "wires": []
+    },
+    {
+        "id": "9967564a13472430",
+        "type": "comment",
+        "z": "1c9952406c8324a7",
+        "name": "GPIO79对多个TEL0118设备短接到地，可能引脚电压不为0，而会相应的升高，导致进入boot失败",
+        "info": "",
+        "x": 550,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "335fe99cc0d42bbc",
+        "type": "comment",
+        "z": "1c9952406c8324a7",
+        "name": "解决方案1：量产机引出8个GPIO(需微调例程)",
+        "info": "",
+        "x": 390,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "c6ee37692c441e23",
+        "type": "comment",
+        "z": "1c9952406c8324a7",
+        "name": "解决方案2：引出GPIO79，做工装连接多个TEL0126，使得GPIO输出高低电平正常",
+        "info": "",
+        "x": 870,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "1013dcb5c816b0e6",
+        "type": "comment",
+        "z": "1c9952406c8324a7",
+        "name": "TEL0126烧录+测试例程：1、将GPIO80连接到TEL0126设备的EN使能引脚；    2、将GPIO79连接到TEL0126设备的BOOT引脚；    3、按量产机上的KeyA按钮进行烧录+测试；    ",
+        "info": "",
+        "x": 760,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "b431368b8b9913b5",
+        "type": "绘制矩形",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "coord_x": "110",
+        "coord_y": "120",
+        "width": "50",
+        "height": "25",
+        "line_width": "2",
+        "border_radius": "5",
+        "fill_color": "#FFFFFF",
+        "border_color": "#000000",
+        "custom_color1": "",
+        "custom_color2": "",
+        "priority": "6",
+        "set": true,
+        "x": 2120,
+        "y": 1600,
+        "wires": []
+    },
+    {
+        "id": "603dd927e950737d",
+        "type": "绘制矩形",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "coord_x": "200",
+        "coord_y": "120",
+        "width": "50",
+        "height": "25",
+        "line_width": "2",
+        "border_radius": "5",
+        "fill_color": "#FFFFFF",
+        "border_color": "#000000",
+        "custom_color1": "",
+        "custom_color2": "",
+        "priority": "6",
+        "set": true,
+        "x": 2120,
+        "y": 1640,
+        "wires": []
+    },
+    {
+        "id": "72568fbc60dd7efa",
+        "type": "绘制矩形",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "coord_x": "290",
+        "coord_y": "120",
+        "width": "50",
+        "height": "25",
+        "line_width": "2",
+        "border_radius": "5",
+        "fill_color": "#FFFFFF",
+        "border_color": "#000000",
+        "custom_color1": "",
+        "custom_color2": "",
+        "priority": "6",
+        "set": true,
+        "x": 2120,
+        "y": 1680,
+        "wires": []
+    },
+    {
+        "id": "cc26cba771cded2f",
+        "type": "绘制矩形",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "coord_x": "380",
+        "coord_y": "120",
+        "width": "50",
+        "height": "25",
+        "line_width": "2",
+        "border_radius": "5",
+        "fill_color": "#FFFFFF",
+        "border_color": "#000000",
+        "custom_color1": "",
+        "custom_color2": "",
+        "priority": "6",
+        "set": true,
+        "x": 2120,
+        "y": 1720,
+        "wires": []
+    },
+    {
+        "id": "60d67950675b358b",
+        "type": "绘制矩形",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "coord_x": "110",
+        "coord_y": "280",
+        "width": "50",
+        "height": "25",
+        "line_width": "2",
+        "border_radius": "5",
+        "fill_color": "#FFFFFF",
+        "border_color": "#000000",
+        "custom_color1": "",
+        "custom_color2": "",
+        "priority": "6",
+        "set": true,
+        "x": 2120,
+        "y": 1780,
+        "wires": []
+    },
+    {
+        "id": "c074d5a080221473",
+        "type": "绘制矩形",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "coord_x": "200",
+        "coord_y": "280",
+        "width": "50",
+        "height": "25",
+        "line_width": "2",
+        "border_radius": "5",
+        "fill_color": "#FFFFFF",
+        "border_color": "#000000",
+        "custom_color1": "",
+        "custom_color2": "",
+        "priority": "6",
+        "set": true,
+        "x": 2120,
+        "y": 1820,
+        "wires": []
+    },
+    {
+        "id": "80b3f9093b9b12fa",
+        "type": "绘制矩形",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "coord_x": "290",
+        "coord_y": "280",
+        "width": "50",
+        "height": "25",
+        "line_width": "2",
+        "border_radius": "5",
+        "fill_color": "#FFFFFF",
+        "border_color": "#000000",
+        "custom_color1": "",
+        "custom_color2": "",
+        "priority": "6",
+        "set": true,
+        "x": 2120,
+        "y": 1860,
+        "wires": []
+    },
+    {
+        "id": "2479a56d4eab2406",
+        "type": "绘制矩形",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "coord_x": "380",
+        "coord_y": "280",
+        "width": "50",
+        "height": "25",
+        "line_width": "2",
+        "border_radius": "5",
+        "fill_color": "#FFFFFF",
+        "border_color": "#000000",
+        "custom_color1": "",
+        "custom_color2": "",
+        "priority": "6",
+        "set": true,
+        "x": 2120,
+        "y": 1900,
+        "wires": []
+    },
+    {
+        "id": "b0734882d2e9999f",
+        "type": "绘制文本",
+        "z": "1c9952406c8324a7",
+        "name": "设置文本-UART测试",
+        "text_content": "UART测试",
+        "coord_x": "10",
+        "coord_y": "90",
+        "font_size": "16",
+        "custom_size": "",
+        "font_color": "#000000",
+        "custom_color": "",
+        "priority": "7",
+        "set": "",
+        "x": 1980,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "04bf05a65f82ffe2",
+        "type": "绘制文本",
+        "z": "1c9952406c8324a7",
+        "name": "设置文本-WIFI测试",
+        "text_content": "WIFI测试",
+        "coord_x": "10",
+        "coord_y": "280",
+        "font_size": "16",
+        "custom_size": "",
+        "font_color": "#000000",
+        "custom_color": "",
+        "priority": "7",
+        "set": "",
+        "x": 1970,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "5d369ab51078651d",
+        "type": "delay",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "500",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1030,
+        "y": 1980,
+        "wires": [
+            [
+                "9785d47b866643de"
+            ]
+        ]
+    },
+    {
+        "id": "9785d47b866643de",
+        "type": "switch",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "property": "payload.serial_response",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "\"\"",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "Failed to open the serial port",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 1170,
+        "y": 1980,
+        "wires": [
+            [
+                "b58ab1e037938b29"
+            ],
+            [
+                "b58ab1e037938b29"
+            ],
+            [
+                "20e7f558c6987980"
+            ]
+        ]
+    },
+    {
+        "id": "20e7f558c6987980",
+        "type": "更改属性",
+        "z": "1c9952406c8324a7",
+        "name": "重新渲染矩形：绿色（测试成功）",
+        "graphic_options": "rect",
+        "background_color": "#00FF00",
+        "line_color": "#000000",
+        "rect_border_color": "#000000",
+        "rect_fill_color": "#00FF00",
+        "circle_border_color": "#000000",
+        "circle_fill_color": "#FFFFFF",
+        "text_color": "#000000",
+        "x": 1600,
+        "y": 2020,
+        "wires": [
+            [
+                "58b0bd784068ebc4"
+            ]
+        ]
+    },
+    {
+        "id": "b58ab1e037938b29",
+        "type": "更改属性",
+        "z": "1c9952406c8324a7",
+        "name": "重新渲染矩形：红色（测试失败）",
+        "graphic_options": "rect",
+        "background_color": "#FFFFFF",
+        "line_color": "#000000",
+        "rect_border_color": "#000000",
+        "rect_fill_color": "#FF0000",
+        "circle_border_color": "#000000",
+        "circle_fill_color": "#FFFFFF",
+        "text_color": "#000000",
+        "x": 1600,
+        "y": 1980,
+        "wires": [
+            [
+                "58b0bd784068ebc4"
+            ]
+        ]
+    },
+    {
+        "id": "c9671b362073e299",
+        "type": "更改属性",
+        "z": "1c9952406c8324a7",
+        "name": "重新渲染矩形：青色（测试中...）",
+        "graphic_options": "rect",
+        "background_color": "#FFFFFF",
+        "line_color": "#000000",
+        "rect_border_color": "#000000",
+        "rect_fill_color": "#00FFFF",
+        "circle_border_color": "#000000",
+        "circle_fill_color": "#FFFFFF",
+        "text_color": "#000000",
+        "x": 1600,
+        "y": 1940,
+        "wires": [
+            [
+                "58b0bd784068ebc4"
+            ]
+        ]
+    },
+    {
+        "id": "82989b725e8b1a8b",
+        "type": "delay",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "500",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1310,
+        "y": 1940,
+        "wires": [
+            [
+                "c9671b362073e299"
+            ]
+        ]
+    },
+    {
+        "id": "d77779f8e4d1031d",
+        "type": "link in",
+        "z": "1c9952406c8324a7",
+        "name": "link in 10",
+        "links": [
+            "cb6381da97f3b9db"
+        ],
+        "x": 1205,
+        "y": 1940,
+        "wires": [
+            [
+                "82989b725e8b1a8b"
+            ]
+        ]
+    },
+    {
+        "id": "58b0bd784068ebc4",
+        "type": "switch",
+        "z": "1c9952406c8324a7",
+        "name": "分筛设备",
+        "property": "payload.device_name",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "/dev/ttyUSB0",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/dev/ttyUSB1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/dev/ttyUSB2",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/dev/ttyUSB3",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/dev/ttyUSB4",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/dev/ttyUSB5",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/dev/ttyUSB6",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/dev/ttyUSB7",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 8,
+        "x": 1920,
+        "y": 2000,
+        "wires": [
+            [
+                "b431368b8b9913b5"
+            ],
+            [
+                "603dd927e950737d"
+            ],
+            [
+                "72568fbc60dd7efa"
+            ],
+            [
+                "cc26cba771cded2f"
+            ],
+            [
+                "60d67950675b358b"
+            ],
+            [
+                "c074d5a080221473"
+            ],
+            [
+                "80b3f9093b9b12fa"
+            ],
+            [
+                "2479a56d4eab2406"
+            ]
+        ]
+    },
+    {
+        "id": "f32a6cb8462a4c29",
+        "type": "GPIO输出",
+        "z": "1c9952406c8324a7",
+        "name": "GPIO-80——>0",
+        "pin": "80",
+        "level": "0",
+        "set": "",
+        "x": 620,
+        "y": 920,
+        "wires": [
+            [
+                "aa301f4417055f06"
+            ]
+        ]
+    },
+    {
+        "id": "aa301f4417055f06",
+        "type": "delay",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 780,
+        "y": 920,
+        "wires": [
+            [
+                "3bea9984f44d5a39"
+            ]
+        ]
+    },
+    {
+        "id": "3bea9984f44d5a39",
+        "type": "GPIO输出",
+        "z": "1c9952406c8324a7",
+        "name": "GPIO-80——>1",
+        "pin": "80",
+        "level": "1",
+        "set": "",
+        "x": 940,
+        "y": 920,
+        "wires": [
+            [
+                "be45cc275b79b21f",
+                "22a5668368c39669"
+            ]
+        ]
+    },
+    {
+        "id": "be45cc275b79b21f",
+        "type": "delay",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1120,
+        "y": 920,
+        "wires": [
+            [
+                "0a0d7d2432db77c1"
+            ]
+        ]
+    },
+    {
+        "id": "0a0d7d2432db77c1",
+        "type": "link out",
+        "z": "1c9952406c8324a7",
+        "name": "link out 7",
+        "mode": "link",
+        "links": [
+            "6819fd6e354d8e71"
+        ],
+        "x": 1215,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "6819fd6e354d8e71",
+        "type": "link in",
+        "z": "1c9952406c8324a7",
+        "name": "link in 11",
+        "links": [
+            "0a0d7d2432db77c1"
+        ],
+        "x": 225,
+        "y": 1160,
+        "wires": [
+            [
+                "9822d44a539ade80"
+            ]
+        ]
+    },
+    {
+        "id": "22a5668368c39669",
+        "type": "delay",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1120,
+        "y": 860,
+        "wires": [
+            [
+                "1f826b82217ef335"
+            ]
+        ]
+    },
+    {
+        "id": "1f826b82217ef335",
+        "type": "GPIO输出",
+        "z": "1c9952406c8324a7",
+        "name": "GPIO-79——>1",
+        "pin": "79",
+        "level": "1",
+        "set": "",
+        "x": 1300,
+        "y": 860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "433c7ded85c90846",
+        "type": "comment",
+        "z": "1c9952406c8324a7",
+        "name": "复位TEL0126",
+        "info": "",
+        "x": 790,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "e691a9838bbdb514",
+        "type": "comment",
+        "z": "1c9952406c8324a7",
+        "name": "松开BOOT",
+        "info": "",
+        "x": 1120,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "84ba01f8ddc3b852",
+        "type": "comment",
+        "z": "1c9952406c8324a7",
+        "name": "所有设备烧录结果出来后——>1、复位所有设备        2、开始UART-WIFI测试",
+        "info": "",
+        "x": 1270,
+        "y": 1460,
+        "wires": []
+    },
+    {
+        "id": "02c240fc63b91089",
+        "type": "GPIO输出",
+        "z": "1c9952406c8324a7",
+        "name": "GPIO-80——>0",
+        "pin": "80",
+        "level": "0",
+        "set": "",
+        "x": 1100,
+        "y": 1400,
+        "wires": [
+            [
+                "e461bf616e59225a"
+            ]
+        ]
+    },
+    {
+        "id": "e461bf616e59225a",
+        "type": "delay",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1260,
+        "y": 1400,
+        "wires": [
+            [
+                "8c872003edbe9711"
+            ]
+        ]
+    },
+    {
+        "id": "8c872003edbe9711",
+        "type": "GPIO输出",
+        "z": "1c9952406c8324a7",
+        "name": "GPIO-80——>1",
+        "pin": "80",
+        "level": "1",
+        "set": "",
+        "x": 1420,
+        "y": 1400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "92a41947b54f8e7c",
+        "type": "link out",
+        "z": "1c9952406c8324a7",
+        "name": "link out 8",
+        "mode": "link",
+        "links": [
+            "4f8d2700705544c4"
+        ],
+        "x": 1015,
+        "y": 1320,
+        "wires": []
+    },
+    {
+        "id": "4f8d2700705544c4",
+        "type": "link in",
+        "z": "1c9952406c8324a7",
+        "name": "link in 12",
+        "links": [
+            "92a41947b54f8e7c"
+        ],
+        "x": 265,
+        "y": 1680,
+        "wires": [
+            [
+                "f9dfb4431461fdb7"
+            ]
+        ]
+    },
+    {
+        "id": "f9dfb4431461fdb7",
+        "type": "delay",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "3",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 360,
+        "y": 1680,
+        "wires": [
+            [
+                "a9af06c7874bbd54"
+            ]
+        ]
+    },
+    {
+        "id": "957e3a22488a100a",
+        "type": "GPIO输出",
+        "z": "1c9952406c8324a7",
+        "name": "GPIO-79——>0",
+        "pin": "79",
+        "level": "0",
+        "set": "",
+        "x": 1460,
+        "y": 1860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2ed1f083b04f8446",
+        "type": "comment",
+        "z": "1c9952406c8324a7",
+        "name": "测试完毕之后将BOOT默认——>0",
+        "info": "",
+        "x": 1210,
+        "y": 1860,
+        "wires": []
+    }
+]

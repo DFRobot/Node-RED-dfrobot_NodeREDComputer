@@ -1,0 +1,774 @@
+[
+    {
+        "id": "4adcd226f941ce3a",
+        "type": "comment",
+        "z": "2cc6b8578366bc4d",
+        "name": "烧录所有插入的esp32设备",
+        "info": "",
+        "x": 610,
+        "y": 1600,
+        "wires": []
+    },
+    {
+        "id": "1ffba49ba08038c9",
+        "type": "ui_template",
+        "z": "2cc6b8578366bc4d",
+        "group": "e30c0c240b47fb36",
+        "name": "/dev/ttyUSB0设备",
+        "order": 1,
+        "width": "5",
+        "height": "1",
+        "format": "<button style=\"width: 225px; height: 50px; background-color: #ae81ff; color: white;\" ng-style=\"{'background-color': msg.payload.backgroundColor, 'color': 'white'}\">{{msg.payload.label}}</button>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1830,
+        "y": 1440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0d44ade22a088252",
+        "type": "ui_template",
+        "z": "2cc6b8578366bc4d",
+        "group": "e30c0c240b47fb36",
+        "name": "/dev/ttyUSB1设备",
+        "order": 2,
+        "width": "5",
+        "height": "1",
+        "format": "<button style=\"width: 225px; height: 50px; background-color: #ae81ff; color: white;\" ng-style=\"{'background-color': msg.payload.backgroundColor, 'color': 'white'}\">{{msg.payload.label}}</button>",
+        "storeOutMessages": false,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1830,
+        "y": 1480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2f4509c759708823",
+        "type": "ui_template",
+        "z": "2cc6b8578366bc4d",
+        "group": "e30c0c240b47fb36",
+        "name": "/dev/ttyUSB2设备",
+        "order": 3,
+        "width": "5",
+        "height": "1",
+        "format": "<button style=\"width: 225px; height: 50px; background-color: #ae81ff; color: white;\" ng-style=\"{'background-color': msg.payload.backgroundColor, 'color': 'white'}\">{{msg.payload.label}}</button>",
+        "storeOutMessages": false,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1830,
+        "y": 1520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a6ab441bdd4f69fd",
+        "type": "ui_template",
+        "z": "2cc6b8578366bc4d",
+        "group": "e30c0c240b47fb36",
+        "name": "/dev/ttyUSB3设备",
+        "order": 4,
+        "width": "5",
+        "height": "1",
+        "format": "<button style=\"width: 225px; height: 50px; background-color: #ae81ff; color: white;\" ng-style=\"{'background-color': msg.payload.backgroundColor, 'color': 'white'}\">{{msg.payload.label}}</button>",
+        "storeOutMessages": false,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1830,
+        "y": 1560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "34c7f5f514fb5e03",
+        "type": "ui_template",
+        "z": "2cc6b8578366bc4d",
+        "group": "e30c0c240b47fb36",
+        "name": "/dev/ttyUSB4设备",
+        "order": 5,
+        "width": "5",
+        "height": "1",
+        "format": "<button style=\"width: 225px; height: 50px; background-color: #ae81ff; color: white;\" ng-style=\"{'background-color': msg.payload.backgroundColor, 'color': 'white'}\">{{msg.payload.label}}</button>",
+        "storeOutMessages": false,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1830,
+        "y": 1600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "58c4731e2cd54fc3",
+        "type": "ui_template",
+        "z": "2cc6b8578366bc4d",
+        "group": "e30c0c240b47fb36",
+        "name": "/dev/ttyUSB5设备",
+        "order": 6,
+        "width": "5",
+        "height": "1",
+        "format": "<button style=\"width: 225px; height: 50px; background-color: #ae81ff; color: white;\" ng-style=\"{'background-color': msg.payload.backgroundColor, 'color': 'white'}\">{{msg.payload.label}}</button>",
+        "storeOutMessages": false,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1830,
+        "y": 1640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ad88199b3cfebab9",
+        "type": "ui_template",
+        "z": "2cc6b8578366bc4d",
+        "group": "e30c0c240b47fb36",
+        "name": "/dev/ttyUSB6设备",
+        "order": 7,
+        "width": "5",
+        "height": "1",
+        "format": "<button style=\"width: 225px; height: 50px; background-color: #ae81ff; color: white;\" ng-style=\"{'background-color': msg.payload.backgroundColor, 'color': 'white'}\">{{msg.payload.label}}</button>",
+        "storeOutMessages": false,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1830,
+        "y": 1680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8e7a9dcc6a437d98",
+        "type": "ui_template",
+        "z": "2cc6b8578366bc4d",
+        "group": "e30c0c240b47fb36",
+        "name": "/dev/ttyUSB7设备",
+        "order": 8,
+        "width": "5",
+        "height": "1",
+        "format": "<button style=\"width: 225px; height: 50px; background-color: #ae81ff; color: white;\" ng-style=\"{'background-color': msg.payload.backgroundColor, 'color': 'white'}\">{{msg.payload.label}}</button>",
+        "storeOutMessages": false,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1830,
+        "y": 1720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2e0d199f7614a30b",
+        "type": "ui_numeric",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "label": "烧录失败的次数",
+        "tooltip": "",
+        "group": "e30c0c240b47fb36",
+        "order": 10,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "5000",
+        "step": 1,
+        "className": "",
+        "x": 1580,
+        "y": 1860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c9739bf2055329df",
+        "type": "comment",
+        "z": "2cc6b8578366bc4d",
+        "name": "拔出/dev/ttyUSBx设备后烧录界面的颜色恢复为紫色",
+        "info": "",
+        "x": 690,
+        "y": 1500,
+        "wires": []
+    },
+    {
+        "id": "582e71f75d7196b4",
+        "type": "change",
+        "z": "2cc6b8578366bc4d",
+        "name": "还原默认颜色",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.backgroundColor",
+                "pt": "msg",
+                "to": "#ae81ff",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.label",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1000,
+        "y": 1540,
+        "wires": [
+            [
+                "8690ab8c24209f7e",
+                "39258f0bb491a107"
+            ]
+        ]
+    },
+    {
+        "id": "1585bdbe6fab943b",
+        "type": "inject",
+        "z": "2cc6b8578366bc4d",
+        "name": "部署后，UI显示默认设置",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.2",
+        "topic": "",
+        "payload": "{\"backgroundColor\":\"#ae81ff\",\"label\":\"\"}",
+        "payloadType": "json",
+        "x": 1570,
+        "y": 1380,
+        "wires": [
+            [
+                "1ffba49ba08038c9",
+                "0d44ade22a088252",
+                "2f4509c759708823",
+                "a6ab441bdd4f69fd",
+                "34c7f5f514fb5e03",
+                "58c4731e2cd54fc3",
+                "ad88199b3cfebab9",
+                "8e7a9dcc6a437d98"
+            ]
+        ]
+    },
+    {
+        "id": "8690ab8c24209f7e",
+        "type": "switch",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "property": "payload.device_name",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "/dev/ttyUSB0",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/dev/ttyUSB1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/dev/ttyUSB2",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/dev/ttyUSB3",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/dev/ttyUSB4",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/dev/ttyUSB5",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/dev/ttyUSB6",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/dev/ttyUSB7",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 8,
+        "x": 1530,
+        "y": 1540,
+        "wires": [
+            [
+                "1ffba49ba08038c9"
+            ],
+            [
+                "0d44ade22a088252"
+            ],
+            [
+                "2f4509c759708823"
+            ],
+            [
+                "a6ab441bdd4f69fd"
+            ],
+            [
+                "34c7f5f514fb5e03"
+            ],
+            [
+                "58c4731e2cd54fc3"
+            ],
+            [
+                "ad88199b3cfebab9"
+            ],
+            [
+                "8e7a9dcc6a437d98"
+            ]
+        ]
+    },
+    {
+        "id": "7ac42223b8dfbb25",
+        "type": "ui_numeric",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "label": "烧录成功的次数",
+        "tooltip": "",
+        "group": "e30c0c240b47fb36",
+        "order": 9,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "5000",
+        "step": 1,
+        "className": "",
+        "x": 1580,
+        "y": 1800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "209807de204772d2",
+        "type": "comment",
+        "z": "2cc6b8578366bc4d",
+        "name": "烧录结果计数",
+        "info": "",
+        "x": 1190,
+        "y": 1760,
+        "wires": []
+    },
+    {
+        "id": "92410ada8e511efd",
+        "type": "comment",
+        "z": "2cc6b8578366bc4d",
+        "name": "部署后，还原烧录界面",
+        "info": "",
+        "x": 1560,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "0aa6e4f2ee15cf5f",
+        "type": "switch",
+        "z": "2cc6b8578366bc4d",
+        "name": "烧录结果",
+        "property": "payload.status",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Burning",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "True",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "False",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 980,
+        "y": 1640,
+        "wires": [
+            [
+                "735840e2e56481e7"
+            ],
+            [
+                "4a27b2ed03b7495c",
+                "33255c3e0111e52e"
+            ],
+            [
+                "c223d6dd24d3ea57",
+                "1f9bb7c86a8a3b29"
+            ]
+        ]
+    },
+    {
+        "id": "c0f6f70a9ce60d0d",
+        "type": "debug",
+        "z": "2cc6b8578366bc4d",
+        "name": "debug 2：数据流详情",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 960,
+        "y": 1740,
+        "wires": []
+    },
+    {
+        "id": "39258f0bb491a107",
+        "type": "debug",
+        "z": "2cc6b8578366bc4d",
+        "name": "debug 1：数据流详情",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1200,
+        "y": 1500,
+        "wires": []
+    },
+    {
+        "id": "735840e2e56481e7",
+        "type": "change",
+        "z": "2cc6b8578366bc4d",
+        "name": "（dashboard标签设置）烧录中...",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.backgroundColor",
+                "pt": "msg",
+                "to": "#35c1f4",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.label",
+                "pt": "msg",
+                "to": "设备烧录中...",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1260,
+        "y": 1600,
+        "wires": [
+            [
+                "8690ab8c24209f7e"
+            ]
+        ]
+    },
+    {
+        "id": "4a27b2ed03b7495c",
+        "type": "change",
+        "z": "2cc6b8578366bc4d",
+        "name": "（dashboard标签设置）烧录成功",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.backgroundColor",
+                "pt": "msg",
+                "to": "#5bb734",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.label",
+                "pt": "msg",
+                "to": "设备烧录成功",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1260,
+        "y": 1640,
+        "wires": [
+            [
+                "8690ab8c24209f7e"
+            ]
+        ]
+    },
+    {
+        "id": "c223d6dd24d3ea57",
+        "type": "change",
+        "z": "2cc6b8578366bc4d",
+        "name": "（dashboard标签设置）烧录失败",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.backgroundColor",
+                "pt": "msg",
+                "to": "#ff5c5c",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.label",
+                "pt": "msg",
+                "to": "设备烧录失败",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1260,
+        "y": 1680,
+        "wires": [
+            [
+                "8690ab8c24209f7e"
+            ]
+        ]
+    },
+    {
+        "id": "859aaba4ed75c795",
+        "type": "设备监听",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "set": true,
+        "action": "remove",
+        "device_name": "/dev/ttyUSB",
+        "setIOin": "",
+        "edge": "none",
+        "x": 570,
+        "y": 1540,
+        "wires": [
+            [
+                "582e71f75d7196b4"
+            ]
+        ]
+    },
+    {
+        "id": "e738791e40628891",
+        "type": "ESP32烧录",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "chip": "esp32e",
+        "firmware": "/root/NodeRED-Computer-PartHardware/Executable-Script/Block-Burn/ESP32_Firmware/esp32e/esp32e.Blink.bin",
+        "x": 800,
+        "y": 1640,
+        "wires": [
+            [
+                "0aa6e4f2ee15cf5f",
+                "c0f6f70a9ce60d0d"
+            ]
+        ]
+    },
+    {
+        "id": "33255c3e0111e52e",
+        "type": "流计数",
+        "z": "2cc6b8578366bc4d",
+        "name": "烧录成功计数",
+        "set": true,
+        "num_Init": "0",
+        "x": 1200,
+        "y": 1800,
+        "wires": [
+            [
+                "5527461e5830c372"
+            ]
+        ]
+    },
+    {
+        "id": "1f9bb7c86a8a3b29",
+        "type": "流计数",
+        "z": "2cc6b8578366bc4d",
+        "name": "烧录失败计数",
+        "set": true,
+        "num_Init": "0",
+        "x": 1200,
+        "y": 1860,
+        "wires": [
+            [
+                "c514998359e235a0"
+            ]
+        ]
+    },
+    {
+        "id": "5527461e5830c372",
+        "type": "change",
+        "z": "2cc6b8578366bc4d",
+        "name": "提取计数值",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.current_count",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1390,
+        "y": 1800,
+        "wires": [
+            [
+                "7ac42223b8dfbb25"
+            ]
+        ]
+    },
+    {
+        "id": "c514998359e235a0",
+        "type": "change",
+        "z": "2cc6b8578366bc4d",
+        "name": "提取计数值",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.current_count",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1390,
+        "y": 1860,
+        "wires": [
+            [
+                "2e0d199f7614a30b"
+            ]
+        ]
+    },
+    {
+        "id": "a6f01c249e7c5f90",
+        "type": "inject",
+        "z": "2cc6b8578366bc4d",
+        "name": "部署后，计数清零",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "0",
+        "payloadType": "num",
+        "x": 1370,
+        "y": 1920,
+        "wires": [
+            [
+                "7ac42223b8dfbb25",
+                "2e0d199f7614a30b"
+            ]
+        ]
+    },
+    {
+        "id": "51ede139312f8b6f",
+        "type": "设备监听",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "set": true,
+        "action": "add",
+        "device_name": "/dev/ttyUSB",
+        "setIOin": "",
+        "edge": "none",
+        "x": 570,
+        "y": 1640,
+        "wires": [
+            [
+                "e738791e40628891"
+            ]
+        ]
+    },
+    {
+        "id": "e30c0c240b47fb36",
+        "type": "ui_group",
+        "name": "group",
+        "tab": "60ceb47b8a6ecc19",
+        "order": 1,
+        "disp": true,
+        "width": "20",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "60ceb47b8a6ecc19",
+        "type": "ui_tab",
+        "name": "Tab",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]

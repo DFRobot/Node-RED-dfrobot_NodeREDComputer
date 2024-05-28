@@ -1,0 +1,231 @@
+[
+    {
+        "id": "fc3dcd8ff245da99",
+        "type": "IIC通信",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "bus": "2",
+        "address": "0x2c",
+        "mode": "write",
+        "command": "0x55 0xAA 0x10 0x06 0x03 0x05 0x00 0x00 0xFF 0x00 0x00 0xFF 0x00 0x00 0x30 0x00 0x30 0x00 0x30",
+        "x": 620,
+        "y": 920,
+        "wires": [
+            [
+                "eb90acb0ce5db985"
+            ]
+        ]
+    },
+    {
+        "id": "de2bb2eff934d20a",
+        "type": "inject",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 410,
+        "y": 920,
+        "wires": [
+            [
+                "fc3dcd8ff245da99"
+            ]
+        ]
+    },
+    {
+        "id": "eb90acb0ce5db985",
+        "type": "debug",
+        "z": "2cc6b8578366bc4d",
+        "name": "debug信息-1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 850,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "dfc80a9be306853f",
+        "type": "comment",
+        "z": "2cc6b8578366bc4d",
+        "name": "通过IIC接口给lcdDisplay模块绘制圆形",
+        "info": "",
+        "x": 530,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "a07962a0b3fc8fac",
+        "type": "IIC通信",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "bus": "2",
+        "address": "0x2c",
+        "mode": "write",
+        "command": "0x55 0xAA 0x10 0x06 0x03 0x05 0x00 0x00 0xFF 0x00 0x00 0xFF 0x00 0x00 0x30 0x00 0x30 0x00 0x30",
+        "x": 660,
+        "y": 1040,
+        "wires": [
+            [
+                "4cea61ec3293715c"
+            ]
+        ]
+    },
+    {
+        "id": "15f70e3a2f031b97",
+        "type": "inject",
+        "z": "2cc6b8578366bc4d",
+        "name": "msg.payload.command",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"command\":\"0x55 0xAA 0x10 0x06 0x03 0x05 0x00 0x00 0x00 0xFF 0x00 0xFF 0x00 0x00 0x30 0x00 0x30 0x00 0x30\"}",
+        "payloadType": "json",
+        "x": 460,
+        "y": 1040,
+        "wires": [
+            [
+                "a07962a0b3fc8fac"
+            ]
+        ]
+    },
+    {
+        "id": "4cea61ec3293715c",
+        "type": "debug",
+        "z": "2cc6b8578366bc4d",
+        "name": "debug信息-2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 850,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "7b817b392b7437f3",
+        "type": "comment",
+        "z": "2cc6b8578366bc4d",
+        "name": "改变圆形的颜色",
+        "info": "",
+        "x": 440,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "7de1ebd07be3513b",
+        "type": "comment",
+        "z": "2cc6b8578366bc4d",
+        "name": "输入流说明",
+        "info": "以节点的初始属性作为基础，输入只要含有如下某字段就对相应属性进行覆盖\n输入非以下字段均只作为触发流\n  - msg.payload.command (发送指令string)",
+        "x": 420,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "f985df5004d329c8",
+        "type": "IIC通信",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "bus": "2",
+        "address": "0x16",
+        "mode": "read",
+        "command": "0x1e",
+        "x": 620,
+        "y": 1200,
+        "wires": [
+            [
+                "621fcfdc22664c41"
+            ]
+        ]
+    },
+    {
+        "id": "24bef11d546054e6",
+        "type": "inject",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 410,
+        "y": 1200,
+        "wires": [
+            [
+                "f985df5004d329c8"
+            ]
+        ]
+    },
+    {
+        "id": "621fcfdc22664c41",
+        "type": "debug",
+        "z": "2cc6b8578366bc4d",
+        "name": "debug信息-3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 850,
+        "y": 1200,
+        "wires": []
+    },
+    {
+        "id": "de169aefa41bc954",
+        "type": "comment",
+        "z": "2cc6b8578366bc4d",
+        "name": "读取IIC设备地址为0x16的0x1e寄存器位置的一个字节数据",
+        "info": "",
+        "x": 590,
+        "y": 1140,
+        "wires": []
+    }
+]

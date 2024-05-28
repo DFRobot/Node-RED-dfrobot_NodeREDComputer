@@ -1,0 +1,156 @@
+[
+    {
+        "id": "55baf0714a39c593",
+        "type": "Device Shell",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "IP_Port": "10.6.6.6:18080",
+        "identity": "BOM",
+        "cmd": "ifconfig",
+        "x": 820,
+        "y": 480,
+        "wires": [
+            [
+                "47b363c6062808ac"
+            ]
+        ]
+    },
+    {
+        "id": "eed7ba6bfd2269b7",
+        "type": "inject",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 560,
+        "y": 480,
+        "wires": [
+            [
+                "55baf0714a39c593"
+            ]
+        ]
+    },
+    {
+        "id": "47b363c6062808ac",
+        "type": "debug",
+        "z": "2cc6b8578366bc4d",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1120,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "da35c73956cc1440",
+        "type": "Device Shell",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "IP_Port": "10.6.6.6:18080",
+        "identity": "BOM",
+        "cmd": "ifconfig",
+        "x": 820,
+        "y": 580,
+        "wires": [
+            [
+                "9b691ea3f049441f"
+            ]
+        ]
+    },
+    {
+        "id": "310ac9a575356d47",
+        "type": "inject",
+        "z": "2cc6b8578366bc4d",
+        "name": "ifconfig br0",
+        "props": [
+            {
+                "p": "payload.shell",
+                "v": "ifconfig br0",
+                "vt": "str"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 560,
+        "y": 580,
+        "wires": [
+            [
+                "da35c73956cc1440"
+            ]
+        ]
+    },
+    {
+        "id": "9b691ea3f049441f",
+        "type": "debug",
+        "z": "2cc6b8578366bc4d",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1120,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "3203acf6a33a74f4",
+        "type": "comment",
+        "z": "2cc6b8578366bc4d",
+        "name": "将量产机连接Linux设备（如IP为10.6.6.6的设备且部署了内置Shell服务器），执行该Linux设备中的shell命令",
+        "info": "",
+        "x": 860,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "969e35d1c76c2bdc",
+        "type": "comment",
+        "z": "2cc6b8578366bc4d",
+        "name": "1、触发执行",
+        "info": "",
+        "x": 590,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "a949179538171cbd",
+        "type": "comment",
+        "z": "2cc6b8578366bc4d",
+        "name": "2、输入流传入shell命令执行",
+        "info": "",
+        "x": 640,
+        "y": 540,
+        "wires": []
+    }
+]

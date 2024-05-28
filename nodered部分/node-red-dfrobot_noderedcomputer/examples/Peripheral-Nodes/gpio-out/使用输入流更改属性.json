@@ -1,0 +1,84 @@
+[
+    {
+        "id": "42c9fe6a7d02b045",
+        "type": "GPIO输出",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "pin": "79",
+        "level": "1",
+        "set": true,
+        "x": 820,
+        "y": 1020,
+        "wires": [
+            [
+                "dc99f568b2fb73a8"
+            ]
+        ]
+    },
+    {
+        "id": "9cc8152ae3c2d4cb",
+        "type": "inject",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"pin\":76,\"level\":1}",
+        "payloadType": "json",
+        "x": 590,
+        "y": 1020,
+        "wires": [
+            [
+                "42c9fe6a7d02b045"
+            ]
+        ]
+    },
+    {
+        "id": "7147f108aca9a70e",
+        "type": "comment",
+        "z": "2cc6b8578366bc4d",
+        "name": "勾选输入流更改属性：76号引脚-输出高电平",
+        "info": "",
+        "x": 670,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "dc99f568b2fb73a8",
+        "type": "debug",
+        "z": "2cc6b8578366bc4d",
+        "name": "debug信息",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1010,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "a0e6e9b76364f10d",
+        "type": "comment",
+        "z": "2cc6b8578366bc4d",
+        "name": "输入流中字段的说明",
+        "info": "- msg.payload.pin (引脚编号)\n    输入的msg.payload.pin必须为: \n    - 文本 \n    - 数字 \n\n- msg.payload.level (高低电平)\n    输入的msg.payload.level必须为: \n    - 文本0/1 \n    - 数字0/1 \n    - 布尔值true/false\n\n\n用inject节点, 发送json类型数据实现:\n    将msg.payload = {...}\n    例如 msg.payload = {\"pin\": 76, \"level\": 1}",
+        "x": 590,
+        "y": 1060,
+        "wires": []
+    }
+]

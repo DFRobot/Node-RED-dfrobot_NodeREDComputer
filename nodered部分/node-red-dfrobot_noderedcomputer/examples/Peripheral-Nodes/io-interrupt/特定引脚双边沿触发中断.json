@@ -1,0 +1,46 @@
+[
+    {
+        "id": "65b8112ef63a98e1",
+        "type": "debug",
+        "z": "2cc6b8578366bc4d",
+        "name": "GPIO的80引脚的双边沿中断触发",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1550,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "be592daf65a560f1",
+        "type": "comment",
+        "z": "2cc6b8578366bc4d",
+        "name": "GPIO的80引脚的双边沿中断触发",
+        "info": "",
+        "x": 1310,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "7c6aca7cac2dae31",
+        "type": "IO中断",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "pin": "80",
+        "mode": "pullDown",
+        "interrupt": "both",
+        "oldrc": false,
+        "x": 1230,
+        "y": 460,
+        "wires": [
+            [
+                "65b8112ef63a98e1"
+            ]
+        ]
+    }
+]

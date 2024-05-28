@@ -1,0 +1,13 @@
+
+{
+    "peripheral": {
+        "gpio": {
+            "name": "name"
+        },
+        
+        "gpio_out": {
+            "Label_0_dragOut": "GPIO Out",
+            "Level_Init": "Sets the initial level of the pin"
+        }
+    }
+}

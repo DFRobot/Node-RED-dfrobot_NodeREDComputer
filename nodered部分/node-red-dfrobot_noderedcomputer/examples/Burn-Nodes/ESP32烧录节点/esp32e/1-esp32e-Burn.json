@@ -1,0 +1,107 @@
+[
+    {
+        "id": "2d44ffb718ceb386",
+        "type": "comment",
+        "z": "2cc6b8578366bc4d",
+        "name": "烧录所有插入的esp32设备",
+        "info": "",
+        "x": 1450,
+        "y": 1680,
+        "wires": []
+    },
+    {
+        "id": "5fe06b8396542918",
+        "type": "comment",
+        "z": "2cc6b8578366bc4d",
+        "name": "拔出设备",
+        "info": "",
+        "x": 1400,
+        "y": 1580,
+        "wires": []
+    },
+    {
+        "id": "cf43ad7ae622f403",
+        "type": "debug",
+        "z": "2cc6b8578366bc4d",
+        "name": "debug 2：数据流详情",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1880,
+        "y": 1720,
+        "wires": []
+    },
+    {
+        "id": "30f2d4e2be4920e9",
+        "type": "debug",
+        "z": "2cc6b8578366bc4d",
+        "name": "debug 1：数据流详情",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1660,
+        "y": 1620,
+        "wires": []
+    },
+    {
+        "id": "49f5074f55f28138",
+        "type": "设备监听",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "set": true,
+        "action": "remove",
+        "device_name": "/dev/ttyUSB",
+        "setIOin": "",
+        "edge": "none",
+        "x": 1410,
+        "y": 1620,
+        "wires": [
+            [
+                "30f2d4e2be4920e9"
+            ]
+        ]
+    },
+    {
+        "id": "3c41d05cf513e2c9",
+        "type": "ESP32烧录",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "chip": "esp32e",
+        "firmware": "/root/NodeRED-Computer-PartHardware/Executable-Script/Block-Burn/ESP32_Firmware/esp32e/esp32e.Blink.bin",
+        "x": 1620,
+        "y": 1720,
+        "wires": [
+            [
+                "cf43ad7ae622f403"
+            ]
+        ]
+    },
+    {
+        "id": "32baecd71359a872",
+        "type": "设备监听",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "set": true,
+        "action": "add",
+        "device_name": "/dev/ttyUSB",
+        "setIOin": "",
+        "edge": "none",
+        "x": 1410,
+        "y": 1720,
+        "wires": [
+            [
+                "3c41d05cf513e2c9"
+            ]
+        ]
+    }
+]

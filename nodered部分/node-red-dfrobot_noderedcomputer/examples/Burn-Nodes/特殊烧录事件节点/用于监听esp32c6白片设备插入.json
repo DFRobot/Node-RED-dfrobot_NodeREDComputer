@@ -1,0 +1,46 @@
+[
+    {
+        "id": "586e058794597410",
+        "type": "特殊烧录事件",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "action": "add",
+        "devName": "",
+        "SpecialEvents": "esp32c6_shakeHands",
+        "oldrc": false,
+        "x": 510,
+        "y": 680,
+        "wires": [
+            [
+                "10d0e8fd6264e1f2"
+            ]
+        ]
+    },
+    {
+        "id": "10d0e8fd6264e1f2",
+        "type": "debug",
+        "z": "2cc6b8578366bc4d",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 840,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "9b79b31f4cbb71a6",
+        "type": "comment",
+        "z": "2cc6b8578366bc4d",
+        "name": "用于监听esp32c6白片设备的插入（在其后可添加esp32烧录节点）",
+        "info": "",
+        "x": 660,
+        "y": 620,
+        "wires": []
+    }
+]

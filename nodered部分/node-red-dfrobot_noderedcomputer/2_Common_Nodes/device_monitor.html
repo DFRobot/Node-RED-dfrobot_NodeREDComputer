@@ -1,0 +1,75 @@
+<script type="text/html" data-help-name="设备监听">
+    <p>设备监听节点: 用于监听/dev/下的所有设备的添加与移除</p>
+  </script>
+  
+  
+  <script type="text/html" data-template-name="设备监听">
+    <!-- Name -->
+    <div class="form-row">
+      <label for="node-input-name"><i class="fa fa-tag"></i> 名称</label>
+      <input type="text" id="node-input-name" data-i18n="[placeholder]name">
+    </div>
+  
+    <div class="form-row" id="node-set-tick">
+      <label>&nbsp;</label>
+      <input type="checkbox" id="node-input-set" style="display: inline-block; width: auto; vertical-align: top;">
+      <label for="node-input-set" style="width: 70%;">筛选</label>
+    </div>
+
+    <div class="form-row" id="node-set-state1">
+      <label for="node-input-action">&nbsp;设备行为</label>
+      <select id="node-input-action" style="width: 250px;">
+        <option value="add">检测-设备插入</option>
+        <option value="remove">检测-设备拔出</option>
+        <option value="both" selected>检测-插入与拔出</option>
+      </select>
+    </div>
+
+    <div class="form-row" id="node-set-state2">
+        <label for="node-input-device_name">&nbsp;设备名中含有</label>
+        <input type="text" id="node-input-device_name" data-i18n="[placeholder]如：输入/dev/ttyACM——>表示设备名称包含/dev/ttyACM的所有设备, 为空表示不筛选此项">
+      </div>
+  
+  </script>
+  
+  
+  
+  <script type="text/javascript">
+      RED.nodes.registerType('设备监听',{
+        category: 'Block 通用节点',
+        color: '#35c1f4',
+        defaults: {
+          name: {value:""},
+          set: {value:""},
+          action:  {value:"both"},
+          device_name:  {value:""},
+
+          setIOin: {value:""},
+          edge:  {value:"none"},
+        },
+        inputs:0,
+        outputs:1,
+        icon: "bridge.svg",
+        label: function() {
+          return this.name||this._("设备监听节点");
+        },
+  
+        oneditprepare: function() {
+  
+          var setstate = function () {
+              if ($('#node-input-set').is(":checked")) {
+                  $("#node-set-state1").show();
+                  $("#node-set-state2").show();
+              } else {
+                  $("#node-set-state1").hide();
+                  $("#node-set-state2").hide();
+              }
+          };
+          $("#node-input-set").change(function () { setstate(); });
+          setstate();
+        }
+  
+      });
+    </script>
+    
+  

@@ -1,0 +1,74 @@
+<script type="text/html" data-help-name="DAC">
+  <p>DAC节点: 将数字信号量转化为模拟量</p>
+</script>
+
+
+<script type="text/html" data-template-name="DAC">
+  <!-- Name -->
+  <div class="form-row">
+    <label for="node-input-name"><i class="fa fa-tag"></i> 名称</label>
+    <input type="text" id="node-input-name" data-i18n="[placeholder]name">
+  </div>
+
+  <div class="form-row">
+    <label for="node-input-pin"><i class="fa fa-circle"></i> Pin</label>
+    <select id="node-input-pin" style="width: 250px;">
+      <option value="0">DAC1</option>
+      <option value="1">DAC2</option>
+      <option value="2">DAC3</option>
+      <option value="3">DAC4</option>
+      <option value="4">DAC5</option>
+      <option value="5">DAC6</option>
+      <option value="6">DAC7</option>
+      <option value="7">DAC8</option>
+  </select>
+  </div>
+  <div class="form-row" id="node-set-tick">
+    <label>&nbsp;</label>
+    <input type="checkbox" id="node-input-set" style="display: inline-block; width: auto; vertical-align: top;">
+    <label for="node-input-set" style="width: 70%;">设置输出电压的初始值(部署后立即生效)</label>
+  </div>
+  <div class="form-row" id="node-set-state">
+    <label for="node-input-initVoltage">&nbsp;</label>
+    <input type="text" id="node-input-initVoltage" data-i18n="[placeholder]初始电压范围：0~3.3">
+  </div>
+
+</script>
+
+
+<script type="text/javascript">
+    RED.nodes.registerType('DAC',{
+      category: 'Block 板载外设',
+      color: '#35c1f4',
+      defaults: {
+        name: {value:""},
+        pin:  {value:"0", required: true},
+        initVoltage:{value:""},
+        set: {value:""}
+      },
+      inputs:1,
+      outputs:0,
+      icon: "font-awesome/fa-angle-double-right",
+      label: function() {
+        return this.name||this._("DAC节点");
+      },
+      inputLabels: function(i) {
+          return this.name||this._("输入-msg.payload.voltage");
+      },
+
+      oneditprepare: function() {
+
+        var setstate = function () {
+            if ($('#node-input-set').is(":checked")) {
+                $("#node-set-state").show();
+            } else {
+                $("#node-set-state").hide();
+            }
+        };
+        $("#node-input-set").change(function () { setstate(); });
+        setstate();
+      }
+
+    });
+  </script>
+  

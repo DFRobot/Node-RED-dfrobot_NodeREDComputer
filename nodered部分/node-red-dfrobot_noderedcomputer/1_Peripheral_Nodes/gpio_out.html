@@ -1,0 +1,52 @@
+<script type="text/html" data-template-name="GPIO输出">
+  <!-- Name -->
+  <div class="form-row">
+      <label for="node-input-name"><i class="fa fa-tag"></i> <span data-i18n="peripheral.gpio.name"></span></label>
+      <input type="text" id="node-input-name" data-i18n="[placeholder]peripheral.gpio.name">
+  </div>
+
+  <div class="form-row">
+    <label for="node-input-pin"><i class="fa fa-tag"></i> 引脚编号</label>
+    <input type="text" id="node-input-pin">
+  </div>
+
+  <div class="form-row">
+    <label for="node-input-level"><i class="fa fa-tag"></i> 电平选择</label>
+    <select id="node-input-level" style="width: 250px;">
+        <option value="0">0 - 低电平</option>
+        <option value="1">1 - 高电平</option>
+    </select>
+  </div>
+
+  <div class="form-row" id="node-set-tick">
+    <div><br></div>
+    <input type="checkbox" id="node-input-set" style="display: inline-block; width: auto; vertical-align: top;">
+    <label for="node-input-set" style="width: 70%;">使用输入流更改属性</label>
+  </div>
+
+</script>
+
+
+<script type="text/javascript">
+    RED.nodes.registerType('GPIO输出',{
+      category: 'Block 板载外设',
+      color: '#35c1f4',
+      defaults: {
+        name: {value:""},
+        pin:  {value:""},
+        level: { value:"0" },
+        set: { value:"" }
+      },
+      inputs:1,
+      outputs:1,
+      icon: "font-awesome/fa-angle-double-right",
+      label: function() {
+        return this.name||this._("peripheral.gpio_out.Label_0_dragOut");
+      },
+      // inputLabels: function(i) {
+      //     return this.name||this._("输入-文本0/1、数字0/1、布尔值true/false");
+      //   },
+        
+    });
+  </script>
+  

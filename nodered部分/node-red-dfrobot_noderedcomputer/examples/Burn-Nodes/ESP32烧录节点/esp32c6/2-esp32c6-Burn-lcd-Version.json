@@ -1,0 +1,896 @@
+[
+    {
+        "id": "2d44ffb718ceb386",
+        "type": "comment",
+        "z": "2cc6b8578366bc4d",
+        "name": "烧录所有插入的esp32设备",
+        "info": "",
+        "x": 550,
+        "y": 1620,
+        "wires": []
+    },
+    {
+        "id": "5fe06b8396542918",
+        "type": "comment",
+        "z": "2cc6b8578366bc4d",
+        "name": "拔出设备后烧录界面的颜色恢复为白色",
+        "info": "",
+        "x": 590,
+        "y": 1520,
+        "wires": []
+    },
+    {
+        "id": "6658aca4d8add50d",
+        "type": "switch",
+        "z": "2cc6b8578366bc4d",
+        "name": "分筛设备",
+        "property": "payload.device_name",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "/dev/ttyACM0",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/dev/ttyACM1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/dev/ttyACM2",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/dev/ttyACM3",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/dev/ttyACM4",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/dev/ttyACM5",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/dev/ttyACM6",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/dev/ttyACM7",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/dev/ttyACM8",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/dev/ttyACM9",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 10,
+        "x": 1500,
+        "y": 1640,
+        "wires": [
+            [
+                "5f2f5f942fb0653e"
+            ],
+            [
+                "cdc81e0b0e3b7a08"
+            ],
+            [
+                "7de3e727f6d4b023"
+            ],
+            [
+                "77043fc3121c03cb"
+            ],
+            [
+                "f05642e005c05b3a"
+            ],
+            [
+                "ddb0c43737bf6a3a"
+            ],
+            [
+                "7d271a92fb815d09"
+            ],
+            [
+                "28989b108f662b55"
+            ],
+            [
+                "6e858958305ec9df"
+            ],
+            [
+                "1069f9ea1e3d714b"
+            ]
+        ]
+    },
+    {
+        "id": "17eb131178928c63",
+        "type": "comment",
+        "z": "2cc6b8578366bc4d",
+        "name": "烧录结果计数",
+        "info": "",
+        "x": 1130,
+        "y": 1760,
+        "wires": []
+    },
+    {
+        "id": "f410a1a07fd44d7a",
+        "type": "comment",
+        "z": "2cc6b8578366bc4d",
+        "name": "设备0-设备9的LCD屏幕中的图像绘制",
+        "info": "",
+        "x": 1700,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "1443b69dd6256e37",
+        "type": "switch",
+        "z": "2cc6b8578366bc4d",
+        "name": "烧录结果",
+        "property": "payload.status",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Burning",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "True",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "False",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 900,
+        "y": 1660,
+        "wires": [
+            [
+                "b844700a24b02530"
+            ],
+            [
+                "2b6ffb8aceb4948e",
+                "6b36ebd73f9282cf"
+            ],
+            [
+                "43851c74fd875fd9",
+                "00c777664c8a4558"
+            ]
+        ]
+    },
+    {
+        "id": "cf43ad7ae622f403",
+        "type": "debug",
+        "z": "2cc6b8578366bc4d",
+        "name": "debug 2：数据流详情",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 880,
+        "y": 1760,
+        "wires": []
+    },
+    {
+        "id": "30f2d4e2be4920e9",
+        "type": "debug",
+        "z": "2cc6b8578366bc4d",
+        "name": "debug 1：数据流详情",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 740,
+        "y": 1580,
+        "wires": []
+    },
+    {
+        "id": "f01cb5b47bd58bc2",
+        "type": "inject",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1640,
+        "y": 1360,
+        "wires": [
+            [
+                "d7dd905499732449",
+                "ea524a61f37ea5f3",
+                "3ec2da21a76cd7a3",
+                "9234c290e0206be9",
+                "3bb806ad2292270d",
+                "79045d881b9ef49a",
+                "22b512144f994725",
+                "566567a66bd1a75e",
+                "8b2f815e933baedf",
+                "cd0e40ed50290c3f",
+                "5f2f5f942fb0653e",
+                "cdc81e0b0e3b7a08",
+                "7de3e727f6d4b023",
+                "77043fc3121c03cb",
+                "f05642e005c05b3a",
+                "ddb0c43737bf6a3a",
+                "7d271a92fb815d09",
+                "28989b108f662b55",
+                "6e858958305ec9df",
+                "1069f9ea1e3d714b"
+            ]
+        ]
+    },
+    {
+        "id": "2b6ffb8aceb4948e",
+        "type": "更改属性",
+        "z": "2cc6b8578366bc4d",
+        "name": "重新渲染矩形：绿色（烧录成功）",
+        "graphic_options": "rect",
+        "background_color": "#00FF00",
+        "line_color": "#000000",
+        "rect_border_color": "#000000",
+        "rect_fill_color": "#00FF00",
+        "circle_border_color": "#000000",
+        "circle_fill_color": "#FFFFFF",
+        "text_color": "#000000",
+        "x": 1200,
+        "y": 1660,
+        "wires": [
+            [
+                "6658aca4d8add50d"
+            ]
+        ]
+    },
+    {
+        "id": "43851c74fd875fd9",
+        "type": "更改属性",
+        "z": "2cc6b8578366bc4d",
+        "name": "重新渲染矩形：红色（烧录失败）",
+        "graphic_options": "rect",
+        "background_color": "#FFFFFF",
+        "line_color": "#000000",
+        "rect_border_color": "#000000",
+        "rect_fill_color": "#FF0000",
+        "circle_border_color": "#000000",
+        "circle_fill_color": "#FFFFFF",
+        "text_color": "#000000",
+        "x": 1200,
+        "y": 1700,
+        "wires": [
+            [
+                "6658aca4d8add50d"
+            ]
+        ]
+    },
+    {
+        "id": "b844700a24b02530",
+        "type": "更改属性",
+        "z": "2cc6b8578366bc4d",
+        "name": "重新渲染矩形：青色（烧录中...）",
+        "graphic_options": "rect",
+        "background_color": "#FFFFFF",
+        "line_color": "#000000",
+        "rect_border_color": "#000000",
+        "rect_fill_color": "#00FFFF",
+        "circle_border_color": "#000000",
+        "circle_fill_color": "#FFFFFF",
+        "text_color": "#000000",
+        "x": 1200,
+        "y": 1620,
+        "wires": [
+            [
+                "6658aca4d8add50d"
+            ]
+        ]
+    },
+    {
+        "id": "9e0b5506e21b85d0",
+        "type": "更改属性",
+        "z": "2cc6b8578366bc4d",
+        "name": "重新渲染矩形：白色（拔出设备）",
+        "graphic_options": "rect",
+        "background_color": "#FFFFFF",
+        "line_color": "#000000",
+        "rect_border_color": "#000000",
+        "rect_fill_color": "#FFFFFF",
+        "circle_border_color": "#000000",
+        "circle_fill_color": "#FFFFFF",
+        "text_color": "#000000",
+        "x": 1200,
+        "y": 1560,
+        "wires": [
+            [
+                "6658aca4d8add50d"
+            ]
+        ]
+    },
+    {
+        "id": "6138dad7a2b211e8",
+        "type": "debug",
+        "z": "2cc6b8578366bc4d",
+        "name": "debug 94",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1380,
+        "y": 1800,
+        "wires": []
+    },
+    {
+        "id": "897e011a9726099f",
+        "type": "debug",
+        "z": "2cc6b8578366bc4d",
+        "name": "debug 95",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1380,
+        "y": 1860,
+        "wires": []
+    },
+    {
+        "id": "e2c050a2642e4ca1",
+        "type": "inject",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1640,
+        "y": 1320,
+        "wires": [
+            [
+                "7c969629965f410b"
+            ]
+        ]
+    },
+    {
+        "id": "49f5074f55f28138",
+        "type": "设备监听",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "set": true,
+        "action": "remove",
+        "device_name": "/dev/ttyACM",
+        "setIOin": "",
+        "edge": "none",
+        "x": 510,
+        "y": 1560,
+        "wires": [
+            [
+                "30f2d4e2be4920e9",
+                "9e0b5506e21b85d0"
+            ]
+        ]
+    },
+    {
+        "id": "fbb576df02cfe4b8",
+        "type": "特殊烧录事件",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "action": "add",
+        "devName": "",
+        "SpecialEvents": "esp32c6_shakeHands",
+        "oldrc": false,
+        "x": 530,
+        "y": 1660,
+        "wires": [
+            [
+                "3c41d05cf513e2c9"
+            ]
+        ]
+    },
+    {
+        "id": "3c41d05cf513e2c9",
+        "type": "ESP32烧录",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "chip": "esp32c6",
+        "firmware": "/root/NodeRED-Computer-PartHardware/Executable-Script/Block-Burn/ESP32_Firmware/esp32c6/esp32c6-blink.bin",
+        "x": 720,
+        "y": 1660,
+        "wires": [
+            [
+                "1443b69dd6256e37",
+                "cf43ad7ae622f403"
+            ]
+        ]
+    },
+    {
+        "id": "6b36ebd73f9282cf",
+        "type": "流计数",
+        "z": "2cc6b8578366bc4d",
+        "name": "烧录成功计数",
+        "set": true,
+        "num_Init": "0",
+        "x": 1140,
+        "y": 1800,
+        "wires": [
+            [
+                "6138dad7a2b211e8"
+            ]
+        ]
+    },
+    {
+        "id": "00c777664c8a4558",
+        "type": "流计数",
+        "z": "2cc6b8578366bc4d",
+        "name": "烧录失败计数",
+        "set": true,
+        "num_Init": "0",
+        "x": 1140,
+        "y": 1860,
+        "wires": [
+            [
+                "897e011a9726099f"
+            ]
+        ]
+    },
+    {
+        "id": "7c969629965f410b",
+        "type": "背景颜色",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "background_color": "#FFFFFF",
+        "custom_color": "",
+        "priority": "5",
+        "set": true,
+        "x": 1920,
+        "y": 1360,
+        "wires": []
+    },
+    {
+        "id": "d7dd905499732449",
+        "type": "绘制文本",
+        "z": "2cc6b8578366bc4d",
+        "name": "设置文本-设备0",
+        "text_content": "设备0",
+        "coord_x": "0",
+        "coord_y": "0",
+        "font_size": "24",
+        "custom_size": "",
+        "font_color": "#000000",
+        "custom_color": "",
+        "priority": "7",
+        "set": "",
+        "x": 1980,
+        "y": 1420,
+        "wires": []
+    },
+    {
+        "id": "ea524a61f37ea5f3",
+        "type": "绘制文本",
+        "z": "2cc6b8578366bc4d",
+        "name": "设置文本-设备1",
+        "text_content": "设备1",
+        "coord_x": "90",
+        "coord_y": "0",
+        "font_size": "24",
+        "custom_size": "",
+        "font_color": "#000000",
+        "custom_color": "",
+        "priority": "7",
+        "set": "",
+        "x": 1980,
+        "y": 1460,
+        "wires": []
+    },
+    {
+        "id": "3ec2da21a76cd7a3",
+        "type": "绘制文本",
+        "z": "2cc6b8578366bc4d",
+        "name": "设置文本-设备2",
+        "text_content": "设备2",
+        "coord_x": "180",
+        "coord_y": "0",
+        "font_size": "24",
+        "custom_size": "",
+        "font_color": "#000000",
+        "custom_color": "",
+        "priority": "7",
+        "set": "",
+        "x": 1980,
+        "y": 1500,
+        "wires": []
+    },
+    {
+        "id": "9234c290e0206be9",
+        "type": "绘制文本",
+        "z": "2cc6b8578366bc4d",
+        "name": "设置文本-设备3",
+        "text_content": "设备3",
+        "coord_x": "270",
+        "coord_y": "0",
+        "font_size": "24",
+        "custom_size": "",
+        "font_color": "#000000",
+        "custom_color": "",
+        "priority": "7",
+        "set": "",
+        "x": 1980,
+        "y": 1540,
+        "wires": []
+    },
+    {
+        "id": "3bb806ad2292270d",
+        "type": "绘制文本",
+        "z": "2cc6b8578366bc4d",
+        "name": "设置文本-设备4",
+        "text_content": "设备4",
+        "coord_x": "360",
+        "coord_y": "0",
+        "font_size": "24",
+        "custom_size": "",
+        "font_color": "#000000",
+        "custom_color": "",
+        "priority": "7",
+        "set": "",
+        "x": 1980,
+        "y": 1580,
+        "wires": []
+    },
+    {
+        "id": "79045d881b9ef49a",
+        "type": "绘制文本",
+        "z": "2cc6b8578366bc4d",
+        "name": "设置文本-设备5",
+        "text_content": "设备5",
+        "coord_x": "0",
+        "coord_y": "100",
+        "font_size": "24",
+        "custom_size": "",
+        "font_color": "#000000",
+        "custom_color": "",
+        "priority": "7",
+        "set": "",
+        "x": 1980,
+        "y": 1640,
+        "wires": []
+    },
+    {
+        "id": "22b512144f994725",
+        "type": "绘制文本",
+        "z": "2cc6b8578366bc4d",
+        "name": "设置文本-设备6",
+        "text_content": "设备6",
+        "coord_x": "90",
+        "coord_y": "100",
+        "font_size": "24",
+        "custom_size": "",
+        "font_color": "#000000",
+        "custom_color": "",
+        "priority": "7",
+        "set": "",
+        "x": 1980,
+        "y": 1680,
+        "wires": []
+    },
+    {
+        "id": "566567a66bd1a75e",
+        "type": "绘制文本",
+        "z": "2cc6b8578366bc4d",
+        "name": "设置文本-设备7",
+        "text_content": "设备7",
+        "coord_x": "180",
+        "coord_y": "100",
+        "font_size": "24",
+        "custom_size": "",
+        "font_color": "#000000",
+        "custom_color": "",
+        "priority": "7",
+        "set": "",
+        "x": 1980,
+        "y": 1720,
+        "wires": []
+    },
+    {
+        "id": "8b2f815e933baedf",
+        "type": "绘制文本",
+        "z": "2cc6b8578366bc4d",
+        "name": "设置文本-设备8",
+        "text_content": "设备8",
+        "coord_x": "270",
+        "coord_y": "100",
+        "font_size": "24",
+        "custom_size": "",
+        "font_color": "#000000",
+        "custom_color": "",
+        "priority": "7",
+        "set": "",
+        "x": 1980,
+        "y": 1760,
+        "wires": []
+    },
+    {
+        "id": "cd0e40ed50290c3f",
+        "type": "绘制文本",
+        "z": "2cc6b8578366bc4d",
+        "name": "设置文本-设备9",
+        "text_content": "设备9",
+        "coord_x": "360",
+        "coord_y": "100",
+        "font_size": "24",
+        "custom_size": "",
+        "font_color": "#000000",
+        "custom_color": "",
+        "priority": "7",
+        "set": "",
+        "x": 1980,
+        "y": 1800,
+        "wires": []
+    },
+    {
+        "id": "5f2f5f942fb0653e",
+        "type": "绘制矩形",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "coord_x": "0",
+        "coord_y": "30",
+        "width": "50",
+        "height": "50",
+        "line_width": "2",
+        "border_radius": "5",
+        "fill_color": "#FFFFFF",
+        "border_color": "#000000",
+        "custom_color1": "",
+        "custom_color2": "",
+        "priority": "6",
+        "set": true,
+        "x": 1780,
+        "y": 1580,
+        "wires": []
+    },
+    {
+        "id": "cdc81e0b0e3b7a08",
+        "type": "绘制矩形",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "coord_x": "90",
+        "coord_y": "30",
+        "width": "50",
+        "height": "50",
+        "line_width": "2",
+        "border_radius": "5",
+        "fill_color": "#FFFFFF",
+        "border_color": "#000000",
+        "custom_color1": "",
+        "custom_color2": "",
+        "priority": "6",
+        "set": true,
+        "x": 1780,
+        "y": 1620,
+        "wires": []
+    },
+    {
+        "id": "7de3e727f6d4b023",
+        "type": "绘制矩形",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "coord_x": "180",
+        "coord_y": "30",
+        "width": "50",
+        "height": "50",
+        "line_width": "2",
+        "border_radius": "5",
+        "fill_color": "#FFFFFF",
+        "border_color": "#000000",
+        "custom_color1": "",
+        "custom_color2": "",
+        "priority": "6",
+        "set": true,
+        "x": 1780,
+        "y": 1660,
+        "wires": []
+    },
+    {
+        "id": "77043fc3121c03cb",
+        "type": "绘制矩形",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "coord_x": "270",
+        "coord_y": "30",
+        "width": "50",
+        "height": "50",
+        "line_width": "2",
+        "border_radius": "5",
+        "fill_color": "#FFFFFF",
+        "border_color": "#000000",
+        "custom_color1": "",
+        "custom_color2": "",
+        "priority": "6",
+        "set": true,
+        "x": 1780,
+        "y": 1700,
+        "wires": []
+    },
+    {
+        "id": "f05642e005c05b3a",
+        "type": "绘制矩形",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "coord_x": "360",
+        "coord_y": "30",
+        "width": "50",
+        "height": "50",
+        "line_width": "2",
+        "border_radius": "5",
+        "fill_color": "#FFFFFF",
+        "border_color": "#000000",
+        "custom_color1": "",
+        "custom_color2": "",
+        "priority": "6",
+        "set": true,
+        "x": 1780,
+        "y": 1740,
+        "wires": []
+    },
+    {
+        "id": "ddb0c43737bf6a3a",
+        "type": "绘制矩形",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "coord_x": "0",
+        "coord_y": "130",
+        "width": "50",
+        "height": "50",
+        "line_width": "2",
+        "border_radius": "5",
+        "fill_color": "#FFFFFF",
+        "border_color": "#000000",
+        "custom_color1": "",
+        "custom_color2": "",
+        "priority": "6",
+        "set": true,
+        "x": 1780,
+        "y": 1800,
+        "wires": []
+    },
+    {
+        "id": "7d271a92fb815d09",
+        "type": "绘制矩形",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "coord_x": "90",
+        "coord_y": "130",
+        "width": "50",
+        "height": "50",
+        "line_width": "2",
+        "border_radius": "5",
+        "fill_color": "#FFFFFF",
+        "border_color": "#000000",
+        "custom_color1": "",
+        "custom_color2": "",
+        "priority": "6",
+        "set": true,
+        "x": 1780,
+        "y": 1840,
+        "wires": []
+    },
+    {
+        "id": "28989b108f662b55",
+        "type": "绘制矩形",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "coord_x": "180",
+        "coord_y": "130",
+        "width": "50",
+        "height": "50",
+        "line_width": "2",
+        "border_radius": "5",
+        "fill_color": "#FFFFFF",
+        "border_color": "#000000",
+        "custom_color1": "",
+        "custom_color2": "",
+        "priority": "6",
+        "set": true,
+        "x": 1780,
+        "y": 1880,
+        "wires": []
+    },
+    {
+        "id": "6e858958305ec9df",
+        "type": "绘制矩形",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "coord_x": "270",
+        "coord_y": "130",
+        "width": "50",
+        "height": "50",
+        "line_width": "2",
+        "border_radius": "5",
+        "fill_color": "#FFFFFF",
+        "border_color": "#000000",
+        "custom_color1": "",
+        "custom_color2": "",
+        "priority": "6",
+        "set": true,
+        "x": 1780,
+        "y": 1920,
+        "wires": []
+    },
+    {
+        "id": "1069f9ea1e3d714b",
+        "type": "绘制矩形",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "coord_x": "360",
+        "coord_y": "130",
+        "width": "50",
+        "height": "50",
+        "line_width": "2",
+        "border_radius": "5",
+        "fill_color": "#FFFFFF",
+        "border_color": "#000000",
+        "custom_color1": "",
+        "custom_color2": "",
+        "priority": "6",
+        "set": true,
+        "x": 1780,
+        "y": 1960,
+        "wires": []
+    }
+]

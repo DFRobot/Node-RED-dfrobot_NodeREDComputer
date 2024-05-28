@@ -1,0 +1,14 @@
+[Unit]
+Description=LoRaGW HAL TX Service
+After=network.target
+
+[Service]
+ExecStartPre=/bin/sleep 3
+ExecStart=/opt/gwConfig/Gateway_LoRa_Reference/test_loragw_hal_tx_DF -d /dev/spidev2.0 -k0 -c0 -r1250 -f868.1 -mLORA --pa 1 -l12 --pwid 14 -s5 -b125 -z16 -t1000 -n1
+Restart=always
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target
+

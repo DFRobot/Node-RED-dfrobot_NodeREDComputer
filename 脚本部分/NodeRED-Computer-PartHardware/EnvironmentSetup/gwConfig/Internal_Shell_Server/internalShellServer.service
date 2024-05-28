@@ -1,0 +1,13 @@
+[Unit]
+Description=internalServer Service
+After=network.target
+
+[Service]
+ExecStartPre=/bin/sleep 5
+ExecStart=/opt/gwConfig/Internal_Shell_Server/internalShellServer
+Restart=always
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target

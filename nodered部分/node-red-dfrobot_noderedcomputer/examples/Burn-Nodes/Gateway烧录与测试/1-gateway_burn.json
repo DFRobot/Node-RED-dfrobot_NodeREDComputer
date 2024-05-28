@@ -1,0 +1,235 @@
+[
+    {
+        "id": "e5e5684bbaee2102",
+        "type": "group",
+        "z": "2cc6b8578366bc4d",
+        "name": "",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "5a1b130ea7eb4fbf",
+            "14cb92516061d23b",
+            "af312b93f9f25d7c",
+            "b5af611360e401ef",
+            "8e60ab6c063979fc",
+            "fee8fa6273774322",
+            "814eda815f7b7a2a",
+            "b5edd31e86eb37a2",
+            "72e5ee339347d5fa",
+            "041fbb526e519530"
+        ],
+        "x": 2374,
+        "y": 579,
+        "w": 1052,
+        "h": 302
+    },
+    {
+        "id": "5a1b130ea7eb4fbf",
+        "type": "Rockchip烧录",
+        "z": "2cc6b8578366bc4d",
+        "g": "e5e5684bbaee2102",
+        "name": "",
+        "chip": "RK3308K",
+        "firmware": "/media/sda1/dfrobot_lorawanos_rk3308_ryl.img",
+        "x": 2990,
+        "y": 780,
+        "wires": [
+            [
+                "814eda815f7b7a2a"
+            ],
+            [
+                "041fbb526e519530"
+            ],
+            [
+                "72e5ee339347d5fa"
+            ]
+        ]
+    },
+    {
+        "id": "14cb92516061d23b",
+        "type": "exec",
+        "z": "2cc6b8578366bc4d",
+        "g": "e5e5684bbaee2102",
+        "command": "rkdeveloptool ld",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 2680,
+        "y": 780,
+        "wires": [
+            [
+                "af312b93f9f25d7c",
+                "8e60ab6c063979fc"
+            ],
+            [
+                "8e60ab6c063979fc"
+            ],
+            [
+                "8e60ab6c063979fc"
+            ]
+        ]
+    },
+    {
+        "id": "af312b93f9f25d7c",
+        "type": "switch",
+        "z": "2cc6b8578366bc4d",
+        "g": "e5e5684bbaee2102",
+        "name": "RK3308成功进入MaskRom模式",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "Maskrom",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 2730,
+        "y": 720,
+        "wires": [
+            [
+                "5a1b130ea7eb4fbf",
+                "b5edd31e86eb37a2"
+            ]
+        ]
+    },
+    {
+        "id": "b5af611360e401ef",
+        "type": "inject",
+        "z": "2cc6b8578366bc4d",
+        "g": "e5e5684bbaee2102",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 2470,
+        "y": 780,
+        "wires": [
+            [
+                "14cb92516061d23b"
+            ]
+        ]
+    },
+    {
+        "id": "8e60ab6c063979fc",
+        "type": "debug",
+        "z": "2cc6b8578366bc4d",
+        "g": "e5e5684bbaee2102",
+        "name": "debug-执行shell的返回信息",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2920,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "fee8fa6273774322",
+        "type": "comment",
+        "z": "2cc6b8578366bc4d",
+        "g": "e5e5684bbaee2102",
+        "name": "1、网关烧录：网关进入MaskRom模式：先按住BOOT后按RST，然后先松开RST再松开BOOT",
+        "info": "",
+        "x": 2720,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "814eda815f7b7a2a",
+        "type": "debug",
+        "z": "2cc6b8578366bc4d",
+        "g": "e5e5684bbaee2102",
+        "name": "debug-烧录进度",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 3260,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "b5edd31e86eb37a2",
+        "type": "debug",
+        "z": "2cc6b8578366bc4d",
+        "g": "e5e5684bbaee2102",
+        "name": "debug 103",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 2970,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "72e5ee339347d5fa",
+        "type": "debug",
+        "z": "2cc6b8578366bc4d",
+        "g": "e5e5684bbaee2102",
+        "name": "debug-烧录的错误信息",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 3280,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "041fbb526e519530",
+        "type": "debug",
+        "z": "2cc6b8578366bc4d",
+        "g": "e5e5684bbaee2102",
+        "name": "debug-烧录成功提示",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 3280,
+        "y": 780,
+        "wires": []
+    }
+]
