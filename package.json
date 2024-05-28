@@ -1,0 +1,53 @@
+{
+    "name": "@renyoo/node-red-dfrobot_noderedcomputer",
+    "version": "1.1.2",
+    "description": "node red nodes for NodeREDComputer",
+    "node-red": {
+        "version": ">=2.0.0",
+        "nodes": {
+            "dfrobot-gpio_out": "./1_Peripheral_Nodes/gpio_out.js",
+            "dfrobot-gpio_in": "./1_Peripheral_Nodes/gpio_in.js",
+            "dfrobot-gpio_Interrupt": "./1_Peripheral_Nodes/gpio_Interrupt.js",
+            "dfrobot-adc": "./1_Peripheral_Nodes/adc.js",
+            "dfrobot-dac": "./1_Peripheral_Nodes/dac.js",
+            "dfrobot-serialCommunication": "./1_Peripheral_Nodes/serialCommunication.js",
+            "dfrobot-iic": "./1_Peripheral_Nodes/iic.js",
+
+            "dfrobot-device_monitor": "./2_Common_Nodes/device_monitor.js",
+            "dfrobot-FlowCountNode": "./2_Common_Nodes/flow_count.js",
+            "dfrobot-FlowSwitch": "./2_Common_Nodes/flow_switch.js",
+            "dfrobot-DeviceShell": "./2_Common_Nodes/device_shell.js",
+
+            "dfrobot-RockChipBurn": "./3_Burn_Nodes/gateway_burn.js",
+            "dfrobot-CH58xBurn": "./3_Burn_Nodes/ch58x_burn.js",
+            "dfrobot-esp32_burn": "./3_Burn_Nodes/esp32_burn.js",
+            "dfrobot-special_event": "./3_Burn_Nodes/Special_event.js",
+
+            "dfrobot-lcdWidget_DrawBackground": "./4_lcdWidget_Nodes/draw_background.js",
+            "dfrobot-lcdWidget_DrawLine": "./4_lcdWidget_Nodes/draw_line.js",
+            "dfrobot-lcdWidget_DrawRect": "./4_lcdWidget_Nodes/draw_rect.js",
+            "dfrobot-lcdWidget_DrawCircle": "./4_lcdWidget_Nodes/draw_circle.js",
+            "dfrobot-lcdWidget_DrawText": "./4_lcdWidget_Nodes/draw_text.js",
+            "dfrobot-lcdWidget_UpdatedAttribute": "./4_lcdWidget_Nodes/updated_attribute.js"
+        }
+    },
+    "author": "GDuang",
+    "license": "MIT",
+    "engines": {
+        "node": ">=12.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DFRobot/Node-RED-dfrobot_NodeREDComputer.git"
+    },
+    "keywords": [
+        "node-red",
+        "dfrobot",
+        "NodeREDComputer"
+    ],
+    "dependencies": {
+        "axios": "^1.6.7",
+        "mqtt": "^4.2.8",
+        "uuid": "^9.0.1"
+    }
+}

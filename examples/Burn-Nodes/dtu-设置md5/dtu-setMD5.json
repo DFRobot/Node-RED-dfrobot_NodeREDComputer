@@ -1,0 +1,105 @@
+[
+    {
+        "id": "643fec763e96ccca",
+        "type": "exec",
+        "z": "1c9952406c8324a7",
+        "command": "python3 /root/NodeRED-Computer-PartHardware/Executable-Script/Block-DTU/DTU-setMD5.py -device_name /dev/ttyACM0",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 980,
+        "y": 680,
+        "wires": [
+            [
+                "dc7abafd3c5a0b4e"
+            ],
+            [
+                "07ec2c0ed6f91d93"
+            ],
+            [
+                "61c810b4d548b00d"
+            ]
+        ]
+    },
+    {
+        "id": "0c5db5f0cc442258",
+        "type": "inject",
+        "z": "1c9952406c8324a7",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 530,
+        "y": 760,
+        "wires": [
+            [
+                "643fec763e96ccca"
+            ]
+        ]
+    },
+    {
+        "id": "dc7abafd3c5a0b4e",
+        "type": "debug",
+        "z": "1c9952406c8324a7",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1520,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "07ec2c0ed6f91d93",
+        "type": "debug",
+        "z": "1c9952406c8324a7",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1520,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "61c810b4d548b00d",
+        "type": "debug",
+        "z": "1c9952406c8324a7",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1520,
+        "y": 800,
+        "wires": []
+    }
+]
